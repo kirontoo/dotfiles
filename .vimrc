@@ -8,7 +8,7 @@
 " Leader key
 let mapleader = "\<Space>"
 
-" " Autoinstall package manager
+" Autoinstall package manager
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -55,6 +55,7 @@ filetype plugin indent on
   " Searching
 	set hlsearch              " Highlight matching search patterns
 	set incsearch             " Enable incremental search
+  set ignorecase            " Ignore case
 
   set splitbelow splitright " Splits window below and right
 	set mouse=a               " Enable mouse usage
@@ -82,8 +83,8 @@ filetype plugin indent on
   set tags+=tags
 
   "~~~~~~~ AUTOMACTIC SETTINGS ~~~~~~~~
-  autocmd BufEnter * silent! lcd %:p:h:pwd                                                          " change dir on buffer switch
-  autocmd CursorMoved * if (expand('<cword>') =~ @/) | set hlsearch | else | set nohlsearch | endif " unhighligt for search
+  autocmd BufEnter * silent! lcd %:p:h                                                                      " change dir on buffer switch
+  autocmd CursorMoved * if (expand('<cword>') =~ @/) | set hlsearch | else | set nohlsearch | endif         " unhighligt for search
   autocmd bufenter * if (winnr("$") == 1 && exists( " b:NERDTree " ) && b:NERDTree.isTabTree()) | q | endif " Exit Nerd Tree on exit vim
 
   set list                                        " show trailing whitespaces
@@ -106,8 +107,11 @@ filetype plugin indent on
   let g:NERDToggleCheckAllLines = 1
   let g:NERDCreateDefaultMappings = 0
 
+" NERD Tree Config
+  let g:NERDTreeShowHidden = 1
+
 " Syntax Color Scheme
-	colorscheme onedark
+	colorscheme one
 
 " For terminal true colo not working atm
   if (has("termguicolors"))
@@ -175,7 +179,8 @@ filetype plugin indent on
 "~~~~~~~~~~ SEARCH & SWOOP PLUGIN~~~~~~~~
   nmap <silent> ,/ :nohlsearch<CR>|           " search with no highlight
   nmap <leader>ss :call Swoop()<CR>|          " swoop current buffer
-  nmap <leader>sb :call SwwopSelection()<CR>| " swoop all open buffers
+  nmap <leader>sb :call SwoopSelection()<CR>| " swoop all open buffers
+
 
 "~~~~~~~~~~ FUGITIVE PLUGIN~~~~~~~~
   nnoremap <leader>gs :Gstatus<CR>| " git status
@@ -193,6 +198,12 @@ filetype plugin indent on
 "~~~~~~~~~~ TAGBAR PLUGIN~~~~~~~~
   nnoremap <silent> <leader>tt :TagbarToggle<CR>
 
+"~~~~~~~~~~ SEARCH & REPLACE ~~~~~~~~
+  nnoremap <leader>rr :%s//<Left>|                             " search entire file
+  nnoremap <leader>rv :%s///c<Left><Left><Left>|               " search file & confirm
+  nnoremap <leader>rg :%s//gc<Left><Left><Left>|               " search entire file & confirm
+  nnoremap <leader>rc :%s///gcI<Left><Left><Left><Left><Left>| " search case sensitive
+
 "~~~~~~~~~~ INSERT MODE ~~~~~~~~~
   "pairing braces
   inoremap <> <><Left>
@@ -203,7 +214,8 @@ filetype plugin indent on
   inoremap `` ``<Left>
 
 "~~~~~~~~~~ QUIT VIM ~~~~~~~~~
-  noremap <leader>qq :qa<CR>|   " quit all files
+  noremap <leader>qq :conf qa!<CR>|   " quit all files
+  noremap <leader>qn :q!<CR>|    " quit without saving
 
 "~~~~~~~~~~ MAPPING HELP ~~~~~~~~~
   nnoremap <leader>g? :map <leader>g <CR>
@@ -212,5 +224,6 @@ filetype plugin indent on
   nnoremap <leader>w? :map <leader>w <CR>
   nnoremap <leader>f? :map <leader>f <CR>
   nnoremap <leader>c? :map <leader>c <CR>
+  nnoremap <leader>r? :map <leader>r <CR>
 
 
