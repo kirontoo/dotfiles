@@ -9,14 +9,14 @@
 let mapleader = "\<Space>"
 
 " Autoinstall package manager
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " Plugin Calls
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'joshdick/onedark.vim'
 Plug 'kaicataldo/material.vim'
@@ -139,8 +139,8 @@ filetype plugin indent on
 "~~~~~~~~~~ FILES AND NAVIGATION ~~~~~~~~
   "~~~~~~~~~~ .VIMRC ~~~~~~~~
   " Quickly edit/reload the vimrc file
-  noremap <leader>fev :e  ~/.vimrc<CR>|     " edit vimrc
-  noremap <leader>fer :source ~/.vimrc<CR>| " reload vimrc
+  noremap <leader>fev :e  ~/.config/nvim/init.vim<CR>|     " edit vimrc
+  noremap <leader>fer :source ~/.config/nvim/init.vim<CR>| " reload vimrc
 
   "~~~~~~~~~~ NERD TREE ~~~~~~~~~
   noremap <leader>ft :NERDTreeToggle<CR>
