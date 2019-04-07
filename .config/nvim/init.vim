@@ -30,7 +30,6 @@ Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/goyo.vim'
-Plug 'pelodelfuego/vim-swoop'
 Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -40,46 +39,42 @@ call plug#end()
 filetype plugin indent on
 
 " Basic configurations
-  set nocompatible " prevent remapping to make plugins compatible
-  syntax on        " Turn on syntax highlighting
-  set ttyfast      " Speed up scrolling in Vim
-	
-	" Tab indent
+  set nocompatible          "  prevent remapping to make plugins compatible
+  syntax on                 "  Turn on syntax highlighting
+  set ttyfast               "  Speed up scrolling in Vim
+
+	"~Tab indent
 	set tabstop=2
 	set shiftwidth=2
 	set softtabstop=2
-	set expandtab  " convert tab to spaces
+	set expandtab             "  convert tab to spaces
 	set smarttab
-  set shiftround " use multiple of shiftwidth when indenting with '<' and '>'
+  set shiftround            "  use multiple of shiftwidth when indenting with '<' and '>'
 
-  " Searching
-	set hlsearch              " Highlight matching search patterns
-	set incsearch             " Enable incremental search
-  set ignorecase            " Ignore case
+  set splitbelow splitright "  Splits window below and right
+	set mouse=a               "  Enable mouse usage
+  set hidden                "  hide buffers
+  set autoindent            "  always set autoindenting on
+  set number relativenumber "  Line Numbers
 
-  set splitbelow splitright " Splits window below and right
-	set mouse=a               " Enable mouse usage
-  set hidden                " hide buffers
-  set autoindent            " always set autoindenting on
-  set number relativenumber " Line Numbers
-
-  " Line Wrap
+  "~Line Wrap
   set tw=80
   set wrap linebreak nolist
   set textwidth=0
   set wrapmargin=0
 
-  set cursorline            " Show line highlight
-  set wildmode=list:longest " Auto complete
+  set cursorline            "  Show line highlight
+  set wildmode=list:longest "  Auto complete
 
-  set showcmd       " show command
-  set hlsearch      " highlight search terms
-  set incsearch     " show search matches as you type
+  set showcmd               "  show command
+  set hlsearch              "  highlight search terms
+  set incsearch             "  show search matches as you type
+  set ignorecase            "  Ignore case
 
-  "set command timeout
+  "~set command timeout
   set timeoutlen=2000
 
-  " source file for tags
+  "~source file for tags
   set tags+=tags
 
   "~~~~~~~ AUTOMACTIC SETTINGS ~~~~~~~~
@@ -138,72 +133,69 @@ filetype plugin indent on
 
 "~~~~~~~~~~ FILES AND NAVIGATION ~~~~~~~~
   "~~~~~~~~~~ .VIMRC ~~~~~~~~
-  " Quickly edit/reload the vimrc file
-  noremap <leader>fev :e  ~/.config/nvim/init.vim<CR>|     " edit vimrc
-  noremap <leader>fer :source ~/.config/nvim/init.vim<CR>| " reload vimrc
+  noremap <leader>fev :e  ~/.config/nvim/init.vim<CR>|         "  edit vimrc
+  noremap <leader>fer :source ~/.config/nvim/init.vim<CR>|     "  reload vimrc
 
-  "~~~~~~~~~~ NERD TREE ~~~~~~~~~
+  "~~~~~~~~~~ NERD TREE PLUGIN~~~~~~~~~
   noremap <leader>ft :NERDTreeToggle<CR>
 
   "~~~~~~~~~~ FZF PLUGIN  ~~~~~~~~~
-  noremap <leader>fp :FZF <CR>|     " Search file in current Directory
-  noremap <leader>ff :FZF ~<CR>|    " Search file in Home Directory
-  noremap <leader>fh :History <CR>| " command history
+  noremap <leader>fp :FZF <CR>|                                "  Search file in current Directory
+  noremap <leader>ff :FZF ~<CR>|                               "  Search file in Home Directory
+  noremap <leader>fh :History <CR>|                            "  command history
+  noremap <leader>Ts :Colors<CR>|
 
-  noremap <leader>fs :w <CR>|       " save file
+  noremap <leader>fs :w <CR>|                                  "  save file
   "~~~~~~~~~~WINDOW NAVIGATION ~~~~~~~~~
   nnoremap <C-Left>  <C-w>h
   nnoremap <C-Down>  <C-w>j
   nnoremap <C-Up>    <C-w>k
   nnoremap <C-Right> <C-w>l
 
-  noremap <leader>w/ :vsplit<CR>|            " split window vertically
-  noremap <leader>w/r :vert sview <C-Z><CR>| " split vertically in read only mode
-  noremap <leader>wd :hide<CR>|              " delete window
-  noremap <leader>wo :only<CR>|              " keep only current window open
+  noremap <leader>w/ :vsplit<CR>|                              "  split window vertically
+  noremap <leader>w/r :vert sview <C-Z><CR>|                   "  split vertically in read only mode
+  noremap <leader>wd :hide<CR>|                                "  delete window
+  noremap <leader>wo :only<CR>|                                "  keep only current window open
 
   "~~~~~~~~~~TAB NAVIGATION ~~~~~~~~~
-  noremap <C-W> :tabclose<CR>| " close tab
-  noremap <C-T> :tabnew<CR>|   " open new empty tab
-  noremap <C-Tab> :tabn<CR>|   " go to next tab
-  noremap <C-S-Tab> :tabp<CR>| " go to prev tab
+  noremap <C-W> :tabclose<CR>|                                 "  close tab
+  noremap <C-T> :tabnew<CR>|                                   "  open new empty tab
+  noremap <C-Tab> :tabn<CR>|                                   "  go to next tab
+  noremap <C-S-Tab> :tabp<CR>|                                 "  go to prev tab
 
   "~~~~~~~~~~ BUFFER NAVIGATION~~~~~~~~~
-  noremap <leader><Tab> :bp<Cr>                  " switch previous buffer
-  noremap <leader>bb :buffers<CR>:buffer<Space>| " open buffer menu
+  noremap <leader><Tab> :bp<Cr>                                "  switch previous buffer
+  noremap <leader>bb :Buffers<CR>|                             "  open buffer menu
 
   set wildchar=<Tab> wildmenu wildmode=full
   set wildcharm=<C-Z>
-  nnoremap <leader>bf :b <C-Z>|                  " find buffer
-  nnoremap <leader>bd :bd<Cr>|                   " delete buffer
+  nnoremap <leader>bd :bd<Cr>|                                 "  delete buffer
 
-"~~~~~~~~~~ SEARCH & SWOOP PLUGIN~~~~~~~~
-  nmap <silent> ,/ :nohlsearch<CR>|           " search with no highlight
-  nmap <leader>ss :call Swoop()<CR>|          " swoop current buffer
-  nmap <leader>sb :call SwoopSelection()<CR>| " swoop all open buffers
-
+  "~~~~~~~~~~ SEARCH ~~~~~~~~
+  nmap <leader>ss :BLines<CR>|                                 "  swoop current buffer
+  nmap <leader>sg :Lines<CR>|                                  "  swoop all open buffer
 
 "~~~~~~~~~~ FUGITIVE PLUGIN~~~~~~~~
-  nnoremap <leader>gs :Gstatus<CR>| " git status
-  nnoremap <leader>gc :Gcommit<CR>| " git commit
-  nnoremap <leader>gd :Gdiff<CR>|   " git diff
-  nnoremap <leader>gf :Gpull<CR>|   " git pull
-  nnoremap <leader>gp :Gpush<CR>|   " git push
-  nnoremap <leader>gm :Gmerge<CR>|  " git merge
-  nnoremap <leader>gg :Git 
+  nnoremap <leader>gs :Gstatus<CR>|                            "  git status
+  nnoremap <leader>gc :Gcommit<CR>|                            "  git commit
+  nnoremap <leader>gd :Gdiff<CR>|                              "  git diff
+  nnoremap <leader>gf :Gpull<CR>|                              "  git pull
+  nnoremap <leader>gp :Gpush<CR>|                              "  git push
+  nnoremap <leader>gm :Gmerge<CR>|                             "  git merge
 
 "~~~~~~~~~~ NERDCOMMENTER PLUGIN~~~~~~~~
   nmap <leader>; <plug>NERDCommenterToggle
   vmap <leader>; <plug>NERDCommenterToggle gv
 
 "~~~~~~~~~~ TAGBAR PLUGIN~~~~~~~~
-  nnoremap <silent> <leader>tt :TagbarToggle<CR>
+  nnoremap <silent> <leader>tt :TagbarToggle<CR>|              "  toggle tag bar
+  nnoremap <leader>tb :BTags<CR>|                              "  search tags in current buffer
 
 "~~~~~~~~~~ SEARCH & REPLACE ~~~~~~~~
-  nnoremap <leader>rr :%s//<Left>|                             " search entire file
-  nnoremap <leader>rv :%s///c<Left><Left><Left>|               " search file & confirm
-  nnoremap <leader>rg :%s//gc<Left><Left><Left>|               " search entire file & confirm
-  nnoremap <leader>rc :%s///gcI<Left><Left><Left><Left><Left>| " search case sensitive
+  nnoremap <leader>rr :%s//<Left>|                             "  search entire file
+  nnoremap <leader>rv :%s///c<Left><Left><Left>|               "  search file & confirm
+  nnoremap <leader>rg :%s//gc<Left><Left><Left>|               "  search entire file & confirm
+  nnoremap <leader>rc :%s///gcI<Left><Left><Left><Left><Left>| "  search case sensitive
 
 "~~~~~~~~~~ INSERT MODE ~~~~~~~~~
   "pairing braces
@@ -215,16 +207,10 @@ filetype plugin indent on
   inoremap `` ``<Left>
 
 "~~~~~~~~~~ QUIT VIM ~~~~~~~~~
-  noremap <leader>qq :conf qa!<CR>|   " quit all files
-  noremap <leader>qn :q!<CR>|    " quit without saving
+  noremap <leader>qq :conf qa!<CR>|                            "  quit all files
+  noremap <leader>qn :q!<CR>|                                  "  quit without saving
 
 "~~~~~~~~~~ MAPPING HELP ~~~~~~~~~
-  nnoremap <leader>g? :map <leader>g <CR>
-  nnoremap <leader>s? :map <leader>s <CR>
-  nnoremap <leader>b? :map <leader>b <CR>
-  nnoremap <leader>w? :map <leader>w <CR>
-  nnoremap <leader>f? :map <leader>f <CR>
-  nnoremap <leader>c? :map <leader>c <CR>
-  nnoremap <leader>r? :map <leader>r <CR>
-
+  nnoremap <leader>? :Commands<CR>
+  nnoremap <leader>?m :Maps<CR>
 
