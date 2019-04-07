@@ -9,11 +9,11 @@
 let mapleader = "\<Space>"
 
 " " Autoinstall package manager
-" if empty(glob('~/.vim/autoload/plug.vim'))
-  " silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    " \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  " autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-" endif
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
 " Plugin Calls
 call plug#begin('~/.vim/plugged')
@@ -32,11 +32,11 @@ Plug 'godlygeek/tabular'
 Plug 'junegunn/goyo.vim'
 Plug 'pelodelfuego/vim-swoop'
 Plug 'majutsushi/tagbar'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
-" Pathogen plugin for powerline
-execute pathogen#infect()
 filetype plugin indent on
 
 " Basic configurations
