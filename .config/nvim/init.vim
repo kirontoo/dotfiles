@@ -23,10 +23,10 @@ Plug 'kaicataldo/material.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', {'do': './install --all'}
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-Plug 'tpope/vim-surround'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer --clang-completer' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'godlygeek/tabular'
@@ -35,6 +35,7 @@ Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
+Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
 
@@ -93,7 +94,7 @@ filetype plugin indent on
 	let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 1
 	let g:airline#extensions#tabline#left_sep = ' '
-	let g:airline#extensions#tabline#left_alt_sep = '|'
+	" let g:airline#extensions#tabline#left_alt_sep = '|'
 
 " Vim-Swoop Config
   let g:defaultWinSwoopHeight = 15
@@ -119,6 +120,7 @@ filetype plugin indent on
 " Configure Goyo
 " NOTE: keymaps for Goyo is default
   let g:goyo_width=120     " width
+  let g:goyo_linenr=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
@@ -139,7 +141,10 @@ filetype plugin indent on
   noremap <leader>fer :source ~/.config/nvim/init.vim<CR>|     "  reload vimrc
 
   "~~~~~~~~~~ NERD TREE PLUGIN~~~~~~~~~
-  noremap <leader>ft :NERDTreeToggle<CR>
+  noremap <leader>ft :NERDTreeToggle ~/<CR>
+  noremap <leader>tf :NERDTreeFocus<CR>
+  noremap <leader>pt :NERDTreeVCS<CR>
+  noremap <leader>tc :NERDTreeClose<CR>
 
   "~~~~~~~~~~ FZF PLUGIN  ~~~~~~~~~
   noremap <leader>fp :FZF <CR>|                                "  Search file in current Directory
@@ -207,6 +212,19 @@ filetype plugin indent on
   inoremap "" ""<Left>
   inoremap '' ''<Left>
   inoremap `` ``<Left>
+
+"~~~~~~~~~~ SURROUND TEXT ~~~~~~~~~
+  nnoremap <leader>s' ciw''<ESC>P|                             "  surround word with ''
+  nnoremap <leader>s" ciw""<ESC>P|                             "  surround word with ""
+  nnoremap <leader>s( ciw()<ESC>P|                             "  surround word with ()
+  nnoremap <leader>s{ ciw{}<ESC>P|                             "  surround word with {}
+  nnoremap <leader>s[ ciw[]<ESC>P|                             "  surround word with []
+
+"~~~~~~~~~~ PLUGIN INSTALL ~~~~~~~~~
+  nnoremap <leader>pi :PlugInstall<CR>
+  nnoremap <leader>pc :PlugClean<CR>
+  nnoremap <leader>pu :PlugUpdate<CR>
+  nnoremap <leader>pg :PlugUpgrade<CR>
 
 "~~~~~~~~~~ QUIT VIM ~~~~~~~~~
   noremap <leader>qq :conf qa!<CR>|                            "  quit all files
