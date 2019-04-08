@@ -26,7 +26,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', {'do': './install --all'}
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer --clang-completer' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'godlygeek/tabular'
@@ -153,6 +152,8 @@ filetype plugin indent on
   noremap <leader>Ts :Colors<CR>|
 
   noremap <leader>fs :w <CR>|                                  "  save file
+  noremap <leader>fq :q <CR>|                                  "  quit file
+
   "~~~~~~~~~~WINDOW NAVIGATION ~~~~~~~~~
   nnoremap <C-Left>  <C-w>h
   nnoremap <C-Down>  <C-w>j
