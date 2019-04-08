@@ -28,6 +28,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/goyo.vim'
 Plug 'majutsushi/tagbar'
