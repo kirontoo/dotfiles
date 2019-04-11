@@ -35,6 +35,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer --ts-completer'}
 
 call plug#end()
 
@@ -121,6 +122,9 @@ filetype plugin indent on
   let g:goyo_width=120     " width
   let g:goyo_linenr=1
 
+" YouCompleteMe Config
+  let g:ycm_confirm_extra_conf = '~/.local/share/nvim/plugged/YouCompleteMe/.ycm_extra_conf.py'
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 "___   _  _______  __   __  __   __  _______  _______  _______ 
@@ -146,8 +150,9 @@ filetype plugin indent on
   noremap <leader>tc :NERDTreeClose<CR>
 
   "~~~~~~~~~~ FZF PLUGIN  ~~~~~~~~~
-  noremap <leader>fp :FZF <CR>|                                "  Search file in current Directory
-  noremap <leader>ff :FZF ~<CR>|                               "  Search file in Home Directory
+  noremap <leader>fp :GFiles <CR>|                             "  Search file in current git Directory
+  noremap <leader>fd :Files ./<CR>|                            "  Search file in current Directory
+  noremap <leader>ff :Files ~<CR>|                             "  Search file in Home Directory
   noremap <leader>fh :History <CR>|                            "  command history
   noremap <leader>Ts :Colors<CR>|
 
