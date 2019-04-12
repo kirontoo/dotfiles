@@ -17,6 +17,15 @@ if [[ $? != 0 ]]; then
   echo "homebrew is not installed"
   echo "installing now...."
   # sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)" 
+
 else
   echo "installed"
+  brew update
+fi
+
+
+if [ $(test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)) ]; then
+  echo "exists";
+else
+  echo "nope.";
 fi
