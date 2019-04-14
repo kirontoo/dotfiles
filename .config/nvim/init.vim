@@ -205,9 +205,9 @@ filetype plugin indent on
   nnoremap <leader>tb :BTags<CR>|                              "  search tags in current buffer
 
 "~~~~~~~~~~ SEARCH & REPLACE ~~~~~~~~
-  nnoremap <leader>rr :%s//<Left>|                             "  search entire file
+  nnoremap <leader>rl :s//<Left>|                              "  search line
   nnoremap <leader>rv :%s///c<Left><Left><Left>|               "  search file & confirm
-  nnoremap <leader>rg :%s//gc<Left><Left><Left>|               "  search entire file & confirm
+  nnoremap <leader>rg :%s///gc<Left><Left><Left><Left>|        "  search entire file & confirm
   nnoremap <leader>rc :%s///gcI<Left><Left><Left><Left><Left>| "  search case sensitive
 
 "~~~~~~~~~~ INSERT MODE ~~~~~~~~~
