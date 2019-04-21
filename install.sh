@@ -49,12 +49,13 @@ PACKAGES=(
   node
   npm
   rxvt-unicode
-  nvim
+  neovim
   docker
   docker-compose
   python3
   git
-  wget
+  curl
+  tmux
 )
 
 for package in ${PACKAGES[@]}; do
