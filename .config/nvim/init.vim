@@ -18,6 +18,7 @@ endif
 " Plugin Calls
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'joshdick/onedark.vim'
 Plug 'kaicataldo/material.vim'
 Plug 'sheerun/vim-polyglot'
@@ -25,6 +26,7 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', {'do': './install --all'}
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
@@ -34,10 +36,12 @@ Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer --ts-completer'}
+" Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer --ts-completer'}
 
 call plug#end()
+
+" COC extensions
+let g:coc_global_extensions=[ 'coc-json', 'coc-tsserver', 'coc-emmet', 'coc-tslint', 'coc-html', 'coc-css', 'coc-angular' ]
 
 filetype plugin indent on
 
@@ -74,6 +78,11 @@ filetype plugin indent on
   set incsearch             "  show search matches as you type
   set ignorecase            "  Ignore case
 
+  " Mode Cursor Settings
+  set guicursor=n-v-c:block-Cursor/iCursor
+  set guicursor+=i:hor50-Cursor/iCursor
+  set guicursor+=r:hor100-Cursor/rCursor-blinkwait300-blinkoff200-blinkon150
+
   "~set command timeout
   set timeoutlen=2000
 
@@ -108,7 +117,7 @@ filetype plugin indent on
 " NERD Tree Config
   let g:NERDTreeShowHidden = 1
 
-" Syntax Color Scheme
+" Syntax Color Scheme / Theme
 	colorscheme one
   hi! Normal ctermbg=NONE guibg=NONE
 
@@ -173,8 +182,8 @@ filetype plugin indent on
   "~~~~~~~~~~TAB NAVIGATION ~~~~~~~~~
   noremap <C-W> :tabclose<CR>|                                 "  close tab
   noremap <C-T> :tabnew<CR>|                                   "  open new empty tab
-  noremap <C-Tab> :tabn<CR>|                                   "  go to next tab
-  noremap <C-S-Tab> :tabp<CR>|                                 "  go to prev tab
+  noremap <leader>tn :tabn<CR>|                                   "  go to next tab
+  noremap <leader>tp :tabp<CR>|                                 "  go to prev tab
 
   "~~~~~~~~~~ BUFFER NAVIGATION~~~~~~~~~
   noremap <leader><Tab> :bp<Cr>                                "  switch previous buffer
@@ -196,9 +205,14 @@ filetype plugin indent on
   nnoremap <leader>gp :Gpush<CR>|                              "  git push
   nnoremap <leader>gm :Gmerge<CR>|                             "  git merge
 
+"~~~~~~~~~~ COC PLUGIN~~~~~~~~
+  inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+  inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+  inoremap <expr><cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
 "~~~~~~~~~~ NERDCOMMENTER PLUGIN~~~~~~~~
-  nmap <leader>; <plug>NERDCommenterToggle
-  vmap <leader>; <plug>NERDCommenterToggle gv
+  nmap <leader>/ <plug>NERDCommenterToggle
+  vmap <leader>/ <plug>NERDCommenterToggle gv
 
 "~~~~~~~~~~ TAGBAR PLUGIN~~~~~~~~
   nnoremap <silent> <leader>tt :TagbarToggle<CR>|              "  toggle tag bar
