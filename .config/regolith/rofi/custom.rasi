@@ -1,0 +1,107 @@
+/*
+ * ROFI Regolith Dark Theme
+ *
+ * Based on https://github.com/DaveDavenport/rofi-themes/blob/master/User%20Themes/onedark.rasi
+ * Based on OneDark.vim (https://github.com/joshdick/onedark.vim)
+ */
+
+
+* {
+  base03:     #292d3e;
+  base03t:    #002b36dd;
+  base02:     #073642;
+  base01:     #586e75;
+  base0:      #839496;
+  base1:      #c0c5ce;
+  yellow:     #dcd435;
+  red:	      #dc3545;
+  blue:       #268bd2;
+  cyan:       #35dcbc;
+  black:      #000000;
+
+  spacing: 0;
+  background-color: transparent;
+
+  text-color: @base1;
+}
+
+window {
+  transparency: "real";
+  background-color: #292d3eee;
+  fullscreen: false;
+  height: 500px;
+}
+
+mainbox {
+  padding: 1%;
+}
+
+scrollbar {
+  handle-width: 10px;
+  handle-color: @red;
+  background-color: #c0c5ceee;
+  border-radius: 50%;
+}
+
+inputbar {
+  margin: 0px 0px 20px 0px;
+  children: [prompt, textbox-prompt-colon, entry, case-indicator];
+}
+
+prompt {
+  text-color: @red;
+}
+
+textbox-prompt-colon {
+  expand: false;
+  str: " >_ ";
+  text-color: @base1;
+}
+
+entry {
+  margin: 0px 10px;
+}
+
+listview {
+  spacing: 3px;
+  dynamic: true;
+  scrollbar: true;
+  border: 2px 2px 2px;
+  border-color: @red;
+  padding: 8px;
+  border-radius: 3px;
+}
+
+element {
+  padding: 5px;
+  text-color: @base1;
+  highlight: @yellow;
+  border-radius: 3px;
+}
+
+element selected {
+  background-color: @red;
+  text-color: @base1;
+}
+
+element urgent, element selected urgent {
+  text-color: @red;
+}
+
+element active, element selected active {
+  text-color: @cyan;
+}
+
+message {
+  padding: 5px;
+  border-radius: 3px;
+  background-color: @base02;
+  border: 1px;
+  border-color: @cyan;
+}
+
+button selected {
+  padding: 5px;
+  border-radius: 3px;
+  background-color: @base02;
+}

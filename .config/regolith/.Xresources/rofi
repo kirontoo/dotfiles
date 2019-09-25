@@ -1,0 +1,5 @@
+rofi.theme:             $HOME/.config/regolith/rofi/custom
+rofi.font:              typeface_rofi
+rofi.show-icons:        true
+rofi.drun-icon-theme:   Arc
+rofi.fullscreen:        true
