@@ -167,7 +167,24 @@ filetype plugin indent on
 
   noremap <leader>fs :w <CR>|                                  "  save file
   noremap <leader>fq :q <CR>|                                  "  quit file
+  
+  "~~~~~~~~~~ MOVE LINES ~~~~~~~~~
+  vnoremap <A-Up> :m -2<CR>
+  vnoremap <A-Down> :m +1<CR>
+  nnoremap <A-Up> :m -2<CR>
+  nnoremap <A-Down> :m +1<CR>
 
+  vnoremap <A-k> :m -2<CR>
+  vnoremap <A-j> :m +1<CR>
+  nnoremap <A-k> :m -2<CR>
+  nnoremap <A-j> :m +1<CR>
+
+  "~~~~~~~~~~ DUPLICATE LINES ~~~~~~~~~
+  vnoremap <A-S-Up> :t -1<CR>
+  vnoremap <A-S-Down> :t.<CR>
+  nnoremap <A-S-Up> :t -1<CR>
+  nnoremap <A-S-Down> :t.<CR>
+  
   "~~~~~~~~~~WINDOW NAVIGATION ~~~~~~~~~
   nnoremap <C-Left>  <C-w>h
   nnoremap <C-Down>  <C-w>j
