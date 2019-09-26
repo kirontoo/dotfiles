@@ -21,6 +21,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'joshdick/onedark.vim'
 Plug 'kaicataldo/material.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'haya14busa/incsearch-easymotion.vim'
+Plug 'haya14busa/incsearch.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'junegunn/fzf.vim'
@@ -32,11 +35,9 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/goyo.vim'
-Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
-" Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer --ts-completer'}
 
 call plug#end()
 
@@ -49,6 +50,10 @@ filetype plugin indent on
   set nocompatible          "  prevent remapping to make plugins compatible
   syntax on                 "  Turn on syntax highlighting
   set ttyfast               "  Speed up scrolling in Vim
+  set path+=**              "  Search down into subfolders & provide tab-completion
+  set wildmenu              "  Display all mtching files when tab-complete
+  set wildignore+=**node_modules/**
+  set updatetime=100        "  lower updatetime to 100ms from 4000
 
 	"~Tab indent
 	set tabstop=2
@@ -78,6 +83,8 @@ filetype plugin indent on
   set incsearch             "  show search matches as you type
   set ignorecase            "  Ignore case
 
+  set formatoptions-=cro    "  disable automatic comment on newline
+
   " Mode Cursor Settings
   set guicursor=n-v-c:block-Cursor/iCursor
   set guicursor+=i:hor50-Cursor/iCursor
@@ -99,7 +106,7 @@ filetype plugin indent on
   autocmd filetype html,xml set listchars-=tab:>. " disable trailing whitspace for html/xml
 
 " Airline (Powerline) Themes and Config
-	let g:airline_theme='deus'
+	let g:airline_theme='fruit_punch'
 	let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 1
 	let g:airline#extensions#tabline#left_sep = ' '
@@ -131,8 +138,8 @@ filetype plugin indent on
   let g:goyo_width=120     " width
   let g:goyo_linenr=1
 
-" YouCompleteMe Config
-  let g:ycm_confirm_extra_conf = '~/.local/share/nvim/plugged/YouCompleteMe/.ycm_extra_conf.py'
+" GitGutter Config
+  let g:gitgutter_max_signs=200           "  change max signs shown
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
@@ -167,7 +174,12 @@ filetype plugin indent on
 
   noremap <leader>fs :w <CR>|                                  "  save file
   noremap <leader>fq :q <CR>|                                  "  quit file
-  
+
+  "~~~~~~~~~~ INCSEARCH-EASYMOTION PLUGIN  ~~~~~~~~~
+  map z/ <Plug>(incsearch-easymotion-/)
+  map z? <Plug>(incsearch-easymotion-?)
+  map zg <Plug>(incsearch-easymotion-stay)
+
   "~~~~~~~~~~ MOVE LINES ~~~~~~~~~
   vnoremap <A-Up> :m -2<CR>
   vnoremap <A-Down> :m +1<CR>
@@ -179,12 +191,6 @@ filetype plugin indent on
   nnoremap <A-k> :m -2<CR>
   nnoremap <A-j> :m +1<CR>
 
-  "~~~~~~~~~~ DUPLICATE LINES ~~~~~~~~~
-  vnoremap <A-S-Up> :t -1<CR>
-  vnoremap <A-S-Down> :t.<CR>
-  nnoremap <A-S-Up> :t -1<CR>
-  nnoremap <A-S-Down> :t.<CR>
-  
   "~~~~~~~~~~WINDOW NAVIGATION ~~~~~~~~~
   nnoremap <C-Left>  <C-w>h
   nnoremap <C-Down>  <C-w>j
