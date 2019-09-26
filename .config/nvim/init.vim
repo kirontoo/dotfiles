@@ -51,9 +51,11 @@ filetype plugin indent on
   syntax on                 "  Turn on syntax highlighting
   set ttyfast               "  Speed up scrolling in Vim
   set path+=**              "  Search down into subfolders & provide tab-completion
-  set wildmenu              "  Display all mtching files when tab-complete
-  set wildignore+=**node_modules/**
+  set wildmenu              "  Display all matching files when tab-complete
+  set wildignore+=**/node_modules/**      "ignore folders to search
   set updatetime=100        "  lower updatetime to 100ms from 4000
+  
+  set signcolumn=yes        "  Enable sign column
 
 	"~Tab indent
 	set tabstop=2
@@ -79,16 +81,17 @@ filetype plugin indent on
   set wildmode=list:longest "  Auto complete
 
   set showcmd               "  show command
-  set hlsearch              "  highlight search terms
+  set incsearch             "  highlight search terms
   set incsearch             "  show search matches as you type
   set ignorecase            "  Ignore case
 
-  set formatoptions-=cro    "  disable automatic comment on newline
+  " Disable automatic comment on newline
+  set formatoptions-=cro 
 
   " Mode Cursor Settings
   set guicursor=n-v-c:block-Cursor/iCursor
-  set guicursor+=i:hor50-Cursor/iCursor
-  set guicursor+=r:hor100-Cursor/rCursor-blinkwait300-blinkoff200-blinkon150
+  set guicursor+=i:hor20-Cursor/iCursor
+  set guicursor+=r:hor20-Cursor/rCursor-blinkwait300-blinkoff200-blinkon150
 
   "~set command timeout
   set timeoutlen=2000
@@ -97,7 +100,7 @@ filetype plugin indent on
   set tags+=tags
 
   "~~~~~~~ AUTOMACTIC SETTINGS ~~~~~~~~
-  autocmd BufEnter * silent! lcd %:p:h                                                                      " change dir on buffer switch
+  " autocmd BufEnter * silent! lcd %:p:h                                                                      " change dir on buffer switch
   autocmd CursorMoved * if (expand('<cword>') =~ @/) | set hlsearch | else | set nohlsearch | endif         " unhighligt for search
   autocmd bufenter * if (winnr("$") == 1 && exists( " b:NERDTree " ) && b:NERDTree.isTabTree()) | q | endif " Exit Nerd Tree on exit vim
 
@@ -125,7 +128,7 @@ filetype plugin indent on
   let g:NERDTreeShowHidden = 1
 
 " Syntax Color Scheme / Theme
-	colorscheme one
+	colorscheme deep-space
   hi! Normal ctermbg=NONE guibg=NONE
 
 " For terminal true colo not working atm
@@ -133,13 +136,21 @@ filetype plugin indent on
    set termguicolors
   endif
 
-" Configure Goyo
+" Configure Goy
 " NOTE: keymaps for Goyo is default
   let g:goyo_width=120     " width
   let g:goyo_linenr=1
 
+" CTRLP Configuration
+  let g:ctrlp_working_path_mode = 'ra'
+
 " GitGutter Config
-  let g:gitgutter_max_signs=200           "  change max signs shown
+  let g:gitgutoter_max_signs=200           "  change max signs shown
+
+" EasyMotion Config
+  let g:EasyMotion_smartcase = 1
+  let g:EasyMotion_use_smartsign_us = 1
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
@@ -180,6 +191,12 @@ filetype plugin indent on
   map z? <Plug>(incsearch-easymotion-?)
   map zg <Plug>(incsearch-easymotion-stay)
 
+  "~~~~~~~~~~ EASYMOTION PLUGIN  ~~~~~~~~~
+  map <leader><leader>w <Plug>(easymotion-overwin-w)
+  map <leader><leader>e <Plug>(easymotion-bd-e)
+  map <leader><leader>t <Plug>(easymotion-bd-t)
+  map <leader><leader>s <Plug>(easymotion-overwin-f)
+
   "~~~~~~~~~~ MOVE LINES ~~~~~~~~~
   vnoremap <A-Up> :m -2<CR>
   vnoremap <A-Down> :m +1<CR>
@@ -190,6 +207,12 @@ filetype plugin indent on
   vnoremap <A-j> :m +1<CR>
   nnoremap <A-k> :m -2<CR>
   nnoremap <A-j> :m +1<CR>
+
+  "~~~~~~~~~~ DUPLICATE LINES ~~~~~~~~~
+  vnoremap <A-S-Up> :t -1<CR>
+  vnoremap <A-S-Down> :t.<CR>
+  nnoremap <A-S-Up> :t -1<CR>
+  nnoremap <A-S-Down> :t.<CR>
 
   "~~~~~~~~~~WINDOW NAVIGATION ~~~~~~~~~
   nnoremap <C-Left>  <C-w>h
@@ -205,8 +228,8 @@ filetype plugin indent on
   "~~~~~~~~~~TAB NAVIGATION ~~~~~~~~~
   noremap <C-W> :tabclose<CR>|                                 "  close tab
   noremap <C-T> :tabnew<CR>|                                   "  open new empty tab
-  noremap <leader>tn :tabn<CR>|                                   "  go to next tab
-  noremap <leader>tp :tabp<CR>|                                 "  go to prev tab
+  noremap <leader>tn :tabn<CR>|                                "  go to next tab
+  noremap <leader>tp :tabp<CR>|                                "  go to prev tab
 
   "~~~~~~~~~~ BUFFER NAVIGATION~~~~~~~~~
   noremap <leader><Tab> :bp<Cr>                                "  switch previous buffer
@@ -233,6 +256,36 @@ filetype plugin indent on
   inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
   inoremap <expr><cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+  "Remap keys for gotos
+  nmap <silent> gd <Plug>(coc-definition)                      " go to definition
+  nmap <silent> gy <Plug>(coc-type-definition)                 " go to type definition
+  nmap <silent> gi <Plug>(coc-implementation)                  " go to implementation
+  nmap <silent> gr <Plug>(coc-references)                      " go to reference
+
+  " show documentation in preview window
+  nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+  function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+      execute 'h '.expand('<cword>')
+    else
+      call CocAction('doHover')
+    endif
+  endfunction
+
+  nmap <leader>rn <Plug>(coc-rename)                           " Remap for rename current word
+  autocmd CursorHold * silent call CocActionAsync('highlight') " Highlight on symbol under cursor
+
+  nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>    " Show all diagnostics
+  nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>     " Manage extensions
+  nnoremap <silent> <space>c  :<C-u>CocList commands<cr>       " Show commands
+  nnoremap <silent> <space>o  :<C-u>CocList outline<cr         " Find symbol of current document
+  nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr      " Search workspace symbols
+  nnoremap <silent> <space>j  :<C-u>CocNext<CR                 " Do default action for next item.
+  nnoremap <silent> <space>k  :<C-u>CocPrev<CR                 " Do default action for previous item.
+  nnoremap <silent> <space>p  :<C-u>CocListResume<CR           " Resume latest coc list
+
+
 "~~~~~~~~~~ NERDCOMMENTER PLUGIN~~~~~~~~
   nmap <leader>/ <plug>NERDCommenterToggle
   vmap <leader>/ <plug>NERDCommenterToggle gv
@@ -254,7 +307,7 @@ filetype plugin indent on
   inoremap {} {}<Left>
   inoremap "" ""<Left>
   inoremap '' ''<Left>
-  inoremap `` ``<Left>
+  inoremap `` ``<Left>'
 
 "~~~~~~~~~~ SURROUND TEXT ~~~~~~~~~
   nnoremap <leader>s' ciw''<ESC>P|                             "  surround word with ''
@@ -276,4 +329,3 @@ filetype plugin indent on
 "~~~~~~~~~~ MAPPING HELP ~~~~~~~~~
   nnoremap <leader>? :Commands<CR>
   nnoremap <leader>?m :Maps<CR>
-
