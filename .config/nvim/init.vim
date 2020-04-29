@@ -21,7 +21,7 @@ if has("win32") || has("win16")
 endif
 
 if !has("win32")
-	if empty(glob(''~/.local/share/nvim/site/autoload/plug.vim))
+	if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
 		silent !curl -fLo '~/.local/share/nvim/site/autoload/plug.vim' --create-dirs
 					\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 		autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
@@ -32,17 +32,23 @@ endif
 
 " Plugin: Colorschemes
 Plug 'aswathkk/DarkScene.vim'
+Plug 'artanikin/vim-synthwave84'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'dracula/vim'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'lifepillar/vim-solarized8'
-Plug 'mhartington/oceanic-next'
 Plug 'morhetz/gruvbox'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'ntk148v/vim-horizon'
+Plug 'stillwwater/vim-nebula'
 Plug 'tjammer/blayu.vim'
 Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'wadackel/vim-dogrun'
+
+" Plugin: NerdFonts
+" Plug 'https://github.com/ryanoasis/nerd-fonts.git', { 'do': './install.sh' }
 
 " Plugin: Packages
 Plug 'airblade/vim-rooter'
@@ -154,7 +160,7 @@ set hlsearch                     " highlight search terms
 set incsearch                    " show search matches as you type
 set ignorecase                   " Ignore case
 
-" WINDOWS CLIPBOARD
+" OS CLIPBOARD
 set clipboard+=unnamed
 
 " Disable automatic comment on newline
@@ -184,10 +190,10 @@ let sh_fold_enabled=1         " sh
 let vimsyn_folding='af'       " Vim script
 
 "~~~~~~~ AUTOMACTIC SETTINGS ~~~~~~~~
-" set autochdir
 autocmd FileType cs,js,css,jsx,ts,tsx autocmd BufWritePre <buffer> %s/\s\+$//e        " automatically remove all trailing whitespace
 autocmd CursorMoved * if (expand('<cword>') =~ @/) | set hlsearch | else | set nohlsearch | endif         " unhighligt for search
 autocmd bufenter * if (winnr("$") == 1 && exists( " b:NERDTree " ) && b:NERDTree.isTabTree()) | q | endif " Exit Nerd Tree on exit vim
+autocmd FileType vim setlocal formatoptions-=c formatoptions-=r formatoptions-=o        " prevent comment on new newline
 
 set nolist                                        " show trailing whitespaces
 set showbreak=↪\
@@ -216,8 +222,8 @@ let g:airline_right_sep=''
 " set guifont=space\ mono:h14
 " set guifont=envy\ code\ r:h12
 " set guifont=terminessttf\ nf:h12
-" set guifont=source\ code\ pro\ for\ powerline:h15
-set guifont=iosevka:h16
+set guifont=source\ code\ pro\ for\ powerline:h15
+" set guifont=iosevka:h16
 
 " Vim-Swoop Config
 let g:defaultWinSwoopHeight=15
@@ -388,15 +394,9 @@ let g:rooter_silent_chdir=1       " silence echoing the project dir
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "~~~~~~~~~~ FILES AND NAVIGATION ~~~~~~~~
-if has("win32") || win("16")
-	noremap <leader>fev :e  C:\Users\amynd\AppData\Local\nvim\init.vim<CR>|     " edit vimrc
-	noremap <leader>feg :e  C:\Users\amynd\AppData\Local\nvim\ginit.vim<CR>|    " edit fvim gui vimrc
-	noremap <leader>fer :source C:\Users\amynd\AppData\Local\nvim\init.vim<CR>| " reload vimrc
-else
-	noremap <leader>fev :e  ~/.config/nvim/init.vim<CR>|                        " edit vimrc
-	noremap <leader>feg :e  ~/.config/nvim/init.vim<CR>|                        " edit fvim gui vimrc
-	noremap <leader>fer :source ~/.config/nvim/init.vim<CR>|                    " reload vimrc
-endif
+noremap <leader>fev :e  $MYVIMRC<CR>|                        " edit vimrc
+noremap <leader>feg :e  $MYVIMRC<CR>|                        " edit fvim gui vimrc
+noremap <leader>fer :source $MYVIMRC<CR>|                    " reload vimrc
 
 noremap <leader>fi gg=G|                                     " fix file indents
 
@@ -579,7 +579,7 @@ nmap <silent> gn <Plug>(coc-diagnostic-next)         " next diagnostic
 
 nnoremap <silent> <leader>ce  :<C-u>CocList diagnostics<cr>    " Show all diagnostics
 nnoremap <silent> <leader>cx  :<C-u>CocList extensions<cr>     " Manage extensions
-nnoremap <silent> <leader>cc  :<C-u>CocList commands<cr>       " Show commands
+nnoremap <silent> <leader>cz  :<C-u>CocList commands<cr>       " Show commands
 nnoremap <silent> <leader>co  :<C-u>CocList outline<cr>        " Find symbol of current document
 nnoremap <silent> <leader>cs  :<C-u>CocList -I symbols<cr>     " Search workspace symbols
 
@@ -629,6 +629,12 @@ let g:coc_explorer_global_presets = {
 			\     'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
 			\   }
 			\ }
+
+"~~~~~~~~~~ TAGBAR PLUGIN~~~~~~~~
+map <leader><leader>w <Plug>(easymotion-overwin-w)
+map <leader><leader>e <Plug>(easymotion-bd-e)
+map <leader><leader>t <Plug>(easymotion-bd-t)
+map <leader><leader>s <Plug>(easymotion-overwin-f)
 
 "~~~~~~~~~~ TAGBAR PLUGIN~~~~~~~~
 " nnoremap <silent> <leader>tt :TagbarToggle<CR>|              "  toggle tag bar
