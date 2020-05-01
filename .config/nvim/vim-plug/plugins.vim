@@ -53,7 +53,7 @@ Plug 'mhinz/vim-signify'
 " Plug 'mengelbrecht/lightline-bufferline'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'sheerun/vim-polyglot', { 'for': [ 'typescript', 'javascript', 'i3', 'html5', 'cpp' ] }
 Plug 'takac/vim-hardtime'
 Plug 'thaerkh/vim-indentguides'
