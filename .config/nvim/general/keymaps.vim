@@ -63,7 +63,7 @@ nnoremap <leader>wl <C-w>l
 noremap <leader>wv :vsplit<CR>|                               "  split window vertically
 noremap <leader>ws :split<CR>|                                "  split window vertically
 noremap <leader>wvr :vert sview <C-Z><CR>|                    "  split vertically in read only mode
-noremap <leader>wd :hide<CR>|                                 "  delete window
+noremap <leader>wd :close<CR>|                                "  close a window
 noremap <leader>wo :only<CR>|                                 "  keep only current window open
 
 "~~~~~~~~~~TAB NAVIGATION ~~~~~~~~~
@@ -78,7 +78,6 @@ noremap <leader>bd :bd<CR>|                                   "  delete buffer
 noremap <leader>br :e<CR>|                                    "  reload buffer
 noremap <leader>bp :bp<CR>|                                   "  previous buffer
 noremap <leader>bn :bn<CR>|                                   "  next buffer
-
 
 "~~~~~~~~~~ SEARCH & REPLACE ~~~~~~~~
 nnoremap <leader>rl :s//<Left>|                               "  search line

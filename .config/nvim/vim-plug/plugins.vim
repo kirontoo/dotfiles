@@ -1,23 +1,29 @@
 " Autoinstall package manager
 " Plugin Calls
 if has("win32") || has("win16")
-	if empty(glob('C:\Users\amynd\AppData\Local\nvim\autoload\plug.vim'))
-		silent !curl -fLo 'C:\Users\amynd\AppData\Local\nvim\autoload\plug.vim' --create-dirs
-					\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-		autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-	endif
-	call plug#begin('C:\Users\amynd\AppData\Local\nvim\autoload\plugged')
+	let $PLUGVIM = $HOME . '\AppData\Local\nvim\autoload\plug.vim'
+	let $PLUGGEDPATH = $HOME . '\AppData\Local\nvim\autoload\plugged'
+else
+	let $PLUGVIM = $HOME . '/.local/share/nvim/site/autoload/plug.vim'
+	let $PLUGGEDPATH = $HOME . '/.local/share/nvim/plugged'
 endif
 
-if !has("win32")
-	if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
-		silent !curl -fLo '~/.local/share/nvim/site/autoload/plug.vim' --create-dirs
-					\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-		autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-	endif
-
-	call plug#begin('~/.local/share/nvim/pugged')
+if empty(glob( $PLUGVIM ))
+	silent !curl -fLo $PLUGVIM --create-dirs
+				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+call plug#begin( $PLUGGEDPATH )
+
+" if !has("win32")
+" 	if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+" 		silent !curl -fLo '~/.local/share/nvim/site/autoload/plug.vim' --create-dirs
+" 					\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" 		autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+" 	endif
+"
+" 	call plug#begin('~/.local/share/nvim/pugged')
+" endif
 
 " Plugin: Colorschemes
 Plug 'aswathkk/DarkScene.vim'
@@ -53,7 +59,7 @@ Plug 'mhinz/vim-signify'
 " Plug 'mengelbrecht/lightline-bufferline'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'sheerun/vim-polyglot', { 'for': [ 'typescript', 'javascript', 'i3', 'html5', 'cpp' ] }
 Plug 'takac/vim-hardtime'
 Plug 'thaerkh/vim-indentguides'

@@ -5,17 +5,10 @@
 " |__|_ \__||__|   \____/|___|  /__|  \____/ \____/
 " \/                     \/
 
-" .__       .__  __          .__
-" |__| ____ |__|/  |_  ___  _|__| _____
-" |  |/    \|  \   __\ \  \/ /  |/     \
-" |  |   |  \  ||  |    \   /|  |  Y Y  \
-" |__|___|  /__||__|     \_/ |__|__|_|  /
-"         \/                          \/
-
 if has("win32")
 	let $VIMPATH=$HOME . "/AppData/Local/nvim"
 else
-	let $VIMPATH=$HOME . ".config/nvim"
+	let $VIMPATH=$HOME . "/.config/nvim"
 endif
 
 source $VIMPATH/vim-plug/plugins.vim
@@ -29,7 +22,7 @@ source $VIMPATH/general/keymaps.vim
 source $VIMPATH/general/custom.vim
 
 " colorscheme configs
-source $VIMPATH/Themes/themes.vim
+source $VIMPATH/themes/themes.vim
 source $VIMPATH/themes/dracula.vim
 source $VIMPATH/themes/gruvbox.vim
 source $VIMPATH/themes/solarized.vim
@@ -45,6 +38,7 @@ source $VIMPATH/plugin-config/fzf.vim
 source $VIMPATH/plugin-config/gitgutter.vim
 source $VIMPATH/plugin-config/goyo.vim
 source $VIMPATH/plugin-config/hardtime.vim
+source $VIMPATH/plugin-config/incsearch.vim
 source $VIMPATH/plugin-config/lightline.vim
 source $VIMPATH/plugin-config/nerdtree.vim
 source $VIMPATH/plugin-config/omnisharp.vim

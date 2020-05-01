@@ -12,7 +12,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists( " b:NERDTree " ) && b:NERDTree
 " NERD Tree Config
 let g:NERDTreeShowHidden=1
 let g:NERDTreeGitStatusWithFlags=1
-let g:NERDTreeIgnore = ['^node_modules$']
+let g:NERDTreeIgnore = [ '^node_modules$', '\.meta$']
 let g:webdevicons_conceal_nerdtree_brackets=1
 
 "~~~~~~~~~~ NERD TREE PLUGIN~~~~~~~~~
