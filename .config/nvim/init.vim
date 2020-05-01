@@ -15,7 +15,7 @@
 if has("win32")
 	let $VIMPATH=$HOME . "/AppData/Local/nvim"
 else
-	let $VIMPATH=$HOME . ".config/nvim"
+	let $VIMPATH=$HOME . "/.config/nvim"
 endif
 
 source $VIMPATH/vim-plug/plugins.vim
@@ -29,7 +29,7 @@ source $VIMPATH/general/keymaps.vim
 source $VIMPATH/general/custom.vim
 
 " colorscheme configs
-source $VIMPATH/Themes/themes.vim
+source $VIMPATH/themes/themes.vim
 source $VIMPATH/themes/dracula.vim
 source $VIMPATH/themes/gruvbox.vim
 source $VIMPATH/themes/solarized.vim
