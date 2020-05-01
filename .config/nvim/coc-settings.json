@@ -1,7 +1,7 @@
 {
 	"coc.preferences.bracketEnterImprove": true,
 	"coc.preferences.jumpCommand": "tab drop",
-	"suggest.maxPreviewWidth": 25,
+	"suggest.maxPreviewWidth": 50,
 	"suggest.maxCompleteItemCount": 30,
 	"list.maxPreviewHeight": 15,
 	"suggest.enablePreview": true,
@@ -58,5 +58,8 @@
 			"^\\."
 		]
 	},
-	"coc.preferences.colorSupport": true
+	"coc.preferences.colorSupport": true,
+	"coc.preferences.hoverTarget": "float",
+	"coc.preferences.enableFloatHighlight": true,
+	"coc.preferences.extensionUpdateCheck": "weekly",
 }
