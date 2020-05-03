@@ -5,7 +5,7 @@
 " /____  >____/|____(____  /__|  |__/_____ \\___  >____ |
 "      \/                \/               \/    \/     \/_
 
-noremap <leader>ts :call Solarized()<CR>
+noremap <leader>Ts :call Solarized()<CR>
 function! Solarized()
 	colorscheme solarized8_high
 	let g:airline_theme='solarized'

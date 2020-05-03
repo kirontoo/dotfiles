@@ -11,3 +11,14 @@ let g:goyo_linenr=1
 
 "~~~~~~~~~~ GOYO PLUGIN~~~~~~~~
 nnoremap <leader>tz :Goyo<CR>|                               " toggle zen mode
+
+function! s:goyo_enter()
+	set nolist
+endfunction
+
+function! s:goyo_leave()
+	set list
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()

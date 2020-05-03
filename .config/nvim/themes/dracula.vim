@@ -5,7 +5,7 @@
 " \____ | |__|  (____  /\___  >____/|____(____  /
 "      \/            \/     \/                \/
 
-noremap <leader>ta :call Dracula()<CR>
+noremap <leader>Ta :call Dracula()<CR>
 
 function! Dracula()
 	colorscheme dracula

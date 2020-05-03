@@ -20,5 +20,4 @@ noremap <leader>ft :NERDTreeToggle<CR>
 noremap <leader>tp :NERDTreeToggleVCS<CR>
 noremap <leader>tf :NERDTreeFocus<CR>
 noremap <leader>tr :NERDTreeRefreshRoot<CR>
-noremap <leader>tc :NERDTreeClose<CR>
 

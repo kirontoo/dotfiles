@@ -9,7 +9,7 @@
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='hard'
 
-noremap <leader>tg :call Gruvbox()<CR>
+noremap <leader>Tg :call Gruvbox()<CR>
 function! Gruvbox()
 	colorscheme gruvbox
 	let g:airline_theme='gruvbox'

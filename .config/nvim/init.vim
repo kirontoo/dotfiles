@@ -41,6 +41,7 @@ source $VIMPATH/plugin-config/hardtime.vim
 source $VIMPATH/plugin-config/incsearch.vim
 source $VIMPATH/plugin-config/lightline.vim
 source $VIMPATH/plugin-config/nerdtree.vim
+source $VIMPATH/plugin-config/neoterm.vim
 source $VIMPATH/plugin-config/omnisharp.vim
 source $VIMPATH/plugin-config/rooter.vim
 source $VIMPATH/plugin-config/signify.vim

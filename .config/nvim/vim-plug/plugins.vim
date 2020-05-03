@@ -15,21 +15,13 @@ if empty(glob( $PLUGVIM ))
 endif
 call plug#begin( $PLUGGEDPATH )
 
-" if !has("win32")
-" 	if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
-" 		silent !curl -fLo '~/.local/share/nvim/site/autoload/plug.vim' --create-dirs
-" 					\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-" 		autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-" 	endif
-"
-" 	call plug#begin('~/.local/share/nvim/pugged')
-" endif
-
 " Plugin: Colorschemes
 Plug 'aswathkk/DarkScene.vim'
+Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'dracula/vim'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'haishanh/night-owl.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'morhetz/gruvbox'
@@ -54,6 +46,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', {'do': './install --all'}
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+Plug 'kassio/neoterm'
 Plug 'mhinz/vim-startify'
 Plug 'mhinz/vim-signify'
 " Plug 'mengelbrecht/lightline-bufferline'
@@ -61,7 +54,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'sheerun/vim-polyglot', { 'for': [ 'typescript', 'javascript', 'i3', 'html5', 'cpp' ] }
-Plug 'takac/vim-hardtime'
+" Plug 'takac/vim-hardtime'
 Plug 'thaerkh/vim-indentguides'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
