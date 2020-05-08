@@ -10,5 +10,9 @@ function! Solarized()
 	colorscheme solarized8_high
 	let g:airline_theme='solarized'
 	set background=light
+	if exists('#lightline')
+		let g:lightline.colorscheme='solarized'
+		call lightline#enable()
+	endif
 endfunction
 

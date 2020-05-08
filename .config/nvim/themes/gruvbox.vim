@@ -13,4 +13,8 @@ noremap <leader>Tg :call Gruvbox()<CR>
 function! Gruvbox()
 	colorscheme gruvbox
 	let g:airline_theme='gruvbox'
+	if exists('#lightline')
+		let g:lightline.colorscheme='gruvbox'
+		call lightline#enable()
+	endif
 endfunction

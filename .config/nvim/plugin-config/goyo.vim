@@ -14,10 +14,20 @@ nnoremap <leader>tz :Goyo<CR>|                               " toggle zen mode
 
 function! s:goyo_enter()
 	set nolist
+	let &guifont = substitute(
+			\ &guifont,
+			\ ':h\zs\d\+',
+			\ '\=eval(submatch(0)+5)',
+			\ '')
 endfunction
 
 function! s:goyo_leave()
 	set list
+	let &guifont = substitute(
+			\ &guifont,
+			\ ':h\zs\d\+',
+			\ '\=eval(submatch(0)-5)',
+			\ '')
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()

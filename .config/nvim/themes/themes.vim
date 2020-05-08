@@ -6,7 +6,7 @@
 "            \/     \/      \/     \/     \/
 
 " Default theme
-colorscheme challenger_deep
+colorscheme deep-space
 set background=dark
 
 " NOTE: needs to be called after colorcheme

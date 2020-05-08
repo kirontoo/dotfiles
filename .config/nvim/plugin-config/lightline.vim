@@ -6,10 +6,10 @@
 "        /_____/      \/                  \/     \/
 
 " show tab line
-" set tabline=2
+set showtabline=2
 
 let g:lightline = {
-			\ 'enable': { 'statusline': 0, 'tabline': 0 },
+			\ 'enable': { 'statusline': 1, 'tabline': 1 },
 			\ 'colorscheme': 'seoul256',
 			\ 'active': {
 			\   'left': [ [ 'mode', 'paste' ],

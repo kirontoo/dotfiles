@@ -11,5 +11,9 @@ function! Dracula()
 	colorscheme dracula
 	let g:airline_theme='dracula'
 	set background=dark
+	if exists('#lightline')
+		let g:lightline.colorscheme='dracula'
+		call lightline#enable()
+	endif
 endfunction
 

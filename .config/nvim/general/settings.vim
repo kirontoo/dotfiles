@@ -71,7 +71,10 @@ set showbreak=↪\
 " set guifont=envy\ code\ r:h15
 " set guifont=terminessttf\ nf:h12
 " set guifont=source\ code\ pro\ for\ powerline:h15
-set guifont=iosevka:h16
+" set guifont=iosevka:h16
+" set guifont=proggyCleanTTSZBP:h20
+set guifont=scientifica:h20
+set guifontwide=scientifica:h20
 
 " FIXME
 " hi Pmenu guibg=bg
@@ -122,7 +125,7 @@ let vimsyn_folding='af'                                                         
 
 "~~~~~~~ AUTOMACTIC SETTINGS ~~~~~~~~
 " automatically remove all trailing whitespace
-autocmd FileType cs,js,css,jsx,ts,tsx,vim autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType cs,js,css,jsx,ts,tsx,vim,c autocmd BufWritePre <buffer> %s/\s\+$//e
 
 " unhighligt for search
 autocmd CursorMoved * if (expand('<cword>') =~ @/) | set hlsearch | else | set nohlsearch | endif

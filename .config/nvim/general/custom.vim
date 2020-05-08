@@ -1,5 +1,3 @@
-" TODO: clean up
-
 " Toggle 'default' terminal
 nnoremap <M-`> :call ChooseTerm("term-slider", 1)<CR>
 " Start terminal in current pane
@@ -28,6 +26,18 @@ function! ChooseTerm(termname, slider)
 		endif
 		:terminal
 		:exe "f " a:termname
+	endif
+endfunction
+
+function! ToggleBackground()
+	if &background == "dark"
+		set background=light
+	else
+		set background=dark
+	endif
+
+	if exists('#lightline')
+		call lightline#enable()
 	endif
 endfunction
 

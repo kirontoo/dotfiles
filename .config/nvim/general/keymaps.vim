@@ -55,10 +55,10 @@ nnoremap <C-Down>  <C-w>j
 nnoremap <C-Up>    <C-w>k
 nnoremap <C-Right> <C-w>l
 
-nnoremap <leader>wh <C-w>h
-nnoremap <leader>wj <C-w>j
-nnoremap <leader>wk <C-w>k
-nnoremap <leader>wl <C-w>l
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
 
 noremap <leader>wv :vsplit<CR>|                               "  split window vertically
 noremap <leader>ws :split<CR>|                                "  split window vertically
@@ -94,13 +94,6 @@ nnoremap <leader>s[ ciw[]<ESC>P|                              "  surround word w
 
 "~~~~~~~~~~ BACKGROUND TOGGLE ~~~~~~~~~
 nnoremap <leader>bg :call ToggleBackground()<cr>
-function! ToggleBackground()
-	if &background == "dark"
-		set background=light
-	else
-		set background=dark
-	endif
-endfunction
 
 "~~~~~~~~~~ QUIT VIM ~~~~~~~~~
 noremap <leader>qq :conf qa!<CR>|                             "  quit all files

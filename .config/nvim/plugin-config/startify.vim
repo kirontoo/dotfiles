@@ -31,4 +31,8 @@ let g:startify_lists = [
 			\ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
 			\ ]
 
-let g:startify_commands = [ { 's': [ 'open init.vim', 'e $MYVIMRC']}, { 'c': [ 'open coc settings', ':CocConfig' ] } ]
+let g:startify_commands = [
+			\ { 's': [ 'open init.vim', 'e $MYVIMRC']},
+			\ { 'c': [ 'open coc settings', ':CocConfig' ] },
+			\ { 'p': [ 'open plugin list', 'e $VIMPATH/vim-plug/plugins.vim' ] }
+			\ ]

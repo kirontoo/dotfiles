@@ -19,7 +19,6 @@ source $VIMPATH/general/settings.vim
 " exec "source " . $VIMPATH . "/general/settings.vim"
 
 source $VIMPATH/general/keymaps.vim
-source $VIMPATH/general/custom.vim
 
 " colorscheme configs
 source $VIMPATH/themes/themes.vim
@@ -27,6 +26,7 @@ source $VIMPATH/themes/dracula.vim
 source $VIMPATH/themes/gruvbox.vim
 source $VIMPATH/themes/solarized.vim
 
+source $VIMPATH/general/custom.vim
 " plugin configs
 source $VIMPATH/plugin-config/airline.vim
 source $VIMPATH/plugin-config/coc.vim

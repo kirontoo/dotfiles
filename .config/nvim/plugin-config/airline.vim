@@ -6,10 +6,10 @@
 "      \/                       \/     \/
 
 " Airline (Powerline) Themes and Config
-let g:airline_theme='challenger_deep'
+let g:airline_theme='deep_space'
 
 let g:webdevicons_enable_airline_statusline=1
-let g:webdevicons_enable_airline_tabline = 1
+let g:webdevicons_enable_airline_tabline=1
 
 let g:airline_powerline_fonts=1
 
