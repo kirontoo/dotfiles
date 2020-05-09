@@ -66,6 +66,9 @@ noremap <leader>wvr :vert sview <C-Z><CR>|                    "  split verticall
 noremap <leader>wd :close<CR>|                                "  close a window
 noremap <leader>wo :only<CR>|                                 "  keep only current window open
 
+"~~~~~~~~~~TERMINAL NAVIGATION ~~~~~~~~~
+tnoremap <Esc> <C-\><C-n>
+
 "~~~~~~~~~~TAB NAVIGATION ~~~~~~~~~
 noremap <leader>td :tabclose<CR>|                             "  close tab
 noremap <leader>to :tabnew<CR>|                               "  open new empty tab
