@@ -6,150 +6,59 @@
 "      \/            \/                \/             \/     \/
 
 set laststatus=2
-
-" set statusline=
-" set statusline+=\ %l
-" set statusline+=\ %*
-" set statusline+=\ 
-" set statusline+=\ %m
-" set statusline+=\ %F
-" set statusline+=\ 
-" set statusline+=%=
-" " set statusline+=\ %{LinterStatus()}
-" set statusline+=\ 
-" " set statusline+=\ %{strftime('%R', getftime(expand('%')))}
-" set statusline+=\ ::
-" set statusline+=\ %n
-" set statusline+=\ ››\ %*
-
-" set statusline=
-" set statusline+=%<\                       " cut at start
-" " set statusline+=%2*[%n%H%R%W]%*\        " flags and buf no
-" " set statusline+=%#PmenuSel#                       " cut at start
-" set statusline+=%{StatuslineGit()}
-" " set statusline+=%#LineNr#                       " cut at start
-" set statusline+=                  " path
-" set statusline+=\ %f\                    " path
-" set statusline+=                   " path
-" " set statusline+=\ %m                   " path
-" set statusline+="%{&modified ? '-': '+'}"
-" set statusline+=%=%1*%y%*%*\              " file type
-" set statusline+=%10([\ %l/%L\ ]%)\            " line and column
-" set statusline+=%P                        " percentage of file
-"
-" function! GitBranch()
-"   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-" endfunction
-"
-" function! StatuslineGit()
-"   let l:branchname = GitBranch()
-"   return strlen(l:branchname) > 0?' '.l:branchname.' ':''
-" endfunction
-
-set laststatus=2
-set statusline=
-set statusline+=%#function#\ %l
-set statusline+=\ %*
-set statusline+=\ ‹‹
-set statusline+=\ %f\ %*
-set statusline+=\ "%{&m ? '+' : ''}"
-" set statusline+=%#keyword#\ %F
-set statusline+=%=
-set statusline+=\ ‹‹
-set statusline+=\ %{strftime('%R',getftime(expand('%')))}
-set statusline+=\ ::
-set statusline+=\ %n
-set statusline+=\ %*
-
 set modifiable
+
+set statusline=
+set statusline +=%7*%#Include#\ %{toupper(g:currentmode[mode()])}  "  Current mode
+set statusline +=%#Typedef#\ %n%*                                  "  buffer number
+set statusline +=%#keyword#\ %{GitInfo()}                          "  Git Branch name
+
+set statusline +=%#SpecialKey#\ %{GitLBracket()}%*
+set statusline +=%#SignifySignAdd#%{GitAdded()}                    "  Git line added
+set statusline +=%#SignifySignDelete#%{GitDeleted()}               "  Git line deleted
+set statusline +=%#SignifySignChange#%{GitModified()}              "  Git line removed
+set statusline +=%#SpecialKey#%{GitRBracket()}%*
+
+set statusline +=%#SpecialKey#\[
+set statusline +=%#Number#\ %<%f%*                                 "  file path
+set statusline +=%#SpecialKey#\ ]
+
+set statusline +=%#Identifier#\ %{ShowModified()}                  "  modified status
+
+set statusline +=%=%*                                              "  separator
+set statusline+=%#Number#%{'[\ '.(&filetype).'\ ]'}                "  file type
+set statusline +=%#Identifier#%5l%*                                "  current line
+set statusline +=%#SpecialKey#/%L%*                                "  total lines
+
+set statusline +=%#Identifier#%4v\ %*                              "  virtual column number
+set statusline +=%#SpecialKey#0x%04B\ %*                           "  character under cursor
+
+set statusline +=%#Identifier#%2P\ %*                              "  virtual column number
+set statusline +=%#Warningmsg#%{StatusDiagnostic()}                "  coc status
+
 " Statusline
 " :h mode() to see all modes
 let g:currentmode={
-    \ 'n'      : 'N ',
-    \ 'no'     : 'N·Operator Pending ',
-    \ 'v'      : 'V ',
-    \ 'V'      : 'V·Line ',
-    \ '\<C-V>' : 'V·Block ',
-    \ 's'      : 'Select ',
-    \ 'S'      : 'S·Line ',
-    \ '\<C-S>' : 'S·Block ',
-    \ 'i'      : 'I ',
-    \ 'R'      : 'R ',
-    \ 'Rv'     : 'V·Replace ',
-    \ 'c'      : 'Command ',
-    \ 'cv'     : 'Vim Ex ',
-    \ 'ce'     : 'Ex ',
-    \ 'r'      : 'Prompt ',
-    \ 'rm'     : 'More ',
-    \ 'r?'     : 'Confirm ',
-    \ '!'      : 'Shell ',
-    \ 't'      : 'Terminal '
-    \}
-" Automatically change the statusline color depending on mode
-function! ChangeStatuslineColor()
-  if (mode() =~# '\v(n|no)')
-    exe 'hi! StatusLine ctermfg=008'
-  elseif (mode() =~# '\v(v|V)' || g:currentmode[mode()] ==# 'V·Block' || get(g:currentmode, mode(), '') ==# 't')
-    exe 'hi! StatusLine ctermfg=005'
-  elseif (mode() ==# 'i')
-    exe 'hi! StatusLine ctermfg=004'
-  else
-    exe 'hi! StatusLine ctermfg=006'
-  endif
-  return ''
-endfunction
-" Find out current buffer's size and output it.
-function! FileSize()
-  let bytes = getfsize(expand('%:p'))
-  if (bytes >= 1024)
-    let kbytes = bytes / 1024
-  endif
-  if (exists('kbytes') && kbytes >= 1000)
-    let mbytes = kbytes / 1000
-  endif
-  if bytes <= 0
-    return '0'
-  endif
-  if (exists('mbytes'))
-    return mbytes . 'MB '
-  elseif (exists('kbytes'))
-    return kbytes . 'KB '
-  else
-    return bytes . 'B '
-  endif
-endfunction
-function! ReadOnly()
-  if &readonly || !&modifiable
-    return ''
-  else
-    return ''
-endfunction
-function! GitInfo()
-  let git = fugitive#head()
-  if git != ''
-    return ' '.fugitive#head()
-  else
-    return ''
-endfunction
-
-" 
-" 
-
-set laststatus=2
-set statusline=
-set statusline+=%{ChangeStatuslineColor()}               " Changing the statusline color
-set statusline+=%0*\ %{toupper(g:currentmode[mode()])}   " Current mode
-set statusline+=%#Identifier#\ %n\                                " buffernr
-set statusline+=%#keyword#\ %{GitInfo()}                 " Git Branch name
-set statusline+=%8*\ %<%F\ %{ReadOnly()}\ \ %w\        " File+path
-" set statusline+=%#warningmsg#
-" set statusline+=%*
-set statusline+=%8*%#keyword#%{ShowModified()}
-set statusline+=%9*\ %=                                  " Space
-set statusline+=%8*\ %y\                                 " FileType
-" set statusline+=%7*\ %{(&fenc!=''?&fenc:&enc)}\[%{&ff}]\ " Encoding & Fileformat
-" set statusline+=%8*\ %-3(%{FileSize()}%)                 " File size
-set statusline+=%0*\ %3p%%\ \ %l:\ %3c\                 " Rownumber/total (%)
+			\ 'n'      : 'N ',
+			\ 'no'     : 'N·Operator Pending ',
+			\ 'v'      : 'V ',
+			\ 'V'      : 'V·Line ',
+			\ '\<C-V>' : 'V·Block ',
+			\ 's'      : 'Select ',
+			\ 'S'      : 'S·Line ',
+			\ '\<C-S>' : 'S·Block ',
+			\ 'i'      : 'I ',
+			\ 'R'      : 'R ',
+			\ 'Rv'     : 'V·Replace ',
+			\ 'c'      : 'Command ',
+			\ 'cv'     : 'Vim Ex ',
+			\ 'ce'     : 'Ex ',
+			\ 'r'      : 'Prompt ',
+			\ 'rm'     : 'More ',
+			\ 'r?'     : 'Confirm ',
+			\ '!'      : 'Shell ',
+			\ 't'      : 'Terminal '
+			\}
 
 highlight User1 cterm=None gui=None ctermfg=007 guifg=fgcolor
 highlight User2 cterm=None gui=None ctermfg=008 guifg=bgcolor
@@ -159,6 +68,113 @@ highlight User5 cterm=None gui=None ctermfg=008 guifg=bgcolor
 highlight User7 cterm=None gui=None ctermfg=008 guifg=bgcolor
 highlight User8 cterm=None gui=None ctermfg=008 guifg=bgcolor
 highlight User9 cterm=None gui=None ctermfg=007 guifg=fgcolor
+
+" Automatically change the statusline color depending on mode
+function! ChangeStatuslineColor()
+	if (mode() =~# '\v(n|no)')
+		exe 'hi! StatusLine ctermfg=008'
+	elseif (mode() =~# '\v(v|V)' || g:currentmode[mode()] ==# 'V·Block' || get(g:currentmode, mode(), '') ==# 't')
+		exe 'hi! StatusLine ctermfg=005'
+	elseif (mode() ==# 'i')
+		exe 'hi! StatusLine ctermfg=004'
+	else
+		exe 'hi! StatusLine ctermfg=006'
+	endif
+	return ''
+endfunction
+
+" Find out current buffer's size and output it.
+function! FileSize()
+	let bytes = getfsize(expand('%:p'))
+	if (bytes >= 1024)
+		let kbytes = bytes / 1024
+	endif
+	if (exists('kbytes') && kbytes >= 1000)
+		let mbytes = kbytes / 1000
+	endif
+	if bytes <= 0
+		return '0'
+	endif
+	if (exists('mbytes'))
+		return mbytes . 'MB '
+	elseif (exists('kbytes'))
+		return kbytes . 'KB '
+	else
+		return bytes . 'B '
+	endif
+endfunction
+
+function! ReadOnly()
+	if &readonly || !&modifiable
+		return ''
+	else
+		return ''
+	endfunction
+
+function! GitInfo()
+	let git = fugitive#head()
+	if git != ''
+		return '  '.fugitive#head()
+	else
+		return ''
+endfunction
+
+function! StatusDiagnostic() abort
+	let info = get(b:, 'coc_diagnostic_info', {})
+	if empty(info) | return '' | endif
+	let msgs = []
+	if get(info, 'error', 0)
+		call add(msgs, 'E' . info['error'])
+	endif
+	if get(info, 'warning', 0)
+		call add(msgs, 'W' . info['warning'])
+	endif
+	return join(msgs, ' ') . ' ' . get(g:, 'coc_status', '') . ' '
+endfunction
+
+function! GitAdded()
+	let [added, modified, removed] = sy#repo#get_stats()
+	if added > 0
+		return ' +' . added . ' '
+	else
+		return ''
+	endif
+endfunction
+
+function! GitDeleted()
+	let [added, modified, removed] = sy#repo#get_stats()
+	if removed > 0
+		return ' -' . removed . ' '
+	else
+		return ''
+	endif
+endfunction
+
+function! GitModified()
+	let [added, modified, removed] = sy#repo#get_stats()
+	if modified > 0
+		return ' ~' . modified . ' '
+	else
+		return ''
+	endif
+endfunction
+
+function! GitRBracket()
+	let [added, modified, removed] = sy#repo#get_stats()
+	if added || modified || removed
+		return ']'
+	else
+		return ''
+	endif
+endfunction
+function! GitLBracket()
+	let [added, modified, removed] = sy#repo#get_stats()
+	if added || modified || removed
+		return '[ '
+	else
+		return ''
+	endif
+endfunction
 
 function! ShowModified()
 	let winnum = winnr()
@@ -170,16 +186,5 @@ function! ShowModified()
 	endif
 endfunction
 
-set statusline=
-set statusline +=%#Identifier#\ %n\ %*                  " buffer number
-" set statusline +=%#PreProc#%{&ff}%*                     " file format
-set statusline +=%#Number#%y%*                          " file type
-set statusline +=%#String#\ %<%t%*                      " full path
-set statusline +=%#String#\ %<%F%*                      " full path
-" set statusline +=%#SpecialKey#%m%*                      " modified flag
-set statusline +=%#Identifier#\ %{ShowModified()}\ %* " pomodoro status
-set statusline +=%8*%=%*                                   " separator
-set statusline +=%#Identifier#%5l%*                     " current line
-set statusline +=%#SpecialKey#/%L%*                     " total lines
-set statusline +=%#Identifier#%4v\ %*                   " virtual column number
-set statusline +=%#SpecialKey#0x%04B\ %*                " character under cursor
+" 
+" 

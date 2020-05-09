@@ -14,6 +14,7 @@ endif
 source $VIMPATH/vim-plug/plugins.vim
 source $VIMPATH/general/settings.vim
 source $VIMPATH/general/statusline.vim
+source $VIMPATH/general/tabline.vim
 
 " TODO: test this out on linux
 " source <sfile>:h/general/settings.vim
@@ -45,7 +46,7 @@ source $VIMPATH/plugin-config/nerdtree.vim
 source $VIMPATH/plugin-config/neoterm.vim
 source $VIMPATH/plugin-config/omnisharp.vim
 source $VIMPATH/plugin-config/rooter.vim
-source $VIMPATH/plugin-config/signify.vim
+" source $VIMPATH/plugin-config/signify.vim
 source $VIMPATH/plugin-config/startify.vim
 source $VIMPATH/plugin-config/tabular.vim
 source $VIMPATH/plugin-config/vimplug.vim
