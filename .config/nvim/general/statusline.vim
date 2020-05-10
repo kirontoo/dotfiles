@@ -8,33 +8,75 @@
 set laststatus=2
 set modifiable
 
-set statusline=
-set statusline +=%7*%#Include#\ %{toupper(g:currentmode[mode()])}  "  Current mode
-set statusline +=%#Typedef#\ %n%*                                  "  buffer number
-set statusline +=%#keyword#\ %{GitInfo()}                          "  Git Branch name
+function! MyStatusLine()
+	let statusline=""
 
-set statusline +=%#SpecialKey#\ %{GitLBracket()}%*
-set statusline +=%#SignifySignAdd#%{GitAdded()}                    "  Git line added
-set statusline +=%#SignifySignDelete#%{GitDeleted()}               "  Git line deleted
-set statusline +=%#SignifySignChange#%{GitModified()}              "  Git line removed
-set statusline +=%#SpecialKey#%{GitRBracket()}%*
+	" mode
+	let statusline .= '%7*%#Include# %{toupper(g:currentmode[mode()])}'
+	" buffer number
+	let statusline .= '%#Typedef# %n%*'
+	" git branch
+	let statusline .= '%#keyword# %{GitInfo()} '
 
-set statusline +=%#SpecialKey#\[
-set statusline +=%#Number#\ %<%f%*                                 "  file path
-set statusline +=%#SpecialKey#\ ]
+	" git repo status
+	let [added, modified, removed] = sy#repo#get_stats()
+	if added > 0 || removed > 0 || modified > 0
+		let statusline .= '%#SpecialKey#['
 
-set statusline +=%#Identifier#\ %{ShowModified()}                  "  modified status
+		if added > 0
+			let statusline .= '%#SignifySignAdd# +' . added . ' '
+		endif
 
-set statusline +=%=%*                                              "  separator
-set statusline+=%#Number#%{'[\ '.(&filetype).'\ ]'}                "  file type
-set statusline +=%#Identifier#%5l%*                                "  current line
-set statusline +=%#SpecialKey#/%L%*                                "  total lines
+		if removed > 0
+			let statusline .= '%#SignifySignDelete# -' . removed . ' '
+		endif
 
-set statusline +=%#Identifier#%4v\ %*                              "  virtual column number
-set statusline +=%#SpecialKey#0x%04B\ %*                           "  character under cursor
+		if modified > 0
+			let statusline .= '%#SignifySignChange# ~' . modified . ' '
+		endif
 
-set statusline +=%#Identifier#%2P\ %*                              "  virtual column number
-set statusline +=%#Warningmsg#%{StatusDiagnostic()}                "  coc status
+		let statusline .= '%#SpecialKey#] '
+
+	elseif &modified
+		let statusline .= '%#SpecialKey#[ '
+	 	let statusline .= '%#Identifier#%{ShowModified()}'
+		let statusline .= '%#SpecialKey# ]'
+	endif
+
+	" file path
+	let statusline .= '%#SpecialKey#['
+	let statusline .= '%#Number# %<%f%*'
+	let statusline .= '%#Warningmsg#%{ReadOnly()}'
+	let statusline .= '%#SpecialKey# ]'
+
+	" separator
+	let statusline .= '%=%*'
+
+	" filetype
+	let statusline .= "%#Number#%{'[ '.(&filetype).' ]'}"
+	let statusline .= '%#Identifier#%5l%*'
+	let statusline .= '%#SpecialKey#/%L%*'
+
+	" line number, column, percentage
+	let statusline .= '%#Identifier#%4v %*'
+	let statusline .= '%#SpecialKey#0x%04B %*'
+	let statusline .= '%#Identifier#%2P %*'
+
+	let info = get(b:, 'coc_diagnostic_info', {})
+	if get(info, 'error', 0)
+		let statusline .= '%#Warningmsg# E' . info['error']
+	endif
+
+	if get(info, 'warning', 0)
+		let statusline .= '%#SignifySignChange# ' . info['warning']
+	endif
+
+	let statusline .= ' ' . get(g:, 'coc_status', '') . ' '
+
+	return statusline
+endfunction
+
+set statusline=%!MyStatusLine()
 
 " Statusline
 " :h mode() to see all modes
@@ -106,7 +148,7 @@ endfunction
 
 function! ReadOnly()
 	if &readonly || !&modifiable
-		return ''
+		return ' '
 	else
 		return ''
 	endfunction
@@ -130,50 +172,6 @@ function! StatusDiagnostic() abort
 		call add(msgs, 'W' . info['warning'])
 	endif
 	return join(msgs, ' ') . ' ' . get(g:, 'coc_status', '') . ' '
-endfunction
-
-function! GitAdded()
-	let [added, modified, removed] = sy#repo#get_stats()
-	if added > 0
-		return ' +' . added . ' '
-	else
-		return ''
-	endif
-endfunction
-
-function! GitDeleted()
-	let [added, modified, removed] = sy#repo#get_stats()
-	if removed > 0
-		return ' -' . removed . ' '
-	else
-		return ''
-	endif
-endfunction
-
-function! GitModified()
-	let [added, modified, removed] = sy#repo#get_stats()
-	if modified > 0
-		return ' ~' . modified . ' '
-	else
-		return ''
-	endif
-endfunction
-
-function! GitRBracket()
-	let [added, modified, removed] = sy#repo#get_stats()
-	if added || modified || removed
-		return ']'
-	else
-		return ''
-	endif
-endfunction
-function! GitLBracket()
-	let [added, modified, removed] = sy#repo#get_stats()
-	if added || modified || removed
-		return '[ '
-	else
-		return ''
-	endif
 endfunction
 
 function! ShowModified()
