@@ -50,6 +50,7 @@ nnoremap <A-S-Down> :t.<CR>
 nnoremap Y y$                                                 "  yank to end of line
 
 "~~~~~~~~~~WINDOW NAVIGATION ~~~~~~~~~
+
 nnoremap <C-Left>  <C-w>h
 nnoremap <C-Down>  <C-w>j
 nnoremap <C-Up>    <C-w>k
@@ -66,6 +67,8 @@ noremap <leader>wvr :vert sview <C-Z><CR>|                    "  split verticall
 noremap <leader>wd :close<CR>|                                "  close a window
 noremap <leader>wo :only<CR>|                                 "  keep only current window open
 
+noremap <leader>wr :vs<bar>:b#<CR>                              " restore previous closed buffer in new window
+
 "~~~~~~~~~~TAB NAVIGATION ~~~~~~~~~
 noremap <leader>td :tabclose<CR>|                             "  close tab
 noremap <leader>to :tabnew<CR>|                               "  open new empty tab
@@ -78,6 +81,9 @@ noremap <leader>bd :bd<CR>|                                   "  delete buffer
 noremap <leader>br :e<CR>|                                    "  reload buffer
 noremap <leader>bp :bp<CR>|                                   "  previous buffer
 noremap <leader>bn :bn<CR>|                                   "  next buffer
+
+"~~~~~~~~~~ TERMINAL NAVIGATION~~~~~~~~~
+tnoremap <C-\> <C-\><C-n>
 
 "~~~~~~~~~~ SEARCH & REPLACE ~~~~~~~~
 nnoremap <leader>rl :s//<Left>|                               "  search line

@@ -71,7 +71,7 @@ function! MyStatusLine()
 		let statusline .= '%#SignifySignChange# ' . info['warning']
 	endif
 
-	let statusline .= ' ' . get(g:, 'coc_status', '') . ' '
+	let statusline .= '%#SpecialKey# ' . get(g:, 'coc_status', '') . ' '
 
 	return statusline
 endfunction

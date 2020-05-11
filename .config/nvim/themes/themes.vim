@@ -6,7 +6,7 @@
 "            \/     \/      \/     \/     \/
 
 " Default theme
-colorscheme deep-space
+colorscheme gruvbox
 set background=dark
 
 " NOTE: needs to be called after colorcheme

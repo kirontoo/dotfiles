@@ -18,3 +18,4 @@ function! Gruvbox()
 		call lightline#enable()
 	endif
 endfunction
+

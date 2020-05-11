@@ -63,18 +63,16 @@ set wrapmargin=0
 set cursorline                                                                                     "  Show line highlight
 
 set nolist                                                                                         "  show trailing whitespaces
-set showbreak=↪\
 " set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:§
 
 " Font
 " set guifont=space\ mono:h15
 " set guifont=envy\ code\ r:h15
-" set guifont=terminessttf\ nf:h12
+" set guifont=terminessttf\ nf:h16
 " set guifont=source\ code\ pro\ for\ powerline:h15
-" set guifont=iosevka:h16
-" set guifont=proggyCleanTTSZBP:h20
-set guifont=scientifica:h20
-set guifontwide=scientifica:h20
+set guifont=iosevka:h16
+" set guifont=scientifica:h20
+" set guifontwide=scientifica:h20
 
 " FIXME
 " hi Pmenu guibg=bg

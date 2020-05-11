@@ -21,6 +21,7 @@ Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'dracula/vim'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'franbach/miramare'
 Plug 'haishanh/night-owl.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'lifepillar/vim-solarized8'
