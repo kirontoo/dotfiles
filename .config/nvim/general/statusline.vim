@@ -8,7 +8,49 @@
 set laststatus=2
 set modifiable
 
-function! MyStatusLine()
+augroup status
+  autocmd!
+  autocmd WinEnter * setlocal statusline=%!ActiveStatus()
+  autocmd WinLeave * setlocal statusline=%!InactiveStatus()
+augroup END
+
+set statusline=%!ActiveStatus()
+
+function! InactiveStatus()
+	let statusline=""
+
+	" buffer number
+	let statusline .= '%#Typedef# %n%*'
+	" git branch
+	let statusline .= '%#keyword# %{GitInfo()} '
+
+	" git repo status
+	let [added, modified, removed] = sy#repo#get_stats()
+
+	" show modified
+	" FIXME: will show modified on both active and inactive windows
+	if &modified
+		let statusline .= '%#SpecialKey#[ '
+		let statusline .= '%#Identifier#+'
+		let statusline .= '%#SpecialKey# ]'
+	endif
+
+	" file path
+	let statusline .= '%#SpecialKey#['
+	let statusline .= '%#Number# %<%f%*'
+	let statusline .= '%#Warningmsg#%{ReadOnly()}'
+	let statusline .= '%#SpecialKey# ]'
+
+	" separator
+	let statusline .= '%=%*'
+
+	" filetype
+	let statusline .= "%#Number#%{'[ '.(&filetype).' ]'} "
+
+	return statusline
+endfunction
+
+function! ActiveStatus()
 	let statusline=""
 
 	" mode
@@ -60,7 +102,7 @@ function! MyStatusLine()
 	" line number, column, percentage
 	let statusline .= '%#Identifier#%4v %*'
 	let statusline .= '%#SpecialKey#0x%04B %*'
-	let statusline .= '%#Identifier#%2P %*'
+	let statusline .= '%#Identifier#%2P%*'
 
 	let info = get(b:, 'coc_diagnostic_info', {})
 	if get(info, 'error', 0)
@@ -68,15 +110,13 @@ function! MyStatusLine()
 	endif
 
 	if get(info, 'warning', 0)
-		let statusline .= '%#SignifySignChange# ' . info['warning']
+		let statusline .= '%#SignifySignChange# W' . info['warning']
 	endif
 
-	let statusline .= '%#SpecialKey# ' . get(g:, 'coc_status', '') . ' '
+	let statusline .= '%#SpecialKey#' . get(g:, 'coc_status', '') . ' '
 
 	return statusline
 endfunction
-
-set statusline=%!MyStatusLine()
 
 " Statusline
 " :h mode() to see all modes
