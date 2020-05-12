@@ -5,6 +5,7 @@
 "  |__| (____  /___  /____/__|___|  /\___  >
 "            \/    \/             \/     \/
 
+set showtabline=2
 set tabline=
 set tabline+=%#TablineSel#\ %n\ %*                                  "  buffer number
 set tabline+=%#String#\ %t
