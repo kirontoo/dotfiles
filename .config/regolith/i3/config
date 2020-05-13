@@ -14,7 +14,11 @@ set $i3xrocks_config $HOME/.config/regolith/i3xrocks/config
 set $compton_config $HOME/.config/regolith/compton/config
 
 # path to terminal. Override this to specify a custom terminal.
-set $terminal_path /usr/local/bin/st
+# set $terminal_path /usr/local/bin/st -f "EnvyCodeR:pixelsize=18:antialias=true"
+# set $terminal_path /usr/local/bin/st -f "SpaceMono:pixelsize=18:antialias=true"
+set $terminal_path /usr/local/bin/st -f "iosevka:pixelsize=18:antialias=true"
+# set $terminal_path /usr/local/bin/st -f "scientifica:pixelsize=24:antialias=true:bold"
+# set $terminal_path /usr/local/bin/st -f "SourceCodePro:pixelsize=18:antialias=true"
 
 # Color values are defined in ~/.Xresources-regolith
 # These are the labels which define each i3 workspace.
@@ -47,8 +51,8 @@ hide_edge_borders smart
 bindsym $mod+Return exec $terminal_path &;
 
 # start a web browser
-# bindsym $mod+Shift+Return exec /usr/bin/sensible-browser
-bindsym $mod+Shift+Return exec /usr/local/bin/surf &
+bindsym $mod+Shift+Return exec /usr/bin/sensible-browser
+# bindsym $mod+Shift+Return exec /usr/local/bin/surf &
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -61,8 +65,12 @@ bindsym $mod+Shift+space exec rofi -show run
 bindsym $mod+Ctrl+space exec rofi -show window
 
 ################### LAUNCH APPS ###################
-bindsym $mod+F2 exec --no-startup-id code; workspace $ws2
-bindsym $mod+Shift+F2 exec --no-startup-id exec st -e nvim; workspace $ws2
+# bindsym $mod+F2 exec --no-startup-id code; workspace $ws2
+bindsym $mod+Shift+F2 exec --no-startup-id exec $terminal_path -e nvim; workspace $ws2
+# bindsym $mod+F2 exec --no-startup-id exec emacsclient -c -n; workspace $ws2
+# bindsym $mod+F2 exec --no-startup-id exec emacs -fn EnvyCodeR-13; workspace $ws2
+# bindsym $mod+F2 exec --no-startup-id exec emacs -fn SpaceMono-13;
+bindsym $mod+F2 exec --no-startup-id exec emacs -fn SourceCodePro-13;
 bindsym $mod+F4 exec --no-startup-id discord;
 bindsym $mod+F5 exec --no-startup-id spotify;
 bindsym $mod+F6 exec --no-startup-id gitkraken;
@@ -74,14 +82,16 @@ bindsym $mod+F12 exec --no-startup-id postman;
 
 ################ ASSIGN WORKSPACE #################
 assign [class="Firefox"] $ws1
+assign [class="google-chrome"] $ws1
+assign [class="Google-Chrome"] $ws1
 assign [class="Surf|surf"] $ws1
 # assign [class="St|st"] $ws3
 assign [class="discord"] $ws4
 assign [instance="gitkraken|Gitkraken"] $ws6
 assign [class="Blender|blender"] $ws7
 assign [class="Nemo"] $ws8
-assign [class="robo3t"] $ws11
-assign [class="Postman"] $ws12
+assign [class="robo3t"] $ws10
+assign [class="Postman"] $ws10
 
 for_window [class="Surf"] focus
 for_window [class="Code"] focus
@@ -277,7 +287,9 @@ new_float pixel 1
 
 # Gaps (i3-gaps)
 gaps inner 30
-gaps outer 0
+gaps outer 25
+# gaps bottom 30
+# gaps top 30
 
 # Only enable gaps on a workspace when there is at least one container
 #smart_gaps true
@@ -391,5 +403,4 @@ exec --no-startup-id /usr/bin/xeventbind resolution /usr/bin/wallpaper-refresh
 exec_always --no-startup-id conky -q -c ~/.config/regolith/conky/system-overview
 
 # Launch Polybar
-exec_always killall polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

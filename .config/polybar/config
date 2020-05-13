@@ -37,8 +37,8 @@
 
 [global/wm]
 ;https://github.com/jaagr/polybar/wiki/Configuration#global-wm-settings
-margin-top = 0
-margin-bottom = 0
+margin-top = 3
+margin-bottom = 3
 
 [settings]
 ;https://github.com/jaagr/polybar/wiki/Configuration#application-settings
@@ -109,13 +109,14 @@ volume-max = #bf616a
 ;monitor = ${env:MONITOR}
 ;monitor-fallback = HDMI1
 monitor-strict = false
-override-redirect = false
+override-redirect = true
+wm-restack = i3
 bottom = false
 fixed-center = true
-width = 100%
+width = 80%
 height = 30
-;offset-x = 1%
-;offset-y = 1%
+offset-x = 10%
+offset-y = 10
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -127,12 +128,13 @@ foreground = ${colors.foreground}
 radius = 0.0
 line-size = 2
 line-color = #000000
+spacing = 1
 
-;border-size = 1
+border-size = 2
 ;border-left-size = 25
 ;border-right-size = 25
-border-top-size = 0
-border-bottom-size = 3
+; border-top-size = 0
+; border-bottom-size = 3
 border-color = ${colors.primary}
 
 padding-left = 6
@@ -205,13 +207,14 @@ cursor-scroll =
 ;monitor = ${env:MONITOR}
 ;monitor-fallback = HDMI1
 monitor-strict = false
-override-redirect = false
+override-redirect = true
+wm-restack = i3
 bottom = true
 fixed-center = true
-width = 100%
+width = 80%
 height = 30
-;offset-x = 1%
-;offset-y = 1%
+offset-x = 10%
+offset-y = 10
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -224,11 +227,11 @@ radius = 0.0
 line-size = 2
 line-color = #000000
 
-;border-size = 1
+border-size = 2
 ;border-left-size = 25
 ;border-right-size = 25
-border-top-size = 3
-border-bottom-size = 0
+; border-top-size = 3
+; border-bottom-size = 0
 border-color = ${colors.primary}
 
 padding-left = 6
@@ -244,11 +247,11 @@ font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
 font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
 font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
 
-modules-left = xwindow
-modules-center = spotify1
+modules-left = spotify1
+modules-center = xwindow
 modules-right = wireless-network volume
 
-separator = ""
+;separator = " "
 
 ;dim-value = 1.0
 
@@ -1126,11 +1129,13 @@ exec = ~/.config/polybar/scripts/spotify1.sh
 interval = 1
 
 ;format = <label>
+; format-foreground = ${colors.foreground}
+; format-background = ${colors.primary}
 format-foreground = ${colors.foreground}
-format-background = ${colors.primary}
-format-padding = 10
+format-background = ${colors.background}
+; format-padding = 2
 format-prefix = "  "
-format-prefix-foreground = ${colors.foreground}
+format-prefix-foreground = ${colors.secondary}
 label = %output:0:150%
 
 ################################################################################
@@ -1291,9 +1296,9 @@ label-disconnected-foreground = ${colors.foreground}
 [module/wireless-network]
 ;https://github.com/jaagr/polybar/wiki/Module:-network
 type = internal/network
-interface = wlp3s0
+interface = wlp4s0
 interval = 3.0
-label-connected = "%upspeed:7%"
+label-connected = " %essid%: %downspeed%" 
 
 format-connected = <label-connected>
 ;format-connected = <ramp-signal> <label-connected>
@@ -1379,13 +1384,20 @@ type = internal/xwindow
 ; Default: %title%
 label = %title%
 
-label-foreground = ${colors.foreground}
+; label-foreground = ${colors.foreground}
+label-foreground = ${colors.secondary}
+label-background = ${colors.primary}
 
-label-maxlen = 50
+label-maxlen = 80
 
-format-prefix = " "
-format-foreground = ${colors.secondary}
-format-background = ${colors.background}
+format-prefix = ""
+; format-foreground = ${colors.secondary}
+; format-background = ${colors.background}
+format-foreground = ${colors.foreground}
+format-background = ${colors.primary}
+
+format-padding = 3
+label-padding=3
 
 
 

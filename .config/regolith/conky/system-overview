@@ -52,12 +52,14 @@ ${font Wargames-Regular:size=16}${color 00ffcc}SYS ${stippled_hr 2}$color$font
 
 ### CPU ###
 ${font Wargames-Regular:size=16}${color ff00cc}CPU ${stippled_hr 2}$color$font
-   INTEL i3-2310M${alignr}2 (4) @ 2.1GHz
+   INTEL i7-8700K${alignr}4 (8) @ 4.0GHz
 
    CORE 1 @ ${freq 1}MHz${alignc -36}${hwmon 0 temp 1}°C${alignr}${cpu cpu1}% (${cpu cpu3}%)
    CORE 2 @ ${freq 2}MHz${alignc -36}${hwmon 0 temp 2}°C${alignr}${cpu cpu2}% (${cpu cpu4}%)
+   CORE 3 @ ${freq 3}MHz${alignc -36}${hwmon 1 temp 3}°C${alignr}${cpu cpu3}% (${cpu cpu5}%)
+   CORE 4 @ ${freq 4}MHz${alignc -36}${hwmon 1 temp 4}°C${alignr}${cpu cpu4}% (${cpu cpu6}%)
    LOGICAL   1  ${color ff00cc}${cpubar cpu1 8,120}$color${alignr}(3) ${color ff00cc}${cpubar cpu3 8,120}$color
-             2  ${color ff00cc}${cpubar cpu2 8,120}$color${alignr}(4) ${color ff00cc}${cpubar cpu4 8,120}$color
+   LOGICAL   2  ${color ff00cc}${cpubar cpu2 8,120}$color${alignr}(4) ${color ff00cc}${cpubar cpu4 8,120}$color
 
    PROCESSES${alignc -12}${running_processes} / ${processes}$color${alignr}${cpu}%
    ${color ff00cc}${cpugraph cpu0 24 ff00cc}$color
@@ -69,7 +71,7 @@ ${font Wargames-Regular:size=16}${color ff00cc}CPU ${stippled_hr 2}$color$font
 
 ### MEMORY ###
 ${font Wargames-Regular:size=16}${color 4cff00}MEM ${stippled_hr 2}$color$font
-   SO-DIMM DDR3${alignr}6GB @ 1333MHz
+   SO-DIMM DDR4${alignr}6GB @ 1600MHz
 
    RAM ${alignc}${mem} / ${memmax}${alignr}$memperc%
    ${color 4cff00}${membar 8}$color
@@ -95,8 +97,8 @@ ${font Wargames-Regular:size=16}${color ff3300}HDD ${stippled_hr 2}$color$font
 
 ### NETWORK ###
 ${font Wargames-Regular:size=16}${color 3300ff}NET ${stippled_hr 2}$color$font
-   ${wireless_essid wlp2s0}${alignr}WLAN @ 2.4GHz
+   ${wireless_essid wlp4s0}${alignr}WLAN @ 5.0GHz
 
-   DOWNLOAD   ${color 3300ff}${downspeedgraph wlp2s0 24,120 300001 3300ff}$color${alignr}UPLOAD ${color 3300ff}${upspeedgraph wlp2s0 24,120 300001 3300ff}$color
-              ${downspeed wlp2s0}/s (${totaldown wlp2s0})${alignr}${upspeed wlp2s0}/s (${totalup wlp2s0})
+   DOWNLOAD   ${color 3300ff}${downspeedgraph wlp4s0 24,120 300001 3300ff}$color${alignr}UPLOAD ${color 3300ff}${upspeedgraph wlp4s0 24,120 300001 3300ff}$color
+              ${downspeed wlp4s0}/s (${totaldown wlp4s0})${alignr}${upspeed wlp4s0}/s (${totalup wlp2s0})
 ]]
