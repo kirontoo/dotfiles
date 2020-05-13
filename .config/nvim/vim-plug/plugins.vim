@@ -20,18 +20,16 @@ Plug 'aswathkk/DarkScene.vim'
 Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'dracula/vim'
-Plug 'drewtempelmeyer/palenight.vim'
 Plug 'franbach/miramare'
 Plug 'haishanh/night-owl.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'morhetz/gruvbox'
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'ntk148v/vim-horizon'
 Plug 'stillwwater/vim-nebula'
 Plug 'tjammer/blayu.vim'
 Plug 'tyrannicaltoucan/vim-deep-space'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline-themes'
 
 " Plugin: NerdFonts
 " Plug 'https://github.com/ryanoasis/nerd-fonts.git', { 'do': './install.sh' }
