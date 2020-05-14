@@ -19,8 +19,6 @@ source $VIMPATH/general/custom.vim
 source $VIMPATH/general/statusline.vim
 source $VIMPATH/general/tabline.vim
 
-" source <sfile>:h/general/settings.vim
-
 " colorscheme configs
 source $VIMPATH/themes/themes.vim
 source $VIMPATH/themes/dracula.vim
