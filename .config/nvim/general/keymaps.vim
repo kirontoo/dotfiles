@@ -35,8 +35,8 @@ vnoremap <A-j> :m +1<CR>
 nnoremap <A-k> :m -2<CR>
 nnoremap <A-j> :m +1<CR>
 
-nmap <S-Enter> O<Esc>                                         "  add newline down without insert mode
-nmap <CR> o<Esc>                                              "  add newline above without insert mode
+nmap <S-Enter> O<Esc>|                                        "  add newline down without insert mode
+nmap <CR> o<Esc>|                                             "  add newline above without insert mode
 
 "~~~~~~~~~~ DUPLICATE LINES ~~~~~~~~~
 vnoremap <A-S-Up> :t -1<CR>
