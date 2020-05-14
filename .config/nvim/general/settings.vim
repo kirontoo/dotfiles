@@ -5,7 +5,6 @@
 " /____  >\___  >__|  |__| |__|___|  /\___  /____  >
 "      \/     \/                   \//_____/     \/
 
-
 " Leader key
 let mapleader = "\<Space>"
 filetype plugin indent on

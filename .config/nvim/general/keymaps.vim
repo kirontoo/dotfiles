@@ -24,8 +24,6 @@ nnoremap <leader>de :e %:h/|                                  "  edit a file in 
 nnoremap <leader>ds :split %:h/|                              "  splits buffer horizontally
 nnoremap <leader>dv :vsplit %:h/|                             "  splits buffer vertically
 
-nnoremap <leader>bv :vsp \| b<space>|                         " vsplit and open buffer from number
-
 "~~~~~~~~~~ MOVE LINES ~~~~~~~~~
 vnoremap <A-Up> :m -2<CR>
 vnoremap <A-Down> :m +1<CR>
@@ -76,11 +74,12 @@ noremap <leader>tn :tabn<CR>|                                 "  go to next tab
 noremap <leader>tp :tabp<CR>|                                 "  go to prev tab
 
 "~~~~~~~~~~ BUFFER NAVIGATION~~~~~~~~~
-noremap <leader>bo :vnew<CR>|                                 "  open new empty buffer
 noremap <leader>bd :bd<CR>|                                   "  delete buffer
 noremap <leader>br :e<CR>|                                    "  reload buffer
 noremap <leader>bp :bp<CR>|                                   "  previous buffer
 noremap <leader>bn :bn<CR>|                                   "  next buffer
+noremap <leader>bv :vsp \| b|                                " vsplit and open buffer from number
+nnoremap <leader>bo :ls <CR>:b|                              " vsplit and open buffer from number
 
 "~~~~~~~~~~ TERMINAL NAVIGATION~~~~~~~~~
 tnoremap <C-\> <C-\><C-n>

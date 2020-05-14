@@ -94,8 +94,13 @@ function! ActiveStatus()
 	" separator
 	let statusline .= '%=%*'
 
-	" filetype
-	let statusline .= "%#Number#%{'[ '.(&filetype).' ]'}"
+	" filetype and format
+	let statusline .= '%#SpecialKey#['
+	let statusline .= "%#Number#%{' '.(&ff).' '}"
+	let statusline .= '%#SpecialKey#]'
+	let statusline .= '%#SpecialKey#['
+	let statusline .= "%#Number#%{' '.(&filetype).' '}"
+	let statusline .= '%#SpecialKey#]'
 	let statusline .= '%#Identifier#%5l%*'
 	let statusline .= '%#SpecialKey#/%L%*'
 
