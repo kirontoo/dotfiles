@@ -20,11 +20,13 @@ source $VIMPATH/general/statusline.vim
 source $VIMPATH/general/tabline.vim
 
 " colorscheme configs
-source $VIMPATH/themes/themes.vim
 source $VIMPATH/themes/dracula.vim
 source $VIMPATH/themes/gruvbox.vim
 source $VIMPATH/themes/solarized.vim
 source $VIMPATH/themes/miramare.vim
+
+" load colorscheme
+source $VIMPATH/themes/themes.vim
 
 " plugin configs
 " source $VIMPATH/plugin-config/airline.vim
@@ -37,6 +39,7 @@ source $VIMPATH/plugin-config/fzf.vim
 source $VIMPATH/plugin-config/gitgutter.vim
 source $VIMPATH/plugin-config/goyo.vim
 source $VIMPATH/plugin-config/hardtime.vim
+source $VIMPATH/plugin-config/hexokinase.vim
 source $VIMPATH/plugin-config/incsearch.vim
 " source $VIMPATH/plugin-config/lightline.vim
 source $VIMPATH/plugin-config/nerdtree.vim
