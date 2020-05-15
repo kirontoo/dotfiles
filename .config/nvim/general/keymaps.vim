@@ -35,7 +35,7 @@ vnoremap <A-j> :m +1<CR>
 nnoremap <A-k> :m -2<CR>
 nnoremap <A-j> :m +1<CR>
 
-nmap <S-Enter> O<Esc>|                                        "  add newline down without insert mode
+nmap <S-CR> O<Esc>|                                           "  add newline down without insert mode
 nmap <CR> o<Esc>|                                             "  add newline above without insert mode
 
 "~~~~~~~~~~ DUPLICATE LINES ~~~~~~~~~
@@ -65,7 +65,7 @@ noremap <leader>wvr :vert sview <C-Z><CR>|                    "  split verticall
 noremap <leader>wd :close<CR>|                                "  close a window
 noremap <leader>wo :only<CR>|                                 "  keep only current window open
 
-noremap <leader>wr :vs<bar>:b#<CR>                              " restore previous closed buffer in new window
+noremap <leader>wr :vs<bar>:b#<CR>                            " restore previous closed buffer in new window
 
 "~~~~~~~~~~TAB NAVIGATION ~~~~~~~~~
 noremap <leader>td :tabclose<CR>|                             "  close tab
@@ -78,8 +78,8 @@ noremap <leader>bd :bd<CR>|                                   "  delete buffer
 noremap <leader>br :e<CR>|                                    "  reload buffer
 noremap <leader>bp :bp<CR>|                                   "  previous buffer
 noremap <leader>bn :bn<CR>|                                   "  next buffer
-noremap <leader>bv :vsp \| b|                                " vsplit and open buffer from number
-nnoremap <leader>bo :ls <CR>:b|                              " vsplit and open buffer from number
+noremap <leader>bv :vsp \| b|                                 " vsplit and open buffer from number
+nnoremap <leader>bo :ls <CR>:b|                               " vsplit and open buffer from number
 
 "~~~~~~~~~~ TERMINAL NAVIGATION~~~~~~~~~
 tnoremap <C-\> <C-\><C-n>

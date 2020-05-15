@@ -104,7 +104,7 @@ set guicursor+=i:hor20-Cursor/iCursor
 set guicursor+=r:hor20-Cursor/rCursor-blinkwait300-blinkoff200-blinkon150
 
 "~set command timeout ( milliseconds )
-set timeoutlen=1000
+set timeoutlen=500
 
 "~source file for tags
 set tags+=tags

@@ -22,7 +22,6 @@ Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'dracula/vim'
 Plug 'franbach/miramare'
 Plug 'haishanh/night-owl.vim'
-Plug 'joshdick/onedark.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'morhetz/gruvbox'
 Plug 'ntk148v/vim-horizon'
@@ -50,6 +49,7 @@ Plug 'mhinz/vim-startify'
 Plug 'mhinz/vim-signify'
 " Plug 'mengelbrecht/lightline-bufferline'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'sheerun/vim-polyglot', { 'for': [ 'typescript', 'javascript', 'i3', 'html5', 'cpp' ] }
