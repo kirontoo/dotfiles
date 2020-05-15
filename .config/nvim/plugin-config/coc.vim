@@ -35,10 +35,10 @@ else
 endif
 
 "Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)                      " go to definition
-nmap <silent> gy <Plug>(coc-type-definition)                 " go to type definition
-nmap <silent> gi <Plug>(coc-implementation)                  " go to implementation
-nmap <silent> gr <Plug>(coc-references)                      " go to reference
+nmap <silent> gd <Plug>(coc-definition)|                      " go to definition
+nmap <silent> gy <Plug>(coc-type-definition)|                 " go to type definition
+nmap <silent> gi <Plug>(coc-implementation)|                  " go to implementation
+nmap <silent> gr <Plug>(coc-references)|                      " go to reference
 
 " show documentation in preview window
 nnoremap <silent> <leader>cd :call <SID>show_documentation()<CR>

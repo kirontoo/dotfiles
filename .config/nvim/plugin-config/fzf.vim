@@ -7,11 +7,11 @@
 
 "~~~~~~~~~~ FZF PLUGIN  ~~~~~~~~~
 noremap <leader>fp :GFiles <CR>|                             "  Search file in current git Directory
-noremap <leader><leader> :FZF    <CR>|                       "  Search file in current Directory
+noremap <leader><leader> :FZF<CR>|                           "  Search file in current Directory
 noremap <leader>ff :Files $HOME<CR>|                         "  Search file in Home Directory
 noremap <leader>bb :Buffers<CR>|                             "  open buffer menu
 noremap <leader>fh :History <CR>|                            "  command history
-noremap <leader>Tt :Colors<CR>|                              "  Search colorschemes
+noremap <leader>Tc :Colors<CR>|                              "  Search colorschemes
 nmap <leader>sb :BLines<CR>|                                 "  swoop current buffer
 nmap <leader>sa :Lines<CR>|                                  "  swoop all open buffer
 
