@@ -29,24 +29,18 @@ source $VIMPATH/themes/miramare.vim
 source $VIMPATH/themes/themes.vim
 
 " plugin configs
-" source $VIMPATH/plugin-config/airline.vim
 source $VIMPATH/plugin-config/coc.vim
-source $VIMPATH/plugin-config/ctrlp.vim
 source $VIMPATH/plugin-config/devicons.vim
 source $VIMPATH/plugin-config/easymotion.vim
 source $VIMPATH/plugin-config/fugitive.vim
 source $VIMPATH/plugin-config/fzf.vim
 source $VIMPATH/plugin-config/gitgutter.vim
 source $VIMPATH/plugin-config/goyo.vim
-source $VIMPATH/plugin-config/hardtime.vim
 source $VIMPATH/plugin-config/hexokinase.vim
 source $VIMPATH/plugin-config/incsearch.vim
-" source $VIMPATH/plugin-config/lightline.vim
 source $VIMPATH/plugin-config/nerdtree.vim
-source $VIMPATH/plugin-config/neoterm.vim
 source $VIMPATH/plugin-config/omnisharp.vim
 source $VIMPATH/plugin-config/rooter.vim
-" source $VIMPATH/plugin-config/signify.vim
 source $VIMPATH/plugin-config/startify.vim
 source $VIMPATH/plugin-config/tabular.vim
 source $VIMPATH/plugin-config/vimplug.vim

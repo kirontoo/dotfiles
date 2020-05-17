@@ -6,7 +6,7 @@
 "            \/     \/      \/     \/     \/
 
 " Default theme
-colorscheme gruvbox
+colorscheme nightfly
 set background=dark
 
 " NOTE: needs to be called after colorcheme

@@ -7,7 +7,7 @@
 
 "~~~~~~~~~~ FZF PLUGIN  ~~~~~~~~~
 noremap <leader>fp :GFiles <CR>|                             "  Search file in current git Directory
-noremap <leader><leader> :FZF<CR>|                           "  Search file in current Directory
+noremap <space><space> :FZF<CR>|                             "  Search file in current Directory
 noremap <leader>ff :Files $HOME<CR>|                         "  Search file in Home Directory
 noremap <leader>bb :Buffers<CR>|                             "  open buffer menu
 noremap <leader>fh :History <CR>|                            "  command history
