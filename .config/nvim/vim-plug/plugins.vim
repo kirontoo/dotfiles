@@ -35,6 +35,7 @@ Plug 'tyrannicaltoucan/vim-deep-space'
 
 " Plugin: Packages
 Plug 'airblade/vim-rooter'
+Plug 'alvan/vim-closetag'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
 Plug 'haya14busa/incsearch.vim'
@@ -52,6 +53,7 @@ Plug 'sheerun/vim-polyglot', { 'for': [ 'typescript', 'javascript', 'i3', 'html5
 Plug 'thaerkh/vim-indentguides'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
