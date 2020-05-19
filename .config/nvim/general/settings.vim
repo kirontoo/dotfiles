@@ -6,7 +6,7 @@
 "      \/     \/                   \//_____/     \/
 
 " Leader key
-let mapleader = "\<Space>"
+map <Space> <leader>
 filetype plugin indent on
 
 " For terminal true color
@@ -71,7 +71,6 @@ set nolist                                                                      
 " set guifont=source\ code\ pro\ for\ powerline:h15
 set guifont=iosevka:h16
 " set guifont=scientifica:h20
-" set guifontwide=scientifica:h20
 
 " FIXME
 " hi Pmenu guibg=bg
@@ -104,7 +103,7 @@ set guicursor+=i:hor20-Cursor/iCursor
 set guicursor+=r:hor20-Cursor/rCursor-blinkwait300-blinkoff200-blinkon150
 
 "~set command timeout ( milliseconds )
-set timeoutlen=500
+set timeoutlen=700
 
 "~source file for tags
 set tags+=tags
@@ -119,7 +118,6 @@ let csharp_fold=1                                                               
 let sh_fold_enabled=1                                                                              "  sh
 let vimsyn_folding='af'                                                                            "  Vim script
 
-
 "~~~~~~~ AUTOMACTIC SETTINGS ~~~~~~~~
 " automatically remove all trailing whitespace
 autocmd FileType cs,js,css,jsx,ts,tsx,vim,c autocmd BufWritePre <buffer> %s/\s\+$//e
@@ -132,10 +130,11 @@ autocmd FileType vim setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " highlight trailing whitespaces in red
 highlight ExtraWhitespace ctermbg=red guibg=red
+
+augroup ClearWhitespace
 match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
-
-
+	autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+	autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+	autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+	autocmd BufWinLeave * call clearmatches()
+augroup END
