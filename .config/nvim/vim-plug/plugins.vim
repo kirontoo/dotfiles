@@ -28,7 +28,6 @@ Plug 'ntk148v/vim-horizon'
 Plug 'stillwwater/vim-nebula'
 Plug 'tjammer/blayu.vim'
 Plug 'tyrannicaltoucan/vim-deep-space'
-" Plug 'vim-airline/vim-airline-themes'
 
 " Plugin: NerdFonts
 " Plug 'https://github.com/ryanoasis/nerd-fonts.git', { 'do': './install.sh' }

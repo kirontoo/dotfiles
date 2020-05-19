@@ -34,5 +34,6 @@ let g:startify_lists = [
 let g:startify_commands = [
 			\ { 's': [ 'open init.vim', 'e $MYVIMRC']},
 			\ { 'c': [ 'open coc settings', ':CocConfig' ] },
-			\ { 'p': [ 'open plugin list', 'e $VIMPATH/vim-plug/plugins.vim' ] }
+			\ { 'p': [ 'open plugin list', 'e $VIMPATH/vim-plug/plugins.vim' ] },
+			\ { 'p': [ 'open keymap', 'e $VIMPATH/general/keymaps.vim' ] }
 			\ ]
