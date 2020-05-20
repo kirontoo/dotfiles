@@ -9,16 +9,15 @@
 noremap <leader>fp :GFiles <CR>|                             "  Search file in current git Directory
 noremap <space><space> :FZF<CR>|                             "  Search file in current Directory
 noremap <leader>ff :Files $HOME<CR>|                         "  Search file in Home Directory
-noremap <leader>bb :Buffers<CR>|                             "  open buffer menu
+noremap <leader>, :Buffers<CR>|                              "  open buffer menu
 noremap <leader>fh :History <CR>|                            "  command history
 noremap <leader>Tc :Colors<CR>|                              "  Search colorschemes
-nmap <leader>sb :BLines<CR>|                                 "  swoop current buffer
+nmap <leader>/ :BLines<CR>|                                  "  swoop current buffer
 nmap <leader>sa :Lines<CR>|                                  "  swoop all open buffer
 
 "~~~~~~~~~~ MAPPING HELP ~~~~~~~~~
 nnoremap <leader>? :Commands<CR>
 nnoremap <leader>?m :Maps<CR>
-
 
 "Fzf-Swoop Config
 let g:defaultWinSwoopHeight=15
@@ -30,7 +29,7 @@ if !has( "win32" )
 endif
 
 let $FZF_DEFAULT_OPTS=' --color=dark --color=fg:15,bg:-1,hl:1,fg+:#ffffff,bg+:0,hl+:1 --color=info:0,prompt:0,pointer:12,marker:4,spinner:11,header:-1 --layout=reverse  --margin=1,4'
-let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+" let g:fzf_layout = { 'window': 'call FloatingFZF()' }
 
 function! FloatingFZF()
 	let buf = nvim_create_buf(v:false, v:true)

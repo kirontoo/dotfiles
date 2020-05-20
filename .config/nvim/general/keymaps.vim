@@ -78,8 +78,8 @@ noremap <leader>bd :bd<CR>|                                   "  delete buffer
 noremap <leader>br :e<CR>|                                    "  reload buffer
 noremap <leader>bp :bp<CR>|                                   "  previous buffer
 noremap <leader>bn :bn<CR>|                                   "  next buffer
-noremap <leader>bv :vsp \| b|                                 " vsplit and open buffer from number
-nnoremap <leader>bo :ls <CR>:b|                               " vsplit and open buffer from number
+noremap <leader>bv :vsp \| b|                                 "  vsplit and open buffer from number
+nnoremap <leader>. :ls <CR>:b|                                "  open buffer list and change buffersopen buffer list and change buffers
 
 "~~~~~~~~~~ TERMINAL NAVIGATION~~~~~~~~~
 tnoremap <C-\> <C-\><C-n>
