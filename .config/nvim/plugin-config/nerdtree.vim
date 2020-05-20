@@ -14,10 +14,16 @@ let g:NERDTreeShowHidden=1
 let g:NERDTreeGitStatusWithFlags=1
 let g:NERDTreeIgnore = [ '^node_modules$', '\.meta$']
 let g:webdevicons_conceal_nerdtree_brackets=1
+let g:NERDTreeStatusline=-1
+let g:NERDTreeShowLineNumbers=1
+let g:NERDTreeAutoDeleteBuffer = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeQuitOnOpen = 1
 
 "~~~~~~~~~~ NERD TREE PLUGIN~~~~~~~~~
 noremap <leader>ft :NERDTreeToggle<CR>
 noremap <leader>tp :NERDTreeToggleVCS<CR>
 noremap <leader>tf :NERDTreeFocus<CR>
 noremap <leader>tr :NERDTreeRefreshRoot<CR>
-
+noremap <leader>tc :NERDTreeClose<CR>
