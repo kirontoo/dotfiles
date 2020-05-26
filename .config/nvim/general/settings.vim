@@ -48,7 +48,7 @@ set smarttab
 set shiftround                                                                                     "  use multiple of shiftwidth when indenting with '<' and '>'
 
 set splitbelow splitright                                                                          "  Splits window below and right
-set mouse=a                                                                                        "  Enable mouse usage
+set mouse=""                                                                                       "  disable mouse usage
 set hidden                                                                                         "  hide buffers
 set autoindent                                                                                     "  always set autoindenting on
 set number relativenumber                                                                          "  Line Numbers
@@ -59,7 +59,8 @@ set nowrap linebreak
 set textwidth=0
 set wrapmargin=0
 
-set cursorline                                                                                     "  Show line highlight
+set colorcolumn=80,120
+" let &colorcolumn="80,".join(range(120,256),",")
 
 set nolist                                                                                         "  show trailing whitespaces
 " set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:§
@@ -75,7 +76,8 @@ set guifont=iosevka:h16
 " FIXME
 " hi Pmenu guibg=bg
 
-" undrline cursorlone instead of highlight
+set cursorline                                                                                     "  Show line highlight
+" underline cursorline instead of highlight
 augroup CustomCursorLine
 	au!
 	au ColorScheme * :hi clear CursorLine

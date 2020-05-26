@@ -10,7 +10,9 @@ let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1
 
 "~~~~~~~~~~ EASYMOTION PLUGIN~~~~~~~~
-map <leader><leader>w <Plug>(easymotion-overwin-w)
-map <leader><leader>e <Plug>(easymotion-bd-e)
-map <leader><leader>t <Plug>(easymotion-bd-t)
-map <leader><leader>s <Plug>(easymotion-overwin-f)
+map <leader>mw <Plug>(easymotion-overwin-w)
+map <leader>me <Plug>(easymotion-bd-e)
+map <leader>mt <Plug>(easymotion-bd-t)
+map <leader>ms <Plug>(easymotion-overwin-f)
+map <leader>mj  <Plug>(easymotion-j)
+map <leader>mk  <Plug>(easymotion-k)
