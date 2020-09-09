@@ -40,16 +40,20 @@ Plug 'zefei/cake16'
 " Plugin: Packages
 Plug 'airblade/vim-rooter'
 Plug 'alvan/vim-closetag'
+Plug 'brooth/far.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'francoiscabrol/ranger.vim'
 Plug 'godlygeek/tabular'
 Plug 'haya14busa/incsearch.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', {'do': './install --all'}
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+Plug 'mg979/vim-xtabline'
 Plug 'mhinz/vim-startify'
 Plug 'mhinz/vim-signify'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+" Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'rbgrouleff/bclose.vim'
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -60,6 +64,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+
 
 call plug#end()
 
