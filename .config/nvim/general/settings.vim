@@ -34,6 +34,7 @@ set lazyredraw
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
+set ff=unix
 
 set laststatus=2
 set noshowmode
@@ -66,11 +67,11 @@ set nolist                                                                      
 " set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:§
 
 " Font
-" set guifont=space\ mono:h15
+set guifont=space\ mono:h15
 " set guifont=envy\ code\ r:h15
 " set guifont=terminessttf\ nf:h16
 " set guifont=source\ code\ pro\ for\ powerline:h15
-set guifont=iosevka:h16
+" set guifont=iosevka:h16
 " set guifont=scientifica:h20
 
 " FIXME

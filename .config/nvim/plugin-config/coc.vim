@@ -8,6 +8,7 @@
 " COC extensions
 let g:coc_global_extensions=[ 'coc-json', 'coc-tsserver', 'coc-emmet', 'coc-tslint', 'coc-html', 'coc-css', 'coc-omnisharp', 'coc-explorer' ]
 
+let g:coc_disable_startup_warning = 1
 
 "~~~~~~~~~~ COC PLUGIN~~~~~~~~
 " Use tab for trigger completion with characters ahead and navigate.
@@ -51,7 +52,7 @@ function! s:show_documentation()
 	endif
 endfunction
 
-nmap <leader>rn <Plug>(coc-rename)                           " Remap for rename current word
+nmap <leader>cr <Plug>(coc-rename)                           " Remap for rename current word
 
 autocmd CursorHold * silent call CocActionAsync('highlight') " Highlight on symbol under cursor
 command! -nargs=? Fold :call     CocAction('fold', <f-args>) " Add :Fold command to fold buffer

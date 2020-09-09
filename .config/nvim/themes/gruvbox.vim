@@ -7,7 +7,7 @@
 
 
 let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_contrast_light='hard'
+let g:gruvbox_contrast_light='medium'
 
 noremap <leader>Tg :call Gruvbox()<CR>
 function! Gruvbox()

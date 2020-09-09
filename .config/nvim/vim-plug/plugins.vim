@@ -24,10 +24,15 @@ Plug 'franbach/miramare'
 Plug 'haishanh/night-owl.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'morhetz/gruvbox'
+Plug 'nice/sweater'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'ntk148v/vim-horizon'
+Plug 'relastle/bluewery.vim'
+Plug 'sonph/onehalf', { 'rtp': 'vim/' }
 Plug 'stillwwater/vim-nebula'
 Plug 'tjammer/blayu.vim'
 Plug 'tyrannicaltoucan/vim-deep-space'
+Plug 'zefei/cake16'
 
 " Plugin: NerdFonts
 " Plug 'https://github.com/ryanoasis/nerd-fonts.git', { 'do': './install.sh' }
@@ -48,7 +53,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'sheerun/vim-polyglot', { 'for': [ 'typescript', 'javascript', 'i3', 'html5', 'cpp' ] }
+Plug 'sheerun/vim-polyglot', { 'for': [ 'typescript', 'javascript', 'i3', 'html5', 'cpp', 'markdown' ] }
 Plug 'thaerkh/vim-indentguides'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'

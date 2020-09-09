@@ -6,9 +6,15 @@
 "            \/     \/      \/     \/     \/
 
 " Default theme
-colorscheme nightfly
+colorscheme gruvbox
 set background=dark
 
 " NOTE: needs to be called after colorcheme
 syntax on
+
+nnoremap <leader>Tl :call LightScheme()<CR>
+
+function! LightScheme()
+	colorscheme bluewery-light
+endfunction
 
