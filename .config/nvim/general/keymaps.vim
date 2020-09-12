@@ -20,9 +20,9 @@ noremap <leader>fs :w <CR>|                                   "  save file
 noremap <leader>fq :q <CR>|                                   "  quit file
 
 "~~~~~~~~~~ EDIT FILE ~~~~~~~~~
-nnoremap <leader>de :e %:h/|                                  "  edit a file in same directory in same buffer
-nnoremap <leader>ds :split %:h/|                              "  splits buffer horizontally
-nnoremap <leader>dv :vsplit %:h/|                             "  splits buffer vertically
+nnoremap <leader>ee :e %:h/|                                  "  edit a file in same directory in same buffer
+nnoremap <leader>es :split %:h/|                              "  splits buffer horizontally
+nnoremap <leader>ev :vsplit %:h/|                             "  splits buffer vertically
 
 "~~~~~~~~~~ MOVE LINES ~~~~~~~~~
 vnoremap <A-Up> :m -2<CR>
@@ -79,7 +79,8 @@ noremap <leader>br :e<CR>|                                    "  reload buffer
 noremap <leader>bp :bp<CR>|                                   "  previous buffer
 noremap <leader>bn :bn<CR>|                                   "  next buffer
 noremap <leader>bv :vsp \| b|                                 "  vsplit and open buffer from number
-nnoremap <leader>. :ls <CR>:b|                                "  open buffer list and change buffers
+" nnoremap <leader>. :ls <CR>:b|                                "  open buffer list and change buffers
+nnoremap <leader>. :b <c-d>|																	" change buffer
 
 "~~~~~~~~~~ TERMINAL NAVIGATION~~~~~~~~~
 tnoremap <C-\> <C-\><C-n>
@@ -92,6 +93,9 @@ nnoremap <leader>rc :%s///gcI<Left><Left><Left><Left><Left>|  "  search case sen
 
 "~~~~~~~~~~ BACKGROUND TOGGLE ~~~~~~~~~
 nnoremap <leader>bg :call ToggleBackground()<cr>
+
+"~~~~~~~~~~ CCOMMAND LINE ~~~~~~~~~
+cnoreabbr <expr> %% fnameescape( expand( '%:p' ) )
 
 "~~~~~~~~~~ QUIT VIM ~~~~~~~~~
 noremap <leader>qq :conf qa!<CR>|                             "  quit all files
