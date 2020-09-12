@@ -19,6 +19,11 @@ source $VIMPATH/general/custom.vim
 source $VIMPATH/general/statusline.vim
 source $VIMPATH/general/tabline.vim
 
+" For vscode
+if exists('g:vscode')
+	 source $VIMPATH/vscode/settings.vim
+else
+
 " colorscheme configs
 source $VIMPATH/themes/dracula.vim
 source $VIMPATH/themes/gruvbox.vim
@@ -29,10 +34,10 @@ source $VIMPATH/themes/miramare.vim
 source $VIMPATH/themes/themes.vim
 
 " plugin configs
-" source $VIMPATH/plugin-config/coc.vim
+source $VIMPATH/plugin-config/coc.vim
 source $VIMPATH/plugin-config/closetag.vim
 source $VIMPATH/plugin-config/devicons.vim
-source $VIMPATH/plugin-config/easymotion.vim
+" source $VIMPATH/plugin-config/easymotion.vim
 source $VIMPATH/plugin-config/far.vim
 source $VIMPATH/plugin-config/fugitive.vim
 source $VIMPATH/plugin-config/fzf.vim
@@ -49,3 +54,5 @@ source $VIMPATH/plugin-config/startify.vim
 source $VIMPATH/plugin-config/tabular.vim
 source $VIMPATH/plugin-config/vimplug.vim
 source $VIMPATH/plugin-config/xtabline.vim
+
+endif

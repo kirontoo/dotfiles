@@ -41,10 +41,11 @@ Plug 'zefei/cake16'
 Plug 'airblade/vim-rooter'
 Plug 'alvan/vim-closetag'
 Plug 'brooth/far.vim'
-Plug 'easymotion/vim-easymotion'
+" Plug 'easymotion/vim-easymotion'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'godlygeek/tabular'
 Plug 'haya14busa/incsearch.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', {'do': './install --all'}
@@ -52,7 +53,7 @@ Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'mg979/vim-xtabline'
 Plug 'mhinz/vim-startify'
 Plug 'mhinz/vim-signify'
-" Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'rbgrouleff/bclose.vim'
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'ryanoasis/vim-devicons'
@@ -63,6 +64,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'turbio/bracey.vim', { 'do': 'npm install --prefix server' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 
