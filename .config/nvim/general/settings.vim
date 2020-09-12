@@ -24,9 +24,11 @@ set nocompatible                                                                
 set ttyfast                                                                                        "  Speed up scrolling in Vim
 set path+=**                                                                                       "  Search down into subfolders & provide tab-completion
 set wildmenu                                                                                       "  Display all matching files when tab-complete
-set wildignore+=*/node_modules/*                                                                   "  ignore folders to search
+set wildignore+=**/node_modules/**,.git\,.tags,tags                                                "  ignore folders to search
 set wildchar=<Tab> wildmenu wildmode=full
 set wildcharm=<C-Z>
+set wildmode=longest:full,full                                                                     "  Auto complete
+set wildignorecase
 
 set updatetime=100                                                                                 "  lower updatetime to 100ms from 4000
 set lazyredraw
@@ -85,7 +87,6 @@ augroup CustomCursorLine
 	au ColorScheme * :hi! CursorLine gui=underline cterm=underline
 augroup END
 
-set wildmode=list:longest                                                                          "  Auto complete
 
 set showcmd                                                                                        "  show command
 set hlsearch                                                                                       "  highlight search terms
