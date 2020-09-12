@@ -12,3 +12,5 @@ vnoremap <silent> <leader>Ff  :Farf<cr>
 " shortcut for far.vim replace
 nnoremap <silent> <leader>Fr  :Farr<cr>
 vnoremap <silent> <leader>Fr  :Farr<cr>
+
+let g:far#enable_undo = 1
