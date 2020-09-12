@@ -64,7 +64,6 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'turbio/bracey.vim', { 'do': 'npm install --prefix server' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 
