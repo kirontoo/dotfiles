@@ -25,15 +25,10 @@ nnoremap <leader>es :split %:h/|                              "  splits buffer h
 nnoremap <leader>ev :vsplit %:h/|                             "  splits buffer vertically
 
 "~~~~~~~~~~ MOVE LINES ~~~~~~~~~
-vnoremap <A-Up> :m -2<CR>
-vnoremap <A-Down> :m +1<CR>
-nnoremap <A-Up> :m -2<CR>
-nnoremap <A-Down> :m +1<CR>
-
-vnoremap <A-k> :m -2<CR>
-vnoremap <A-j> :m +1<CR>
-nnoremap <A-k> :m -2<CR>
-nnoremap <A-j> :m +1<CR>
+nnoremap <leader>m+ :m+|
+nnoremap <leader>m- :m-|
+vnoremap <leader>m+ :m+|
+vnoremap <leader>m- :m-|
 
 nmap <S-CR> O<Esc>|                                           "  add newline down without insert mode
 nmap <CR> o<Esc>|                                             "  add newline above without insert mode
@@ -74,7 +69,8 @@ noremap <leader>tn :tabn<CR>|                                 "  go to next tab
 noremap <leader>tp :tabp<CR>|                                 "  go to prev tab
 
 "~~~~~~~~~~ BUFFER NAVIGATION~~~~~~~~~
-noremap <leader>bd :%bd<bar>e#<CR>|                           "  delete all buffers but current and previous one
+noremap <leader>bd :bd|																				"  delete current buffer
+noremap <leader>bD :%bd<bar>e#<CR>|                           "  delete all buffers but current and previous one
 noremap <leader>br :e<CR>|                                    "  reload buffer
 noremap <leader>bp :bp<CR>|                                   "  previous buffer
 noremap <leader>bn :bn<CR>|                                   "  next buffer
