@@ -14,7 +14,8 @@ let g:NERDTreeShowHidden=1
 let g:NERDTreeGitStatusWithFlags=1
 let g:NERDTreeIgnore = [ '^node_modules$', '\.meta$']
 let g:webdevicons_conceal_nerdtree_brackets=1
-let g:NERDTreeStatusline=-1
+" let g:NERDTreeStatusline=-1
+let NERDTreeStatusline="%8*%=%7*NERD%8*%="
 let g:NERDTreeShowLineNumbers=1
 let g:NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeMinimalUI = 1

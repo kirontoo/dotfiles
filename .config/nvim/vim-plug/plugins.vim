@@ -35,6 +35,16 @@ Plug 'zefei/cake16'
 " Plug 'https://github.com/ryanoasis/nerd-fonts.git', { 'do': './install.sh' }
 
 " Plugin: Packages
+
+" UI
+Plug 'ryanoasis/vim-devicons'
+Plug 'mg979/vim-xtabline'
+Plug 'mhinz/vim-signify'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'thaerkh/vim-indentguides'
+Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
+
+" Utility
 Plug 'airblade/vim-rooter'
 Plug 'alvan/vim-closetag'
 Plug 'brooth/far.vim'
@@ -42,27 +52,29 @@ Plug 'brooth/far.vim'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'godlygeek/tabular'
 Plug 'haya14busa/incsearch.vim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf', {'do': './install --all'}
-Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-Plug 'mg979/vim-xtabline'
-Plug 'mhinz/vim-startify'
-Plug 'mhinz/vim-signify'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'rbgrouleff/bclose.vim'
-Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
-Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'sheerun/vim-polyglot', { 'for': [ 'typescript', 'javascript', 'i3', 'html5', 'cpp', 'markdown' ] }
-Plug 'thaerkh/vim-indentguides'
-Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'tomtom/tcomment_vim'
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+
+" Files and Projects
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', {'do': './install --all'}
+Plug 'mhinz/vim-startify'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+" LSP and Git
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'liuchengxu/vista.vim'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'sheerun/vim-polyglot', { 'for': [ 'typescript', 'javascript', 'i3', 'html5', 'cpp', 'markdown', 'jsx' ] }
+Plug 'tpope/vim-fugitive'
+
+" Extras
+Plug 'ThePrimeagen/vim-be-good'
 
 call plug#end()
 

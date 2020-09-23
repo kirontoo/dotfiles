@@ -6,7 +6,15 @@
 "      \/           \/
 
 " COC extensions
-let g:coc_global_extensions=[ 'coc-json', 'coc-tsserver', 'coc-emmet', 'coc-tslint', 'coc-html', 'coc-css', 'coc-omnisharp', 'coc-explorer' ]
+let g:coc_global_extensions=[
+				\'coc-json',
+				\'coc-tsserver',
+				\'coc-emmet',
+				\'coc-tslint',
+				\'coc-html',
+				\'coc-css',
+				\'coc-explorer',
+			\]
 
 let g:coc_disable_startup_warning = 1
 

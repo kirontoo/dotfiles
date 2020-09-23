@@ -91,6 +91,10 @@ function! ActiveStatus()
 	let statusline .= '%#Warningmsg#%{ReadOnly()}'
 	let statusline .= '%#SpecialKey# ]'
 
+	" Requirement: Vista.vom
+	" Show current method
+	let statusline .= ' %#Keyword#%{NearestMethodOrFunction()}'
+
 	" separator
 	let statusline .= '%=%*'
 
@@ -229,5 +233,10 @@ function! ShowModified()
 	endif
 endfunction
 
+
+" Requirement: Vista.vim
+function! NearestMethodOrFunction() abort
+ return get(b:, 'vista_nearest_method_or_function', '')
+endfunction
 " 
 " 
