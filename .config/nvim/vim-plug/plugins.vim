@@ -19,7 +19,7 @@ call plug#begin( $PLUGGEDPATH )
 Plug 'aswathkk/DarkScene.vim'
 Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
-Plug 'dracula/vim'
+Plug 'embark-theme/vim', { 'as': 'embark' }
 Plug 'franbach/miramare'
 Plug 'haishanh/night-owl.vim'
 Plug 'lifepillar/vim-solarized8'
@@ -27,9 +27,6 @@ Plug 'morhetz/gruvbox'
 Plug 'nice/sweater'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'ntk148v/vim-horizon'
-Plug 'relastle/bluewery.vim'
-Plug 'sonph/onehalf', { 'rtp': 'vim/' }
-Plug 'stillwwater/vim-nebula'
 Plug 'tjammer/blayu.vim'
 Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'zefei/cake16'
