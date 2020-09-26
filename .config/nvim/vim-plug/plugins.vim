@@ -42,7 +42,7 @@ Plug 'mg979/vim-xtabline'
 Plug 'mhinz/vim-signify'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'thaerkh/vim-indentguides'
-Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'ap/vim-css-color'
 
 " Utility
 Plug 'airblade/vim-rooter'
@@ -59,6 +59,7 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tomtom/tcomment_vim'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+Plug 'AndrewRadev/splitjoin.vim'
 
 " Files and Projects
 Plug 'junegunn/fzf.vim'
