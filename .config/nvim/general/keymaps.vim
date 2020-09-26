@@ -42,6 +42,33 @@ nnoremap <A-S-Down> :t.<CR>
 "~~~~~~~~~~ YANK LINES ~~~~~~~~~
 nnoremap Y y$                                                 "  yank to end of line
 
+"~~~~~~~~~~ TODO LISTS ~~~~~~~~~
+if has( "win32" )
+	nnoremap <leader>T :vimgrep /TODO/ **/*.*<CR>|								" find all TODOs recursively in current directory
+	" :vimgrep TODO **/*.%:e \| cw
+	nnoremap<leader>To :copen<CR>|																" open todo list
+else
+	nnoremap <leader>T :Ag \(FIXME\)\\|\(TODO\)<CR> |								" find all TODOs recursively in current directory
+	nnoremap<leader>To :copen<CR>|																" open todo list
+endif
+
+
+" next and previous grep item
+nnoremap <leader>Tn :cn<CR>|
+nnoremap <leader>Tp :cp<CR>|
+
+"NOTE: quickfix  useful commands
+" :.cc to go to file under cursor ( if cursor is in quickfix window )
+" :ccl to close it
+" :cn next search item
+" :cp previous search item
+" :copen open quickfix window
+
+" search all occurences of the current word in the current directory and sub-directory
+command GREP execute "vimgrep /" . expand("<cword>") . "/j **" | cw
+command FIXME execute "vimgrep /" . expand("FIXME") . "/j **" | cw
+command TODO execute "vimgrep /" . expand("TODO") . "/j **" | cw
+
 "~~~~~~~~~~WINDOW NAVIGATION ~~~~~~~~~
 
 nnoremap <C-Left>  <C-w>h
@@ -61,6 +88,14 @@ noremap <leader>wd :close<CR>|                                "  close a window
 noremap <leader>wo :only<CR>|                                 "  keep only current window open
 
 noremap <leader>wr :vs<bar>:b#<CR>                            " restore previous closed buffer in new window
+
+" resize window horizontally
+nnoremap <c-,> <C-W><
+nnoremap <c-.> <C-W>>
+
+" resize window vertically
+nnoremap <A-,> <C-W>-
+nnoremap <A-.> <C-W>+
 
 "~~~~~~~~~~TAB NAVIGATION ~~~~~~~~~
 noremap <leader>td :tabclose<CR>|                             "  close tab

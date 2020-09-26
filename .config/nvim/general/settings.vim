@@ -72,9 +72,9 @@ set nolist                                                                      
 " set guifont=fira\ code:h14
 " set guifont=space\ mono:h10
 " set guifont=envy\ code\ r:h15
-set guifont=terminessttf\ nf:h12
+" set guifont=terminessttf\ nf:h12
 " set guifont=source\ code\ pro\ for\ powerline:h11
-" set guifont=iosevka:h11
+set guifont=iosevka:h11
 " set guifont=scientifica:h20
 
 " FIXME
