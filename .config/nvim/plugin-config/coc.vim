@@ -48,6 +48,8 @@ nmap <silent> gd <Plug>(coc-definition)|                      " go to definition
 nmap <silent> gy <Plug>(coc-type-definition)|                 " go to type definition
 nmap <silent> gi <Plug>(coc-implementation)|                  " go to implementation
 nmap <silent> gr <Plug>(coc-references)|                      " go to reference
+nmap <silent> gD <Plug>(coc-declaration)|											" go to reference
+nmap <silent> <leader>cr <Plug>(coc-rename)|                  " Remap for rename current word
 
 " show documentation in preview window
 nnoremap <silent> <leader>cd :call <SID>show_documentation()<CR>
@@ -60,15 +62,14 @@ function! s:show_documentation()
 	endif
 endfunction
 
-nmap <leader>cr <Plug>(coc-rename)                           " Remap for rename current word
 
 autocmd CursorHold * silent call CocActionAsync('highlight') " Highlight on symbol under cursor
 command! -nargs=? Fold :call     CocAction('fold', <f-args>) " Add :Fold command to fold buffer
 command! -nargs=? OR :call CocAction('runCommand, 'editor.action.organizeImport')
 set shortmess+=c
 
-nmap <silent> gp <Plug>(coc-diagnostic-prev)         " prev diagnostic
-nmap <silent> gn <Plug>(coc-diagnostic-next)         " next diagnostic
+nmap <silent> [c <Plug>(coc-diagnostic-prev)					 " prev diagnostic
+nmap <silent> ]c <Plug>(coc-diagnostic-next)					 " next diagnostic
 
 nnoremap <silent> <leader>ce  :<C-u>CocList diagnostics<cr>    " Show all diagnostics
 nnoremap <silent> <leader>cx  :<C-u>CocList extensions<cr>     " Manage extensions
@@ -76,11 +77,12 @@ nnoremap <silent> <leader>cz  :<C-u>CocList commands<cr>       " Show commands
 nnoremap <silent> <leader>co  :<C-u>CocList outline<cr>        " Find symbol of current document
 nnoremap <silent> <leader>cs  :<C-u>CocList -I symbols<cr>     " Search workspace symbols
 
-nnoremap <silent> <leader>ca  :<Plug>(coc-codeaction)          " Apply code actoin to current line
-nnoremap <silent> <leader>cf  :<Plug>(coc-fix-current)         " Autofix a problem on the current line
-nnoremap <silent> <leader>cj  :<C-u>CocNext<CR>                " Do default action for next item.
-nnoremap <silent> <leader>ck  :<C-u>CocPrev<CR>                " Do default action for previous item.
-nnoremap <silent> <leader>cp  :<C-u>CocListResume<CR>          " Resume latest coc list
+nnoremap <silent> <leader>ca  :<Plug>(coc-codeaction)<CR>|          " Apply code action to current line
+nnoremap <silent> <leader>cf  :<Plug>(coc-fix-current)<CR>|         " Autofix a problem on the current line
+nnoremap <silent> <leader>cj  :<C-u>CocNext<CR>|                " Do default action for next item.
+nnoremap <silent> <leader>ck  :<C-u>CocPrev<CR>|                " Do default action for previous item.
+nnoremap <silent> <leader>cp  :<C-u>CocListResume<CR>|          " Resume latest coc list
+nnoremap <silent> <leader>ch  :call CocAction( 'doHover' )<CR>|          " Resume latest coc list
 
 " Introduce function text object
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
