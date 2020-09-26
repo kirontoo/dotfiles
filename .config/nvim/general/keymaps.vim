@@ -39,6 +39,9 @@ vnoremap <A-S-Down> :t.<CR>
 nnoremap <A-S-Up> :t -1<CR>
 nnoremap <A-S-Down> :t.<CR>
 
+"~~~~~~~~~~ VISUAL LINES ~~~~~~~~~
+vnoremap v $h																									" vv selects to eol without newline
+
 "~~~~~~~~~~ YANK LINES ~~~~~~~~~
 nnoremap Y y$                                                 "  yank to end of line
 
