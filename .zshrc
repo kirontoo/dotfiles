@@ -12,6 +12,11 @@ export ALTERNATE_EDITONR=""
   alias dotfiles="cd ~/Documents/dev/dotfiles"
 	alias lg="lazygit"
 
+# Tmux aliases
+	alias t="tmux"
+	alias ta="t a -t"
+	alias tls="t ls"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
