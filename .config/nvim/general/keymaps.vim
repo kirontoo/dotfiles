@@ -115,6 +115,8 @@ noremap <leader>bn :bn<CR>|                                   "  next buffer
 noremap <leader>bv :vsp \| b|                                 "  vsplit and open buffer from number
 " nnoremap <leader>. :ls <CR>:b|                                "  open buffer list and change buffers
 nnoremap <leader>. :b <c-d>|																	" change buffer
+noremap <Tab> :bn<CR>
+noremap <S-Tab> :bp<CR>
 
 "~~~~~~~~~~ TERMINAL NAVIGATION~~~~~~~~~
 tnoremap <C-\> <C-\><C-n>

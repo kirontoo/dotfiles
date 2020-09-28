@@ -11,6 +11,7 @@ export ALTERNATE_EDITONR=""
   alias mechdb="cd ~/Documents/dev/mechdb"
   alias dotfiles="cd ~/Documents/dev/dotfiles"
 	alias lg="lazygit"
+	alias ide="~/scripts/ide.sh"
 
 # Tmux aliases
 	alias t="tmux"
