@@ -18,8 +18,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 10
-    y: 10
+    x: 5
+    y: 5
 
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: true
@@ -89,34 +89,57 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
   draw_bold_text_with_bright_colors: true
 
-# Colors ( NORD )
 colors:
-  # Default colors
-   primary:
-     background: '#292D3E'
-     foreground: '#D8DEE9'
 
-   # Normal colors
-   normal:
-     black:   '#3B4252'
-     red:     '#BF616A'
-     green:   '#A3BE8C'
-     yellow:  '#EBCB8B'
-     blue:    '#81A1C1'
-     magenta: '#B48EAD'
-     cyan:    '#88C0D0'
-     white:   '#E5E9F0'
+  # Colors ( EMBARK )
+  primary:
+    background: '0x1e1c31'
+    foreground: '0xeeffff'
+  cursor:
+    text: '0x1e1c31'
+    cursor: '0xa1efd3'
+  normal:
+    black: '0x1e1c31'
+    red: '0xf0719b'
+    green: '0xa1efd3'
+    yellow: '0xffe9aa'
+    blue: '0x57c7ff'
+    magenta: '0xc792ea'
+    cyan: '0x87dfeb'
+    white: '0xf8f8f2'
+  bright:
+    black: '0x585273'
+    red: '0xf02e6e'
+    green: '0x2ce592'
+    yellow: '0xffb378'
+    blue: '0x1da0e2'
+    magenta: '0xa742ea'
+    cyan: '0x63f2f1'
+    white: '0xa6b3cc'
 
-   # Bright colors
-   bright:
-     black:   '#4C566A'
-     red:     '#BF616A'
-     green:   '#A3BE8C'
-     yellow:  '#EBCB8B'
-     blue:    '#81A1C1'
-     magenta: '#B48EAD'
-     cyan:    '#8FBCBB'
-     white:   '#ECEFF4'
+
+  # Colors ( NORD )
+  #  primary:
+  #    background: '#292D3E'
+  #    foreground: '#D8DEE9'
+  #  normal:
+  #    black:   '#3B4252'
+  #    red:     '#BF616A'
+  #    green:   '#A3BE8C'
+  #    yellow:  '#EBCB8B'
+  #    blue:    '#81A1C1'
+  #    magenta: '#B48EAD'
+  #    cyan:    '#88C0D0'
+  #    white:   '#E5E9F0'
+  #  bright:
+  #    black:   '#4C566A'
+  #    red:     '#BF616A'
+  #    green:   '#A3BE8C'
+  #    yellow:  '#EBCB8B'
+  #    blue:    '#81A1C1'
+  #    magenta: '#B48EAD'
+  #    cyan:    '#8FBCBB'
+  #    white:   '#ECEFF4'
 
 # Allow terminal applications to change Alacritty's window title.
 widow.dynamic_title: true
