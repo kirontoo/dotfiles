@@ -20,7 +20,7 @@ function! LightScheme()
 endfunction
 
 highlight Pmenu guibg='#00010a' guifg=white             " popup menu colors
-highlight Comment gui=italic cterm=italic               " bold comments
+highlight Comment gui=NONE cterm=italic               " bold comments
 highlight Normal gui=none
 highlight NonText guibg=none
 highlight clear SignColumn                              " use number color for sign column color
@@ -30,3 +30,5 @@ hi NonText guifg=bg                                     " mask ~ on empty lines
 hi clear CursorLineNr                                   " use the theme color for relative number
 hi CursorLineNr gui=bold                                " make relative number bold
 hi SpellBad guifg=#ff7480 cterm=bold,undercurl          " misspelled words
+
+
