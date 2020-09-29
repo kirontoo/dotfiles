@@ -1,0 +1,100 @@
+/*
+* ROFI Embark Theme
+* Based on https://embark-theme.github.io/
+*/
+
+* {
+	background: #1e1c31;
+	text: #cbe3e7;
+	text2: #8a889d;
+	yellow: #f2b482;
+	red: #f02e6e;
+	blue: #65b2ff;
+	violet: #a36acc;
+	cyan: #63f2f1;
+	green: #62d196;
+	background-color: transparent;
+	spacing: 0;
+	text-color: @text;
+}
+
+window {
+  transparency: "real";
+  background-color: @background;
+  fullscreen: false;
+  height: 500px;
+}
+
+mainbox {
+  padding: 1%;
+}
+
+scrollbar {
+  handle-width: 10px;
+  handle-color: @red;
+  background-color: @background;
+  border-radius: 50%;
+}
+
+inputbar {
+  margin: 0px 0px 20px 0px;
+  children: [prompt, textbox-prompt-colon, entry, case-indicator];
+}
+
+prompt {
+  text-color: @red;
+}
+
+textbox-prompt-colon {
+  expand: false;
+  str: " >_ ";
+  text-color: @text;
+}
+
+entry {
+  margin: 0px 10px;
+}
+
+listview {
+  spacing: 3px;
+  dynamic: true;
+  scrollbar: true;
+  border: 2px 2px 2px;
+  border-color: @red;
+  padding: 8px;
+  border-radius: 3px;
+}
+
+element {
+  padding: 5px;
+  text-color: @base1;
+  highlight: @yellow;
+  border-radius: 3px;
+}
+
+element selected {
+  background-color: @red;
+  text-color: @base1;
+}
+
+element urgent, element selected urgent {
+  text-color: @red;
+}
+
+element active, element selected active {
+  text-color: @cyan;
+}
+
+message {
+  padding: 5px;
+  border-radius: 3px;
+  background-color: @base02;
+  border: 1px;
+  border-color: @cyan;
+}
+
+button selected {
+  padding: 5px;
+  border-radius: 3px;
+  background-color: @base02;
+}
