@@ -3,16 +3,27 @@
 * Based on https://embark-theme.github.io/
 */
 
+
 * {
-	background: #1e1c31;
+	background: @black;
+  selection-bg: #3e3859;
+  selection-fg: @cyan;
+  black: #1e1c31;
+  black2: #585273;
 	text: #cbe3e7;
 	text2: #8a889d;
-	yellow: #f2b482;
+	orange: #f2b482;
+  orange2: #ffe6b3;
 	red: #f02e6e;
+  red2: #f48fb1;
 	blue: #65b2ff;
+  blue2: #91ddff;
 	violet: #a36acc;
+  violet2: #d4bfff;
 	cyan: #63f2f1;
+  cyan2: #76dfeb;
 	green: #62d196;
+  green2: #a1efd3;
 	background-color: transparent;
 	spacing: 0;
 	text-color: @text;
@@ -42,7 +53,7 @@ inputbar {
 }
 
 prompt {
-  text-color: @red;
+  text-color: @green;
 }
 
 textbox-prompt-colon {
@@ -73,8 +84,8 @@ element {
 }
 
 element selected {
-  background-color: @red;
-  text-color: @base1;
+  background-color: @selection-bg;
+  text-color: @selection-fg;
 }
 
 element urgent, element selected urgent {
