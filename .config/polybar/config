@@ -38,18 +38,44 @@ format-margin =
 format-offset =
 
 [colors]
-primary = #dc3545
-secondary = #35dcbd
-primary-shade = #c25560
-green = #99dc35
-yellow = #dcd435
-; Nord theme ============
-background = #292d3e
-foreground = #c0c5ce
-; alert = #bd2c40
-volume-min = #a3be8c
-volume-med = #ebcb8b
-volume-max = #bf616a
+primary = ${colors.red-b}
+secondary = ${colors.yellow-b}
+background = ${colors.black-n}
+foreground = ${colors.white-n}
+
+; EMBARK THEME
+; # black
+black-n = #1E1C31
+black-b = #585273
+
+; # red
+red-n = #F48FB1
+red-b = #F02E6E
+
+; # green
+green-n = #A1EFD3
+green-b = #62D196
+
+; # yellow
+yellow-n = #FFE6B3
+yellow-b = #F2B482
+
+; # blue
+blue-n = #91DDFF
+blue-b = #65B2FF
+
+; # magenta
+magenta-n = #D4BFFF
+magenta-b = #A37ACC
+
+; # cyan
+cyan-n = #87DFEB
+cyan-b = #63F2F1
+
+; # white
+white-n = #CBE3E7
+white-b = #8A889D
+
 ; =======================
 
 ; Gotham theme ==========
@@ -352,7 +378,7 @@ label-mode-background = ${colors.background}
 ; Default: %icon%  %name%
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
-label-focused-foreground = ${colors.background}
+label-focused-foreground = ${colors.foreground}
 label-focused-background = ${colors.primary}
 label-focused-padding = 1
 
@@ -365,11 +391,12 @@ label-focused-padding = 1
 label-unfocused = %name%
 label-unfocused-padding = 1
 label-unfocused-background = ${colors.background}
-label-unfocused-foreground = ${colors.foreground}
+label-unfocused-foreground = ${colors.white-b}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
 label-visible-background = ${self.label-focused-background}
+label-visible-foreground = ${colors.background}
 label-visible-padding = 1
 
 ; Available tokens:
@@ -761,7 +788,7 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 ; format-padding = 2
 format-prefix = "  "
-format-prefix-foreground = ${colors.secondary}
+format-prefix-foreground = ${colors.green-b}
 label = %output:0:150%
 
 ################################################################################
@@ -780,17 +807,17 @@ interval = 3
 format-volume = "<label-volume>  <bar-volume>"
 
 label-volume = " "
-label-volume-foreground = ${colors.secondary}
+label-volume-foreground = ${colors.cyan-b}
 label-muted = muted
 
 bar-volume-width = 10
-bar-volume-foreground-0 = ${colors.secondary}
-bar-volume-foreground-1 = ${colors.secondary}
-bar-volume-foreground-2 = ${colors.secondary}
-bar-volume-foreground-3 = ${colors.secondary}
-bar-volume-foreground-4 = ${colors.secondary}
-bar-volume-foreground-5 = ${colors.secondary}
-bar-volume-foreground-6 = ${colors.secondary}
+bar-volume-foreground-0 = ${colors.cyan-b}
+bar-volume-foreground-1 = ${colors.cyan-b}
+bar-volume-foreground-2 = ${colors.cyan-b}
+bar-volume-foreground-3 = ${colors.cyan-b}
+bar-volume-foreground-4 = ${colors.cyan-b}
+bar-volume-foreground-5 = ${colors.cyan-b}
+bar-volume-foreground-6 = ${colors.cyan-b}
 bar-volume-gradient = true
 bar-volume-indicator = 
 bar-volume-indicator-font = 2
@@ -888,7 +915,7 @@ type = internal/xwindow
 label = %title%
 
 ; label-foreground = ${colors.foreground}
-label-foreground = ${colors.secondary}
+label-foreground = ${colors.foreground}
 label-background = ${colors.primary}
 
 label-maxlen = 80
@@ -901,8 +928,6 @@ format-background = ${colors.primary}
 
 format-padding = 2
 label-padding=2
-
-
 
 ###############################################################################
 [module/github]
