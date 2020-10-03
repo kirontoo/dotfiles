@@ -76,28 +76,6 @@ cyan-b = #63F2F1
 white-n = #CBE3E7
 white-b = #8A889D
 
-; =======================
-
-; Gotham theme ==========
-; background = #0a0f14
-; foreground = #99d1ce
-; alert = #d26937
-; volume-min = #2aa889
-; volume-med = #edb443
-; volume-max = #c23127
-; =======================
-
-; INTRCPTR theme ============
-;background = ${xrdb:color0:#222}
-;background = #aa000000
-;background-alt = #444
-;foreground = ${xrdb:color7:#222}
-;foreground = #fff
-;foreground-alt = #555
-;primary = #ffb52a
-;secondary = #e60053
-;alert = #bd2c40
-
 ################################################################################
 ################################################################################
 ############                         topbar                     ############
@@ -141,8 +119,8 @@ border-color = ${colors.primary}
 padding-left = 2
 padding-right = 2
 
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 0
+module-margin-right = 2
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
 font-0 = "scientifica:style=Regular:weight=bold:pixelsize=14;2"
@@ -152,7 +130,7 @@ font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
 
 modules-left = date
 modules-center = i3
-modules-right = battery time
+modules-right = battery time powermenu
 
 separator = ""
 
@@ -237,8 +215,8 @@ border-color = ${colors.primary}
 padding-left = 2
 padding-right = 2
 
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 0
+module-margin-right = 0
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
 font-0 = "scientifica:style=Regular:weight=bold:pixelsize=14;2"
@@ -249,7 +227,7 @@ font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
 
 modules-left = spotify1
 modules-center = xwindow
-modules-right = wireless-network volume
+modules-right = wireless-network 
 
 ;separator = " "
 
@@ -414,138 +392,6 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
 ################################################################################
-################################################################################
-############                       MODULE BSPWM                     ############
-################################################################################
-################################################################################
-
-[module/bspwm]
-type = internal/bspwm
-
-enable-click = true
-enable-scroll = true
-reverse-scroll = true
-pin-workspaces = true
-
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-;ws-icon-8 = 9;
-;ws-icon-9 = 10;
-;ws-icon-default = " "
-
-
-format = <label-state> <label-mode>
-
-label-focused = %icon%
-label-focused-background = ${colors.background}
-label-focused-underline= #6790eb
-label-focused-padding = 4
-label-focused-foreground = ${colors.foreground}
-
-label-occupied = %icon%
-label-occupied-padding = 2
-label-occupied-background = ${colors.background}
-
-label-urgent = %icon%
-label-urgent-padding = 2
-
-label-empty = %icon%
-label-empty-foreground = ${colors.foreground}
-label-empty-padding = 2
-label-empty-background = ${colors.background}
-label-monocle = "  "
-label-monocle-foreground = ${colors.foreground}
-label-tiled = "  "
-label-tiled-foreground = ${colors.foreground}
-label-fullscreen = "  "
-label-fullscreen-foreground = ${colors.foreground}
-label-floating = "  "
-label-floating-foreground = ${colors.foreground}
-label-pseudotiled = "  "
-label-pseudotiled-foreground = ${colors.foreground}
-label-locked = "  "
-label-locked-foreground = ${colors.foreground}
-label-sticky = "  "
-label-sticky-foreground = ${colors.foreground}
-label-private =  "     "
-label-private-foreground = ${colors.foreground}
-
-; Separator in between workspaces
-;label-separator = |
-;label-separator-padding = 10
-;label-separator-foreground = #ffb52a
-
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-
-
-
-
-################################################################################
-###############################################################################
-############                       MODULES ARROWS                     ############
-################################################################################
-################################################################################
-
-
-[module/arrow1]
-; grey to Blue
-type = custom/text
-content = "%{T2}  %{T-}"
-content-font = 2
-content-foreground = #C3E88D
-content-background = #292d3e
-
-[module/arrow2]
-; grey to Blue
-type = custom/text
-content = "%{T2} « %{T-}"
-content-font = 2
-content-foreground = #82AAFF
-content-background = #292d3e
-
-
-[module/arrow3]
-; grey to Blue
-type = custom/text
-content = "%{T2} « %{T-}"
-content-font = 2
-content-foreground = #C792EA
-content-background = #292d3e
-
-[module/arrow4]
-; grey to Blue
-type = custom/text
-content = "%{T2} « %{T-}"
-content-font = 2
-content-foreground = #FFE585
-content-background = #292d3e
-
-[module/arrow5]
-; grey to Blue
-type = custom/text
-content = "%{T2} « %{T-}"
-content-font = 2
-content-foreground = #F07178
-content-background = #292d3e
-
-[module/arrow6]
-; grey to Blue
-type = custom/text
-content = "%{T2} « %{T-}"
-content-font = 2
-content-foreground = ${colors.foreground}
-content-background = #292d3e
-
-
-
-################################################################################
 ###############################################################################
 ############                       MODULES A-Z                      ############
 ################################################################################
@@ -559,21 +405,22 @@ battery = BAT1
 adapter = ACAD
 full-at = 100
 
+; format-charging = <animation-charging> 
 format-charging = <animation-charging> <label-charging>
 label-charging = %percentage%%
 format-charging-foreground = ${colors.foreground}
 format-charging-background = ${colors.background}
 
-format-discharging = <ramp-capacity> <label-discharging>
-label-discharging =  %percentage%%
-format-discharging-foreground = ${colors.foreground}
+format-discharging = <ramp-capacity><label-discharging> 
+label-discharging = %percentage%%
+format-discharging-foreground = ${colors.yellow-n}
 format-discharging-background = ${colors.background}
 
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.secondary}
-format-foreground = ${colors.foreground}
+format-full-prefix-foreground = ${colors.green-b}
+format-foreground = ${colors.green-b}
 format-background = ${colors.background}
-format-full-foreground = ${colors.secondary}
+format-full-foreground = ${colors.green-b}
 format-full-background = ${colors.background}
 
 ramp-capacity-0 = 
@@ -581,17 +428,19 @@ ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
-ramp-capacity-0-foreground = ${colors.primary}
-ramp-capacity-1-foreground = ${colors.primary}
+ramp-capacity-0-foreground = ${colors.red-b}
+ramp-capacity-1-foreground = ${colors.red-n}
+ramp-capacity-2-foreground = ${colors.yellow-n}
+ramp-capacity-3-foreground = ${colors.green-n}
+ramp-capacity-4-foreground = ${colors.green-b}
 ramp-capacity-foreground = ${colors.foreground}
-
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
-animation-charging-foreground = ${colors.foreground}
+animation-charging-foreground = ${colors.green-b}
 animation-charging-framerate = 750
 
 ################################################################################
@@ -633,11 +482,11 @@ interval = 5
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
 time = "%H:%M %p"
 time-alt = %l:%M%p
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
+; format-prefix = " "
+; format-prefix-foreground = ${colors.foreground}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-label = "%time% "
+label = "%time%"
 
 #################################################################
 
@@ -760,8 +609,6 @@ scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
-
-
 ################################################################################
 
 [module/sep]
@@ -808,7 +655,7 @@ format-volume = "<label-volume>  <bar-volume>"
 
 label-volume = " "
 label-volume-foreground = ${colors.cyan-b}
-label-muted = muted
+; label-muted = muted
 
 bar-volume-width = 10
 bar-volume-foreground-0 = ${colors.cyan-b}
@@ -870,28 +717,31 @@ label-disconnected-foreground = ${colors.foreground}
 [module/wireless-network]
 ;https://github.com/jaagr/polybar/wiki/Module:-network
 type = internal/network
-interface = wlp4s0
+interface = wlp3s0
 ; for laptop
 ; interface = wlp3s0
 interval = 3.0
-label-connected = " %essid%: %downspeed%" 
 
 format-connected = <label-connected>
 ;format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = ${colors.foreground}
-format-connected-background = ${colors.background}
-format-connected-prefix = "  "
-format-connected-prefix-foreground = ${colors.foreground}
-format-connected-prefix-background = ${colors.background}
+; format-connected-foreground = ${colors.foreground}
+; format-connected-background = ${colors.background}
+; format-connected-prefix = "  "
+; format-connected-prefix-foreground = ${colors.foreground}
+; format-connected-prefix-background = ${colors.background}
+
+label-connected = ""
+label-connected-foreground = ${colors.blue-n}
+label-connected-background = ${colors.background}
 
 label-disconnected = " no wifi "
 label-disconnected-foreground = ${colors.background}
-label-disconnected-background = ${colors.secondary}
+label-disconnected-background = ${colors.red-n}
 
 format-disconnected = <label-disconnected>
 format-disconnected-foreground = ${colors.background}
-format-disconnected-background = ${colors.secondary}
-format-disconnected-prefix = "  "
+format-disconnected-background = ${colors.red-n}
+format-disconnected-prefix = " "
 
 ramp-signal-0 = ▁
 ramp-signal-1 = ▂
@@ -901,7 +751,7 @@ ramp-signal-4 = ▅
 ramp-signal-5 = ▆
 ramp-signal-6 = ▇
 ramp-signal-7 = █
-ramp-signal-foreground = #7e52c6
+
 
 ################################################################################
 
@@ -957,6 +807,16 @@ label-foreground = #C3E88D
 label-background = ${colors.background}
 format-prefix-background = ${colors.background}
 format-prefix-foreground = #C3E88D
+
+###############################################################################
+
+[module/powermenu]
+type = custom/text
+format-spacing = 1
+content = 
+content-foreground = ${colors.red-n}
+content-background = ${colors.background}
+click-left = bash ~/scripts/launch.sh powermenu
 
 ###############################################################################
 # vim:ft=dosini

@@ -82,7 +82,6 @@ bindsym $mod+F12 exec --no-startup-id postman;
 assign [class="Firefox"] $ws1
 assign [class="google-chrome"] $ws1
 assign [class="Google-Chrome"] $ws1
-assign [class="Surf|surf"] $ws1
 assign [class="discord"] $ws4
 assign [instance="gitkraken|Gitkraken"] $ws6
 assign [class="Blender|blender"] $ws7
@@ -90,12 +89,11 @@ assign [class="Nemo"] $ws8
 assign [class="robo3t"] $ws10
 assign [class="Postman"] $ws10
 
-for_window [class="Surf"] focus
 for_window [class="Code"] focus
 for_window [class="Firefox"] focus
 for_window [class="St|st"] focus
 for_window [class="Spotify"] move window to workspace $ws5
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 0
 
 ############### CUSTOM KEYBINDS ######################
 
@@ -105,9 +103,8 @@ bindsym $mod+s exec $HOME/.config/regolith/scripts/rofi-surfraw.sh
 bindsym $mod+m exec --no-startup-id $HOME/.config/regolith/scripts/rofi-sysmon.sh
 bindsym $mod+w exec --no-startup-id $HOME/Documents/i3-layout-manager/layout_manager.sh
 
-
-bindsym $mod+n move scratchpad
-bindsym $mod+Shift+n scratchpad show
+bindsym $mod+Shift+n move scratchpad
+bindsym $mod+n scratchpad show
 for_window [instance="scratch"] border pixel 5
 for_window [instance="scratch"] resize set 625 400
 
@@ -230,11 +227,14 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
+# Rofi menu for logout / reboot / poweroff / lock system
+bindsym $mod+shift+b exec $HOME/scripts/launch.sh powermenu
+
 # Logout of session
 bindsym $mod+Shift+e exec /usr/bin/gnome-session-quit --logout
 
 # Reboot computer
-bindsym $mod+Shift+b exec /usr/bin/gnome-session-quit --reboot
+# bindsym $mod+Shift+b exec /usr/bin/gnome-session-quit --reboot
 
 # Power off computer
 bindsym $mod+Shift+p exec /usr/bin/gnome-session-quit --power-off
@@ -323,7 +323,6 @@ set_from_resource $urgent.color.child_border i3-wm.client.urgent.color.child_bor
 # client.unfocused        $unfocused.color.border            $unfocused.color.background        $unfocused.color.text              $unfocused.color.indicator         $unfocused.color.child_border
 # client.urgent           $urgent.color.border               $urgent.color.background           $urgent.color.text                 $urgent.color.indicator            $urgent.color.child_border
 
-
 # class                  border      background    text        indicator    child_border
 client.focused           "#dc3545"   "#292d3e"     "#c0c5ce"   "#5f819d"    "#dc3545"
 client.focused_inactive  "#dc3545"   "#0F142C"     "#c0c5ce"   "#5f819d"    "#c25560"
@@ -359,28 +358,6 @@ set_from_resource $i3-wm.bar.workspace.urgent.background.color i3-wm.bar.workspa
 set_from_resource $i3-wm.bar.workspace.urgent.text.color i3-wm.bar.workspace.urgent.text.color "#fdf6e3"
 
 set_from_resource $i3-wm.bar.font i3-wm.bar.font "pango:Source Code Pro Medium 13, FontAwesome 13"
-
-# Configure the bar
-#bar {
-#  font $i3-wm.bar.font
-#  separator_symbol " "
-#  status_command i3xrocks -c $i3xrocks_config
-#  tray_output none
-#  strip_workspace_numbers yes
-#  position top
-#
-#  colors {
-#      background $i3-wm.bar.background.color
-#      statusline $i3-wm.bar.statusline.color
-#      separator  $i3-wm.bar.separator.color
-#
-##                        BORDER  BACKGROUND TEXT
-#      focused_workspace  $i3-wm.bar.workspace.focused.border.color      $i3-wm.bar.workspace.focused.background.color   $i3-wm.bar.workspace.focused.text.color
-#      active_workspace   $i3-wm.bar.workspace.active.border.color       $i3-wm.bar.workspace.active.background.color    $i3-wm.bar.workspace.active.text.color
-#      inactive_workspace $i3-wm.bar.workspace.inactive.border.color     $i3-wm.bar.workspace.inactive.background.color  $i3-wm.bar.workspace.inactive.text.color
-#      urgent_workspace   $i3-wm.bar.workspace.urgent.border.color       $i3-wm.bar.workspace.urgent.background.color    $i3-wm.bar.workspace.urgent.text.color
-#  }
-#}
 
 # Run programs when i3 starts
 
