@@ -17,7 +17,7 @@ source $VIMPATH/general/keymaps.vim
 
 source $VIMPATH/general/custom.vim
 source $VIMPATH/general/statusline.vim
-source $VIMPATH/general/tabline.vim
+" source $VIMPATH/general/tabline.vim
 
 " For vscode
 if exists('g:vscode')

@@ -38,7 +38,7 @@ Plug 'zefei/cake16'
 
 " UI
 Plug 'ryanoasis/vim-devicons'
-Plug 'mg979/vim-xtabline'
+" Plug 'mg979/vim-xtabline'
 Plug 'mhinz/vim-signify'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'thaerkh/vim-indentguides'
