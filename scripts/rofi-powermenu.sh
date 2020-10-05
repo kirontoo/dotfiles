@@ -9,12 +9,14 @@ if [ -z "$@" ]; then
     echo -en "Reboot\0icon\x1fsystem-restart\n"
 else
     if [ "$1" = "Shutdown" ]; then
-        echo -en "Now\n30s\n1m"
+        shutdown now
+    elif [ "$1" = "Logout" ]; then
+        gnome-session-quit
     elif [ "$1" = "Exit" ]; then
         i3-msg exit
     elif [ "$1" = "Reboot" ]; then
         sudo reboot
     elif [ "$1" = "Suspend" ]; then
-        system-ctl suspend
+        systemctl suspend
     fi
 fi
