@@ -109,7 +109,7 @@ line-size = 2
 line-color = #000000
 spacing = 1
 
-border-size = 2
+border-size = 1
 ;border-left-size = 25
 ;border-right-size = 25
 ; border-top-size = 0
@@ -128,9 +128,11 @@ font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
 font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
 font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
 
-modules-left = date
-modules-center = i3
-modules-right = battery time powermenu
+; modules-left = date
+; modules-center = i3
+modules-left = i3
+modules-center = xwindow
+modules-right = time powermenu
 
 separator = ""
 
@@ -204,32 +206,34 @@ foreground = ${colors.foreground}
 radius = 0.0
 line-size = 2
 line-color = #000000
+spacing = 1
 
-border-size = 2
+border-size = 1
 ;border-left-size = 25
 ;border-right-size = 25
-; border-top-size = 3
-; border-bottom-size = 0
+; border-top-size = 0
+; border-bottom-size = 3
 border-color = ${colors.primary}
 
 padding-left = 2
 padding-right = 2
 
 module-margin-left = 0
-module-margin-right = 0
+module-margin-right = 2
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
 font-0 = "scientifica:style=Regular:weight=bold:pixelsize=14;2"
-; font-0 = "Hack:size=10;3"
 font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
 font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
 font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
 
-modules-left = spotify1
-modules-center = xwindow
-modules-right = wireless-network 
+; modules-left = date
+; modules-center = i3
+modules-left = date
+modules-center = spotify
+modules-right = wireless-network volume-percent battery
 
-;separator = " "
+separator = ""
 
 ;dim-value = 1.0
 
@@ -237,8 +241,8 @@ tray-position = right
 tray-detached = false
 tray-maxsize = 20
 tray-background = ${colors.background}
-tray-offset-x = 0
-tray-offset-y = 0
+;tray-offset-x = 0
+;tray-offset-y = 0
 tray-padding = 4
 tray-scale = 1.0
 
@@ -268,7 +272,6 @@ double-click-right =
 ; - ns-resize : Up and down arrows, can be used to indicate scrolling
 cursor-click =
 cursor-scroll =
-
 ################################################################################
 ################################################################################
 ############                       MODULE I3                        ############
@@ -464,12 +467,13 @@ interval = 5
 ; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
 date = " %A %B %d, %Y"
-date-alt = " %A %B %d, %Y"
+; date-alt = " %A %B %d, %Y"
+; date = "%m/%d/%y"
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
+format-prefix-foreground = ${colors.magenta-n}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-label = "%date% "
+label = "%date%"
 
 ################################################################################
 
@@ -622,10 +626,10 @@ format-background = ${colors.background}
 
 ################################################################################
 
-[module/spotify1]
+[module/spotify]
 ;https://github.com/NicholasFeldman/dotfiles/blob/master/polybar/.config/polybar/spotify.sh
 type = custom/script
-exec = ~/.config/polybar/scripts/spotify1.sh
+exec = ~/.config/polybar/scripts/spotify.sh
 interval = 1
 
 ;format = <label>
@@ -636,7 +640,7 @@ format-background = ${colors.background}
 ; format-padding = 2
 format-prefix = "  "
 format-prefix-foreground = ${colors.green-b}
-label = %output:0:150%
+label = %output:0:40:...%
 
 ################################################################################
 
@@ -680,6 +684,22 @@ format-muted-prefix-foreground = ${colors.primary}
 format-muted-foreground = ${colors.foreground}
 format-muted-background = ${colors.background}
 
+[module/volume-percent]
+
+type = internal/pulseaudio
+
+format = <label>
+
+label-volume = " %percentage%%"
+label-volume-foreground = ${colors.cyan-b}
+label-volume-background = ${colors.background}
+format-foreground =  ${colors.foreground}
+format-background =  ${colors.background}
+
+label-muted = ""
+label-muted-foreground = ${colors.red-b}
+label-muted-background = ${colors.background}
+interval = 3
 ################################################################################
 
 [module/wired-network]
@@ -762,7 +782,7 @@ type = internal/xwindow
 ; Available tokens:
 ;   %title%
 ; Default: %title%
-label = %title%
+label = %title:0:40:...%
 
 ; label-foreground = ${colors.foreground}
 label-foreground = ${colors.foreground}
