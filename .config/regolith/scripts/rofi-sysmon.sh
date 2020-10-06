@@ -1,20 +1,23 @@
 #!/bin/bash
 
 
-choice=$(echo "gtop
+choice=$(echo "bashtop
+gtop
 gotop
 htop
-iftop" | rofi -dmenu -p "System Monitor")
+iftop" | rofi -dmenu -p "Syalacrittyem Monitor")
 	if [ $choice == 'htop' ]; then
     echo $choice
-        exec st -e htop
+        exec alacritty -e htop
 	fi
 	if [ $choice == 'gtop' ]; then
-        exec st -e gtop
+        exec alacritty -e gtop
 	fi
 	if [ $choice == 'gotop' ]; then
-        exec st -e gotop 
+        exec alacritty -e gotop 
 	fi
 	if [ $choice == 'ifton' ]; then
-        exec st -e ifton 
+        exec alacritty -e ifton 
 	fi
+	if [ $choices == 'bashtop' ]; then
+				exec alacritty -e bashtop

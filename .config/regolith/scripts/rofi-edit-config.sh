@@ -5,9 +5,9 @@ read_or_write() {
 yes" | rofi -dmenu -p "Read Only?")
 
   if [ $read == 'no' ]; then
-    exec st -e nvim $HOME/$1
+    exec alacritty -e nvim $HOME/$1
   else
-    exec st -e nvim -R $HOME/$1
+    exec alacritty -e nvim -R $HOME/$1
   fi
 }
 
@@ -38,7 +38,7 @@ if [ $choice == 'compton' ]; then
       read_or_write '.config/regolith/compton/config'
 fi
 if [ $choice == 'rofi' ]; then
-      read_or_write '.config/regolith/rofi/custom.rasi'
+      read_or_write '.config/regolith/rofi/embark.rasi'
 fi
 if [ $choice == 'conky' ]; then
       read_or_write '.config/regolith/conky/system-overview'
