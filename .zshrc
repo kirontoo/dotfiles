@@ -69,7 +69,6 @@ plugins=(
   git 
   web-search 
   colored-man-pages
-	frontend-search
 )
 
 source $ZSH/oh-my-zsh.sh
