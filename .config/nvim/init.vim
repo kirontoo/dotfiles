@@ -3,7 +3,7 @@
 " |  |/ /  \_  __ \/  _ \ /    \   __\/  _ \ /  _ \
 " |    <|  ||  | \(  <_> )   |  \  | (  <_> |  <_> )
 " |__|_ \__||__|   \____/|___|  /__|  \____/ \____/
-" \/                     \/
+"  \/  \/
 
 if has("win32")
 	let $VIMPATH=$HOME . "/AppData/Local/nvim"
@@ -41,6 +41,7 @@ source $VIMPATH/plugin-config/devicons.vim
 source $VIMPATH/plugin-config/far.vim
 source $VIMPATH/plugin-config/fugitive.vim
 source $VIMPATH/plugin-config/fzf.vim
+source $VIMPATH/plugin-config/fzf-preview.vim
 source $VIMPATH/plugin-config/gitgutter.vim
 source $VIMPATH/plugin-config/goyo.vim
 source $VIMPATH/plugin-config/hexokinase.vim
@@ -50,7 +51,6 @@ source $VIMPATH/plugin-config/neoterm.vim
 source $VIMPATH/plugin-config/omnisharp.vim
 source $VIMPATH/plugin-config/polyglot.vim
 source $VIMPATH/plugin-config/rooter.vim
-source $VIMPATH/plugin-config/ranger.vim
 source $VIMPATH/plugin-config/startify.vim
 source $VIMPATH/plugin-config/tabular.vim
 source $VIMPATH/plugin-config/vimplug.vim

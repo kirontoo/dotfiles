@@ -49,7 +49,6 @@ Plug 'airblade/vim-rooter'
 Plug 'alvan/vim-closetag'
 Plug 'brooth/far.vim'
 " Plug 'easymotion/vim-easymotion'
-Plug 'francoiscabrol/ranger.vim'
 Plug 'godlygeek/tabular'
 Plug 'haya14busa/incsearch.vim'
 Plug 'jiangmiao/auto-pairs'
@@ -63,7 +62,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 
 " Files and Projects
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf', {'do': './install --all'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'mhinz/vim-startify'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
@@ -71,7 +70,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'liuchengxu/vista.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'sheerun/vim-polyglot', { 'for': [ 'typescript', 'javascript', 'i3', 'html5', 'cpp', 'markdown', 'jsx' ] }
+" Plug 'sheerun/vim-polyglot', { 'for': [ 'typescript', 'javascript', 'i3', 'html5', 'cpp', 'markdown', 'jsx' ] }
 Plug 'tpope/vim-fugitive'
 
 " Extras

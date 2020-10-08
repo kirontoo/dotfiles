@@ -1,4 +1,4 @@
-"________________________________
+"_______________________________
 " \_   _____/\____    /\_   _____/
 "  |    __)    /     /  |    __)
 "  |     \    /     /_  |     \
@@ -6,14 +6,24 @@
 "      \/            \/     \/
 
 "~~~~~~~~~~ FZF PLUGIN  ~~~~~~~~~
-noremap <leader>fp :GFiles <CR>|                             "  Search file in current git Directory
-noremap <space><space> :FZF<CR>|                             "  Search file in current Directory
+" noremap <leader>g :GFiles <CR>|                              "  Search file in current git Directory
+" noremap <space><space> :FZF<CR>|                             "  Search file in current Directory
+" noremap <leader>, :Buffers<CR>|                              "  open buffer menu
+
 noremap <leader>ff :Files $HOME<CR>|                         "  Search file in Home Directory
-noremap <leader>, :Buffers<CR>|                              "  open buffer menu
 noremap <leader>fh :History <CR>|                            "  command history
 noremap <leader>Tc :Colors<CR>|                              "  Search colorschemes
 nmap <leader>/ :BLines<CR>|                                  "  swoop current buffer
 nmap <leader>sa :Lines<CR>|                                  "  swoop all open buffer
+nnoremap <silent> <leader>. :Files <C-r>=expand("%:h")<CR>/<CR>
+nnoremap <silent> <leader>c  :Commits<CR>
+nnoremap <silent> <leader>bc :BCommits<CR>
+nnoremap <silent> <leader>m :Marks<CR>
+
+if filereadable('src/index.tsx')
+  " This looks like a React app, add React specific mappings here.
+	nnoremap <silent> <Leader>ec :Files src/components<CR>
+endif
 
 "~~~~~~~~~~ MAPPING HELP ~~~~~~~~~
 nnoremap <leader>? :Commands<CR>
@@ -24,12 +34,17 @@ let g:defaultWinSwoopHeight=15
 
 " FZF Config
 if !has( "win32" )
-	let $FZF_DEFAULT_COMMAND="find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
-	" let $FZF_DEFAULT_COMMAND="fd -H -E '.git' -E '.o' -E '.meta' -E 'node_modules/**' --type file --follow"
+	" let $FZF_DEFAULT_COMMAND="find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
+	let $FZF_DEFAULT_COMMAND="fd -H -E '.git' -E '.o' -E '.meta' -E 'node_modules/**' --type file --follow"
 endif
 
 let $FZF_DEFAULT_OPTS=' --color=dark --color=fg:15,bg:-1,hl:1,fg+:#ffffff,bg+:0,hl+:1 --color=info:0,prompt:0,pointer:12,marker:4,spinner:11,header:-1 --layout=reverse  --margin=1,4'
 " let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+
+let g:fzf_commits_log_options = '--graph --color=always
+  \ --format="%C(yellow)%h%C(red)%d%C(reset)
+  \ - %C(bold green)(%ar)%C(reset) %s %C(blue)<%an>%C(reset)"'
+
 
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
 
