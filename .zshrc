@@ -19,8 +19,6 @@ alias dev="cd ~/Documents/dev"
 alias dotfiles="cd ~/Documents/dev/dotfiles"
 alias db="mongod --dbpath /home/griffin/mongodb-data"
 alias db_end="sudo mongod --dbpath /home/griffin/mongodb-data --shutdown"
-alias emacs="emacs -tty -fn SpaceMono"
-alias qmk="cd ~/Documents/dev/qmk"
 alias lg="lazygit"
 alias config="cd ~/.config/regolith"
 alias ide="~/scripts/ide.sh"
@@ -33,6 +31,7 @@ alias tn="t new -t"
 
 # Close google chrome
 alias killg="wmctrl -c chrome"
+alias killd="pkill discord"
 
 # source files
 alias srcz="source $HOME/.zshrc"
@@ -86,4 +85,103 @@ export TERM=xterm-256color
 
 # neofetch
 
+#  _____  _____  _____ 
+# |     ||     ||     |
+# |   __||__/  ||   __|
+# |  |_  |   __||  |_  
+# |   _] |  /  ||   _] 
+# |  |   |     ||  |   
+# |__|   |_____||__|   
+                      
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias fcd='fzf_change_directory'
+alias ffe='fzf_find_edit'
+alias fkill='fzf_kill'
+alias gadd='fzf_git_add'
+alias gll='fzf_git_log'
+alias grl='fzf_git_reflog'
+
+export FZF_DEFAULT_OPTS='
+  --height 75% --multi --reverse
+  --bind ctrl-f:page-down,ctrl-b:page-up
+'
+fzf_find_edit() {
+    local file=$(
+      fzf --query="$1" --no-multi --select-1 --exit-0 \
+          --preview 'bat --color=always --line-range :500 {}'
+      )
+    if [[ -n $file ]]; then
+        $EDITOR "$file"
+    fi
+}
+
+fzf_change_directory() {
+    local directory=$(
+      fd --type d | \
+      fzf --query="$1" --no-multi --select-1 --exit-0 \
+          --preview 'tree -C {} | head -100'
+      )
+    if [[ -n $directory ]]; then
+        cd "$directory"
+    fi
+}
+
+
+fzf_kill() {
+    local pid_col
+    if [[ $(uname) = Linux ]]; then
+        pid_col=2
+    elif [[ $(uname) = Darwin ]]; then
+        pid_col=3;
+    else
+        echo 'Error: unknown platform'
+        return
+    fi
+    local pids=$(
+      ps -f -u $USER | sed 1d | fzf --multi | tr -s [:blank:] | cut -d' ' -f"$pid_col"
+      )
+    if [[ -n $pids ]]; then
+        echo "$pids" | xargs kill -9 "$@"
+    fi
+}
+
+fzf_git_add() {
+    local selections=$(
+      git status --porcelain | \
+      fzf --ansi \
+          --preview 'if (git ls-files --error-unmatch {2} &>/dev/null); then
+                         git diff --color=always {2}
+                     else
+                         bat --color=always --line-range :500 {2}
+                     fi'
+      )
+    if [[ -n $selections ]]; then
+        git add --verbose $(echo "$selections" | cut -c 4- | tr '\n' ' ')
+    fi
+}
+
+fzf_git_log() {
+    local selections=$(
+      git ll --color=always "$@" |
+        fzf --ansi --no-sort --no-height \
+            --preview "echo {} | grep -o '[a-f0-9]\{7\}' | head -1 |
+                       xargs -I@ sh -c 'git show --color=always @'"
+      )
+    if [[ -n $selections ]]; then
+        local commits=$(echo "$selections" | sed 's/^[* |]*//' | cut -d' ' -f1 | tr '\n' ' ')
+        git show $commits
+    fi
+}
+
+fzf_git_reflog() {
+    local selection=$(
+      git reflog --color=always "$@" |
+        fzf --no-multi --ansi --no-sort --no-height \
+            --preview "git show --color=always {1}"
+      )
+    if [[ -n $selection ]]; then
+        git show $(echo $selection | cut -d' ' -f1)
+    fi
+}
+
