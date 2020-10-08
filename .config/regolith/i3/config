@@ -14,11 +14,6 @@ set $i3xrocks_config $HOME/.config/regolith/i3xrocks/config
 set $compton_config $HOME/.config/regolith/compton/config
 
 # path to terminal. Override this to specify a custom terminal.
-# set $terminal_path /usr/local/bin/st -f "EnvyCodeR:pixelsize=18:antialias=true"
-# set $terminal_path /usr/local/bin/st -f "SpaceMono:pixelsize=18:antialias=true"
-# set $terminal_path /usr/local/bin/st -f "iosevka:pixelsize=20:antialias=true"
-# set $terminal_path /usr/local/bin/st -f "scientifica:pixelsize=24:antialias=true:bold"
-# set $terminal_path /usr/local/bin/st -f "SourceCodePro:pixelsize=18:antialias=true"
 set $terminal_path /usr/bin/alacritty 
 
 # Color values are defined in ~/.Xresources-regolith
