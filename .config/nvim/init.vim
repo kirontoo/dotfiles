@@ -41,7 +41,7 @@ source $VIMPATH/plugin-config/devicons.vim
 source $VIMPATH/plugin-config/far.vim
 source $VIMPATH/plugin-config/fugitive.vim
 source $VIMPATH/plugin-config/fzf.vim
-source $VIMPATH/plugin-config/fzf-preview.vim
+" source $VIMPATH/plugin-config/fzf-preview.vim
 source $VIMPATH/plugin-config/gitgutter.vim
 source $VIMPATH/plugin-config/goyo.vim
 source $VIMPATH/plugin-config/hexokinase.vim

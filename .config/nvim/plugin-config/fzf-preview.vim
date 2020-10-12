@@ -1,9 +1,9 @@
 nmap <Leader>f [fzf-p]
 xmap <Leader>f [fzf-p]
 
-nnoremap <silent> <leader>g					 :<C-u>CocCommand fzf-preview.GitFiles<CR>
-nnoremap <silent> <space><space>     :<C-u>CocCommand fzf-preview.DirectoryFiles<CR>
-nnoremap <silent> <leader>,				   :<C-u>CocCommand fzf-preview.Buffers<CR>
+" nnoremap <silent> <leader>g					 :<C-u>CocCommand fzf-preview.GitFiles<CR>
+" nnoremap <silent> <space><space>     :<C-u>CocCommand fzf-preview.DirectoryFiles<CR>
+" nnoremap <silent> <leader>,				   :<C-u>CocCommand fzf-preview.Buffers<CR>
 
 nnoremap <silent> [fzf-p]p     :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
 nnoremap <silent> [fzf-p]gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
