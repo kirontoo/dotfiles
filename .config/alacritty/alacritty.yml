@@ -144,7 +144,7 @@ colors:
 # Allow terminal applications to change Alacritty's window title.
 widow.dynamic_title: true
 
-background_opacity: 0.9
+background_opacity: 1
 
 cursor:
   # Cursor style
