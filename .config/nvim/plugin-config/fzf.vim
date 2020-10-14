@@ -12,7 +12,7 @@ noremap <space><space> :FZF<CR>|                             "  Search file in c
 noremap <leader>, :Buffers<CR>|                              "  open buffer menu
 
 noremap <leader>ff :Files $HOME<CR>|                         "  Search file in Home Directory
-noremap <leader>h :History<CR>|														   "  File history
+noremap <leader>hf :History<CR>|														 "  File history
 noremap <leader>hc :History: <CR>|                           "  Command history
 noremap <leader>h/ :History/ <CR>|                           "  Command history
 noremap <leader>Tc :Colors<CR>|                              "  Search colorschemes
