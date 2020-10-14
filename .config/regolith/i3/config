@@ -278,10 +278,10 @@ new_window pixel 1
 new_float pixel 1
 
 # Gaps (i3-gaps)
-gaps inner 30
-gaps outer 25
-# gaps bottom 30
-# gaps top 30
+gaps inner 25
+gaps outer 30
+gaps bottom 0
+gaps top 35
 
 # Only enable gaps on a workspace when there is at least one container
 #smart_gaps true
@@ -319,11 +319,11 @@ set_from_resource $urgent.color.child_border i3-wm.client.urgent.color.child_bor
 # client.urgent           $urgent.color.border               $urgent.color.background           $urgent.color.text                 $urgent.color.indicator            $urgent.color.child_border
 
 # class                  border      background    text        indicator    child_border
-client.focused           "#dc3545"   "#292d3e"     "#c0c5ce"   "#5f819d"    "#dc3545"
-client.focused_inactive  "#dc3545"   "#0F142C"     "#c0c5ce"   "#5f819d"    "#c25560"
-client.unfocused         "#dc3545"   "#0F142C"     "#c0c5ce"   "#5f819d"    "#c25560"
-client.urgent            "#dc3545"   "#292d3e"     "#c0c5ce"   "#5f819d"    "#c25560"
-client.placeholder       "#dc3545"   "#292d3e"     "#c0c5ce"   "#5f819d"    "#c25560"
+client.focused           "#dc3545"   "#1e1c31"     "#c0c5ce"   "#5f819d"    "#f02e6e"
+client.focused_inactive  "#dc3545"   "#1e1c31"     "#c0c5ce"   "#5f819d"    "#1e1c31"
+client.unfocused         "#dc3545"   "#1e1c31"     "#c0c5ce"   "#5f819d"    "#1e1c31"
+client.urgent            "#dc3545"   "#1e1c31"     "#c0c5ce"   "#5f819d"    "#f2b482"
+client.placeholder       "#dc3545"   "#1e1c31"     "#c0c5ce"   "#5f819d"    "#c25560"
 
 
 # Enable popup during fullscreen
@@ -369,7 +369,8 @@ exec --no-startup-id /usr/bin/unclutter -b
 exec --no-startup-id /usr/bin/xeventbind resolution /usr/bin/wallpaper-refresh
 
 # Start System stats on desktop
-exec_always --no-startup-id conky -q -c ~/.config/regolith/conky/system-overview
+# exec_always --no-startup-id conky -q -c ~/.config/regolith/conky/system-overview
+exec_always --no-startup-id $HOME/.config/regolith/conky/launch.sh
 
 # Launch Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

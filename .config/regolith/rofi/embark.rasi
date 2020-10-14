@@ -3,13 +3,17 @@
 * Based on https://embark-theme.github.io/
 */
 
-
 * {
-	background: @black;
-  selection-bg: #3e3859;
-  selection-fg: @cyan;
-  black: #1e1c31;
-  black2: #585273;
+	background: @black1;
+  selection-bg: @black3;
+  selection-fg: @text;
+
+	black0: #100e23;
+  black1: #1e1c31;
+	black2: #2d2b40;
+	black3: #3e3859;
+  black4: #585273;
+
 	text: #cbe3e7;
 	text2: #8a889d;
 	orange: #f2b482;
@@ -26,14 +30,15 @@
   green2: #a1efd3;
 	background-color: transparent;
 	spacing: 0;
-	text-color: @text;
+	text-color: @text2;
 }
 
 window {
-  transparency: "real";
+  /* transparency: "real"; */
   background-color: @background;
   fullscreen: false;
-  height: 500px;
+	height: 30%;
+	width: 30%;
 }
 
 mainbox {
@@ -43,7 +48,7 @@ mainbox {
 scrollbar {
   handle-width: 10px;
   handle-color: @red;
-  background-color: @background;
+  background-color: @black2;
   border-radius: 50%;
 }
 
@@ -53,7 +58,7 @@ inputbar {
 }
 
 prompt {
-  text-color: @green;
+  text-color: @cyan2;
 }
 
 textbox-prompt-colon {
@@ -64,6 +69,7 @@ textbox-prompt-colon {
 
 entry {
   margin: 0px 10px;
+	text-color: @text;
 }
 
 listview {
@@ -71,7 +77,7 @@ listview {
   dynamic: true;
   scrollbar: true;
   border: 2px 2px 2px;
-  border-color: @red;
+  border-color: @black2;
   padding: 8px;
   border-radius: 3px;
 }
