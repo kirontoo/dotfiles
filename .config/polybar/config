@@ -41,12 +41,15 @@ format-offset =
 primary = ${colors.red-b}
 secondary = ${colors.yellow-b}
 background = ${colors.black-n}
-foreground = ${colors.white-n}
+foreground = ${colors.white-b}
 
 ; EMBARK THEME
 ; # black
 black-n = #1E1C31
 black-b = #585273
+black-na = #2d2b40
+black-ba = #3e3859
+black-d = #100e23
 
 ; # red
 red-n = #F48FB1
@@ -73,8 +76,8 @@ cyan-n = #87DFEB
 cyan-b = #63F2F1
 
 ; # white
-white-n = #CBE3E7
-white-b = #8A889D
+white-n = #8A889D
+white-b = #CBE3E7
 
 ################################################################################
 ################################################################################
@@ -92,9 +95,9 @@ override-redirect = true
 wm-restack = i3
 bottom = false
 fixed-center = true
-width = 80%
-height = 30
-offset-x = 10%
+width = 96%
+height = 34
+offset-x = 2%
 offset-y = 10
 
 background = ${colors.background}
@@ -105,22 +108,22 @@ foreground = ${colors.foreground}
 ;background-0 =
 
 radius = 0.0
-line-size = 2
-line-color = #000000
-spacing = 1
+line-size = 0
+; line-color = ${colors.magenta-b}
+; spacing = 10
 
-border-size = 1
+border-size = 0
 ;border-left-size = 25
-;border-right-size = 25
-; border-top-size = 0
+; border-right-size = 25
+; border-top-size = 1
 ; border-bottom-size = 3
 border-color = ${colors.primary}
 
 padding-left = 2
 padding-right = 2
 
-module-margin-left = 0
-module-margin-right = 2
+module-margin-left = 1
+module-margin-right = 1
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
 font-0 = "scientifica:style=Regular:weight=bold:pixelsize=14;2"
@@ -130,22 +133,23 @@ font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
 
 ; modules-left = date
 ; modules-center = i3
-modules-left = i3
-modules-center = xwindow
-modules-right = time powermenu
+modules-left = i3 xwindow
+; modules-center = xwindow
+modules-right = spotify wireless-network volume-percent date time powermenu
+; modules-right = wireless-network sep battery sep volume-percent sep date sep time sep powermenu
 
-separator = ""
+separator = "  "
 
 ;dim-value = 1.0
 
-;tray-position = right
-;tray-detached = false
-;tray-maxsize = 20
-;tray-background = ${colors.background}
+; tray-position = right
+; tray-detached = false
+; tray-maxsize = 20
+; tray-background = ${colors.background}
 ;tray-offset-x = 0
 ;tray-offset-y = 0
-;tray-padding = 4
-;tray-scale = 1.0
+; tray-padding = 5
+; tray-scale = 0.9
 
 #i3: Make the bar appear below windows
 ;wm-restack = i3
@@ -233,7 +237,7 @@ modules-left = date
 modules-center = spotify
 modules-right = wireless-network volume-percent battery
 
-separator = ""
+; separator = ""
 
 ;dim-value = 1.0
 
@@ -329,7 +333,7 @@ fuzzy-match = false
 ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
-ws-icon-3 = 4;
+ws-icon-3 = 4;
 ws-icon-4 = 5;
 ws-icon-5 = 6;
 ws-icon-6 = 7;
@@ -346,10 +350,18 @@ ws-icon-default = " "
 ;   <label-mode> (default)
 format = <label-state> <label-mode>
 
+; label-separator = ""
+label-separator = ""
+label-separator-padding = 0.8
+; label-separator-foreground = ${self.label-unfocused-foreground}
+label-separator-foreground = ${colors.black-ba}
+
 label-mode = %mode%
 label-mode-padding = 2
-label-mode-foreground = ${colors.foreground}
+label-mode-foreground = ${colors.primary}
 label-mode-background = ${colors.background}
+; label-mode-foreground = ${colors.foreground}
+; label-mode-background = ${colors.background}
 
 ; Available tokens:
 ;   %name%
@@ -359,8 +371,10 @@ label-mode-background = ${colors.background}
 ; Default: %icon%  %name%
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
-label-focused-foreground = ${colors.foreground}
-label-focused-background = ${colors.primary}
+label-focused-foreground = ${colors.primary}
+label-focused-background = ${colors.background}
+; label-focused-foreground = ${colors.background}
+; label-focused-background = ${colors.primary}
 label-focused-padding = 1
 
 ; Available tokens:
@@ -372,12 +386,17 @@ label-focused-padding = 1
 label-unfocused = %name%
 label-unfocused-padding = 1
 label-unfocused-background = ${colors.background}
-label-unfocused-foreground = ${colors.white-b}
+; label-unfocused-foreground = ${colors.black-b}
+label-unfocused-foreground = ${colors.black-b}
+; label-unfocused-background = ${colors.background}
+; label-unfocused-foreground = ${colors.white-b}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-foreground = ${colors.background}
+label-visible-background = ${colors.background}
+label-visible-foreground = ${colors.white-b}
+; label-visible-background = ${colors.black-b}
+; label-visible-foreground = ${colors.white-b}
 label-visible-padding = 1
 
 ; Available tokens:
@@ -386,9 +405,9 @@ label-visible-padding = 1
 ;   %index%
 ; Default: %icon%  %name%
 ; urgent = Workspace with urgency hint set
-label-urgent = %icon% %name%
-label-urgent-foreground = ${colors.background}
-label-urgent-background = ${colors.secondary}
+label-urgent = %name%
+label-urgent-foreground = ${colors.secondary}
+label-urgent-background = ${colors.background}
 label-urgent-padding = 1
 
 format-foreground = ${colors.foreground}
@@ -420,7 +439,7 @@ format-discharging-foreground = ${colors.yellow-n}
 format-discharging-background = ${colors.background}
 
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.green-b}
+format-full-prefix-foreground = ${colors.green-n}
 format-foreground = ${colors.green-b}
 format-background = ${colors.background}
 format-full-foreground = ${colors.green-b}
@@ -463,15 +482,17 @@ format-background = ${colors.background}
 ;https://github.com/jaagr/polybar/wiki/Module:-date
 type = internal/date
 ; Seconds to sleep between updates
-interval = 5
+; interval = 5
 ; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
-date = " %A %B %d, %Y"
+; date = " %a %b, %d"
+date = "%a %b, %d"
+; date = "%a %m/%d/%Y"
 ; date-alt = " %A %B %d, %Y"
 ; date = "%m/%d/%y"
-format-prefix = " "
-format-prefix-foreground = ${colors.magenta-n}
-format-foreground = ${colors.foreground}
+; format-prefix = " "
+format-prefix-foreground = ${self.format-foreground}
+format-foreground = ${colors.green-n}
 format-background = ${colors.background}
 label = "%date%"
 
@@ -487,8 +508,8 @@ interval = 5
 time = "%H:%M %p"
 time-alt = %l:%M%p
 ; format-prefix = " "
-; format-prefix-foreground = ${colors.foreground}
-format-foreground = ${colors.foreground}
+format-prefix-foreground = ${self.format-foreground}
+format-foreground = ${colors.yellow-n}
 format-background = ${colors.background}
 label = "%time%"
 
@@ -618,7 +639,7 @@ format-background = ${colors.background}
 [module/sep]
 ; alternative separator
 type = custom/text
-content = 
+content = 
 content-foreground = ${colors.foreground}
 content-background =  ${colors.background}
 format-foreground = ${colors.foreground}
@@ -640,7 +661,7 @@ format-background = ${colors.background}
 ; format-padding = 2
 format-prefix = "  "
 format-prefix-foreground = ${colors.green-b}
-label = %output:0:40:...%
+label = %output:0:30:...%
 
 ################################################################################
 
@@ -684,22 +705,24 @@ format-muted-prefix-foreground = ${colors.primary}
 format-muted-foreground = ${colors.foreground}
 format-muted-background = ${colors.background}
 
-[module/volume-percent]
+################################################################################
 
+[module/volume-percent]
 type = internal/pulseaudio
 
 format = <label>
 
-label-volume = " %percentage%%"
-label-volume-foreground = ${colors.cyan-b}
+label-volume = " %percentage%%"
+label-volume-foreground = ${colors.blue-n}
 label-volume-background = ${colors.background}
-format-foreground =  ${colors.foreground}
-format-background =  ${colors.background}
+format-foreground = ${colors.blue-n}
+format-background = ${colors.background}
 
 label-muted = ""
 label-muted-foreground = ${colors.red-b}
 label-muted-background = ${colors.background}
 interval = 3
+
 ################################################################################
 
 [module/wired-network]
@@ -725,7 +748,7 @@ format-connected-foreground = ${colors.foreground}
 format-connected-background = ${colors.background}
 format-connected-underline = #55aa55
 format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.green}
+format-connected-prefix-foreground = ${colors.green-b}
 format-connected-prefix-background = ${colors.background}
 
 format-disconnected = <label-disconnected>
@@ -737,7 +760,7 @@ label-disconnected-foreground = ${colors.foreground}
 [module/wireless-network]
 ;https://github.com/jaagr/polybar/wiki/Module:-network
 type = internal/network
-interface = wlp3s0
+interface = wlp4s0
 ; for laptop
 ; interface = wlp3s0
 interval = 3.0
@@ -750,8 +773,8 @@ format-connected = <label-connected>
 ; format-connected-prefix-foreground = ${colors.foreground}
 ; format-connected-prefix-background = ${colors.background}
 
-label-connected = ""
-label-connected-foreground = ${colors.blue-n}
+label-connected = " %downspeed%"
+label-connected-foreground = ${colors.magenta-n}
 label-connected-background = ${colors.background}
 
 label-disconnected = " no wifi "
@@ -782,19 +805,20 @@ type = internal/xwindow
 ; Available tokens:
 ;   %title%
 ; Default: %title%
-label = %title:0:40:...%
+label = %title:0:80:...%
 
-; label-foreground = ${colors.foreground}
 label-foreground = ${colors.foreground}
-label-background = ${colors.primary}
+label-background = ${colors.background}
+; label-foreground = ${colors.foreground}
+; label-background = ${colors.primary}
 
 label-maxlen = 80
 
 format-prefix = ""
-; format-foreground = ${colors.secondary}
-; format-background = ${colors.background}
-format-foreground = ${colors.foreground}
-format-background = ${colors.primary}
+format-foreground = ${colors.cyan-n}
+format-background = ${colors.background}
+; format-foreground = ${colors.foreground}
+; format-background = ${colors.primary}
 
 format-padding = 2
 label-padding=2
@@ -832,11 +856,44 @@ format-prefix-foreground = #C3E88D
 
 [module/powermenu]
 type = custom/text
-format-spacing = 1
-content = 
-content-foreground = ${colors.red-n}
+format-spacing = 0
+content-padding = 0
+content = ""
 content-background = ${colors.background}
+content-foreground = ${colors.primary}
 click-left = bash ~/scripts/launch.sh powermenu
 
 ###############################################################################
+
+[module/taskwarrior]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/task.sh -r 5
+tail = true
+format = <label>
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+label-padding = 1
+label= "%output%"
+; click-right = kill -USR2 %pid%
+; click-left = kill -USR1 %pid%
+
+###############################################################################
+
+[module/task]
+type = custom/script
+interval = 5 
+exec = $HOME/.config/polybar/scripts/polybar-task.sh
+format = <label>
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-prefix = " "
+click-left = task "$((`cat /tmp/tw_polybar_id`))" done
+
+###############################################################################
+
+[module/docker]
+type = custom/script
+exec = docker ps -q | wc -l
+interval = 1
+label =  %output%
 # vim:ft=dosini
