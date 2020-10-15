@@ -98,8 +98,9 @@ export TERM=xterm-256color
 alias fcd='fzf_change_directory'
 alias ffe='fzf_find_edit'
 alias fkill='fzf_kill'
-alias gadd='fzf_git_add'
-alias gll='fzf_git_log'
+alias fgd='fzf_git_diff'
+alias fgadd='fzf_git_add'
+alias fgl='fzf_git_log'
 alias grl='fzf_git_reflog'
 
 export FZF_DEFAULT_OPTS='
@@ -163,7 +164,7 @@ fzf_git_add() {
 
 fzf_git_log() {
     local selections=$(
-      git ll --color=always "$@" |
+      git log --color=always "$@" |
         fzf --ansi --no-sort --no-height \
             --preview "echo {} | grep -o '[a-f0-9]\{7\}' | head -1 |
                        xargs -I@ sh -c 'git show --color=always @'"
@@ -185,3 +186,7 @@ fzf_git_reflog() {
     fi
 }
 
+fzf_git_diff() {
+  preview="git diff $@ --color=always -- {-1}"
+  git diff $@ --name-only | fzf -m --ansi --preview $preview
+}
