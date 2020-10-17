@@ -90,13 +90,13 @@ for_window [class="Code"] focus
 for_window [class="Firefox"] focus
 for_window [class="St|st"] focus
 for_window [class="Spotify"] move window to workspace $ws5
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 4
 
 ############### CUSTOM KEYBINDS ######################
 
 bindsym $alt+Tab workspace back_and_forth
 bindsym $mod+e exec $HOME/.config/regolith/scripts/rofi-edit-config.sh
-bindsym $mod+s exec $HOME/.config/regolith/scripts/rofi-surfraw.sh
+bindsym $mod+b exec $HOME/.config/regolith/scripts/rofi-surfraw.sh
 bindsym $mod+m exec --no-startup-id $HOME/.config/regolith/scripts/rofi-sysmon.sh
 bindsym $mod+w exec --no-startup-id $HOME/Documents/i3-layout-manager/layout_manager.sh
 
@@ -132,6 +132,10 @@ bindsym $mod+Shift+l move right
 # toggle split orientation
 bindsym $mod+BackSpace split toggle
 
+# split orientation
+bindsym $mod+s split h;exec notify-send "tile horizontally"
+bindsym $mod+v split v;exec notify-send "tile vertically"
+
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
@@ -148,7 +152,7 @@ bindsym $mod+Shift+f floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+Shift+t focus mode_toggle
 
-# toggle tabbed mode
+# toggle between tabbed, split horizontally and split vertically mode
 bindsym $mod+t layout toggle tabbed splith splitv
 
 # move to workspace
@@ -281,12 +285,13 @@ new_float pixel 1
 
 # Gaps (i3-gaps)
 gaps inner 25
-gaps outer 30
+# gaps outer 30
 gaps bottom 0
 gaps top 35
 
 # Only enable gaps on a workspace when there is at least one container
 #smart_gaps true
+smart_borders true
 
 set_from_resource $focused.color.border i3-wm.client.focused.color.border "#dc322f"
 set_from_resource $focused.color.background i3-wm.client.focused.color.background "#586e75"
@@ -321,7 +326,7 @@ set_from_resource $urgent.color.child_border i3-wm.client.urgent.color.child_bor
 # client.urgent           $urgent.color.border               $urgent.color.background           $urgent.color.text                 $urgent.color.indicator            $urgent.color.child_border
 
 # class                  border      background    text        indicator    child_border
-client.focused           "#dc3545"   "#1e1c31"     "#c0c5ce"   "#5f819d"    "#f02e6e"
+client.focused           "#dc3545"   "#1e1c31"     "#c0c5ce"   "#5f819d"    "#2d2b40"
 client.focused_inactive  "#dc3545"   "#1e1c31"     "#c0c5ce"   "#5f819d"    "#1e1c31"
 client.unfocused         "#dc3545"   "#1e1c31"     "#c0c5ce"   "#5f819d"    "#1e1c31"
 client.urgent            "#dc3545"   "#1e1c31"     "#c0c5ce"   "#5f819d"    "#f2b482"
