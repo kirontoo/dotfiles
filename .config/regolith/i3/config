@@ -58,7 +58,7 @@ bindsym $mod+x kill
 set $rofiTheme $HOME/.config/regolith/rofi/custom
 
 # rofi app and window launchers
-bindsym $mod+space exec rofi -show drun
+bindsym $mod+space exec rofi -show drun -show-icons
 bindsym $mod+Shift+space exec rofi -show run
 bindsym $mod+Ctrl+space exec rofi -show window
 
@@ -95,9 +95,9 @@ for_window [class=".*"] border pixel 4
 ############### CUSTOM KEYBINDS ######################
 
 bindsym $alt+Tab workspace back_and_forth
-bindsym $mod+e exec $HOME/.config/regolith/scripts/rofi-edit-config.sh
-bindsym $mod+b exec $HOME/.config/regolith/scripts/rofi-surfraw.sh
-bindsym $mod+m exec --no-startup-id $HOME/.config/regolith/scripts/rofi-sysmon.sh
+bindsym $mod+e exec $HOME/scripts/rofi/rofi-edit-config.sh
+bindsym $mod+b exec $HOME/scripts/rofi/rofi-surfraw.sh
+bindsym $mod+m exec --no-startup-id $HOME/scripts/rofi/rofi-sysmon.sh
 bindsym $mod+w exec --no-startup-id $HOME/Documents/i3-layout-manager/layout_manager.sh
 
 bindsym $mod+Shift+n move scratchpad
@@ -153,7 +153,7 @@ bindsym $mod+Shift+f floating toggle
 bindsym $mod+Shift+t focus mode_toggle
 
 # toggle between tabbed, split horizontally and split vertically mode
-bindsym $mod+t layout toggle tabbed splith splitv
+bindsym $mod+t layout toggle splith splitv
 
 # move to workspace
 bindsym $mod+1 workspace $ws1
@@ -326,11 +326,11 @@ set_from_resource $urgent.color.child_border i3-wm.client.urgent.color.child_bor
 # client.urgent           $urgent.color.border               $urgent.color.background           $urgent.color.text                 $urgent.color.indicator            $urgent.color.child_border
 
 # class                  border      background    text        indicator    child_border
-client.focused           "#dc3545"   "#1e1c31"     "#c0c5ce"   "#5f819d"    "#2d2b40"
-client.focused_inactive  "#dc3545"   "#1e1c31"     "#c0c5ce"   "#5f819d"    "#1e1c31"
-client.unfocused         "#dc3545"   "#1e1c31"     "#c0c5ce"   "#5f819d"    "#1e1c31"
-client.urgent            "#dc3545"   "#1e1c31"     "#c0c5ce"   "#5f819d"    "#f2b482"
-client.placeholder       "#dc3545"   "#1e1c31"     "#c0c5ce"   "#5f819d"    "#c25560"
+client.focused           "#dc3545"   "#1e1c31"     "#c0c5ce"   "#62d196"    "#585273"
+client.focused_inactive  "#dc3545"   "#1e1c31"     "#c0c5ce"   "#1e1c31"    "#1e1c31"
+client.unfocused         "#dc3545"   "#1e1c31"     "#c0c5ce"   "#1e1c31"    "#1e1c31"
+client.urgent            "#dc3545"   "#1e1c31"     "#c0c5ce"   "#1e1c31"    "#f2b482"
+client.placeholder       "#dc3545"   "#1e1c31"     "#c0c5ce"   "#1e1c31"    "#c25560"
 
 
 # Enable popup during fullscreen
@@ -377,7 +377,7 @@ exec --no-startup-id /usr/bin/xeventbind resolution /usr/bin/wallpaper-refresh
 
 # Start System stats on desktop
 # exec_always --no-startup-id conky -q -c ~/.config/regolith/conky/system-overview
-exec_always --no-startup-id $HOME/.config/regolith/conky/launch.sh
+exec_always --no-startup-id $HOME/.config/conky/launch.sh
 
 # Launch Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
