@@ -144,7 +144,12 @@
 
     # Split notifications into multiple lines if they don't fit into
     # geometry.
-    word_wrap = yes
+    word_wrap = n
+
+    # The frequency with wich text that is longer than the notification
+    # window allows bounces back and forth.
+    # This option conflicts with "word_wrap".
+		bounce_freq = 5
 
     # When word_wrap is set to no, specify where to make an ellipsis in long lines.
     # Possible values are "start", "middle" and "end".
