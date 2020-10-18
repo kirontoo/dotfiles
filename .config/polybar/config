@@ -861,7 +861,7 @@ content-padding = 0
 content = ""
 content-background = ${colors.background}
 content-foreground = ${colors.primary}
-click-left = bash ~/scripts/launch.sh powermenu
+click-left = bash ~/scripts/rofi/rofi-launch.sh powermenu
 
 ###############################################################################
 
