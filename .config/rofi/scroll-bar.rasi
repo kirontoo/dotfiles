@@ -1,40 +1,4 @@
-/*
-* ROFI Embark Theme
-* Based on https://embark-theme.github.io/
-*/
-
-* {
-	/* background: @black-trans; */
-	background: @black1;
-  selection-bg: @black3;
-  selection-fg: @cyan;
-	
-	black-trans: rgba( 30, 28, 58, 0.9 );
-
-	black0: #100e23;
-  black1: #1e1c31;
-	black2: #2d2b40;
-	black3: #3e3859;
-  black4: #585273;
-
-	text: #cbe3e7;
-	text2: #8a889d;
-	orange: #f2b482;
-  orange2: #ffe6b3;
-	red: #f02e6e;
-  red2: #f48fb1;
-	blue: #65b2ff;
-  blue2: #91ddff;
-	violet: #a36acc;
-  violet2: #d4bfff;
-	cyan: #63f2f1;
-  cyan2: #76dfeb;
-	green: #62d196;
-  green2: #a1efd3;
-	background-color: transparent;
-	spacing: 0;
-	text-color: @text2;
-}
+@import "~/.config/rofi/themes/embark.rasi"
 
 window {
   transparency: "real";

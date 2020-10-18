@@ -1,0 +1,97 @@
+@import "~/.config/rofi/themes/embark.rasi"
+
+window {
+  transparency: "real";
+  background-color: @background;
+  fullscreen: false;
+	height: 30%;
+	width: 20%;
+	border: 4px;
+	border-color: @black4;
+}
+
+mainbox {
+	padding: 0.3em;
+	margin: 0.2em;
+}
+
+scrollbar {
+  handle-width: 10px;
+  handle-color: @red2;
+  background-color: @black3;
+  border-radius: 50%;
+	border: 0;
+	width: 4px;
+	padding: 0;
+}
+
+inputbar {
+	margin: 8px;
+  children: [prompt, textbox-prompt-colon, entry, case-indicator];
+	border: 0 0 2px 0;
+	padding: 0 0 10 0;
+	border-color: @black4;
+}
+
+case-indicator {
+	text-color: @red2;
+}
+
+prompt {
+  text-color: @cyan2;
+}
+
+textbox-prompt-colon {
+  expand: false;
+  str: " >_";
+  text-color: @text;
+}
+
+entry {
+  margin: 0px 10px;
+	text-color: @text;
+}
+
+listview {
+  spacing: 2px;
+  dynamic: true;
+  padding: 8px;
+}
+
+element {
+  padding: 5px;
+  text-color: @text;
+	padding: 3px;
+}
+
+element selected {
+  /* background-color: @selection-bg; */
+  text-color: @green;
+	text-style: bold;
+}
+
+element urgent, element selected urgent {
+  text-color: @red;
+	text-style: bold;
+}
+
+element active, element selected active {
+  text-color: @cyan;
+	text-style: bold;
+}
+
+message {
+  padding: 5px;
+  background-color: @background;
+	text-color: @yellow;
+}
+
+button {
+	spacing: 0;
+	text-color: @text;
+	background-color: @green2;
+}
+
+button selected {
+  background-color: @cyan2;
+}
