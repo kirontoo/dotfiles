@@ -54,10 +54,12 @@ ${font Wargames-Regular:size=16}${color 00ffcc}SYS ${stippled_hr 2}$color$font
 ${font Wargames-Regular:size=16}${color ff00cc}CPU ${stippled_hr 2}$color$font
    INTEL i7-8700K${alignr}4 (8) @ 4.0GHz
 
-   CORE 1 @ ${freq 1}MHz${alignc -36}${hwmon 0 temp 1}°C${alignr}${cpu cpu1}% (${cpu cpu3}%)
-   CORE 2 @ ${freq 2}MHz${alignc -36}${hwmon 0 temp 2}°C${alignr}${cpu cpu2}% (${cpu cpu4}%)
+   CORE 1 @ ${freq 1}MHz${alignc -36}${hwmon 1 temp 1}°C${alignr}${cpu cpu1}% (${cpu cpu3}%)
+   CORE 2 @ ${freq 2}MHz${alignc -36}${hwmon 1 temp 2}°C${alignr}${cpu cpu2}% (${cpu cpu4}%)
    CORE 3 @ ${freq 3}MHz${alignc -36}${hwmon 1 temp 3}°C${alignr}${cpu cpu3}% (${cpu cpu5}%)
    CORE 4 @ ${freq 4}MHz${alignc -36}${hwmon 1 temp 4}°C${alignr}${cpu cpu4}% (${cpu cpu6}%)
+   CORE 5 @ ${freq 4}MHz${alignc -36}${hwmon 1 temp 5}°C${alignr}${cpu cpu4}% (${cpu cpu6}%)
+   CORE 6 @ ${freq 4}MHz${alignc -36}${hwmon 1 temp 6}°C${alignr}${cpu cpu4}% (${cpu cpu6}%)
    LOGICAL   1  ${color ff00cc}${cpubar cpu1 8,120}$color${alignr}(3) ${color ff00cc}${cpubar cpu3 8,120}$color
    LOGICAL   2  ${color ff00cc}${cpubar cpu2 8,120}$color${alignr}(4) ${color ff00cc}${cpubar cpu4 8,120}$color
 
@@ -85,7 +87,7 @@ ${font Wargames-Regular:size=16}${color 4cff00}MEM ${stippled_hr 2}$color$font
 
 ### STORAGE ###
 ${font Wargames-Regular:size=16}${color ff3300}HDD ${stippled_hr 2}$color$font
-   ${exec hddtemp /dev/sda}${alignr}750GB @ 5400 RPM
+   ${exec hddtemp /dev/sda}${alignr}128GB
 
    / (${fs_type /})${alignc}${fs_used /} / ${fs_size /}${alignr}${fs_used_perc /}%
    ${color ff3300}${fs_bar 8 /}$color
@@ -97,7 +99,7 @@ ${font Wargames-Regular:size=16}${color ff3300}HDD ${stippled_hr 2}$color$font
 
 ### NETWORK ###
 ${font Wargames-Regular:size=16}${color 3300ff}NET ${stippled_hr 2}$color$font
-   ${wireless_essid wlp4s0}${alignr}WLAN @ 5.0GHz
+   ${wireless_essid wlp4s0}${alignr}WLAN @ 2.4GHz
 
    DOWNLOAD   ${color 3300ff}${downspeedgraph wlp4s0 24,120 300001 3300ff}$color${alignr}UPLOAD ${color 3300ff}${upspeedgraph wlp4s0 24,120 300001 3300ff}$color
               ${downspeed wlp4s0}/s (${totaldown wlp4s0})${alignr}${upspeed wlp4s0}/s (${totalup wlp2s0})

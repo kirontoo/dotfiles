@@ -41,16 +41,16 @@ conky.config={
 
 conky.text=[[
 ${font Wargames-Regular:style=Bold:pixelsize=16}DOING ${stippled_hr 2}${font}
-${texecpi 60 flock /home/phoenix/.task task limit:10 rc.defaultwidth:80 rc._forcecolor:on rc.verbose:affected,blank doing | ansito - | sed -r 's/([^ ])#/\1\\#/g'}
+
+${texecpi 60 flock /home/phoenix/.task task limit:10 rc.defaultwidth:80 rc._forcecolor:off rc.verbose:affected doing | ansito - | sed -r 's/([^ ])#/\1\\#/g'}
 
 ${font Wargames-Regular:style=Bold:pixelsize=16}TODO ${stippled_hr 2}${font}
-${texecpi 60 flock /home/phoenix/.task task limit:10 rc.defaultwidth:80 rc._forcecolor:on rc.verbose:affected,blank todo | ansito - | sed -r 's/([^ ])#/\1\\#/g'}
+${texecpi 60 flock /home/phoenix/.task task limit:10 rc.defaultwidth:80 rc._forcecolor:off rc.verbose:affected,blank todo | ansito - | sed -r 's/([^ ])#/\1\\#/g'}
 
 ${font Wargames-Regular:style=Bold:pixelsize=16}BURNDOWN ${stippled_hr 2}${font}
 
 ${font}${texecpi 180 flock /home/phoenix/.task task rc.defaultwidth:60 rc.verbose:affected,blank burndown.daily | head -n-2 | /home/phoenix/.config/regolith/conky/conky-bg-space-to-fg.sh | ansito - | sed -r 's/([^ ])#/\1\\#/g'}
 ### ${font Fira Code:style=Bold:size=8}${texecpi 120 flock /home/phoenix/.task task rc._forcecolor:on burndown.weekly | tail -n+2 | head -n-2 | /home/phoenix/.config/regolith/conky/conky-bg-space-to-fg.sh | ansito - | sed -r 's/([^ ])#/\1\\#/g'}${font}
-
 ### ${font Wargames-Regular:style=Bold:pixelsize=16}PROGRESS ${stippled_hr 2}${font}
 ### ${font}${texecpi 180 flock /home/phoenix/.task /home/phoenix/.config/regolith/conky/conky-task-progress.sh}${font}
 
