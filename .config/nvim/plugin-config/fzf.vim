@@ -7,17 +7,17 @@
 
 "~~~~~~~~~~ FZF PLUGIN  ~~~~~~~~~
 noremap <leader>g :GFiles <CR>|                              "  Search file in current git Directory
-noremap <leader>g :GFiles?<CR>|                              "  Git status
+" noremap <leader>g? :GFiles?<CR>|                              "  Git status
 noremap <space><space> :FZF<CR>|                             "  Search file in current Directory
 noremap <leader>, :Buffers<CR>|                              "  open buffer menu
-
 noremap <leader>ff :Files $HOME<CR>|                         "  Search file in Home Directory
+
 noremap <leader>hf :History<CR>|														 "  File history
 noremap <leader>hc :History: <CR>|                           "  Command history
 noremap <leader>h/ :History/ <CR>|                           "  Command history
 noremap <leader>Tc :Colors<CR>|                              "  Search colorschemes
-nmap <leader>/ :BLines<CR>|                                  "  Swoop current buffer
-nmap <leader>sa :Lines<CR>|                                  "  Swoop all open buffer
+nmap <leader>/b :BLines<CR>|                                  "  Swoop current buffer
+nmap <leader>/ :Lines<CR>|                                  "  Swoop all open buffer
 
 nnoremap <silent> <leader>. :Files <C-r>=expand("%:h")<CR>/<CR>
 nnoremap <silent> <leader>c  :Commits<CR>

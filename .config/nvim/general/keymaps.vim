@@ -108,7 +108,7 @@ noremap <leader>tn :tabn<CR>|                                 "  go to next tab
 noremap <leader>tp :tabp<CR>|                                 "  go to prev tab
 
 "~~~~~~~~~~ BUFFER NAVIGATION~~~~~~~~~
-noremap <leader>bd :bd|																				"  delete current buffer
+noremap <leader>bd :bd<CR>|																		"  delete current buffer
 noremap <leader>bD :%bd<bar>e#<CR>|                           "  delete all buffers but current and previous one
 noremap <leader>br :e<CR>|                                    "  reload buffer
 noremap <leader>bp :bp<CR>|                                   "  previous buffer
