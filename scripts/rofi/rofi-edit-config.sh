@@ -5,9 +5,9 @@ read_or_write() {
 yes" | rofi -dmenu -p "Read Only?")
 
   if [ $read == 'no' ]; then
-    exec alacritty -e nvim $HOME/$1
+    exec kitty -e nvim $HOME/$1
   else
-    exec alacritty -e nvim -R $HOME/$1
+    exec kitty -e nvim -R $HOME/$1
   fi
 }
 
@@ -38,10 +38,10 @@ if [ $choice == 'compton' ]; then
       read_or_write '.config/regolith/compton/config'
 fi
 if [ $choice == 'rofi' ]; then
-      read_or_write '.config/regolith/rofi/embark.rasi'
+      read_or_write '.config/rofi/themes/embark.rasi'
 fi
 if [ $choice == 'conky' ]; then
-      read_or_write '.config/regolith/conky/system-overview'
+      read_or_write '.config/conky/system-overview'
 fi
 if [ $choice == 'Xresources' ]; then
       read_or_write '.Xresources-regolith'
@@ -53,13 +53,13 @@ sysmon
 surfraw" | rofi -dmenu -p "Select Script")
 
     if [ $file == 'edit-config' ]; then
-      read_or_write '.config/regolith/scripts/rofi-edit-config.sh'
+      read_or_write '.config/scripts/rofi/rofi-edit-config.sh'
     fi
     if [ $file == 'sysmon' ]; then
-      read_or_write '.config/regolith/scripts/rofi-sysmon.sh'
+      read_or_write '.config/scripts/rofi/rofi-sysmon.sh'
     fi
     if [ $file == 'surfraw' ]; then
-      read_or_write '.config/regolith/scripts/rofi-surfraw.sh'
+      read_or_write '.config/scripts/rofi/rofi-surfraw.sh'
     fi
 fi
 
