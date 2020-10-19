@@ -1,0 +1,125 @@
+@import "~/.config/rofi/themes/embark.rasi"
+
+window {
+    background-color: @background;
+    border:           2;
+    padding:          15;
+		fullscreen: false;
+		height: 30%;
+		width: 20%;
+		border-color: @black4;
+}
+
+mainbox {
+    border:  0;
+    padding: 0;
+}
+
+message {
+    border:       2px 0 0;
+    border-color: @black4;
+    padding:      1px;
+}
+
+textbox {
+    highlight:  @green;
+    text-color: @text-color;
+}
+
+listview {
+    border:       0px solid 0 0;
+    padding:      2px 0px 0px;
+    border-color: @black4;
+    spacing:      3px;
+    scrollbar:    @red2;
+}
+
+element {
+    border:  0;
+    padding: 3px;
+}
+
+element.normal.normal {
+    background-color: @background;
+    text-color:       @text-color;
+}
+
+element.normal.urgent {
+    background-color: @background;
+    text-color:       @text-color;
+}
+
+element.normal.active {
+    background-color: @background;
+    text-color:       @text-color;
+}
+
+element.selected.normal {
+    background-color: @background;
+    text-color:       @green;
+}
+
+element.selected.urgent {
+    background-color: @background;
+    text-color:       @red;
+}
+
+element.selected.active {
+    background-color: @background;
+    text-color:       @text-color;
+}
+
+element.alternate.normal {
+    background-color: @background;
+    text-color:       @text-color;
+}
+
+element.alternate.urgent {
+    background-color: @background;
+    text-color:       @text-color;
+}
+
+element.alternate.active {
+    background-color: @background;
+    text-color:       @text-color;
+}
+
+scrollbar {
+    width:        4px;
+    border:       0;
+    handle-color: @black2;
+    handle-width: 8px;
+    padding:      0;
+}
+
+mode-switcher {
+    border:       2px 0 0;
+    border-color: @black3;
+}
+
+inputbar {
+    spacing:    0;
+    text-color: @text-color;
+    padding:    2px;
+    children:   [ prompt, textbox-prompt-sep, entry, case-indicator ];
+}
+
+case-indicator,
+entry,
+prompt,
+button {
+    spacing:    0;
+    text-color: @cyan2;
+}
+
+button.selected {
+    background-color: @background;
+    text-color:       @cyan;
+}
+
+textbox-prompt-sep {
+    expand:     false;
+		str:				" >_";
+    text-color: @text-color;
+    margin:     0 0.3em 0 0;
+}
