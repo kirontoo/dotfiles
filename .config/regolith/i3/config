@@ -130,7 +130,7 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # toggle split orientation
-bindsym $mod+BackSpace split toggle
+bindsym $mod+q split toggle
 
 # split orientation
 bindsym $mod+s split h;exec notify-send "tile horizontally"
@@ -249,6 +249,22 @@ bindsym $mod+Shift+s exec systemctl suspend
 # shortcuts for common system configuration tasks
 bindsym $mod+c exec gnome-control-center
 
+bindsym $mod+BackSpace mode "$mode_system"
+set $mode_system (l)lock, (e)exit, (s)suspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+mode "$mode_system" {
+
+    bindsym l exec --no-startup-id gnome-screensaver-command --lock , mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
 # resize window (you can also use the mouse for that)
 mode "Resize Mode" {
         # These bindings trigger as soon as you enter the resize mode
@@ -278,6 +294,7 @@ mode "Resize Mode" {
         bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "Resize Mode"
+
 
 # Disable titlebar
 new_window pixel 1
