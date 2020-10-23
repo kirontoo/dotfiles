@@ -25,17 +25,9 @@ data.location=~/.task
 #include /usr/share/taskwarrior/dark-yellow-green.theme
 #include /usr/share/taskwarrior/dark-gray-256.theme
 #include /usr/share/taskwarrior/dark-gray-blue-256.theme
-include /usr/share/taskwarrior/solarized-dark-256.theme
+#include /usr/share/taskwarrior/solarized-dark-256.theme
 #include /usr/share/taskwarrior/solarized-light-256.theme
 #include /usr/share/taskwarrior/no-color.theme
-
-# Sync tasks using https://inthe.am/getting-started
-taskd.certificate=/home/phoenix/taskwarrior_cert/private.certificate.pem
-taskd.key=/home/phoenix/taskwarrior_cert/private.key.pem
-taskd.ca=/home/phoenix/taskwarrior_cert/ca.cert.pem
-taskd.server=taskwarrior.inthe.am:53589
-taskd.credentials=inthe_am/kirontoo/7ed192fd-5d05-4a04-a166-fa2caffa3804
-taskd.trust=ignore hostname
 
 # Custom reports
 report.todo.description=Todo

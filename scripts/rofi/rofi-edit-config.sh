@@ -18,7 +18,6 @@ i3
 polybar
 rofi
 scripts
-Xresources
 zsh
 " | rofi -dmenu -p "Select Config")
 
@@ -26,7 +25,7 @@ if [ $choice == 'bash' ]; then
       read_or_write '.bashrc'
 fi
 if [ $choice == 'i3' ]; then
-      read_or_write '.config/regolith/i3/config'
+      read_or_write '.config/i3/config'
 fi
 if [ $choice == 'polybar' ]; then
       read_or_write '.config/polybar/config'
@@ -35,16 +34,13 @@ if [ $choice == 'zsh' ]; then
       read_or_write '.zshrc'
 fi
 if [ $choice == 'compton' ]; then
-      read_or_write '.config/regolith/compton/config'
+      read_or_write '.config/compton/config'
 fi
 if [ $choice == 'rofi' ]; then
       read_or_write '.config/rofi/themes/embark.rasi'
 fi
 if [ $choice == 'conky' ]; then
       read_or_write '.config/conky/system-overview'
-fi
-if [ $choice == 'Xresources' ]; then
-      read_or_write '.Xresources-regolith'
 fi
 
 if [ $choice == 'scripts' ]; then
