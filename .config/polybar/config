@@ -131,11 +131,9 @@ font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
 font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
 font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
 
-; modules-left = date
-; modules-center = i3
 modules-left = i3 xwindow
-; modules-center = xwindow
 modules-right = spotify wireless-network volume-percent date time powermenu
+
 ; modules-right = wireless-network sep battery sep volume-percent sep date sep time sep powermenu
 
 separator = "  "
@@ -356,12 +354,10 @@ label-separator-padding = 0.8
 ; label-separator-foreground = ${self.label-unfocused-foreground}
 label-separator-foreground = ${colors.black-ba}
 
-label-mode = %mode%
+label-mode = %mode% 
 label-mode-padding = 2
-label-mode-foreground = ${colors.primary}
-label-mode-background = ${colors.background}
-; label-mode-foreground = ${colors.foreground}
-; label-mode-background = ${colors.background}
+label-mode-foreground = ${colors.background}
+label-mode-background = ${colors.green-n}
 
 ; Available tokens:
 ;   %name%
@@ -406,8 +402,8 @@ label-visible-padding = 1
 ; Default: %icon%  %name%
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
-label-urgent-foreground = ${colors.secondary}
-label-urgent-background = ${colors.background}
+label-urgent-foreground = ${colors.background}
+label-urgent-background = ${colors.secondary}
 label-urgent-padding = 1
 
 format-foreground = ${colors.foreground}
@@ -809,26 +805,20 @@ label = %title:0:80:...%
 
 label-foreground = ${colors.foreground}
 label-background = ${colors.background}
-; label-foreground = ${colors.foreground}
-; label-background = ${colors.primary}
 
 label-maxlen = 80
 
-format-prefix = ""
+format-prefix = "  "
 format-foreground = ${colors.cyan-n}
 format-background = ${colors.background}
-; format-foreground = ${colors.foreground}
-; format-background = ${colors.primary}
-
-format-padding = 2
-label-padding=2
+format-padding = 1
 
 ###############################################################################
 [module/github]
 type = internal/github
 
 ; Accessing an access token stored in file
-token = ${file:/home/pegasus/.config/github/access.token}
+token = ${file:$HOME/.config/github/access.token}
 
 ; Whether empty notifications should be displayed or not
 empty-notifications = true
@@ -894,6 +884,13 @@ click-left = task "$((`cat /tmp/tw_polybar_id`))" done
 [module/docker]
 type = custom/script
 exec = docker ps -q | wc -l
-interval = 1
-label =  %output%
+interval = 5
+label = %output%
+format = <label>
+format-prefix = "  " 
+format-prefix-foreground = ${colors.blue-b}
+format-prefix-background = ${colors.background}
+label-foreground = ${colors.foreground}
+label-background = ${colors.background}
+
 # vim:ft=dosini
