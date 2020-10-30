@@ -1,0 +1,5 @@
+configuration {
+	font: "Source Code Pro 12";
+	show-icons: false;
+	theme: "~/.config/rofi/simple-menu.rasi";
+}
