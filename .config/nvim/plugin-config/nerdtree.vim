@@ -21,11 +21,11 @@ let g:NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeQuitOnOpen = 1
-let g:NERDTreeWinPos = "right"
+let g:NERDTreeWinPos = "left"
 
 "~~~~~~~~~~ NERD TREE PLUGIN~~~~~~~~~
 noremap <leader>ft :NERDTreeToggle<CR>
-noremap <leader>tp :NERDTreeToggleVCS<CR>
+noremap <leader>tv :NERDTreeToggleVCS<CR>
 noremap <leader>tf :NERDTreeFocus<CR>
 noremap <leader>tr :NERDTreeRefreshRoot<CR>
 noremap <leader>tc :NERDTreeClose<CR>
