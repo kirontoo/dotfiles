@@ -13,6 +13,7 @@ if empty(glob( $PLUGVIM ))
 				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
 call plug#begin( $PLUGGEDPATH )
 
 " Plugin: Colorschemes
@@ -57,6 +58,8 @@ Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'stsewd/fzf-checkout.vim'
+Plug 'nvim-lua/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter'
 
 " Files and Projects
 Plug 'junegunn/fzf.vim'
@@ -70,8 +73,12 @@ Plug 'liuchengxu/vista.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 " Plug 'sheerun/vim-polyglot', { 'for': [ 'typescript', 'javascript', 'i3', 'html5', 'cpp', 'markdown', 'jsx' ] }
 
+" Telescope Dependencies
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+
 " Syntax
-Plug 'pangloss/vim-javascript'
+" Plug 'pangloss/vim-javascript'
 
 " Extras
 Plug 'ThePrimeagen/vim-be-good'

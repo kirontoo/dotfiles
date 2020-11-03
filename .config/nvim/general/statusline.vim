@@ -123,6 +123,7 @@ function! ActiveStatus()
 	endif
 
 	let statusline .= '%#SpecialKey#' . get(g:, 'coc_status', '') . ' '
+	" echo nvim_treesitter#statusline(90)
 
 	return statusline
 endfunction
