@@ -24,7 +24,7 @@ let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeWinPos = "left"
 
 "~~~~~~~~~~ NERD TREE PLUGIN~~~~~~~~~
-noremap <leader>ft :NERDTreeToggle<CR>
+noremap <leader>tt :NERDTreeToggle<CR>
 noremap <leader>tv :NERDTreeToggleVCS<CR>
 noremap <leader>tf :NERDTreeFocus<CR>
 noremap <leader>tr :NERDTreeRefreshRoot<CR>

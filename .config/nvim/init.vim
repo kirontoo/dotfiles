@@ -47,7 +47,7 @@ source $VIMPATH/plugin-config/goyo.vim
 source $VIMPATH/plugin-config/hexokinase.vim
 source $VIMPATH/plugin-config/incsearch.vim
 source $VIMPATH/plugin-config/nerdtree.vim
-source $VIMPATH/plugin-config/neoterm.vim
+" source $VIMPATH/plugin-config/neoterm.vim
 source $VIMPATH/plugin-config/omnisharp.vim
 source $VIMPATH/plugin-config/polyglot.vim
 source $VIMPATH/plugin-config/rooter.vim

@@ -8,6 +8,7 @@
 nnoremap <leader>vo :Vista<cr>|
 nnoremap <leader>vc :Vista!<cr>|
 nnoremap <leader>vt :Vista!!<cr>|
+nnoremap <leader>vf :Vista focus<cr>
 
 let g:vista_sidebar_width = 35
 let g:vista_close_on_jump = 0
