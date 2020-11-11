@@ -71,6 +71,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'liuchengxu/vista.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'vim-test/vim-test'
 " Plug 'sheerun/vim-polyglot', { 'for': [ 'typescript', 'javascript', 'i3', 'html5', 'cpp', 'markdown', 'jsx' ] }
 
 " Telescope Dependencies

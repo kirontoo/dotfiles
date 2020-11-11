@@ -6,3 +6,5 @@ require'nvim-treesitter.configs'.setup {
 	indent = { enable = true }
 }
 EOF
+
+set foldexpr=nvim_treesitter#foldexpr()

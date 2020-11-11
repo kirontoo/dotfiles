@@ -17,7 +17,7 @@ noremap <leader>hc :History: <CR>|                           "  Command history
 noremap <leader>h/ :History/ <CR>|                           "  Command history
 noremap <leader>Tc :Colors<CR>|                              "  Search colorschemes
 " nmap <leader>/b :BLines<CR>|                                 "  Swoop current buffer
-" nmap <leader>/ :Lines<CR>|                                   "  Swoop all open buffer
+nmap <leader>/ :Lines<CR>|                                   "  Swoop all open buffer
 
 " nnoremap <silent> <leader>. :Files <C-r>=expand("%:h")<CR>/<CR>
 nnoremap <silent> <leader>c  :Commits<CR>
