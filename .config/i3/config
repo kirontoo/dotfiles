@@ -5,7 +5,9 @@
 set $mod Mod4
 set $alt Mod1
 
-set $lockscreen $HOME/scripts/minimal-lock.sh
+# set $lockscreen $HOME/scripts/minimal-lock.sh
+set $lockscreen exec betterlockscreen -l dim -t "Get off my computer"
+set $suspendscreen exec betterlockscreen -s dim -t "Get off my computer"
 
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
@@ -41,7 +43,7 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # start a web browser
-bindsym $mod+Shift+Return exec google-chrome-stable
+bindsym $mod+Shift+Return exec brave
 
 # kill focused window
 bindsym $mod+x kill
@@ -54,6 +56,7 @@ bindsym $mod+z exec --no-startup-id morc_menu
 bindsym $mod+e exec --no-startup-id $HOME/scripts/rofi/rofi-edit-config.sh
 bindsym $mod+b exec --no-startup-id $HOME/scripts/rofi/rofi-surfraw.sh
 bindsym $mod+m exec --no-startup-id $HOME/scripts/rofi/rofi-sysmon.sh
+bindsym $mod+Shift+s exec --no-startup-id $HOME/scripts/rofi/rofi-run-services.sh
 
 
 ################################################################################################
@@ -71,6 +74,10 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+# bindsym XF86AudioLowerVolume exec $HOME/.config/polybar/scripts/pulseaudio-control.bash down
+# bindsym XF86AudioRaiseVolume exec $HOME/.config/polybar/scripts/pulseaudio-control.bash up
+
 
 ################################################################################################
 
@@ -94,6 +101,7 @@ bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 # bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+bindsym $mod+c exec xfce4-screenshooter
 
 focus_follows_mouse no
 
@@ -129,14 +137,13 @@ bindsym $mod+s split h;exec notify-send 'tile horizontally'
 bindsym $mod+v split v;exec notify-send 'tile vertically'
 bindsym $mod+q split toggle
 
-
 # toggle fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+s layout stacking
 # bindsym $mod+w layout tabbed
-bindsym $mod+t layout toggle splith splitv
+bindsym $mod+t layout toggle all
 
 # toggle tiling / floating
 bindsym $mod+Shift+f floating toggle
@@ -145,7 +152,7 @@ bindsym $mod+Shift+f floating toggle
 # bindsym $mod+Shift+s sticky toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+# bindsym $mod+a focus mode_toggle
 
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+n move scratchpad
@@ -158,7 +165,7 @@ bindsym $mod+n scratchpad show
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
-bindsym $alt+tab workspace back_and_forth
+bindsym $alt+Tab workspace back_and_forth
 bindsym $alt+Shift+Tab move container to workspace back_and_forth; workspace back_and_forth
 
 # Workspace names
@@ -217,10 +224,10 @@ bindsym $mod+Shift+0 move container to workspace $ws0; workspace $ws0
 # assign [class="Pale moon"] $ws2
 # assign [class="Skype"] $ws5
 assign [class="discord"] $ws4
-assign [class="spotify"] $ws5
-assign [class="Spotify"] $ws5
+assign [class="spotify|Spotify"] $ws5
 assign [class="Spotify Premium"] $ws5
 assign [class="google-chrome|Google-chrome"] $ws1
+assign [class="brave-browser|Brave-browser"] $ws1
 assign [class="Pcmanfm"] $ws8
 
 # Open specific applications in floating mode
@@ -269,7 +276,8 @@ bindsym $mod+BackSpace mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id $lockscreen, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    # bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym s exec --no-startup-id $suspendscreen, mode "default"
     bindsym u exec --no-startup-id i3exit switch_user, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
     bindsym h exec --no-startup-id i3exit hibernate, mode "default"
@@ -329,11 +337,17 @@ exec_always --no-startup-id fix_xcursor
 
 ################## CUSTOM AUTOSTART ####################
 
+# for clipboard
+exec_always --no-startup-id xfce4-clipman &
+
+# breaktimer
+# exec --no-startup-id breaktimer
+
 # for multiple monitors
 exec --no-startup-id $HOME/scripts/multi-monitors.sh
 
 exec --no-startup-id discord
-# exec --no-startup-id spotify
+exec --no-startup-id spotify
 
 # Start System stats on desktop
 exec_always --no-startup-id $HOME/.config/conky/launch.sh
@@ -382,25 +396,25 @@ set_from_resource $term_color15    color15
 # 	position bottom
 #
 # ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-# #	tray_output primary
+# 	tray_output primary
 # #	tray_output eDP1
 #
 # 	bindsym button4 nop
 # 	bindsym button5 nop
-# #   font xft:URWGothic-Book 11
+#   font xft:SpaceMono 11
 # 	strip_workspace_numbers yes
 #
 #     colors {
-#         background #222D31
+#         background #1e1c31
 #         statusline #F9FAF9
-#         separator  #454947
+#         separator  #a36acc
 #
 # #                      border  backgr. text
-#         focused_workspace  #F9FAF9 #16a085 #292F34
-#         active_workspace   #595B5B #353836 #FDF6E3
-#         inactive_workspace #595B5B #222D31 #EEE8D5
-#         binding_mode       #16a085 #2C2C2C #F9FAF9
-#         urgent_workspace   #16a085 #FDF6E3 #E5201D
+#         focused_workspace  #f02e6e #f02e6e #cbe3e7
+#         active_workspace   #1e1c31 #1e1c31 #cbe3e7
+#         inactive_workspace #1e1c31 #1e1c31 #2d2b40
+#         binding_mode       #62d196 #62d196 #1e1c31
+#         urgent_workspace   #f2b482 #f2b482 #1e1c31
 #     }
 # }
 #
@@ -408,9 +422,9 @@ set_from_resource $term_color15    color15
 # bindsym $mod+m bar mode toggle
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #1e1c31 #80FFF9 #62d196 #585273
-  client.focused_inactive #2F3D44 #1e1c31 #1ABC9C #1e1c31 #1e1c31
-  client.unfocused        #2F3D44 #1e1c31 #1ABC9C #1e1c31 #1e1c31
+  client.focused          #556064 #1e1c31 #80FFF9 #a1efd3 #585273
+  client.focused_inactive #2F3D44 #1e1c31 #1ABC9C #2D2B40 #2D2B40
+  client.unfocused        #2F3D44 #1e1c31 #1ABC9C #2D2B40 #2D2B40
   client.urgent           #CB4B16 #1e1c31 #1ABC9C #1e1c31 #f2b482
   client.placeholder      #000000 #1e1c31 #ffffff #1e1c31 #c25560
 
@@ -424,7 +438,7 @@ set_from_resource $term_color15    color15
 gaps inner 14
 # gaps outer 22
 gaps bottom 0
-gaps top 40
+# gaps top 40
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -436,13 +450,13 @@ gaps top 40
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-# smart_borders on
+# smart_borders no_gaps
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
-# set $mode_gaps Gaps: (o) outer, (i) inner
-# set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-# set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-# bindsym $mod+Shift+g mode "$mode_gaps"
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
 
 mode "$mode_gaps" {
         bindsym o      mode "$mode_gaps_outer"
