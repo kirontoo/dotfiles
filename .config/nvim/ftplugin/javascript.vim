@@ -1,1 +1,1 @@
-nnoremap ,try :-1read $VIMPATH/snippets/js/try-catch.js<CR>ji
+nnoremap ,try :read $VIMPATH/snippets/js/try-catch.js<CR>=i{<c-o>f{ci{
