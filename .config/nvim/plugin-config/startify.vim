@@ -9,6 +9,7 @@
 nnoremap <leader>ss :SSave <CR>
 nnoremap <leader>sc :SClose <CR>
 nnoremap <leader>sl :SLoad <space>
+nnoremap <leader>sd :SDelete <space>
 
 
 " Startify Config
@@ -16,9 +17,6 @@ let g:startify_session_peristence=1
 let g:startify_session_number=5
 let g:startify_change_to_vcs_root=1
 let g:startify_files_number=5
-
-let g:startify_custom_header =
-			\ 'startify#center(startify#fortune#cowsay())'
 
 let g:startify_custom_footer =
 			\ ['', "          Kironto", '']
@@ -51,14 +49,23 @@ let g:startify_commands = [
 "  \ '',
 "  \ '',
 "  \]
-
-let g:startify_custom_header=['     _           _                      _             ',
-                             \'             ▕                                 ',
-                             \'  ▕ ███       ▕│█     ___   ___                 ',
-                             \'  ▕││███     ▕│███▕│         █   ██      ',
-                             \'  ▕││  ███   ▕│███▕│▕│ ▁ ▕│    ▕│██          ',
-                             \'  ▕││  ▕│███ ▕│███▕│▕│   ▕│    ▕│██  ◢◣  ◢  ',
-                             \'  ▕││  ▕│  ███│███▕│  ▁▁  ▁   ██   ▜█ ██  ',
-                             \'     ▕│    ████      ‾‾    ‾                 ',
-                             \'     ▕│                                        ',
+"
+" let g:startify_custom_header=['     _           _                      _             ',
+"                              \'             ▕                                 ',
+"                              \'  ▕ ███       ▕│█     ___   ___                 ',
+"                              \'  ▕││███     ▕│███▕│         █   ██      ',
+"                              \'  ▕││  ███   ▕│███▕│▕│ ▁ ▕│    ▕│██          ',
+"                              \'  ▕││  ▕│███ ▕│███▕│▕│   ▕│    ▕│██  ◢◣  ◢  ',
+"                              \'  ▕││  ▕│  ███│███▕│  ▁▁  ▁   ██   ▜█ ██  ',
+"                              \'     ▕│    ████      ‾‾    ‾                 ',
+"                              \'     ▕│                                        ',
                              \'                 ‾                      ‾             ']
+
+let g:startify_custom_header=startify#center([
+			\'    ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗',
+			\'    ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║',
+			\'    ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║',
+			\'    ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║',
+			\'    ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║',
+			\'    ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝'])
+
