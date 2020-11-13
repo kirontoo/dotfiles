@@ -1,4 +1,5 @@
 " Autoinstall package manager
+
 " Plugin Calls
 if has("win32") || has("win16")
 	let $PLUGVIM = $HOME . '\AppData\Local\nvim\autoload\plug.vim'
@@ -34,7 +35,6 @@ Plug 'zefei/cake16'
 
 " UI
 Plug 'ryanoasis/vim-devicons'
-" Plug 'mg979/vim-xtabline'
 Plug 'mhinz/vim-signify'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'thaerkh/vim-indentguides'
@@ -44,7 +44,6 @@ Plug 'ap/vim-css-color'
 Plug 'airblade/vim-rooter'
 Plug 'alvan/vim-closetag'
 Plug 'brooth/far.vim'
-" Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
 Plug 'haya14busa/incsearch.vim'
 Plug 'jiangmiao/auto-pairs'
@@ -79,7 +78,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 
 " Syntax
-" Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
 
 " Extras
 Plug 'ThePrimeagen/vim-be-good'
