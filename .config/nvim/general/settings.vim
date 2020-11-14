@@ -88,11 +88,11 @@ set guifont=iosevka:h11
 
 set cursorline                                                                                     "  Show line highlight
 " underline cursorline instead of highlight
-augroup CustomCursorLine
-	au!
-	au ColorScheme * :hi clear CursorLine
-	au ColorScheme * :hi! CursorLine gui=underline cterm=underline
-augroup END
+" augroup CustomCursorLine
+" 	au!
+" 	au ColorScheme * :hi clear CursorLine
+" 	au ColorScheme * :hi! CursorLine gui=underline cterm=underline
+" augroup END
 
 
 set showcmd                                                                                        "  show command
