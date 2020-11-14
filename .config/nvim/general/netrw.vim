@@ -14,3 +14,5 @@ let g:netrw_list_hide=netrw_gitignore#Hide()
 
 " For relative line numbers
 let g:netrw_bufsettings="noma nomod nonu nobl nowrap ro rnu"
+
+nnoremap <leader>nt :Lexplore<CR>
