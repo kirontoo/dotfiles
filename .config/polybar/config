@@ -91,14 +91,15 @@ white-b = #CBE3E7
 ;monitor = ${env:MONITOR}
 ;monitor-fallback = HDMI1
 monitor-strict = false
-override-redirect = true
+override-redirect = false
 wm-restack = i3
+; dock = false
 bottom = false
-fixed-center = true
-width = 96%
+; fixed-center = true
+; width = 96%
 height = 34
-offset-x = 2%
-offset-y = 10
+; offset-x = 45
+; offset-y = 10
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -132,7 +133,7 @@ font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
 font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
 
 modules-left = i3 xwindow
-modules-right = spotify wireless-network volume-percent date time powermenu
+modules-right = docker spotify wireless-network pulseaudio-control date time powermenu
 
 ; modules-right = wireless-network sep battery sep volume-percent sep date sep time sep powermenu
 
@@ -144,8 +145,6 @@ separator = "  "
 ; tray-detached = false
 ; tray-maxsize = 20
 ; tray-background = ${colors.background}
-;tray-offset-x = 0
-;tray-offset-y = 0
 ; tray-padding = 5
 ; tray-scale = 0.9
 
@@ -176,104 +175,6 @@ double-click-right =
 cursor-click =
 cursor-scroll =
 
-################################################################################
-################################################################################
-############                         bottombar                      ############
-################################################################################
-################################################################################
-
-
-[bar/bottombar]
-;https://github.com/jaagr/polybar/wiki/Configuration
-
-;monitor = ${env:MONITOR}
-;monitor-fallback = HDMI1
-monitor-strict = false
-override-redirect = true
-wm-restack = i3
-bottom = true
-fixed-center = true
-width = 80%
-height = 30
-offset-x = 10%
-offset-y = 10
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-; Background gradient (vertical steps)
-;   background-[0-9]+ = #aarrggbb
-;background-0 =
-
-radius = 0.0
-line-size = 2
-line-color = #000000
-spacing = 1
-
-border-size = 1
-;border-left-size = 25
-;border-right-size = 25
-; border-top-size = 0
-; border-bottom-size = 3
-border-color = ${colors.primary}
-
-padding-left = 2
-padding-right = 2
-
-module-margin-left = 0
-module-margin-right = 2
-
-;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "scientifica:style=Regular:weight=bold:pixelsize=14;2"
-font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
-font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
-font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
-
-; modules-left = date
-; modules-center = i3
-modules-left = date
-modules-center = spotify
-modules-right = wireless-network volume-percent battery
-
-; separator = ""
-
-;dim-value = 1.0
-
-tray-position = right
-tray-detached = false
-tray-maxsize = 20
-tray-background = ${colors.background}
-;tray-offset-x = 0
-;tray-offset-y = 0
-tray-padding = 4
-tray-scale = 1.0
-
-#i3: Make the bar appear below windows
-;wm-restack = i3
-;override-redirect = true
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = true
-
-; Fallback click handlers that will be called if
-; there's no matching module handler found.
-click-left =
-click-middle =
-click-right =
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
-double-click-left =
-double-click-middle =
-double-click-right =
-
-; Requires polybar to be built with xcursor support (xcb-util-cursor)
-; Possible values are:
-; - default   : The default pointer as before, can also be an empty string (default)
-; - pointer   : Typically in the form of a hand
-; - ns-resize : Up and down arrows, can be used to indicate scrolling
-cursor-click =
-cursor-scroll =
 ################################################################################
 ################################################################################
 ############                       MODULE I3                        ############
@@ -768,12 +669,14 @@ format-connected = <label-connected>
 ; format-connected-prefix = "  "
 ; format-connected-prefix-foreground = ${colors.foreground}
 ; format-connected-prefix-background = ${colors.background}
+label-connected = "%{A1:networkmanager_dmenu &:} %downspeed%%{A}"
 
-label-connected = " %downspeed%"
+label-disconnected = "%{A1:networkmanager_dmenu &:} not connected %{A}"
+; label-connected = " %downspeed%"
 label-connected-foreground = ${colors.magenta-n}
 label-connected-background = ${colors.background}
 
-label-disconnected = " no wifi "
+; label-disconnected = " no wifi "
 label-disconnected-foreground = ${colors.background}
 label-disconnected-background = ${colors.red-n}
 
@@ -791,6 +694,8 @@ ramp-signal-5 = ▆
 ramp-signal-6 = ▇
 ramp-signal-7 = █
 
+; requirement: networkmanager-dmenu
+click-left = networkmanager_dmenu &
 
 ################################################################################
 
@@ -883,14 +788,32 @@ click-left = task "$((`cat /tmp/tw_polybar_id`))" done
 
 [module/docker]
 type = custom/script
-exec = docker ps -q | wc -l
-interval = 5
-label = %output%
-format = <label>
-format-prefix = "  " 
-format-prefix-foreground = ${colors.blue-b}
-format-prefix-background = ${colors.background}
-label-foreground = ${colors.foreground}
+interal = 5
+exec = $HOME/.config/polybar/scripts/isrunning-docker.sh
+interval = 10
+tail = true
+label-foreground = ${colors.blue-b}
 label-background = ${colors.background}
 
+###############################################################################
+
+# https://github.com/marioortizmanero/polybar-pulseaudio-control
+[module/pulseaudio-control]
+type = custom/script
+tail = true
+format-underline = ${colors.blue-n}
+; label-padding = 2
+label-foreground = ${colors.blue-n}
+label-background = ${colors.background}
+
+# Icons mixed from Font Awesome 5 and Material Icons
+exec = ~/.config/polybar/scripts/pulseaudio-control.bash --volume-max 100 --icons-volume " , " --icon-muted " " --sink-nickname "alsa_output.usb-Razer_Razer_Kraken_7.1_V2_00000000-00.analog-stereo:Headphones" --sink-blacklist "alsa_output.pci-0000_01_00.1.hdmi-stereo" --sink-nicknames-from "device.description" --sink-nickname "alsa_output.pci-0000_00_1f.3.analog-stereo:Stereo" listen
+click-right = exec pavucontrol &
+click-left = ~/.config/polybar/scripts/pulseaudio-control.bash togmute
+click-middle = ~/.config/polybar/scripts/pulseaudio-control.bash next-sink
+scroll-up = ~/.config/polybar/scripts/pulseaudio-control.bash up
+scroll-down = ~/.config/polybar/scripts/pulseaudio-control.bash down
+
+
+###############################################################################
 # vim:ft=dosini
