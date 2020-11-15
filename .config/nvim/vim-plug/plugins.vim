@@ -59,6 +59,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'nvim-lua/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'vimwiki/vimwiki'
+Plug 'miyakogi/conoline.vim'
 
 " Files and Projects
 Plug 'junegunn/fzf.vim'

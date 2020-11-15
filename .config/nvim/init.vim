@@ -35,6 +35,7 @@ source $VIMPATH/themes/themes.vim
 
 " plugin configs
 source $VIMPATH/plugin-config/coc.vim
+source $VIMPATH/plugin-config/conoline.vim
 source $VIMPATH/plugin-config/closetag.vim
 source $VIMPATH/plugin-config/devicons.vim
 source $VIMPATH/plugin-config/fugitive.vim
@@ -48,10 +49,12 @@ source $VIMPATH/plugin-config/omnisharp.vim
 source $VIMPATH/plugin-config/polyglot.vim
 source $VIMPATH/plugin-config/rooter.vim
 source $VIMPATH/plugin-config/startify.vim
+source $VIMPATH/plugin-config/splitjoin.vim
 source $VIMPATH/plugin-config/tabular.vim
 source $VIMPATH/plugin-config/vimplug.vim
 source $VIMPATH/plugin-config/vim-test.vim
 source $VIMPATH/plugin-config/vista.vim
+source $VIMPATH/plugin-config/vimwiki.vim
 
 source $VIMPATH/plugin-config/treesitter.lua
 source $VIMPATH/plugin-config/telescope.lua
