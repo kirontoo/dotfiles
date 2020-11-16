@@ -2,9 +2,9 @@ const { Model } = require( 'objection' );
 const dbTableNames = require( '../../constants/dbTableNames' );
 const nameSchema = require( './name.schema.json' );
 
-class Table extends Model {
+class ModelName extends Model {
   static get tableName() {
-    return dbTableNames.table;
+    return dbTableNames.ModelName;
   }
 
 	static get jsonSchema() {
@@ -12,4 +12,4 @@ class Table extends Model {
 	}
 }
 
-module.exports = Table;
+module.exports = ModelName;

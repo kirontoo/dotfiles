@@ -1,9 +1,10 @@
 router.post( '/', async ( req, res, next ) => {
 	try {
-		const table = await Tablename
+		const tables = await Tablename
 			.query()
 			.insert( req.body );
-		return res.json( table );
+
+		return res.json( tables );
 	} catch( error ) {
 		next( error );
 	}
