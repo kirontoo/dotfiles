@@ -101,7 +101,7 @@ set incsearch                                                                   
 set ignorecase                                                                                     "  Ignore case
 
 " OS CLIPBOARD
-set clipboard+=unnamed
+set clipboard+=unnamedplus
 
 " Disable automatic comment on newline
 set formatoptions-=cro

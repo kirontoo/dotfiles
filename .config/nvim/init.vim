@@ -35,7 +35,6 @@ source $VIMPATH/themes/themes.vim
 
 " plugin configs
 source $VIMPATH/plugin-config/coc.vim
-source $VIMPATH/plugin-config/conoline.vim
 source $VIMPATH/plugin-config/closetag.vim
 source $VIMPATH/plugin-config/devicons.vim
 source $VIMPATH/plugin-config/fugitive.vim

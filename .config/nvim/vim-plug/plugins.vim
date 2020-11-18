@@ -37,7 +37,7 @@ Plug 'zefei/cake16'
 Plug 'ryanoasis/vim-devicons'
 Plug 'mhinz/vim-signify'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'thaerkh/vim-indentguides'
+" Plug 'thaerkh/vim-indentguides'
 Plug 'ap/vim-css-color'
 
 " Utility
@@ -50,7 +50,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'rbgrouleff/bclose.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tomtom/tcomment_vim'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
@@ -60,7 +59,6 @@ Plug 'stsewd/fzf-checkout.vim'
 Plug 'nvim-lua/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'vimwiki/vimwiki'
-Plug 'miyakogi/conoline.vim'
 
 " Files and Projects
 Plug 'junegunn/fzf.vim'
