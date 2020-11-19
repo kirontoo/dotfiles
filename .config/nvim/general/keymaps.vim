@@ -30,10 +30,6 @@ nnoremap <leader>m- :m-|
 vnoremap <leader>m+ :m+|
 vnoremap <leader>m- :m-|
 
-noremap <CR> o<Esc>|
-" nnoremap <silent> [<space> :pu! _<cr>:']+1<cr>							  "  add newline above current line
-" nnoremap <silent> ]<space> :pu _<cr>:'[-1<cr>									"  add newline below line current
-
 "~~~~~~~~~~ DUPLICATE LINES ~~~~~~~~~
 vnoremap <A-S-Up> :t -1<CR>
 vnoremap <A-S-Down> :t.<CR>
