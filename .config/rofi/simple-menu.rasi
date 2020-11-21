@@ -85,13 +85,3 @@ message {
   background-color: @background;
 	text-color: @yellow;
 }
-
-button {
-	spacing: 0;
-	text-color: @text;
-	background-color: @green2;
-}
-
-button selected {
-  background-color: @cyan2;
-}

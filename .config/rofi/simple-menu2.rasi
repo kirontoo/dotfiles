@@ -106,15 +106,9 @@ inputbar {
 
 case-indicator,
 entry,
-prompt,
-button {
+prompt {
     spacing:    0;
     text-color: @cyan2;
-}
-
-button.selected {
-    background-color: @background;
-    text-color:       @cyan;
 }
 
 textbox-prompt-sep {
