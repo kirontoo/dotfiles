@@ -22,7 +22,7 @@ nmap <leader>/ :Lines<CR>|                                   "  Swoop all open b
 " nnoremap <silent> <leader>. :Files <C-r>=expand("%:h")<CR>/<CR>
 nnoremap <silent> <leader>c  :Commits<CR>
 nnoremap <silent> <leader>bc :BCommits<CR>
-nnoremap <silent> <leader>m :Marks<CR>
+nnoremap <silent> <leader>mk :Marks<CR>
 
 if filereadable('src/index.tsx')
   " This looks like a React app, add React specific mappings here.
