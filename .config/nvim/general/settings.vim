@@ -68,7 +68,7 @@ set nowrap linebreak
 set textwidth=0
 set wrapmargin=0
 
-set colorcolumn=80,120
+" set colorcolumn=80,120
 " let &colorcolumn="80,".join(range(120,256),",")
 
 set nolist                                                                                         "  show trailing whitespaces
@@ -129,6 +129,9 @@ let csharp_fold=1                                                               
 let sh_fold_enabled=1                                                                              "  sh
 let vimsyn_folding='af'                                                                            "  Vim script
 
+" python3 path
+let g:python3_host_prog = '/usr/bin/python3'
+
 "~~~~~~~ AUTOMACTIC SETTINGS ~~~~~~~~
 " automatically remove all trailing whitespace
 autocmd FileType cs,js,css,jsx,ts,tsx,vim,c autocmd BufWritePre <buffer> %s/\s\+$//e
@@ -149,3 +152,25 @@ match ExtraWhitespace /\s\+$/
 	autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 	autocmd BufWinLeave * call clearmatches()
 augroup END
+
+" Add all TODO items to the quickfix list relative to where you opened Vim.
+function! s:todo() abort
+  let entries = []
+  for cmd in ['git grep -niIw -e TODO -e FIXME 2> /dev/null',
+            \ 'grep -rniIw -e TODO -e FIXME . 2> /dev/null']
+    let lines = split(system(cmd), '\n')
+    if v:shell_error != 0 | continue | endif
+    for line in lines
+      let [fname, lno, text] = matchlist(line, '^\([^:]*\):\([^:]*\):\(.*\)')[1:3]
+      call add(entries, { 'filename': fname, 'lnum': lno, 'text': text })
+    endfor
+    break
+  endfor
+
+  if !empty(entries)
+    call setqflist(entries)
+    copen
+  endif
+endfunction
+
+command! Todo call s:todo()
