@@ -43,6 +43,8 @@ source $VIMPATH/plugin-config/gitgutter.vim
 source $VIMPATH/plugin-config/goyo.vim
 source $VIMPATH/plugin-config/hexokinase.vim
 source $VIMPATH/plugin-config/incsearch.vim
+source $VIMPATH/plugin-config/maximize.vim
+source $VIMPATH/plugin-config/nnn.vim
 source $VIMPATH/plugin-config/nerdtree.vim
 source $VIMPATH/plugin-config/omnisharp.vim
 source $VIMPATH/plugin-config/polyglot.vim
@@ -53,6 +55,7 @@ source $VIMPATH/plugin-config/tabular.vim
 source $VIMPATH/plugin-config/vimplug.vim
 source $VIMPATH/plugin-config/vim-test.vim
 source $VIMPATH/plugin-config/vista.vim
+source $VIMPATH/plugin-config/vimspector.vim
 source $VIMPATH/plugin-config/vimwiki.vim
 
 source $VIMPATH/plugin-config/treesitter.lua

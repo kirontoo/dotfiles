@@ -56,6 +56,7 @@ Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'stsewd/fzf-checkout.vim'
+Plug 'mcchrish/nnn.vim'
 Plug 'nvim-lua/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'vimwiki/vimwiki'
@@ -72,6 +73,10 @@ Plug 'liuchengxu/vista.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'vim-test/vim-test'
 " Plug 'sheerun/vim-polyglot', { 'for': [ 'typescript', 'javascript', 'i3', 'html5', 'cpp', 'markdown', 'jsx' ] }
+
+" Debugger Plugins
+Plug 'puremourning/vimspector'
+Plug 'szw/vim-maximizer'
 
 " Telescope Dependencies
 Plug 'nvim-lua/popup.nvim'
