@@ -26,6 +26,7 @@ My personal dotfiles
 * *betterlockscreen
 * neovim-nightly
 * sxiv and viu ( terminal image viewer )
+* jq ( for i3-swap-workspace.sh )
 
 ## Programs I Use
 
