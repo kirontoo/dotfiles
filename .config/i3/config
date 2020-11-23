@@ -64,6 +64,9 @@ bindsym $mod+m exec --no-startup-id $HOME/scripts/rofi/rofi-sysmon.sh
 bindsym $mod+Shift+s exec --no-startup-id $HOME/scripts/rofi/rofi-run-services.sh
 bindsym $mod+Ctrl+e exec --no-startup-id $HOME/scripts/rofi/rofi-emoji.sh
 
+# swap workspaces between monitors
+bindsym $mod+Shift+w $HOME/scripts/i3-swap-workspace.sh
+
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
@@ -94,7 +97,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # Start Applications
 bindsym $mod+Ctrl+b exec i3-sensible-terminal -e 'bmenu'
 bindsym $mod+F2 exec brave
-bindsym $mod+F3 exec nnn
+bindsym $mod+F3 exec i3-sensible-terminal -e nnn
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F5 exec i3-sensible-terminal -e 'mocp'
 # bindsym $mod+t exec --no-startup-id pkill picom
@@ -494,4 +497,13 @@ mode "$mode_gaps_outer" {
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
+}
+
+mode "$mode_workspace" { 
+				bindsym Up move workspace to output up
+				bindsym Down move workspace to output down
+				bindsym Left move workspace to output left
+				bindsym Right move workspace to output right
+
+				bindsym Escape mode "default"
 }
