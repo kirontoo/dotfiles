@@ -43,31 +43,12 @@ if !has( "win32" )
 endif
 
 let $FZF_DEFAULT_OPTS=' --color=dark --color=fg:15,bg:-1,hl:1,fg+:#ffffff,bg+:0,hl+:1 --color=info:0,prompt:0,pointer:12,marker:4,spinner:11,header:-1 --layout=reverse  --margin=1,4'
-" let g:fzf_layout = { 'window': 'call FloatingFZF()' }
 
 let g:fzf_commits_log_options = '--graph --color=always
   \ --format="%C(yellow)%h%C(red)%d%C(reset)
   \ - %C(bold green)(%ar)%C(reset) %s %C(blue)<%an>%C(reset)"'
 
-
-let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
-
-function! FloatingFZF()
-	let buf = nvim_create_buf(v:false, v:true)
-	call setbufvar(buf, '&signcolumn', 'no')
-	let height = float2nr(22)
-	let width = float2nr(110)
-	let horizontal = float2nr((&columns - width) / 2)
-	let vertical = float2nr((&lines - height) / 2)
-	let opts = {
-				\ 'relative': 'editor',
-				\ 'row': vertical,
-				\ 'col': horizontal,
-				\ 'width': width,
-				\ 'height': height,
-				\ }
-	call nvim_open_win(buf, v:true, opts)
-endfunction
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.5, 'height': 0.5, 'yoffset':0.5, 'xoffset': 0.5, 'border': 'sharp' } }
 
 let g:fzf_colors =
 			\ { 'fg':      ['fg', 'Normal'],
@@ -77,7 +58,7 @@ let g:fzf_colors =
 			\ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
 			\ 'hl+':     ['fg', 'Statement'],
 			\ 'info':    ['fg', 'PreProc'],
-			\ 'border':  ['fg', 'Ignore'],
+			\ 'border':  ['fg', 'Error'],
 			\ 'prompt':  ['fg', 'Conditional'],
 			\ 'pointer': ['fg', 'Exception'],
 			\ 'marker':  ['fg', 'Keyword'],
