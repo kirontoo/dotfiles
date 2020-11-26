@@ -58,7 +58,7 @@ source $VIMPATH/plugin-config/vista.vim
 source $VIMPATH/plugin-config/vimspector.vim
 source $VIMPATH/plugin-config/vimwiki.vim
 
-source $VIMPATH/plugin-config/treesitter.lua
-source $VIMPATH/plugin-config/telescope.lua
+source $VIMPATH/plugin-config/treesitter.vim
+source $VIMPATH/plugin-config/telescope.vim
 
 endif

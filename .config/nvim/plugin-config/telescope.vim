@@ -9,10 +9,10 @@ require('telescope').setup ({
 
 EOF
 
-nnoremap <leader>hc :lua require('telescope.builtin').command_history( require('telescope.themes').get_dropdown({ winblend=10, border=true, previewer=false, shorten_path=false }))<CR><CR>
+nnoremap <leader>hc :lua require('telescope.builtin').command_history( require('telescope.themes').get_dropdown({ winblend=10, border=true, previewer=false, shorten_path=false }))<CR>
 nnoremap <leader>gf :lua require'telescope.builtin'.git_files()<CR>
 nnoremap <leader>gr :lua require('telescope.builtin').treesitter()<CR>
-nnoremap <leader>/b :lua require('telescope.builtin').current_buffer_fuzzy_find( require('telescope.themes').get_dropdown({ winblend=10, border=true, previewer=false, shorten_path=false }))<CR><CR>
+nnoremap <leader>/b :lua require('telescope.builtin').current_buffer_fuzzy_find( require('telescope.themes').get_dropdown({ winblend=10, border=true, previewer=false, shorten_path=false }))<CR>
 nnoremap <leader>, :lua require('telescope.builtin').buffers( require('telescope.themes').get_dropdown({ winblend=10, border=true, previewer=false, shorten_path=false }))<CR>
-nnoremap <leader>. :lua require('telescope.builtin').find_files( require('telescope.themes').get_dropdown({ cwd=vim.fn.expand("%:h"), winblend=10, border=true, previewer=false, shorten_path=false }))<CR><CR>
+nnoremap <leader>. :lua require('telescope.builtin').find_files( require('telescope.themes').get_dropdown({ cwd=vim.fn.expand("%:h"), winblend=10, border=true, previewer=false, shorten_path=false }))<CR>
 nnoremap <leader>ht :lua require('telescope.builtin').help_tags()<CR>
