@@ -86,6 +86,12 @@ noremap <leader>ws :split<CR>|                                "  split window ve
 noremap <leader>wvr :vert sview <C-Z><CR>|                    "  split vertically in read only mode
 noremap <leader>wd :close<CR>|                                "  close a window
 noremap <leader>wo :only<CR>|                                 "  keep only current window open
+noremap <leader>wh :hide<CR>|																	"  hide the current window
+
+noremap <leader>hh <C-w>h:hide<CR>|														" hide the left window
+noremap <leader>hj <C-w>j:hide<CR>|														" hide the bottom window
+noremap <leader>hk <C-w>k:hide<CR>|														" hide the top window
+noremap <leader>hl <C-w>l:hide<CR>|														" hide the right window
 
 noremap <leader>wr :vs<bar>:b#<CR>                            " restore previous closed buffer in new window
 
@@ -110,6 +116,7 @@ noremap <leader>br :e<CR>|                                    "  reload buffer
 noremap <leader>bp :bp<CR>|                                   "  previous buffer
 noremap <leader>bn :bn<CR>|                                   "  next buffer
 noremap <leader>bv :vsp \| b|                                 "  vsplit and open buffer from number
+noremap <leader>bw :b#|                                "  open previously opened buffer
 " nnoremap <leader>. :ls <CR>:b|                                "  open buffer list and change buffers
 nnoremap <leader>. :b <c-d>|																	" change buffer
 noremap <Tab> :bn<CR>
