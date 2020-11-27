@@ -2,4 +2,6 @@ configuration {
 	font: "Source Code Pro 12";
 	show-icons: false;
 	theme: "~/.config/rofi/simple-menu.rasi";
+	lines: 12;
+	scroll-method: 1;
 }

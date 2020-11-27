@@ -4,8 +4,8 @@ window {
   transparency: "real";
   background-color: @background;
   fullscreen: false;
-	height: 30%;
-	width: 20%;
+	// height: 30%;
+	// width: 20%;
 	border: 4px;
 	border-color: @black4;
 }
@@ -65,8 +65,8 @@ element {
 }
 
 element selected {
-  /* background-color: @selection-bg; */
-  text-color: @green;
+   background-color: @selection-bg; 
+  text-color: @selection-fg;
 	text-style: bold;
 }
 
