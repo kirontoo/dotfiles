@@ -18,7 +18,7 @@ restart" | rofi -dmenu -p "command" )
 	fi
 }
 
-service=$(systemctl list-unit-files --no-pager --type=service --no-legend | awk '{print $1;}' | rofi -dmenu -p "services")
+service=$(systemctl list-unit-files --no-pager --type=service --no-legend | awk '{print $1;}' | rofi -width 15 -dmenu -p "Services")
 
 # start / stop / restart service
 if [ $service ]; then

@@ -4,7 +4,7 @@ read_or_write() {
   read=$(echo "no
 yes" | rofi -dmenu -p "Read Only?")
 
-  if [ $read == 'no' ]; then
+  if [ "$read" == 'no' ]; then
     exec kitty -e nvim $HOME/$1
   else
     exec kitty -e nvim -R $HOME/$1
@@ -19,42 +19,42 @@ polybar
 rofi
 scripts
 zsh
-" | rofi -dmenu -p "Select Config")
+" | rofi -dmenu -width 15 -lines 8 -p "Edit Config")
 
-if [ $choice == 'bash' ]; then
+if [ "$choice" == 'bash' ]; then
       read_or_write '.bashrc'
 fi
-if [ $choice == 'i3' ]; then
+if [ "$choice" == 'i3' ]; then
       read_or_write '.config/i3/config'
 fi
-if [ $choice == 'polybar' ]; then
+if [ "$choice" == 'polybar' ]; then
       read_or_write '.config/polybar/config'
 fi
-if [ $choice == 'zsh' ]; then
+if [ "$choice" == 'zsh' ]; then
       read_or_write '.zshrc'
 fi
-if [ $choice == 'compton' ]; then
+if [ "$choice" == 'compton' ]; then
       read_or_write '.config/compton/config'
 fi
-if [ $choice == 'rofi' ]; then
+if [ "$choice" == 'rofi' ]; then
       read_or_write '.config/rofi/themes/embark.rasi'
 fi
-if [ $choice == 'conky' ]; then
+if [ "$choice" == 'conky' ]; then
       read_or_write '.config/conky/system-overview'
 fi
 
-if [ $choice == 'scripts' ]; then
+if [ "$choice" == 'scripts' ]; then
     file=$(echo "edit-config
 sysmon
 surfraw" | rofi -dmenu -p "Select Script")
 
-    if [ $file == 'edit-config' ]; then
+    if [ "$file" == 'edit-config' ]; then
       read_or_write '.config/scripts/rofi/rofi-edit-config.sh'
     fi
-    if [ $file == 'sysmon' ]; then
+    if [ "$file" == 'sysmon' ]; then
       read_or_write '.config/scripts/rofi/rofi-sysmon.sh'
     fi
-    if [ $file == 'surfraw' ]; then
+    if [ "$file" == 'surfraw' ]; then
       read_or_write '.config/scripts/rofi/rofi-surfraw.sh'
     fi
 fi

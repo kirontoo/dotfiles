@@ -1,22 +1,22 @@
 #!/bin/bash
 
-
 choice=$(echo "bashtop
 gtop
 gotop
 htop
-iftop" | rofi -dmenu -p "System Monitor")
-	if [ $choice == 'htop' ]; then
-        exec kitty -e htop
+iftop" | rofi -dmenu -p "System Monitor" -lines 5)
+	if [ "$choice" == 'htop' ]; then
+        kitty -e htop
 	fi
-	if [ $choice == 'gtop' ]; then
-        exec kitty -e gtop
+	if [ "$choice" == 'gtop' ]; then
+        kitty -e gtop
 	fi
-	if [ $choice == 'gotop' ]; then
-        exec kitty -e gotop 
+	if [ "$choice" == 'gotop' ]; then
+        kitty -e gotop 
 	fi
-	if [ $choice == 'iftop' ]; then
-        exec kitty -e iftop
+	if [ "$choice" == 'iftop' ]; then
+        kitty -e iftop
 	fi
-	if [ $choice == 'bashtop' ]; then
-				exec kitty -e bashtop
+	if [ "$choice" == 'bashtop' ]; then
+				kitty -e bashtop
+	fi
