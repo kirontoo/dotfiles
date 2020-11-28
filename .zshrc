@@ -15,19 +15,35 @@ ZSH_THEME="spaceship"
 SPACESHIP_CHAR_SYMBOL=❯
 SPACESHIP_CHAR_SUFFIX=" "
 
+################################################
+#     _    _ _           
+#    / \  | (_) __ _ ___ 
+#   / _ \ | | |/ _` / __|
+#  / ___ \| | | (_| \__ \
+# /_/   \_\_|_|\__,_|___/
+                       
 alias dev="cd ~/Documents/dev"
 alias dotfiles="cd ~/Documents/dev/dotfiles"
-alias db="mongod --dbpath /home/griffin/mongodb-data"
-alias db_end="sudo mongod --dbpath /home/griffin/mongodb-data --shutdown"
 alias lg="lazygit"
 alias config="cd ~/.config/regolith"
 alias ide="~/scripts/ide.sh"
 
-# Tmux aliases
+# NNN
+alias nnn="nnn -R"
+
+# Tmux 
 alias t="tmux"
 alias ta="t a -t"
 alias tls="t ls"
 alias tn="t new -t"
+
+# docker
+alias  dockup="sudo docker-compose up -d"
+alias  dockdown="sudo docker-compose down"
+
+# pomodoro
+alias pomostart="sleep 1500 && zenity --warning --text='Time to take a break!'"
+alias pomobreak="sleep 300 && zenity --warning --text'Break Time over!'"
 
 # Close google chrome
 alias killg="wmctrl -c chrome"
@@ -36,6 +52,14 @@ alias killd="pkill discord"
 # source files
 alias srcz="source $HOME/.zshrc"
 alias srct="source $HOME/.tmux.conf"
+
+alias cp='cp -i'    # confirm before overwriting existing files
+alias mv='mv -i'
+
+# generate ASCII art from text
+alias ascii='figlet'
+
+################################################
 
 ########## filter history completion ###########
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
@@ -49,12 +73,8 @@ bindkey '^[[B'  down-line-or-beginning-search  # Arrow down
 bindkey '^[OB'  down-line-or-beginning-search
 ################################################
 
-################ Commands ######################
-alias cp='cp -i'    # confirm before overwriting existing files
-alias mv='mv -i'
-
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -83,8 +103,18 @@ source $ZSH/oh-my-zsh.sh
 
 export TERM=xterm-256color
 
-# neofetch
+################################################
+#  _ __  _ __  _ __
+# | '_ \| '_ \| '_ \
+# | | | | | | | | | |
+# |_| |_|_| |_|_| |_|
 
+export NNN_PLUG='b:bulknew;c:fzcd;i:imgview;j:autojump;p:preview-tui;'
+export NNN_FIFO='/tmp/nnn.fifo'
+export NNN_COLORS='1267'
+################################################
+
+################################################
 #  _____  _____  _____ 
 # |     ||     ||     |
 # |   __||__/  ||   __|
@@ -190,3 +220,6 @@ fzf_git_diff() {
   preview="git diff $@ --color=always -- {-1}"
   git diff $@ --name-only | fzf -m --ansi --preview $preview --preview-window=down:80%
 }
+################################################
+
+eval "$(jump shell zsh)"
