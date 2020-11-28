@@ -4,7 +4,7 @@ menu="$1"
 
 if [ "$menu" = "calculator" ]; then
     # rofi -modi "calculator:~/scripts/rofi/rofi-calculator.sh" -show calculator -show-icons -theme "$HOME/.config/rofi/simple-menu.rasi"
-		rofi -show calc -modi calc -no-show-match -no-sort > /dev/null
+		rofi -show calc -modi calc -width 15 -lines 10 -no-show-match -no-sort -calc-command "echo -n '{result}' | xclip" > /dev/null
 
 elif [ "$menu" = "config" ]; then
     exec "~/scripts/rofi/rofi-edit-config.sh" > /dev/null
@@ -12,8 +12,17 @@ elif [ "$menu" = "config" ]; then
 elif [ "$menu" = "books" ]; then
     exec "~/scripts/rofi/rofi-books.sh" > /dev/null
 
+elif [ "$menu" = "icons" ]; then
+    exec "~/scripts/rofi/rofi-icons" -f $HOME/scripts/icon_resources/icon-list.txt -o '-width 50 -lines 15 -bw 2 -columns 3 -i -markup-rows'
+
+elif [ "$menu" = "unicode" ]; then
+    exec "~/scripts/rofi/rofi-icons" -f $HOME/scripts/icon_resources/unicode.txt -o '-width 50 -lines 15 -bw 2 -columns 3 -i -markup-rows'
+
 elif [ "$menu" = "emoji" ]; then
     exec "~/scripts/rofi/rofi-emoji.sh" 
+
+elif [ "$menu" = "autoscript" ]; then
+    exec "~/scripts/rofi/rofi-autoscript.sh" 
 
 elif [ "$menu" = "network" ]; then
     networkmanager_dmenu &
