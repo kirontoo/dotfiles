@@ -2,7 +2,9 @@
 
 read_or_write() {
   read=$(echo "no
-yes" | rofi -dmenu -p "Read Only?")
+yes" | rofi -width 15 -lines 2 -dmenu -p "Read Only?")
+	
+	[[ -z "$read" ]] && exit
 
   if [ "$read" == 'no' ]; then
     exec kitty -e nvim $HOME/$1
@@ -46,7 +48,7 @@ fi
 if [ "$choice" == 'scripts' ]; then
     file=$(echo "edit-config
 sysmon
-surfraw" | rofi -dmenu -p "Select Script")
+surfraw" | rofi -dmenu -width 15 -lines 3 -p "Select Script")
 
     if [ "$file" == 'edit-config' ]; then
       read_or_write '.config/scripts/rofi/rofi-edit-config.sh'
