@@ -1,11 +1,13 @@
 #!/bin/bash
 
+[ "$2" ] && WILL_FLOAT="$2"
+
 SCRIPT_FOLDER="$HOME/scripts"
 SCRIPT_FILE="$SCRIPT_FOLDER/$1"
 
 COMMAND="$EDITOR $SCRIPT_FILE"
 
-if  [ $2 = 'rofi' ]; then
+if  [ $WILL_FLOAT ]; then
 	if [[ -d $SCRIPT_FILE ]]; then
 		FOLDER=$SCRIPT_FILE
 		SCRIPT=$( ls "${FOLDER}" | rofi -dmenu -width 15 -lines 10 -p "${1}")
@@ -13,7 +15,7 @@ if  [ $2 = 'rofi' ]; then
 		SCRIPT_FILE="$SCRIPT_FOLDER/$1/$SCRIPT"
 	fi
 
-	COMMAND="i3-sensible-terminal -e $EDITOR $SCRIPT_FILE"
+	COMMAND="$HOME/scripts/float-window i3-sensible-terminal $EDITOR $SCRIPT_FILE"
 fi
 
 if [[ -f $SCRIPT_FILE ]]; then
