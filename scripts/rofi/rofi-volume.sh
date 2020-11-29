@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+## source: https://github.com/adi1090x/rofi
+
 ## Author  : Aditya Shakya
 ## Mail    : adi1090x@gmail.com
 ## Github  : @adi1090x
@@ -37,8 +39,8 @@ fi
 
 ## Icons
 ICON_UP=""
-ICON_DOWN=""
-ICON_MUTED=""
+ICON_DOWN=""
+ICON_MUTED=""
 
 options="$ICON_UP\n$ICON_MUTED\n$ICON_DOWN"
 

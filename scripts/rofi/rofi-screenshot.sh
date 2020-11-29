@@ -26,21 +26,21 @@ chosen="$(echo -e "$options" | $rofi_command -lines 3 -width 15 -p 'Scrot' -dmen
 case $chosen in
     $screen)
 		if [[ -f /usr/bin/scrot ]]; then
-			sleep 1; scrot 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES)/screenshots | sxiv $$(xdg-user-dir PICTURES)/screenshots/$f | xclip -selection c -t image/png $$(xdg-user-dir PICTURES)/screenshots/$f'
+			sleep 1; scrot 'Screenshot_%Y-%m-%d-%S_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)/screenshots | sxiv $$(xdg-user-dir PICTURES)/screenshots/$f | xclip -selection c -t image/jpg $$(xdg-user-dir PICTURES)/screenshots/$f'
 		else
 			msg
 		fi
         ;;
     $area)
 		if [[ -f /usr/bin/scrot ]]; then
-			scrot -s 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES)/screenshots | sxiv $$(xdg-user-dir PICTURES)/screenshots/$f | xclip -selection c -t image/png $$(xdg-user-dir PICTURES)/screenshots/$f'
+			scrot -s 'Screenshot_%Y-%m-%d-%S_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)/screenshots | sxiv $$(xdg-user-dir PICTURES)/screenshots/$f | xclip -selection c -t image/jpg $$(xdg-user-dir PICTURES)/screenshots/$f'
 		else
 			msg
 		fi
         ;;
     $window)
 		if [[ -f /usr/bin/scrot ]]; then
-			sleep 1; scrot -u 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES)/screenshots | sxiv $$(xdg-user-dir PICTURES)/screenshots/$f | xclip -selection c -t image/png $$(xdg-user-dir PICTURES)/screenshots/$f'
+			sleep 1; scrot -u 'Screenshot_%Y-%m-%d-%S_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)/screenshots | sxiv $$(xdg-user-dir PICTURES)/screenshots/$f | xclip -selection c -t image/jpg $$(xdg-user-dir PICTURES)/screenshots/$f'
 		else
 			msg
 		fi
