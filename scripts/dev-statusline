@@ -1,0 +1,12 @@
+#!/bin/bash
+
+tmux new -s hugo -d
+tmux send-keys -t hugo 'cd $HOME/Documents/dev/statusline' C-m
+tmux send-keys -t hugo 'nvim' C-m
+tmux send-keys -t hugo ':SLoad statusline' C-m
+
+tmux new-window -t hugo -c $HOME/Documents/dev/statusline
+tmux send-keys -t hugo 'vivaldi-stable http://localhost:1313/' C-m
+tmux send-keys -t hugo 'make' C-m
+tmux select-window -t hugo:0
+tmux attach -t hugo

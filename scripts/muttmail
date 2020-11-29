@@ -1,0 +1,7 @@
+#!/bin/bash
+
+tmux new -s mail -d
+tmux send-keys -t mail 'neomutt' C-m
+tmux send-keys -t mail B
+tmux send-keys -t mail o
+tmux attach -t mail
