@@ -4,7 +4,7 @@ choice=$(echo "bashtop
 gtop
 gotop
 htop
-iftop" | rofi -dmenu -p "System Monitor" -lines 5)
+iftop" | rofi -dmenu -p "System Monitor" -width 15 -lines 5)
 	if [ "$choice" == 'htop' ]; then
         kitty -e htop
 	fi
