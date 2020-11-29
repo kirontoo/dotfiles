@@ -12,6 +12,9 @@ fi
 pids=$(
 ps -f -u $USER | sed 1d | rofi -dmenu -width 40 -lines 10 -i | tr -s [:blank:] | cut -d' ' -f"$pid_col"
 )
+
+[[ -z $pids ]] && exit
+
 if [[ -n $pids ]]; then
 	echo "$pids" | xargs kill -9 "$@"
 fi
