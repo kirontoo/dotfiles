@@ -25,7 +25,10 @@ elif [ "$menu" = "network" ]; then
     networkmanager_dmenu &
 
 elif [ "$menu" = "open" ]; then
-		open "$(locate /  home  | rofi -threads 3 -width 50 -lines 15 -dmenu -i -p "locate:")"
+		xdg-open "$(locate /  home  | rofi -threads 3 -width 50 -lines 15 -dmenu -i -p "locate:")"
+
+elif [ "$menu" = "pidkill" ]; then
+    exec "~/scripts/rofi/rofi-pidkill.sh" 
 
 elif [ "$menu" = "powermenu" ]; then
     rofi -modi "Powermenu:~/scripts/rofi/rofi-powermenu.sh" -width 15 -lines 4 -show Powermenu -show-icons -theme "$HOME/.config/rofi/simple-menu.rasi"
