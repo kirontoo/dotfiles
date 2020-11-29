@@ -6,6 +6,7 @@ window {
     padding:          15;
 		fullscreen: false;
 		border-color: @black4;
+		width: 30%;
 }
 
 mainbox {
@@ -30,6 +31,7 @@ listview {
     border-color: @black4;
     spacing:      3px;
     scrollbar:    @red2;
+		lines:				0;
 }
 
 element {
