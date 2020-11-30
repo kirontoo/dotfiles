@@ -6,18 +6,19 @@
 "      \/            \/     \/
 
 "~~~~~~~~~~ FZF PLUGIN  ~~~~~~~~~
-" noremap <leader>g :GFiles <CR>|                              "  Search file in current git Directory
-noremap <leader>g? :GFiles?<CR>|                             "  Git status
-noremap <space><space> :FZF<CR>|                             "  Search file in current Directory
-" noremap <leader>, :Buffers<CR>|                              "  open buffer menu
-noremap <leader>ff :Files $HOME<CR>|                         "  Search file in Home Directory
+noremap <leader>gf :GFiles <CR>|      " Search file in current git Directory
+noremap <leader>g? :GFiles?<CR>|      " Git status
+noremap <space><space> :FZF<CR>|      " Search file in current Directory
+noremap <leader>, :Buffers<CR>|       " open buffer menu
+noremap <leader>. :Files %:h<CR>|      " Search file in currend Directory
+noremap <leader>ff :Files $HOME<CR>|  " Search file in Home Directory
 
-noremap <leader>hf :History<CR>|														 "  File history
-noremap <leader>hc :History: <CR>|                           "  Command history
-noremap <leader>h/ :History/ <CR>|                           "  Command history
-noremap <leader>Tc :Colors<CR>|                              "  Search colorschemes
-" nmap <leader>/b :BLines<CR>|                                 "  Swoop current buffer
-nmap <leader>/ :Lines<CR>|                                   "  Swoop all open buffer
+noremap <leader>hf :History<CR>|      " File history
+noremap <leader>hc :History: <CR>|    " Command history
+noremap <leader>h/ :History/ <CR>|    " Command history
+noremap <leader>Tc :Colors<CR>|       " Search colorschemes
+nmap <leader>/b :BLines<CR>|          " Swoop current buffer
+nmap <leader>/ :Lines<CR>|            " Swoop all open buffer
 
 " nnoremap <silent> <leader>. :Files <C-r>=expand("%:h")<CR>/<CR>
 nnoremap <silent> <leader>c  :Commits<CR>
@@ -42,7 +43,11 @@ if !has( "win32" )
 	let $FZF_DEFAULT_COMMAND="fd -H -E '.git' -E '.o' -E '.meta' -E 'node_modules/**' --type file --follow"
 endif
 
-let $FZF_DEFAULT_OPTS=' --color=dark --color=fg:15,bg:-1,hl:1,fg+:#ffffff,bg+:0,hl+:1 --color=info:0,prompt:0,pointer:12,marker:4,spinner:11,header:-1 --layout=reverse  --margin=1,4'
+" Preview window on the upper side of the window with 40% height,
+" hidden by default, ctrl-/ to toggle
+let g:fzf_preview_window = ['right:40%:hidden', 'ctrl-/']
+
+let $FZF_DEFAULT_OPTS='--color=dark  --color=info:0,prompt:0,pointer:12,marker:4,spinner:11,header:-1 --layout=reverse'
 
 let g:fzf_commits_log_options = '--graph --color=always
   \ --format="%C(yellow)%h%C(red)%d%C(reset)
@@ -58,7 +63,7 @@ let g:fzf_colors =
 			\ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
 			\ 'hl+':     ['fg', 'Statement'],
 			\ 'info':    ['fg', 'PreProc'],
-			\ 'border':  ['fg', 'Error'],
+			\ 'border':  ['fg', 'Comment'],
 			\ 'prompt':  ['fg', 'Conditional'],
 			\ 'pointer': ['fg', 'Exception'],
 			\ 'marker':  ['fg', 'Keyword'],
