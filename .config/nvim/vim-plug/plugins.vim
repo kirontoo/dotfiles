@@ -58,7 +58,6 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'mcchrish/nnn.vim'
-Plug 'nvim-lua/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'vimwiki/vimwiki'
 
@@ -78,10 +77,6 @@ Plug 'vim-test/vim-test'
 " Debugger Plugins
 Plug 'puremourning/vimspector'
 Plug 'szw/vim-maximizer'
-
-" Telescope Dependencies
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
 
 " Syntax
 Plug 'pangloss/vim-javascript'

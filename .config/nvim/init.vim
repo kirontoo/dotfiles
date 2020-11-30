@@ -53,13 +53,12 @@ source $VIMPATH/plugin-config/rooter.vim
 source $VIMPATH/plugin-config/startify.vim
 source $VIMPATH/plugin-config/splitjoin.vim
 source $VIMPATH/plugin-config/tabular.vim
+source $VIMPATH/plugin-config/treesitter.vim
 source $VIMPATH/plugin-config/vimplug.vim
 source $VIMPATH/plugin-config/vim-test.vim
 source $VIMPATH/plugin-config/vista.vim
 source $VIMPATH/plugin-config/vimspector.vim
 source $VIMPATH/plugin-config/vimwiki.vim
 
-source $VIMPATH/plugin-config/treesitter.vim
-source $VIMPATH/plugin-config/telescope.vim
 
 endif
