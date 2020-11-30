@@ -9,6 +9,9 @@ ROFI_DIR="$SCRIPT_DIR/rofi"
 COMMANDS["autoscript"]="$ROFI_DIR/rofi-launch.sh autoscript"
 LABELS["autoscript"]="Edit or create a script"
 
+COMMANDS["books"]="$ROFI_DIR/rofi-launch.sh books"
+LABELS["books"]="Open a book ( pdf/epub )"
+
 COMMANDS["calculator"]="$ROFI_DIR/rofi-launch.sh calculator"
 LABELS["calculator"]="An interactive calculator"
 

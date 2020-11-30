@@ -2,6 +2,8 @@
 ## Author: Kirontoo
 ## Dependenies: zathura, rofi
 
+# TODO: search epub files too
+
 function get_books() {
 	find $(xdg-user-dir DOCUMENTS)/books -name '*.pdf' -printf "%f\n"
 }
