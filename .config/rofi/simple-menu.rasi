@@ -4,8 +4,6 @@ window {
   transparency: "real";
   background-color: @background;
   fullscreen: false;
-	// height: 30%;
-	// width: 20%;
 	border: 4px;
 	border-color: @black4;
 }
