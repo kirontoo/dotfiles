@@ -21,6 +21,9 @@ elif [ "$menu" = "emoji" ]; then
 elif [ "$menu" = "icons" ]; then
     exec "~/scripts/rofi/rofi-icons" -f $HOME/scripts/icon_resources/icon-list.txt -o '-width 50 -lines 15 -bw 2 -columns 3 -i -markup-rows'
 
+elif [ "$menu" = "keymap" ]; then
+    exec "~/scripts/rofi/rofi-i3keymap.sh"
+
 elif [ "$menu" = "network" ]; then
     networkmanager_dmenu &
 

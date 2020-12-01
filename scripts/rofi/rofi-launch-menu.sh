@@ -24,6 +24,9 @@ LABELS["emoji"]="Search through emojis"
 COMMANDS["icons"]="$ROFI_DIR/rofi-launch.sh icons"
 LABELS["icons"]="Search through font awesome icons"
 
+COMMANDS["keymap"]="$ROFI_DIR/rofi-launch.sh keymap"
+LABELS["keymap"]="View or execute i3 keymappings"
+
 COMMANDS["network"]="$ROFI_DIR/rofi-launch.sh network"
 LABELS["network"]="Network Manager"
 
@@ -55,9 +58,12 @@ COMMANDS["volume"]="$ROFI_DIR/rofi-launch.sh volume"
 LABELS["volume"]="Adjust volume"
 
 function print_menu() {
-	for key in ${!LABELS[@]}	
+	
+	# sort alphabetically
+	mapfile -d '' sorted < <(printf '%s\0' "${!LABELS[@]}" | sort -z)
+	for key in ${!sorted[@]}	
 	do
-		echo -e "$key: ${LABELS[$key]}"
+		echo -e "${sorted[$key]}: ${LABELS[${sorted[$key]}]}"
 	done
 }
 
