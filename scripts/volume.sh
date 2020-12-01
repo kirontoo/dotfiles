@@ -60,7 +60,7 @@ case $1 in
 		amixer -D pulse set Master 1+ toggle > /dev/null
 		if is_mute ; then
 			DIR=`dirname "$0"`
-			$DIR/notify-send.sh -i "/usr/share/icons/Faba/48x48/notifications/notification-audio-volume-muted.svg" --replace=555 -u normal "Mute" -t 2000
+			$DIR/notify-send.sh -i $ICON_MUTED --replace=555 -u normal "$ICON_MUTED Mute" -t 2000
 		else
 			send_notification
 		fi
