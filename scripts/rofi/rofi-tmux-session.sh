@@ -12,9 +12,9 @@ TMUX_SESSION=$( (echo 'new'; tmux_sessions) | rofi -dmenu -p "Select tmux sessio
 if [[ x"new" = x"${TMUX_SESSION}" ]]; then
 		session_name=$( rofi -dmenu -p "Session Name?" -theme '.config/rofi/prompt.rasi' )
 		[[ -z "${session_name}" ]] && exit
-		rofi-sensible-terminal --name tmux_${session_name} -e tmux new -t $session_name &
+		rofi-sensible-terminal --name tmux_${session_name} --title ${session_name} -e tmux new -t $session_name &
 elif [[ -z "${TMUX_SESSION}" ]]; then
 		exit
 else
-    rofi-sensible-terminal --name tmux_${TMUX_SESSION} -e tmux attach -t "${TMUX_SESSION}" &
+    rofi-sensible-terminal --name tmux_${TMUX_SESSION} --title ${TMUX_SESSION} -e tmux attach -t "${TMUX_SESSION}" &
 fi
