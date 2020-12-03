@@ -6,17 +6,20 @@ gotop
 htop
 iftop" | rofi -dmenu -p "System Monitor" -width 15 -lines 5)
 if [ "$choice" == 'htop' ]; then
-	kitty --name htop -e htop
-if [ "$choice" == 'gtop' ]; then
-	kitty --name gtop -e gtop
+	i3-sensible-terminal --detach -o font_size=10 -o window_margin_width=0 --name htop -e htop &
+elif [ "$choice" == 'gtop' ]; then
+	kitty -o font_size=10 --name gtop -e gtop
+	i3-sensible-terminal --detach -o font_size=10 -o window_margin_width=0 --name gtop -e gtop &
 elif [ "$choice" == 'gotop' ]; then
-	kitty --name gotop -e gotop 
+	i3-sensible-terminal --detach -o font_size=10 -o window_margin_width=0 --name gotop -e gotop &
 elif [ "$choice" == 'iftop' ]; then
-	kitty --name iftop -e sudo iftop
+	i3-sensible-terminal --detach -o font_size=10 -o window_margin_width=0 --name iftop -e iftop &
 elif [ "$choice" == 'bashtop' ]; then
-	kitty --name bashtop -e bashtop
+	i3-sensible-terminal --detach -o font_size=8 -o window_margin_width=0 -o window_padding_width=0 --name bashtop -e bashtop &
 elif [ "$choice" == 'bandwhich' ]; then
-	kitty --name bandwhich -e sudo bandwhich
+	i3-sensible-terminal --detach -o font_size=10 -o window_margin_width=0 --name bandwhich -e bandwhich &
+elif [[ -z ${choice} ]]; then
+	exit
 else
 	rofi -theme "$HOME/.config/rofi/prompt.rasi" -e "Please install ${choice} first."
 fi
