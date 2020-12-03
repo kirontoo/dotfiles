@@ -1,0 +1,15 @@
+{
+  "name": "Embark",
+  "colors": {
+    "--color-long-round": "#91ddff",
+    "--color-short-round": "#a1efd3",
+    "--color-focus-round": "#f48fb1",
+    "--color-background": "#1e1c31",
+    "--color-background-light": "#2d2b40",
+    "--color-background-lightest": "#d4bfff",
+    "--color-foreground": "#cbe3e7",
+    "--color-foreground-darker": "#d4bfff",
+    "--color-foreground-darkest": "#d4bfff",
+    "--color-accent": "#f02e6e"
+  }
+}
