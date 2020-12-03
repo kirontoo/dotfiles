@@ -57,8 +57,9 @@ set $tr for_window [title =
 # tf: title format
 set $tf ] title_format
 
-# tc: target container
-set $tc ,focus;exec --no-startup-id exec i3fyra -m
+# ts: show target container, tc: move to target container
+set $ts ,focus;exec --no-startup-id i3fyra -s
+set $tm ;exec --no-startup-id exec i3fyra -m
 #############################################################################
 
 #############################################################################
@@ -124,9 +125,10 @@ $W+$S+Print  --release $X i3-scrot -s
 $W+$S+d      --release  exec "killall dunst;exec notify-send 'restart dunst'"
 
 $W+Return          exec i3-sensible-terminal
-$W+$S+Return       exec vivaldi-stable
+# $W+$S+Return       exec vivaldi-stable
+$W+$S+Return       $R -i vivaldi_main -x vivaldi-stable -e "vivaldi-stable"
 $W+$C+b            exec i3-sensible-terminal -e 'bmenu'
-$W+F3              $R -i nnn -e "kitty --name file_explorer -e nnn -R"
+$W+F3              $R -i file_explorer -e "i3-sensible-terminal --name file_explorer -e nnn -R"
 $W+$S+F3           exec pcmanfm_pkexec
 # $W+$S+h          exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 
@@ -241,7 +243,7 @@ $map volumeicon
 $map pulseaudio
 #exec --no-startup-id pa-applet
 $W+$C+a exec pavucontrol
-$W+a exec $HOME/.config/polybar/scripts/pulseaudio-control.bash next-sink
+$W+a $X $HOME/.config/polybar/scripts/pulseaudio-control.bash next-sink; $X $HOME/scripts/visulaunch
 
 # Media controls
 $B XF86AudioPlay exec playerctl play-pause
@@ -377,38 +379,55 @@ $W+$S+0 move container to workspace $ws0; workspace $ws0
 ## Rules
 ################################################################################################
 
-# Open applications on specific workspaces
-# assign [class="discord"] $ws4
-assign [class="Pcmanfm"] $ws8
+# >>> Windows
+# instance|class|title rule
+# $ir for_window [instance =
+# $cr for_window [class =
+# $tr for_window [title =
+
+# tf: title format
+# $tf ] title_format
+
+# ts: show target container, tc: move to target container
+# $ts ,focus;exec --no-startup-id i3fyra -s
+# $tm ;exec --no-startup-id exec i3fyra -m
+
+# Use $ts before $tm to make sure that the container exists 
+# ( container A will always exist )
 
 for_window [class=".*"] title_format "%class: %title"
 
 # >>> Container A
-$cr "Vivaldi-stable"  $tf "vivaldi"                 $tc A
-$cr "discord"         $tf " discord"               $tc A
-$ir "zathura"         $tf "zathura"                 $tc A
-$ir "tmux_*"          $tf "Tmux: %title"            $tc A
-$ir "bashtop"         $tf "bashtop"                 $tc A
-$ir "thunar"          $tf " thunar"                $tc A
-$ir "spotify"         $tf " spotify "             $X i3fyra -m A
-$tr "nvim"            $tf " %title"                $tc A
+$cr "vivaldi-stable"        $tf "Vivaldi"              $ts A $tm A
+$cr "Xarchiver"             $tf "Xarchiver"            $ts A $tm A
+$ir "zathura"               $tf "Zathura"              $ts A $tm A
+$ir "tmux_*"                $tf "Tmux: %title"         $ts A $tm A
+$ir "thunar"                $tf " Thunar"             $ts A $tm A
+$cr "pcmanfm"               $tf " File explorer"      $ts A $tm A
+$ir "mousepad"              $tf " Mousepad"           $ts A $tm A
+$ir "spotify"               $tf " Spotify "          $X i3fyra -m A
+$tr "nvim"                  $tf " %title"             ,focus $tm A
 
 # >>> Container B
-$ir "gtop"                       $tf "gtop"                    $tc B
-$ir "gotop"                      $tf "gotop"                   $tc B
-$ir "htop"                       $tf "htop"                    $tc B
-$ir "iftop"                      $tf "iftop"                   $tc B
-$ir "bandwhich"                  $tf "bandwhich"               $tc B
-$cr "Sxiv"                       $tf "sxiv"                    $X i3fyra -m B
-$cr "tabbed"                     $tf "preview-tabbed"          $X i3fyra -m B
+$cr "pomotroid"             $tf "祥 Pomodoro 祥"         $ts B $tm B
+$ir "gtop"                  $tf " Gtop"                 $ts B $tm B
+$ir "gotop"                 $tf " Gotop"                $ts B
+$ir "htop"                  $tf " Htop"                 $ts B $tm B
+$ir "bashtop"               $tf " Bashtop"              $ts B $tm B
+$ir "iftop"                 $tf " Iftop"                $ts B $tm B
+$ir "bandwhich"             $tf " Bandwhich"            $ts B $tm B
+$cr "Sxiv"                  $tf " Image Preview"        $X i3fyra -m B
+$ir "tabbed" class="tabbed" $tf " Preview-tabbed"       $X i3fyra -m B
 
 # >>> Container C
-$ir "visualizer"      $tf "vis"                     $tc C
+$ir "visualizer"            $tf "vis"                  $ts C $tm C
 
 # >>> Container D
-# $ir "thunar"        $tf "thunar"                  $tc D
-$ir "file_explorer"   $tf "nnn"                     $tc D
+$cr "discord"               $tf " Discord"            $ts D $tm D
+$cr "kitty" title="nnn"     $tf "nnn"                  $ts D
+$tr "task"                  $tf " todo list"          $ts D
 
+# >>> Floating windows
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
@@ -434,9 +453,9 @@ for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 
-########################################################
 # switch to workspace with urgent window automatically
 # for_window [urgent=latest] focus
+########################################################
 
 ########################################################
 #
@@ -450,7 +469,6 @@ for_window [class="Xfburn"] floating enable
 ## Autostart
 ########################################################
 
-# Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 exec --no-startup-id nm-applet
@@ -476,6 +494,12 @@ exec_always --no-startup-id $HOME/.config/conky/launch.sh
 
 # Launch Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# startup apps and layout
+# Visualizer
+exec_always --no-startup-id $HOME/scripts/visulaunch
+$X $HOME/scripts/startup_app &
+
 ########################################################
 
 ########################################################
@@ -555,10 +579,10 @@ set_from_resource $term_color15    color15
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
   client.focused          #8a889d #1e1c31 #cbe3e7 #8a889d #8a889d
-  client.focused_inactive #2D2B40 #1e1c31 #cbe3e7 #2D2B40 #2D2B40
-  client.unfocused        #2D2B40 #1e1c31 #cbe3e7 #2D2B40 #2D2B40
-  client.urgent           #F2B482 #1e1c31 #1ABC9C #1e1c31 #f2b482
-  client.placeholder      #000000 #1e1c31 #ffffff #1e1c31 #c25560
+  client.focused_inactive #2d2b40 #1e1c31 #cbe3e7 #2D2B40 #2D2B40
+  client.unfocused        #2d2b40 #1e1c31 #cbe3e7 #2D2B40 #2D2B40
+  client.urgent           #F2B482 #1e1c31 #cbe3e7 #1e1c31 #f2b482
+  client.placeholder      #f02e6e #62d196 #cbe3e7 #1e1c31 #f02e6e
 
   client.background       #1e1c31
 
