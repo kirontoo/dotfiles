@@ -98,7 +98,7 @@ $W+z            $X morc_menu
 $W+d            $X dmenu_recency -nb "#100e32" -nf "#cbe3e6" -sb "#63f2f1" -sf "#100e32" -fn iosevka -p ">_"
 $W+space        $X rofi -show drun -width 15
 $W+Shift+space  $X rofi -show run -width 15
-$W+w            $X rofi -show window -width 15
+$W+w            $X rofi -show window -width 20 -window-format "{n0}  {t0}"
 $W+e            $X $HOME/scripts/rofi/rofi-launch.sh config
 $W+$alt+e       $X $HOME/scripts/rofi/rofi-launch.sh autoscript
 $W+b            $X $HOME/scripts/rofi/rofi-launch.sh books
@@ -161,6 +161,12 @@ $W+$S+Left    move left
 $W+$S+Down    move down
 $W+$S+Up      move up
 $W+$S+Right   move right
+
+# >>> move windows to specific containers
+$W+$A+a  $tm A
+$W+$A+b  $tm B
+$W+$A+c  $tm C
+$W+$A+d  $tm D
 
 
 # >>> split orientation
@@ -278,7 +284,7 @@ $W+$A+m exec --no-startup-id  "$HOME/scripts/volume.sh mute"
 default_border pixel 2px
 default_floating_border normal 2px
 # border_radius 2
-title_align center
+title_align left
 
 focus_follows_mouse no
 focus_wrapping no
@@ -395,37 +401,67 @@ $W+$S+0 move container to workspace $ws0; workspace $ws0
 # Use $ts before $tm to make sure that the container exists 
 # ( container A will always exist )
 
-for_window [class=".*"] title_format "%class: %title"
+set $srn <span fgcolor="#f48fb1">
+set $srb <span fgcolor="#f02e6e">
+
+set $sgn <span fgcolor="#a1efd3">
+set $sgb <span fgcolor="#62d196">
+
+set $syn <span fgcolor="#ffe6b3">
+set $syb <span fgcolor="#f2b482">
+
+set $sun <span fgcolor="#91ddff">
+set $sub <span fgcolor="#65b2ff">
+
+set $smn <span fgcolor="#d4bfff">
+set $smb <span fgcolor="#a37acc">
+
+set $scn <span fgcolor="#87dfeb">
+set $scb <span fgcolor="#63f2f1">
+
+set $swn <span fgcolor="#cbe3e7">
+set $swb <span fgcolor="#8a889d">
+
+set $sbn <span fgcolor="#1e1c31">
+set $sbd <span fgcolor="#100E23">
+set $sbb <span fgcolor="#2D2B40">
+set $sbp <span fgcolor="#3E3859">
+set $sbq <span fgcolor="#585273">
+ 
+set $send </span>
+
+for_window [class=".*"] title_format $sgn 缾$send %class: %title
+for_window [class="kitty"] title_format $srn $send %title
 
 # >>> Container A
-$cr "vivaldi-stable"        $tf "Vivaldi"              $ts A $tm A
-$cr "Xarchiver"             $tf "Xarchiver"            $ts A $tm A
-$ir "zathura"               $tf "Zathura"              $ts A $tm A
-$ir "tmux_*"                $tf "Tmux: %title"         $ts A $tm A
-$ir "thunar"                $tf " Thunar"             $ts A $tm A
-$cr "pcmanfm"               $tf " File explorer"      $ts A $tm A
-$ir "mousepad"              $tf " Mousepad"           $ts A $tm A
-$ir "spotify"               $tf " Spotify "          $X i3fyra -m A
-$tr "nvim"                  $tf " %title"             ,focus $tm A
+$cr "Xarchiver"             $tf "Xarchiver"                          $ts A $tm A
+$ir "vivaldi-stable"        $tf $scb 爵$send %title                   $ts A $tm A
+$ir "zathura"               $tf $srb $send Zathura                   $ts A $tm A
+$ir "tmux_*"                $tf $scn $send Tmux: %title              $ts A $tm A
+$ir "thunar"                $tf $sbn $send Thunar                    $ts A $tm A
+$cr "pcmanfm"               $tf $sbn $send File explorer             $ts A $tm A
+$ir "mousepad"              $tf $syn $send Mousepad                  $ts A $tm A
+$ir "spotify"               $tf $scb $send Spotify $scb$send        ,$X i3fyra -m A
+$ir "nvim_*"                $tf $syn $send Nvim: %title              ,focus $tm A
 
 # >>> Container B
-$cr "pomotroid"             $tf "祥 Pomodoro 祥"         $ts B $tm B
-$ir "gtop"                  $tf " Gtop"                 $ts B $tm B
-$ir "gotop"                 $tf " Gotop"                $ts B
-$ir "htop"                  $tf " Htop"                 $ts B $tm B
-$ir "bashtop"               $tf " Bashtop"              $ts B $tm B
-$ir "iftop"                 $tf " Iftop"                $ts B $tm B
-$ir "bandwhich"             $tf " Bandwhich"            $ts B $tm B
-$cr "Sxiv"                  $tf " Image Preview"        $X i3fyra -m B
-$ir "tabbed" class="tabbed" $tf " Preview-tabbed"       $X i3fyra -m B
+$cr "pomotroid"             $tf $syb 祥$send Pomodoro $syb祥$send     $ts B $tm B
+$ir "gtop"                  $tf $smb $send Gtop                      $ts B $tm B
+$ir "gotop"                 $tf $smb $send Gotop                     $ts B
+$ir "htop"                  $tf $smb $send Htop                      $ts B $tm B
+$ir "bashtop"               $tf $smb $send Bashtop                   $ts B $tm B
+$ir "iftop"                 $tf $smb $send Iftop                     $ts B $tm B
+$ir "bandwhich"             $tf $smb $send Bandwhich                 $ts B $tm B
+$cr "Sxiv"                  $tf $sgb  $send Image Preview            $X i3fyra -m B
+$ir "tabbed" class="tabbed" $tf $sgb  $send Preview-tabbed           $X i3fyra -m B
+$tr "Picture in picture"    $tf $srn $send Pic-in-Pic                $ts B $tm B 
 
 # >>> Container C
-$ir "visualizer"            $tf "vis"                  $ts C $tm C
+$ir "visualizer"            $tf "vis"                                 $ts C $tm C
 
 # >>> Container D
-$cr "discord"               $tf " Discord"            $ts D $tm D
-$cr "kitty" title="nnn"     $tf "nnn"                  $ts D
-$tr "task"                  $tf " todo list"          $ts D
+$cr "discord"                    $tf $smn  $send %title              $ts D $tm D
+$ir "file_explorer" title="nnn"  $tf $sbn $send nnn                   $ts D $tm D
 
 # >>> Floating windows
 for_window [title="alsamixer"] floating enable border pixel 1
