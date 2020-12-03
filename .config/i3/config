@@ -95,15 +95,14 @@ $W+Shift+w exec --no-startup-id $HOME/scripts/i3-swap-workspace.sh
 
 # >>> rofi app and window launchers
 $W+z            $X morc_menu
-$W+d            $X dmenu_recency -nb "#100e32" -nf "#cbe3e6" -sb "#63f2f1" -sf "#100e32" -fn iosevka -p ">_"
+$W+d            $X dmenu_recency -nb "#1e1c31" -nf "#cbe3e7" -sb "#63f2f1" -sf "#100e32" -fn iosevka -p ">_" -h 34px
 $W+space        $X rofi -show drun -width 15
 $W+Shift+space  $X rofi -show run -width 15
-$W+w            $X rofi -show window -width 20 -window-format "{n0}  {t0}"
+$W+w            $X rofi -show window -width 20 -window-format "{w0} {n0}  {t0}"
 $W+e            $X $HOME/scripts/rofi/rofi-launch.sh config
 $W+$alt+e       $X $HOME/scripts/rofi/rofi-launch.sh autoscript
 $W+b            $X $HOME/scripts/rofi/rofi-launch.sh books
 $W+c            $X $HOME/scripts/rofi/rofi-launch.sh screenshot
-$W+$alt+c       $X $HOME/scripts/rofi/rofi-launch.sh calculator
 $W+t            $X $HOME/scripts/rofi/rofi-launch.sh tmux
 $W+m            $X $HOME/scripts/rofi/rofi-launch-menu.sh
 $W+Shift+s      $X $HOME/scripts/rofi/rofi-launch.sh services
@@ -125,7 +124,6 @@ $W+$S+Print  --release $X i3-scrot -s
 $W+$S+d      --release  exec "killall dunst;exec notify-send 'restart dunst'"
 
 $W+Return          exec i3-sensible-terminal
-# $W+$S+Return       exec vivaldi-stable
 $W+$S+Return       $R -i vivaldi_main -x vivaldi-stable -e "vivaldi-stable"
 $W+$C+b            exec i3-sensible-terminal -e 'bmenu'
 $W+F3              $R -i file_explorer -e "i3-sensible-terminal --name file_explorer -e nnn -R"
@@ -167,7 +165,6 @@ $W+$A+a  $tm A
 $W+$A+b  $tm B
 $W+$A+c  $tm C
 $W+$A+d  $tm D
-
 
 # >>> split orientation
 $W+s split h;exec notify-send 'tile horizontally'
@@ -282,7 +279,7 @@ $W+$A+m exec --no-startup-id  "$HOME/scripts/volume.sh mute"
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 default_border pixel 2px
-default_floating_border normal 2px
+default_floating_border normal 2
 # border_radius 2
 title_align left
 
@@ -296,6 +293,8 @@ hide_edge_borders true
 # is used in the bar {} block below.
 # font xft:URWGothic-Book 11
 font xft:Iosevka 12
+# font pango:Iosevka SS10, Medium 12
+font pango:Scientifica, Bold 13
 
 # Default workspace on the right monitor
 workspace 1 output $monitor_right
@@ -401,77 +400,76 @@ $W+$S+0 move container to workspace $ws0; workspace $ws0
 # Use $ts before $tm to make sure that the container exists 
 # ( container A will always exist )
 
-set $srn <span fgcolor="#f48fb1">
-set $srb <span fgcolor="#f02e6e">
+set $srn <span font_family="Iosevka" fgcolor="#f48fb1">
+set $srb <span font_family="Iosevka" fgcolor="#f02e6e">
 
-set $sgn <span fgcolor="#a1efd3">
-set $sgb <span fgcolor="#62d196">
+set $sgn <span font_family="Iosevka" fgcolor="#a1efd3">
+set $sgb <span font_family="Iosevka" fgcolor="#62d196">
 
-set $syn <span fgcolor="#ffe6b3">
-set $syb <span fgcolor="#f2b482">
+set $syn <span font_family="Iosevka" fgcolor="#ffe6b3">
+set $syb <span font_family="Iosevka" fgcolor="#f2b482">
 
-set $sun <span fgcolor="#91ddff">
-set $sub <span fgcolor="#65b2ff">
+set $sun <span font_family="Iosevka" fgcolor="#91ddff">
+set $sub <span font_family="Iosevka" fgcolor="#65b2ff">
 
-set $smn <span fgcolor="#d4bfff">
-set $smb <span fgcolor="#a37acc">
+set $smn <span font_family="Iosevka" fgcolor="#d4bfff">
+set $smb <span font_family="Iosevka" fgcolor="#a37acc">
 
-set $scn <span fgcolor="#87dfeb">
-set $scb <span fgcolor="#63f2f1">
+set $scn <span font_family="Iosevka" fgcolor="#87dfeb">
+set $scb <span font_family="Iosevka" fgcolor="#63f2f1">
 
-set $swn <span fgcolor="#cbe3e7">
-set $swb <span fgcolor="#8a889d">
+set $swn <span font_family="Iosevka" fgcolor="#cbe3e7">
+set $swb <span font_family="Iosevka" fgcolor="#8a889d">
 
-set $sbn <span fgcolor="#1e1c31">
-set $sbd <span fgcolor="#100E23">
-set $sbb <span fgcolor="#2D2B40">
-set $sbp <span fgcolor="#3E3859">
-set $sbq <span fgcolor="#585273">
+set $sbn <span font_family="Iosevka" fgcolor="#1e1c31">
+set $sbd <span font_family="Iosevka" fgcolor="#100E23">
+set $sbb <span font_family="Iosevka" fgcolor="#2D2B40">
+set $sbp <span font_family="Iosevka" fgcolor="#3E3859">
+set $sbq <span font_family="Iosevka" fgcolor="#585273">
  
 set $send </span>
 
-for_window [class=".*"] title_format $sgn 缾$send %class: %title
+for_window [class="^.*"] title_format $sgn 缾$send %class: %title, border normal 2
 for_window [class="kitty"] title_format $srn $send %title
 
 # >>> Container A
-$cr "Xarchiver"             $tf "Xarchiver"                          $ts A $tm A
-$ir "vivaldi-stable"        $tf $scb 爵$send %title                   $ts A $tm A
-$ir "zathura"               $tf $srb $send Zathura                   $ts A $tm A
-$ir "tmux_*"                $tf $scn $send Tmux: %title              $ts A $tm A
-$ir "thunar"                $tf $sbn $send Thunar                    $ts A $tm A
-$cr "pcmanfm"               $tf $sbn $send File explorer             $ts A $tm A
-$ir "mousepad"              $tf $syn $send Mousepad                  $ts A $tm A
-$ir "spotify"               $tf $scb $send Spotify $scb$send        ,$X i3fyra -m A
-$ir "nvim_*"                $tf $syn $send Nvim: %title              ,focus $tm A
+$cr "Xarchiver"                  $tf "Xarchiver"                           $ts A $tm A
+$ir "vivaldi-stable"             $tf $scb 爵$send %title                   $ts A $tm A
+$ir "zathura"                    $tf $srb $send Zathura                   $ts A $tm A
+$ir "tmux_*"                     $tf $scn $send Tmux: %title              $ts A $tm A
+$ir "thunar"                     $tf $smn $send Thunar                    $ts A $tm A
+$cr "pcmanfm"                    $tf $sbn $send File explorer             $ts A $tm A
+$ir "mousepad"                   $tf $syn $send Mousepad                  $ts A $tm A
+$ir "spotify"                    $tf $scb $send Spotify $scb$send        ,$X i3fyra -m A
+$ir "nvim_*"                     $tf $syn $send Nvim: %title              ,focus $tm A
 
 # >>> Container B
-$cr "pomotroid"             $tf $syb 祥$send Pomodoro $syb祥$send     $ts B $tm B
-$ir "gtop"                  $tf $smb $send Gtop                      $ts B $tm B
-$ir "gotop"                 $tf $smb $send Gotop                     $ts B
-$ir "htop"                  $tf $smb $send Htop                      $ts B $tm B
-$ir "bashtop"               $tf $smb $send Bashtop                   $ts B $tm B
-$ir "iftop"                 $tf $smb $send Iftop                     $ts B $tm B
-$ir "bandwhich"             $tf $smb $send Bandwhich                 $ts B $tm B
-$cr "Sxiv"                  $tf $sgb  $send Image Preview            $X i3fyra -m B
-$ir "tabbed" class="tabbed" $tf $sgb  $send Preview-tabbed           $X i3fyra -m B
-$tr "Picture in picture"    $tf $srn $send Pic-in-Pic                $ts B $tm B 
+$cr "pomotroid"                  $tf $syb 祥$send Pomodoro $syb祥$send     $ts B $tm B
+$ir "gtop"                       $tf $smb $send Gtop                      $ts B $tm B
+$ir "gotop"                      $tf $smb $send Gotop                     $ts B $tm B
+$ir "htop"                       $tf $smb $send Htop                      $ts B $tm B
+$ir "bashtop"                    $tf $smb $send Bashtop                   $ts B $tm B
+$ir "iftop"                      $tf $smb $send Iftop                     $ts B $tm B
+$ir "bandwhich"                  $tf $smb $send Bandwhich                 $ts B $tm B
+$tr "Picture in picture"         $tf $srn $send Pic-in-Pic                $ts B $tm B
+$ir "tabbed" class="tabbed"      $tf $sgb  $send Preview-tabbed           $tm B; $X i3viswiz -f -c kitty -t nnn 
+$cr "Sxiv"                       $tf $sgb  $send Image Preview            $X i3fyra -m B
 
 # >>> Container C
-$ir "visualizer"            $tf "vis"                                 $ts C $tm C
+$ir "visualizer"                 $tf "visualizer"                          $ts C $tm C, border pixel 2px
 
 # >>> Container D
-$cr "discord"                    $tf $smn  $send %title              $ts D $tm D
-$ir "file_explorer" title="nnn"  $tf $sbn $send nnn                   $ts D $tm D
+$cr "discord"                    $tf $smn  $send %title                   $ts D $tm D
+$ir "file_explorer" title="nnn"  $tf $smn $send nnn                       $ts D $tm D
+$cr "kitty" title="nnn"          $tf $smn $send nnn                       $ts D $tm D
 
 # >>> Floating windows
-for_window [title="alsamixer"] floating enable border pixel 1
-for_window [class="calamares"] floating enable border normal
+for_window [title="alsamixer"] floating enable border pixel 2px
 for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable
 for_window [class="fpakman"] floating enable
-for_window [class="Galculator"] floating enable border pixel 1
-for_window [class="GParted"] floating enable border normal
-for_window [title="i3_help"] floating enable sticky enable border normal
+for_window [class="GParted"] floating enable border normal 2
+for_window [title="i3_help"] floating enable sticky enable border normal 2
 for_window [class="Lightdm-settings"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable border normal
 for_window [class="Manjaro-hello"] floating enable
@@ -614,10 +612,10 @@ set_from_resource $term_color15    color15
 # bindsym $mod+m bar mode toggle
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #8a889d #1e1c31 #cbe3e7 #8a889d #8a889d
-  client.focused_inactive #2d2b40 #1e1c31 #cbe3e7 #2D2B40 #2D2B40
-  client.unfocused        #2d2b40 #1e1c31 #cbe3e7 #2D2B40 #2D2B40
-  client.urgent           #F2B482 #1e1c31 #cbe3e7 #1e1c31 #f2b482
+  client.focused          #1e1c31 #1e1c31 #cbe3e7 #8a889d #2d2b40
+  client.focused_inactive #100e23 #100e23 #cbe3e7 #2d2b40 #2d2b40
+  client.unfocused        #100e23 #100e23 #cbe3e7 #2d2b40 #1e1c31
+  client.urgent           #f2b482 #f2b482 #1e1c31 #1e1c31 #f2b482
   client.placeholder      #f02e6e #62d196 #cbe3e7 #1e1c31 #f02e6e
 
   client.background       #1e1c31

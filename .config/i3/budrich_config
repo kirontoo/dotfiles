@@ -1,0 +1,469 @@
+# i3 config file (v4)
+# >> initializatione
+  
+set $left   h
+set $down   j
+set $up     k
+set $right  l
+
+set $bigsize   20
+set $megasize  50
+set $smallsize 5
+
+set $map exec --no-startup-id exec xdotool key
+
+set $W bindsym Mod4
+set $A Mod1
+set $S Shift
+set $C Control
+set $B bindsym
+
+set $X exec --no-startup-id exec
+
+set $P exec --no-startup-id exec polybar-msg hook
+set $T exec --no-startup-id exec i3term
+set $TB exec --no-startup-id exec i3term --font large
+set $R exec --no-startup-id exec i3run
+set $M exec --no-startup-id exec mediacontrol
+set $K exec --no-startup-id exec i3Kornhe
+set $U exec --no-startup-id exec launchfm
+
+# >> media
+
+$W+minus             $M speed -
+$W+equal             $M speed +
+
+$W+bracketleft       $M prev 
+$W+bracketright      $M next
+
+$W+$S+braceleft      $M seek -10
+$W+$C+braceleft      $M seek -300
+$W+$S+$C+braceleft   $M seek -60
+
+$W+$S+braceright     $M seek +10
+$W+$C+braceright     $M seek +300
+$W+$S+$C+braceright  $M seek +60
+
+$W+slash             $M toggle
+
+$W+apostrophe        $M vol -2%
+$W+backslash         $M vol +2%
+
+$W+$S+quotedbl       $M vol mic -2%
+$W+$S+bar            $M vol mic +2%
+
+$W+period            $M mute
+$W+$S+greater        $M mute mic
+
+$W+comma             $X audioswitch
+$W+0                 $M screenshot
+
+# >> brightness
+
+$W+$S+underscore   $X light -U 5; $P light 1
+$W+$S+plus         $X light -A 5; $P light 1
+
+# >> mouse
+
+# mbutton on titlebar kills
+
+$B --release button2 kill
+# disable scrolling on tabs
+$B button4 nop
+$B button5 nop
+
+# map backbutton as BackSpace
+# map forwardbutton as F5
+$B --whole-window button8 $map BackSpace
+$B --whole-window button9 $map F5
+
+# >> move/size/focus
+
+$W+$A+$left    $K size left  -p $bigsize
+$W+$A+$down    $K size down  -p $bigsize
+$W+$A+$up      $K size up    -p $bigsize
+$W+$A+$right   $K size right -p $bigsize
+
+$W+$S+$C+$left    $K size left  -p $smallsize
+$W+$S+$C+$down    $K size down  -p $smallsize
+$W+$S+$C+$up      $K size up    -p $smallsize
+$W+$S+$C+$right   $K size right -p $smallsize
+
+$W+$C+$left    $K size left  -p $megasize
+$W+$C+$down    $K size down  -p $megasize
+$W+$C+$up      $K size up    -p $megasize
+$W+$C+$right   $K size right -p $megasize
+
+$W+$left       $K move left
+$W+$right      $K move right
+$W+$down       $K move down
+$W+$up         $K move up
+
+$W+$S+$left    $X i3viswiz left 
+$W+$S+$right   $X i3viswiz right
+$W+$S+$down    $X i3viswiz down 
+$W+$S+$up      $X i3viswiz up 
+
+# >> tabs
+
+$W+Tab     $X i3flip next
+$W+$S+Tab  $X i3flip prev
+
+$W+w       $X i3flip --move next
+$W+q       $X i3flip --move prev
+
+# >> window managing
+
+$W+F11 fullscreen toggle
+
+# set title format of active window
+$W+F2     $X i3settf
+$W+F3     $X i3monocle
+$B $A+F4     kill
+
+$W+z      $X i3fyra -a
+$W+$S+z   focus mode_toggle
+
+$W+$C+z   $X i3zen
+
+
+# >> i3Kornhe mode
+
+mode "sizemode" {
+  $B $left           $K -p $bigsize left
+  $B $down           $K -p $bigsize down
+  $B $up             $K -p $bigsize up
+  $B $right          $K -p $bigsize right
+  
+  $B Shift+$left     $K -p $smallsize left
+  $B Shift+$down     $K -p $smallsize down
+  $B Shift+$up       $K -p $smallsize up
+  $B Shift+$right    $K -p $smallsize right
+
+  $B $C+$left        $K -p $megasize left
+  $B $C+$down        $K -p $megasize down
+  $B $C+$up          $K -p $megasize up
+  $B $C+$right       $K -p $megasize right
+
+  $W+$C+$left        $K size left
+  $W+$C+$down        $K size down
+  $W+$C+$up          $K size up
+  $W+$C+$right       $K size right
+
+  $B m $K move -p 0 left
+
+  $B 1 $K 1
+  $B 2 $K 2
+  $B 3 $K 3
+  $B 4 $K 4
+  $B 5 $K 5
+  $B 6 $K 6
+  $B 7 $K 7
+  $B 8 $K 8
+  $B 9 $K 9
+
+  $B q      $K x
+  $B Return $K x
+  $B Escape $K x
+}
+
+# >> workspace
+
+$B $A+Tab $P pbws 2
+
+$W+1 workspace 1
+$W+2 workspace 2
+$W+3 workspace 3
+$W+4 workspace 4
+$W+5 workspace 5
+
+$W+$S+1 move container to workspace 1
+$W+$S+2 move container to workspace 2
+$W+$S+3 move container to workspace 3
+
+# >> settings
+
+show_marks no
+floating_modifier $A
+hide_edge_borders both
+focus_follows_mouse no
+workspace_auto_back_and_forth no
+
+
+# >> appearance
+
+# instance|class|title rule
+set $ir for_window [instance =
+set $cr for_window [class =
+set $tr for_window [title =
+
+# tf: titleformat
+set $tf ] title_format
+
+# tc: target container
+set $tc ,focus;exec --no-startup-id exec i3fyra -m
+
+# use global rule in with ipc instead:
+# https://github.com/acrisci/i3ipc-python/blob/master/examples/floating-mode.py
+# for_window [class = "^.*"] border normal 1, floating enable 
+# $cr "^.*"], border normal 1, floating enable 
+# default rule
+# for_window [con_id = 94544471434448] border normal 1, floating enable 
+
+# bindsym Mod4+c exec --no-startup-id ulf  "$(selection2file)"
+# bindsym Mod4+Shift+c exec --no-startup-id snap
+
+# i3config - curated by budRich since 2016
+# ========================================
+
+# >> autoexec
+#$X switcharoo horizontal
+# $X switcharoo i3reload
+
+# >> panic
+$W+$C+r          $X i3reload
+$W+$A+r          $X i3fyra -m u
+$W+$C+Escape     $X xfce4-session-logout
+# $W+$C+Escape     $X i3off -x
+
+$W+$C+space $X polifypop gurl
+
+$W+$S+m          $X togmon
+
+bindsym Mod4+Shift+d exec --no-startup-id terms -t urxvt -c 3 -n testterm -e typiskt
+for_window [instance=testterm] focus, exec --no-startup-id i3fyra -m A
+
+
+# >> terminal
+
+$W+Return      $T --instance cornerterm
+$W+$S+Return   $T --instance termsmall --font large
+$W+$C+Return   $T --instance auto --autotile
+$W+$A+Return   $T --instance floatterm --i3run-options '--summon'
+
+# >> sublime
+
+$W+s     $R -i sublime_main -e 'sublaunch -p main'
+$W+$S+s  $R -i sublime_not  -e 'sublaunch -p not'
+$W+$A+s  $R -i sublime_tmp  -e 'sublaunch -p tmp'
+
+$W+$C+s  $X sublaction
+
+# >> i3run
+
+$W+$S+i   $R -i inkscape_main -x inkscape -e inkscape
+$W+$S+q   $R -i tore -x qbittorrent -e qbittorrent
+$W+v      $X typisktstart
+
+$W+a      $TB irssi  
+$W+grave  $R -i gcolor2 -e 'gcolor2'
+
+$W+m      $R -c mpv
+$W+n      $R -c Sxiv
+
+$W+$S+question  $R -i pavucontrol -e pavucontrol
+$B $C+$S+Escape $T htop
+
+# >> barmenu
+
+$W+b                  $X paneltoggle
+# $W+b                  $X polybar-msg cmd toggle
+$W+$S+b               $X windowinfo
+
+$W+u                  $X switcharoo
+
+$B --release F8       $X newstuff
+
+
+$W+i                  $X iconfontmenu
+$W+space              $X xlunch
+$W+o                  $X podlist -p
+$W+$S+o               $X podlist -s
+
+$W+d                  $X calmen
+
+# >> print
+
+$B --release Print         $X i3snap s
+$B --release Mod4+Print    $X ssrt --container mkv
+$B --release Control+Print $X ssrt --pause
+$B --release Shift+Print   $X i3snap
+
+# >> upload
+
+$W+c                       $X ulf $(selection2file)
+$W+$S+c                    $X addquote
+
+# >> wallpaper
+
+$W+$S+w  $X setwp --next 
+$W+$C+w  $X setwp --prev
+$W+$A+w  $X setwp --blur
+$W+x     $X xflock4
+# $W+x     $X bwp --lock --wallpaper
+$W+$S+x  $X xfce4-session-logout --suspend
+# $W+$S+x  $X locker
+
+# >> i3keys
+
+$W+y $X monitor -i info -e i3info
+
+# >> rules  
+$cr "Godot"              $tf "godot"       $tc C
+$cr "minecraft-launcher" $tf "minecraft"   $tc C
+$cr "Audacity" window_type="normal" $tf "audacity"    $tc C
+$ir "sublime_main"       $tf "sublime"     $tc C
+$ir "discord"            $tf "discord"     $tc C
+$ir "milkytracker"       $tf "tracker"     $tc C
+$ir "termbig"            $tf "URxvt"       $tc C
+$ir "calibre-gui" title="[|][|]$"       $tf "calibre"     $tc C
+$ir "code"               $tf "VScode"      $tc C
+$ir "sam"                $tf "sam"         $tc C
+$ir "^inkscape_main$"    $tf "inkscape"    $tc C
+$ir "scummvm"            $tf "%title"      $tc C
+
+$tr "^conky \(6570b\)$"     $tf "desktop"  $tc C
+$tr "^Klavaro - Fluidness$" $tf "klavaro"  $tc C
+$tr "^Klavaro - Velocity$"  $tf "klavaro"  $tc C
+
+$cr "Pinta$"                $tf "pinta"    $tc C
+
+# >> rules other
+$ir "tiledterm" $tf "URxvt"
+
+$ir "floatterm" $tf \
+  "<span letter_spacing='0'>░▒▓█</span> URxvt"
+
+# games, fullscreen on ws 2
+set $gaym , move to workspace 2, fullscreen enable, workspace 2
+$ir "explorer.exe"      $tf  "mtg-arena"  $gaym
+$ir "mtga.exe"      $tf  "mtg-arena"  $gaym
+$ir "heroes3 hd.exe"    $tf  "hommIII"    $gaym
+$ir "Minecraft 1.14.4"  $tf  "minecraft"  $gaym
+
+$tr "^cairo-dock-dialog$"] border pixel 0
+for_window [title="^Whisker Menu$"] border pixel 0
+for_window [class="URxvt" title="^/dev/pts/.*"] title_format URxvt
+
+$ir "Navigator"          $tf "palemoon"    $tc C
+$cr "Pale moon" instance="Navigator" title="^Source of:.*"  \
+    $tf "HTMLsource" ;                                      \
+    $X  xdotool getactivewindow                             \
+        set_window --classname "palemoon-source"
+
+# >> chromium
+$cr "Chromium" $tf "chromium" , floating disable, move to workspace 3, workspace 3
+# keybindings
+$W+f                     $X browser
+$W+$S+f                  $X bashugo --preview
+$W+$S+semicolon          $X linklord
+$W+semicolon             $X linklord --exec "vivaldi-launch -u '%u'"
+$B --release $S+F8       $X bashugo
+$B --release $C+F8       $X newpost
+
+# window rules
+$cr "Vivaldi-stable"     $tf "vivaldi"     $tc D
+$cr "Vivaldi-main"       $tf "vivaldi"     $tc C
+$cr "Vivaldi-hugo"       $tf "preview"     $tc D
+$tr "Picture in picture" $tf "PiP"         $tc B
+$ir "StylishEdit2"       $tf "stylem"      $tc D
+$ir "Devtools"           $tf "devtools"    $tc D
+
+# tm: to monitor container
+set $tm class="URxvt"] focus;exec --no-startup-id exec monitor
+
+$ir "vb4c"               $tm vb4c
+$ir "dcd"                $tm dcd
+$ir "browser"            $tm browser
+$ir "hugo"               $tm hugo
+$ir "i3$"                $tm i3
+$ir "dunst"              $tm dunst
+$ir "xfsettingsd"        $tm xfsettingsd
+$ir "^xcfe$"             $tm xfce
+$ir "pulse"              $tm pulse
+$ir "polybar"            $tm polybar
+$ir "i3listn"            $tm i3listn
+$ir "thunar"             $tm thunar
+
+$cr "Xfce4-panel" title="Add New Items"     $tf "additem"  $tc B 
+$cr "Xfce4-panel" title="Panel Preferences" $tf "panel"    $tc D
+# >> layout
+
+# default layout:
+set $layout 'AB=-350 AC=220 BD=252'
+
+# layout manipulation bindings:
+$W+p     $X i3fyra -l $layout
+$W+$C+p  $X i3fyra -l 'AB=800 BD=450'
+$W+$S+p  $X i3fyra -l 'AB=800'
+$W+g     layout toggle tabbed splith splitv stacked
+
+workspace 1 output eDP1
+
+# autoload layout:
+$X i3fyra -l $layout
+
+# >> rules A
+$ir "tore"                 $tf "qbittorrent" $tc A
+$ir "termsmall"            $tf "URxvt"       $tc A
+$ir "htop"                 $tf "htop"        $tc A
+$ir "newsboat"             $tf "newsboat"    $tc A
+$ir "sublime_tmp"          $tf "tmp"         $tc A
+$ir "^surf$"               $tf "surf"        $tc A
+$ir "hd_launcher.exe"      $tf "hommIII"     $tc A
+$ir "sublime_git"          $tf "not"         $tc A
+$cr "Devhelp"              $tf "devhelp"     $tc A
+
+$tr "Minecraft game output"$tf "mclog"       $tc A
+ 
+# >> rules B
+$ir "lutris"             $tf "lutris"      $tc B
+$cr "mpv"                $tf "mpv"         $tc B
+$cr "Nemo-desktop"       $tf "desktop"     $tc B
+$cr "feh"                $tf "feh"         $tc B
+$ir "openimage"          $tf "sxiv"        $tc B
+$ir "snappreview"        $tf "snappreview" $tc B
+$cr "^ThunarB$"          ] focus           $tc B
+$ir "^urxvtB$"           $tf "termfm"      $tc B
+$ir "ncmpcpp"            $tf "ncmpcpp"     $tc B
+$ir "cmus"               $tf "cmus"        $tc B
+$ir "zathura"            $tf "zathura"     $tc B
+$ir "llpp"               ] focus           $tc B
+$ir "speedcrunch"        $tf "SpeedCrunch" $tc B
+$cr "XEyes"              $tf "xeyes"       $tc B
+$ir "sublime_subltmp"    $tf "subltmp"     $tc B
+
+$ir "pavucontrol"        $tf "pavucontrol" $tc B; \
+  $X i3fyra -l 'AB=-565 AC=400'; \
+  $X i3-msg [instance="pavucontrol"] focus
+
+# >> rules D
+$ir "^urxvtD$"           $tf "termfm"      $tc B
+# $cr "Vivaldi-stable"     $tf "vivaldi"     $tc D
+$ir "zeal"               $tf "zeal"        $tc D
+$cr "^ThunarD$"          ] focus           $tc D
+$ir "irssi"              $tf "irc"         $tc D
+$ir "sublime_not"        $tf "not"         $tc D
+$ir "cornerterm"         $tf "URxvt"       $tc D
+
+# >> thunar
+
+$W+e        $U -c D
+$W+$S+e     $U -c B
+$W+$C+e     $U -c D -p "$(sublget --print d)"
+$W+$C+$S+e  $U -c B -p "$(sublget --print d)"
+$B $A+e     $X favfm D
+$B $A+$S+e  $X favfm B
+$B $A+t     $X thunartoggler
+
+# widow Colors           border     bg        text       indic
+client.focused           #4A7EB3    #4A7EB3   #EEEEEE    #4A7EB3
+client.focused_inactive  #2e2e2e    #A8A8A8   #2e2e2e    #A8A8A8
+client.unfocused         #2e2e2e    #989898   #2e2e2e    #989898
+client.urgent            #D4665D    #D4665D   #2e2e2e    #D4665D
+
+client.background        #99CCFF
+
+font pango:FixedFixedsys 12
+
+# syntax:ssHash
