@@ -11,8 +11,6 @@
 
 # >> Initialize
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
-set $mod Mod4
-set $alt Mod1
 
 set $W bindsym Mod4
 set $A Mod1
@@ -100,7 +98,7 @@ $W+space        $X rofi -show drun -width 15
 $W+Shift+space  $X rofi -show run -width 15
 $W+w            $X rofi -show window -width 20 -window-format "{w0} {n0}  {t0}"
 $W+e            $X $HOME/scripts/rofi/rofi-launch.sh config
-$W+$alt+e       $X $HOME/scripts/rofi/rofi-launch.sh autoscript
+$W+$A+e       $X $HOME/scripts/rofi/rofi-launch.sh autoscript
 $W+b            $X $HOME/scripts/rofi/rofi-launch.sh books
 $W+c            $X $HOME/scripts/rofi/rofi-launch.sh screenshot
 $W+t            $X $HOME/scripts/rofi/rofi-launch.sh tmux
@@ -113,7 +111,7 @@ $W+Shift+s      $X $HOME/scripts/rofi/rofi-launch.sh services
 
 # >>> Start Applications
 # $W+t       $X pkill picom
-$W+Ctrl+t    $X "picom -b"
+$W+$C+t      exec "picom -b; exec notify-send 'restart picom'"
 $B+Print     $X i3-scrot
 
 $W+Ctrl+x    --release $X xkill
