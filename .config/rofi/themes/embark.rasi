@@ -37,6 +37,6 @@
 
 	background       :  @black1;
 
-  selection-bg     :  @black0;
-  selection-fg     :  @green;
+  selection-bg     :  @red2;
+  selection-fg     :  @background;
 }
