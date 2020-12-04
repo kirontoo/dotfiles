@@ -2,7 +2,7 @@
 
 read_or_write() {
   read=$(echo "no
-yes" | rofi -width 15 -lines 2 -dmenu -p "Read Only?")
+yes" | rofi -dmenu -p "Read Only?")
 	
 	[[ -z "$read" ]] && exit
 

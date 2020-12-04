@@ -15,7 +15,7 @@ if  [ $WILL_FLOAT ]; then
 		SCRIPT_FILE="$SCRIPT_FOLDER/$1/$SCRIPT"
 	fi
 
-	COMMAND="$HOME/scripts/float-window i3-sensible-terminal $EDITOR $SCRIPT_FILE"
+	COMMAND="$HOME/scripts/float-window i3-sensible-terminal --detach --name nvim_scripts -e $EDITOR $SCRIPT_FILE"
 fi
 
 if [[ -f $SCRIPT_FILE ]]; then

@@ -72,7 +72,7 @@ function download() {
 }
 
 function rofi_menu() { # {{{
-	rofi -width 50 -lines 15 -columns 3 -markup-rows -dmenu -i -p 'emoji: ' \
+	rofi -theme simple-menu -width 50 -lines 15 -columns 3 -markup-rows -dmenu -i -p 'emoji: ' \
 		-kb-row-tab '' \
 		-kb-row-select Tab \
 		-kb-custom-1 Ctrl+c

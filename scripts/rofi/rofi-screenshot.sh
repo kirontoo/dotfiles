@@ -26,21 +26,21 @@ chosen="$(echo -e "$options" | $rofi_command -lines 3 -width 15 -p 'Scrot' -dmen
 case $chosen in
     $screen)
 		if [[ -f /usr/bin/scrot ]]; then
-			sleep 1; -q 90 scrot 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES)/screenshots | sxiv $$(xdg-user-dir PICTURES)/screenshots/$f | xclip -selection c -t image/png $$(xdg-user-dir PICTURES)/screenshots/$f | notify-send "$screen screenshot was made"'
+			sleep 1; -q 90 scrot 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES)/Screenshots | sxiv $$(xdg-user-dir PICTURES)/Screenshots/$f | xclip -selection c -t image/png $$(xdg-user-dir PICTURES)/Screenshots/$f | notify-send "$screen screenshot was made"'
 		else
 			msg
 		fi
         ;;
     $area)
 		if [[ -f /usr/bin/scrot ]]; then
-			sleep 1; scrot -q 90 -s 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES)/screenshots | sxiv $$(xdg-user-dir PICTURES)/screenshots/$f | xclip -selection c -t image/png $$(xdg-user-dir PICTURES)/screenshots/$f | notify-send "$area screenshot was made"'
+			sleep 1; scrot -q 90 -s 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES)/Screenshots | sxiv $$(xdg-user-dir PICTURES)/Screenshots/$f | xclip -selection c -t image/png $$(xdg-user-dir PICTURES)/Screenshots/$f | notify-send "$area screenshot was made"'
 		else
 			msg
 		fi
         ;;
     $window)
 		if [[ -f /usr/bin/scrot ]]; then
-			sleep 1; scrot -q 90 -u 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES)/screenshots | sxiv $$(xdg-user-dir PICTURES)/screenshots/$f | xclip -selection c -t image/png $$(xdg-user-dir PICTURES)/screenshots/$f | notify-send "$window screenshot was made"'
+			sleep 1; scrot -q 90 -u 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES)/Screenshots | sxiv $$(xdg-user-dir PICTURES)/Screenshots/$f | xclip -selection c -t image/png $$(xdg-user-dir PICTURES)/Screenshots/$f | notify-send "$window screenshot was made"'
 		else
 			msg
 		fi

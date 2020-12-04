@@ -68,7 +68,7 @@ selected="$({
   for ((i=0;i<foundkeys;i++)); do
     echo "${keys[${i}-bindsym]}" "${keys[${i}-cmd]}"
   done
-} | rofi -width 40 -dmenu -format i -mesg "#=Win, !=Alt, +=Shift, ^=Ctrl")"
+} | rofi -theme simple-menu -width 40 -dmenu -format i -mesg "#=Win, !=Alt, +=Shift, ^=Ctrl")"
 
 [[ -z $selected ]] && exit 1
 

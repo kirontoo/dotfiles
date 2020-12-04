@@ -7,10 +7,8 @@
 ## Github  : @adi1090x
 ## Twitter : @adi1090x
 
-style="$($HOME/.config/rofi/applets/menu/style.sh)"
-
 dir="$HOME/.config/rofi/simple-menu.rasi"
-rofi_command="rofi -theme $dir"
+rofi_command="rofi"
 
 ## Get Volume
 #VOLUME=$(amixer get Master | tail -n 1 | awk -F ' ' '{print $5}' | tr -d '[]%')
@@ -38,9 +36,9 @@ else
 fi
 
 ## Icons
-ICON_UP=""
-ICON_DOWN=""
-ICON_MUTED=""
+ICON_UP="up"
+ICON_DOWN="down"
+ICON_MUTED="mute"
 
 options="$ICON_UP\n$ICON_MUTED\n$ICON_DOWN"
 

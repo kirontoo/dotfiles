@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sleep 1;
 killall -q nnn
 killall -q gotop
 killall -q pomotroid
@@ -8,11 +9,7 @@ while pgrep -u $UID -x nnn >/dev/null; do sleep 1; done
 while pgrep -u $UID -x gotop >/dev/null; do sleep 1; done
 while pgrep -u $UID -x pomotroid >/dev/null; do sleep 1; done
 
-sleep 1;
 exec i3-sensible-terminal --detach --name file_explorer -e nnn -R &
-exec i3fyra -c Spotify -m A
-sleep 1; i3viswiz -c Spotify -f; i3-msg layout tabbed;
-
-exec i3-sensible-terminal --detach -o font_size=10 -o window_margin_width=0 --name gotop -e gotop &
-exec pomotroid &
-exit
+exec i3-sensible-terminal --detach -o font_size=10 --name gotop -e gotop &
+pomotroid &
+i3viswiz -c Spotify -f; i3fyra -m A; i3-msg layout tabbed;

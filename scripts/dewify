@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# dependencies: kitty, npm, docker
+# these flags are kitty specific
+
+if [[ -d $1 ]]; then
+	DIR=$HOME/scripts/kitty-sessions
+	echo "running npm session"
+
+	if [[ "${2}" == "dock" ]]; then
+		echo "running docker compose"
+		exec /usr/bin/kitty --detach --name docker_server --directory $1 --session $DIR/run-docker-compose.sh & 
+	fi
+
+	exec /usr/bin/kitty --detach --name web_server --directory $1 --session $DIR/run-npm-server.sh &
+	exec /usr/bin/kitty --detach --name test_runner --directory $1 --session $DIR/run-test-runner.sh &
+
+else
+	echo "not a directory"
+	exit
+fi
+
+exit
+

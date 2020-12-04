@@ -20,7 +20,7 @@ function get_max_lines() {
 
 lines=$( get_max_lines )
 
-BOOK_SELECTION=$( ( get_books ) | rofi -dmenu -p "Open PDF" -width 15 -fixed-num-lines 10 -lines ${lines})
+BOOK_SELECTION=$( ( get_books ) | rofi -dmenu -theme simple-menu -p "Open PDF" -width 15 -fixed-num-lines 10 -lines ${lines})
 
 if [[ -z "${BOOK_SELECTION}" ]]; then
 	echo "Cancel"

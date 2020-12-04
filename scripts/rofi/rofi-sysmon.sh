@@ -8,8 +8,7 @@ iftop" | rofi -dmenu -p "System Monitor" -width 15 -lines 5)
 if [ "$choice" == 'htop' ]; then
 	i3-sensible-terminal --detach -o font_size=10 -o window_margin_width=0 --name htop -e htop &
 elif [ "$choice" == 'gtop' ]; then
-	kitty -o font_size=10 --name gtop -e gtop
-	i3-sensible-terminal --detach -o font_size=10 -o window_margin_width=0 --name gtop -e gtop &
+	i3-sensible-terminal --detach -o font_size=8 -o window_margin_width=0 -o window_padding_width=0 --name gtop -e gtop
 elif [ "$choice" == 'gotop' ]; then
 	i3-sensible-terminal --detach -o font_size=10 -o window_margin_width=0 --name gotop -e gotop &
 elif [ "$choice" == 'iftop' ]; then

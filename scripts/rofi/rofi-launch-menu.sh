@@ -42,8 +42,17 @@ LABELS["powermenu"]="Open powermenu"
 COMMANDS["screenshot"]="$ROFI_DIR/rofi-launch.sh screenshot"
 LABELS["screenshot"]="Make a screenshot"
 
+COMMANDS["screenshooter"]="$ROFI_DIR/rofi-launch.sh screenshooter"
+LABELS["screenshooter"]="Make a screenshot or record"
+
+COMMANDS["screenshooter-stop"]="$ROFI_DIR/rofi-launch.sh screenshooter-stop"
+LABELS["screenshooter-stop"]="End screenshooter recording"
+
 COMMANDS["services"]="$ROFI_DIR/rofi-launch.sh services"
 LABELS["services"]="Run a service"
+
+COMMANDS["surfraw"]="$ROFI_DIR/rofi-launch.sh surfraw"
+LABELS["surfraw"]="Search the web"
 
 COMMANDS["sysmon"]="$ROFI_DIR/rofi-launch.sh sysmon"
 LABELS["sysmon"]="Run a system monitor application"
@@ -63,12 +72,17 @@ function print_menu() {
 	mapfile -d '' sorted < <(printf '%s\0' "${!LABELS[@]}" | sort -z)
 	for key in ${!sorted[@]}	
 	do
-		echo -e "${sorted[$key]}: ${LABELS[${sorted[$key]}]}"
+		# echo -e "${sorted[$key]}: ${LABELS[${sorted[$key]}]}"
+		echo -e "${sorted[$key]}"
 	done
 }
 
 function launch() {
-	print_menu | rofi -dmenu -width 20 -mesg "Launch Rofi Menu" -i -p "Menu"
+	# print_menu | rofi -dmenu -width 15 -mesg "Launch Rofi Menu" -i -p "Menu"
+	print_menu | rofi -dmenu -p "Menu" -theme $HOME/.config/rofi/embark-bar.rasi
+
+	# print_menu | dmenu -nb "#1e1c31" -nf "#cbe3e7" -sb "#f48fb1" -sf "#100e32" -fn "scientifica:bold:pixelsize=15" -p "Menu >_" -h 34px
+	# print_menu | i3menu --prompt "Menu >_ " --theme embark --orientation horizontal --include pel --target B
 }
 
 value=$( launch )
