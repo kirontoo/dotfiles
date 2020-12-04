@@ -1,7 +1,7 @@
 configuration {
-	font: "Source Code Pro 12";
+	font: "scientifica bold 14";
 	show-icons: false;
-	theme: "~/.config/rofi/simple-menu.rasi";
+	theme: "~/.config/rofi/embark-bar.rasi";
 	lines: 12;
 	scroll-method: 1;
 }

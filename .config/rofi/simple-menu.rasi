@@ -42,12 +42,12 @@ prompt {
 textbox-prompt-colon {
   expand: false;
   str: " >_";
-  text-color: @text-color;
+  text-color: @text;
 }
 
 entry {
   margin: 0px 10px;
-	text-color: @text-color;
+	text-color: @selection-bg;
 }
 
 listview {
@@ -58,7 +58,7 @@ listview {
 
 element {
   padding: 5px;
-  text-color: @text-color;
+  text-color: @text;
 	padding: 3px;
 }
 
@@ -82,4 +82,8 @@ message {
   padding: 5px;
   background-color: @background;
 	text-color: @yellow;
+}
+
+textbox {
+ text-color: @text;
 }
