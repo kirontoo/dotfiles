@@ -2,7 +2,7 @@
 
 * {
 		background-color:      @background;
-		text-color:            @text;
+		text-color:            @white;
 		font: "scientifica bold 12";
 }
 
@@ -21,8 +21,6 @@ inputbar {
 }
 
 prompt {
-  /* text-color: @selection-fg; */
-	/* background-color: @selection-bg; */
 	background-color: @background;
 	text-color: @selection-bg;
 	padding: 8px 0.3em 8px 0.3em;
@@ -32,7 +30,7 @@ prompt {
 textbox-prompt-colon {
   expand: false;
   str: " ";
-  text-color: @text;
+  text-color: @black4;
 	background-color: @background;
 	padding: 8px 0px;
 }
@@ -48,22 +46,24 @@ listview {
 		spacing:    4px;
 		width:      10em;
 		lines: 30;
+		children: [ element-icon, element ];
 }
 
 entry {
 		expand:     false;
 		width:      15em;
-		margin: 8px 10px;
+		margin: 4px 10px;
+		padding: 4px 0;
 		text-color: @selection-bg;
 		border: 0 2px 0 0;
 		border-color: @black4;
 }
 
 element {
-	  text-color: @text;
+	  text-color: @white;
 		dynamic: true;
-		padding: 8px 4px;
-		str: "|";
+		padding: 2px 4px;
+		margin: 6px 0px;
 }
 
 element selected {
@@ -72,7 +72,7 @@ element selected {
 }
 
 textbox {
- text-color: @text;
+ text-color: @white;
 }
 
 element urgent, element selected urgent {
