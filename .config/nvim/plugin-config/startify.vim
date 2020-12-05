@@ -44,3 +44,4 @@ let g:startify_custom_header=startify#center([
 			\'    ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║',
 			\'    ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝'])
 
+highlight StartifyHeader  guifg=#f48fb1 ctermfg=204
