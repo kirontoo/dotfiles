@@ -94,10 +94,10 @@ $W+Shift+w exec --no-startup-id $HOME/scripts/i3-swap-workspace.sh
 
 # >>> rofi app and window launchers
 $W+z            $X morc_menu
-$W+d            $X dmenu_recency -nb "#1e1c31" -nf "#cbe3e7" -sb "#f48fb1" -sf "#100e32" -fn iosevka -p ">_" -h 34px
-$W+space        $X rofi -show drun -width 15
-$W+Shift+space  $X rofi -show run -width 15
-$W+w            $X rofi -show window -width 20 -window-format "{w0} {n0}  {t0}"
+$W+d            $X dmenu_recency -nb "#1e1c31" -nf "#cbe3e7" -sb "#f48fb1" -sf "#100e32" -fn "scientifica:bold:pixelsize=15" -p ">_" -h 34px -p ">_" -h 34px
+$W+space        $X rofi -show drun 
+$W+Shift+space  $X rofi -show run 
+$W+w            $X rofi -show window -window-format "{t0}"  -theme embark-bar
 $W+e            $X $HOME/scripts/rofi/rofi-launch.sh config
 $W+$A+e         $X $HOME/scripts/rofi/rofi-launch.sh autoscript
 $W+b            $X $HOME/scripts/rofi/rofi-launch.sh books
@@ -125,7 +125,7 @@ $W+$S+d      --release  exec "killall dunst;exec notify-send 'restart dunst'"
 $W+Return          exec i3-sensible-terminal
 $W+$S+Return       $R -i vivaldi-stable -x vivaldi-stable -e "vivaldi-stable"
 $W+$C+b            exec i3-sensible-terminal -e 'bmenu'
-$W+F1              $R -i vivaldi_branch -x vivaldi-stable -e "vivaldi-stable"
+$W+F1              $R -i vivaldi_branch -e "vivaldi-stable"
 $W+F2              $R -i file_explorer -e "i3-sensible-terminal --name file_explorer -e nnn -R"
 $W+F3              $R -i discord -e "discord"
 $W+F4              $R -i spotify -e "spotify"
@@ -455,7 +455,7 @@ $ir "bashtop"                    $tf $smb $send Bashtop                   $tc
 $ir "iftop"                      $tf $smb $send Iftop                     $tc B 
 $ir "bandwhich"                  $tf $smb $send Bandwhich                 $tc B 
 $tr "Picture in picture"         $tf $srn $send Pic-in-Pic                $tc B 
-$ir "tabbed" class="tabbed"      $tf $sgb  $send Preview-tabbed           $tc B; $X i3viswiz -f -c kitty -t nnn 
+$ir "tabbed" class="tabbed"      $tf $sgb  $send Preview-tabbed           $tm B; $X i3viswiz -f -c kitty -t nnn 
 $cr "Sxiv"                       $tf $sgb  $send Image Preview            $tc B; $X i3viswiz -i "file_explorer" -f
 
 # >>> Container C
@@ -619,8 +619,8 @@ set_from_resource $term_color15    color15
 # bindsym $mod+m bar mode toggle
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #100e23 #1e1c31 #cbe3e7 #f02e6e #100e23
-  client.focused_inactive #100e23 #2d2b40 #cbe3e7 #2d2b40 #100e23
+  client.focused          #100e23 #2d2b40 #cbe3e7 #f02e6e #100e23
+  client.focused_inactive #100e23 #1e1c31 #cbe3e7 #2d2b40 #100e23
   client.unfocused        #100e23 #100e23 #cbe3e7 #2d2b40 #100e23
   client.urgent           #f2b482 #f2b482 #1e1c31 #1e1c31 #f2b482
   client.placeholder      #f02e6e #62d196 #cbe3e7 #1e1c31 #f02e6e
