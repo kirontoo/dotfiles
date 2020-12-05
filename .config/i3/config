@@ -531,15 +531,9 @@ exec_always --no-startup-id $HOME/.config/conky/launch.sh
 # Launch Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-# Start up nnn, gotop, and pomotroid
-# $R -i file_explorer -e "i3-sensible-terminal --name file_explorer -e nnn -R"
-# $X pomotroid &
-# $X i3-sensible-terminal --detach -o font_size=10 --name gotop -e gotop &
- 
 # startup apps and layout
 # Visualizer
 exec_always --no-startup-id $HOME/scripts/visulaunch
-# $X $HOME/scripts/startup_app &
 
 ########################################################
 
