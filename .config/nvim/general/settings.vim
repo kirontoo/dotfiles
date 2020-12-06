@@ -68,7 +68,7 @@ set nowrap linebreak
 set textwidth=0
 set wrapmargin=0
 
-" set colorcolumn=80,120
+set colorcolumn=80,120
 " let &colorcolumn="80,".join(range(120,256),",")
 
 set nolist                                                                                         "  show trailing whitespaces
@@ -107,8 +107,6 @@ set clipboard+=unnamedplus
 set formatoptions-=cro
 
 " Mode Cursor Settings
-" highlight Cursor guifg=white guibg=black
-" highlight iCursor guifg=white guibg=steelblue
 set guicursor=n-v-c:block-Cursor/iCursor
 set guicursor+=i:hor20-Cursor/iCursor
 set guicursor+=r:hor20-Cursor/rCursor-blinkwait300-blinkoff200-blinkon150
