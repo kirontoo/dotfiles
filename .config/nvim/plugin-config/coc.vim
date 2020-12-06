@@ -13,6 +13,7 @@ let g:coc_global_extensions=[
 				\'coc-tslint',
 				\'coc-html',
 				\'coc-css',
+				\'coc-rls'
 			\]
 
 let g:coc_disable_startup_warning = 1
