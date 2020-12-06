@@ -11,7 +11,7 @@ TMUX_SESSION=$( (echo 'new'; tmux_sessions) | rofi -dmenu -p "Select tmux sessio
 
 if [[ x"new" = x"${TMUX_SESSION}" ]]; then
 		# create a new tmux session
-		session_name=$( rofi -dmenu -p "Session Name?" -theme '.config/rofi/prompt.rasi' )
+		session_name=$( rofi -dmenu -p "Session Name?" )
 		[[ -z "${session_name}" ]] && exit
 		i3-sensible-terminal --name tmux_${session_name} --title ${session_name} -e tmux new -t $session_name &
 
