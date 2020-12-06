@@ -94,8 +94,8 @@ $W+Shift+w exec --no-startup-id $HOME/scripts/i3-swap-workspace.sh
 
 # >>> rofi app and window launchers
 $W+z            $X morc_menu
-$W+d            $X dmenu_recency -nb "#1e1c31" -nf "#cbe3e7" -sb "#f48fb1" -sf "#100e32" -fn "scientifica:bold:pixelsize=15" -p ">_" -h 34px -p ">_" -h 34px
-$W+space        $X rofi -show drun 
+$W+d            $X dmenu_recency -nb "#1e1c31" -nf "#cbe3e7" -sb "#f48fb1" -sf "#100e32" -fn "scientifica:bold:pixelsize=15" -p ">_" -h 34px 
+$W+space        $X rofi -show drun
 $W+Shift+space  $X rofi -show run 
 $W+w            $X rofi -show window -window-format "{t0}"  -theme embark-bar
 $W+e            $X $HOME/scripts/rofi/rofi-launch.sh config
@@ -104,7 +104,6 @@ $W+b            $X $HOME/scripts/rofi/rofi-launch.sh books
 $W+c            $X $HOME/scripts/rofi/rofi-launch.sh screenshot
 $W+t            $X $HOME/scripts/rofi/rofi-launch.sh tmux
 $W+m            $X $HOME/scripts/rofi/rofi-launch-menu.sh
-$W+Shift+s      $X $HOME/scripts/rofi/rofi-launch.sh services
 
 # Screen brightness controls
 # bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
@@ -169,8 +168,8 @@ $W+$A+c  $tm C
 $W+$A+d  $tm D
 
 # >>> split orientation
-$W+s split h;exec notify-send 'tile horizontally'
-$W+v split v;exec notify-send 'tile vertically'
+# $W+s split h;exec notify-send 'tile horizontally'
+# $W+v split v;exec notify-send 'tile vertically'
 $W+q split toggle
 
 # toggle fullscreen mode for the focused container
@@ -215,6 +214,8 @@ $W+$C+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you rea
 $W+Escape exec --no-startup-id $lockscreen
 # bindsym $mod+Escape exec --no-startup-id blurlock
 
+$B --release button2 kill
+
 ################################################################################################
 
 ################################################################################################
@@ -244,6 +245,7 @@ $B XF86AudioPrev exec playerctl previous
 bindsym XF86AudioRaiseVolume exec --no-startup-id  "$HOME/scripts/volume.sh up" 
 bindsym XF86AudioLowerVolume exec --no-startup-id  "$HOME/scripts/volume.sh down" 
 $W+$A+m exec --no-startup-id  "$HOME/scripts/volume.sh mute" 
+$W+comma $X pactl set-source-mute 2 toggle
 ################################################################################################
 
 ################################################################################################
@@ -364,11 +366,12 @@ $W+$S+0 move container to workspace $ws0; workspace $ws0
 # >>> I3FYRA
 # dependency: i3ass https://github.com/budlabs/i3ass
 
-# set $layout 'AB=800 AC=-200 BD=-500'
 set $layout 'AB=-550 AC=-200 BD=500'
 
-$W+p $X i3fyra -l $layout
-$W+$S+p $X i3fyra -l 'AB=550 AC=-200 BD=500'
+$W+p     $X i3fyra -l $layout
+$W+$S+p  $X i3fyra -l 'AB=550 AC=-200 BD=500'
+$W+s     $X i3fyra -l 'AB=-550 AC=-200 BD=200'
+$W+$S+s  $X i3fyra -l 'AB=-550 AC=-200 DB=200'
 
 # autoload layout
 $X i3fyra -l $layout
@@ -403,32 +406,32 @@ $X i3fyra -l $layout
 # Use $ts before $tm to make sure that the container exists 
 # ( container A will always exist )
 
-set $srn <span font_size="x-small" font_family="Iosevka" fgcolor="#f48fb1">
-set $srb <span font_size="x-small" font_family="Iosevka" fgcolor="#f02e6e">
+set $srn <span font_size="small" font_family="Iosevka" fgcolor="#f48fb1">
+set $srb <span font_size="small" font_family="Iosevka" fgcolor="#f02e6e">
 
-set $sgn <span font_size="x-small" font_family="Iosevka" fgcolor="#a1efd3">
-set $sgb <span font_size="x-small" font_family="Iosevka" fgcolor="#62d196">
+set $sgn <span font_size="small" font_family="Iosevka" fgcolor="#a1efd3">
+set $sgb <span font_size="small" font_family="Iosevka" fgcolor="#62d196">
 
-set $syn <span font_size="x-small" font_family="Iosevka" fgcolor="#ffe6b3">
-set $syb <span font_size="x-small" font_family="Iosevka" fgcolor="#f2b482">
+set $syn <span font_size="small" font_family="Iosevka" fgcolor="#ffe6b3">
+set $syb <span font_size="small" font_family="Iosevka" fgcolor="#f2b482">
 
-set $sun <span font_size="x-small" font_family="Iosevka" fgcolor="#91ddff">
-set $sub <span font_size="x-small" font_family="Iosevka" fgcolor="#65b2ff">
+set $sun <span font_size="small" font_family="Iosevka" fgcolor="#91ddff">
+set $sub <span font_size="small" font_family="Iosevka" fgcolor="#65b2ff">
 
-set $smn <span font_size="x-small" font_family="Iosevka" fgcolor="#d4bfff">
-set $smb <span font_size="x-small" font_family="Iosevka" fgcolor="#a37acc">
+set $smn <span font_size="small" font_family="Iosevka" fgcolor="#d4bfff">
+set $smb <span font_size="small" font_family="Iosevka" fgcolor="#a37acc">
 
-set $scn <span font_size="x-small" font_family="Iosevka" fgcolor="#87dfeb">
-set $scb <span font_size="x-small" font_family="Iosevka" fgcolor="#63f2f1">
+set $scn <span font_size="small" font_family="Iosevka" fgcolor="#87dfeb">
+set $scb <span font_size="small" font_family="Iosevka" fgcolor="#63f2f1">
 
-set $swn <span font_size="x-small" font_family="Iosevka" fgcolor="#cbe3e7">
-set $swb <span font_size="x-small" font_family="Iosevka" fgcolor="#8a889d">
+set $swn <span font_size="small" font_family="Iosevka" fgcolor="#cbe3e7">
+set $swb <span font_size="small" font_family="Iosevka" fgcolor="#8a889d">
 
-set $sbn <span font_size="x-small" font_family="Iosevka" fgcolor="#1e1c31">
-set $sbd <span font_size="x-small" font_family="Iosevka" fgcolor="#100E23">
-set $sbb <span font_size="x-small" font_family="Iosevka" fgcolor="#2D2B40">
-set $sbp <span font_size="x-small" font_family="Iosevka" fgcolor="#3E3859">
-set $sbq <span font_size="x-small" font_family="Iosevka" fgcolor="#585273">
+set $sbn <span font_size="small" font_family="Iosevka" fgcolor="#1e1c31">
+set $sbd <span font_size="small" font_family="Iosevka" fgcolor="#100E23">
+set $sbb <span font_size="small" font_family="Iosevka" fgcolor="#2D2B40">
+set $sbp <span font_size="small" font_family="Iosevka" fgcolor="#3E3859">
+set $sbq <span font_size="small" font_family="Iosevka" fgcolor="#585273">
  
 set $send </span>
 
@@ -436,34 +439,35 @@ for_window [class="^.*"] title_format $sgn 缾$send %class: %title, border norma
 for_window [class="kitty"] title_format $srn $send %title
 
 # >>> Container A
-$cr "Xarchiver"                  $tf "Xarchiver"                           $tc A
-$ir "vivaldi-stable"             $tf $scb 爵$send %title                   $tc A
-$ir "zathura"                    $tf $srb $send Zathura                   $tc A
-$ir "tmux_*"                     $tf $scn $send Tmux: %title              $tc A
-$ir "thunar"                     $tf $smn $send Thunar                    $tc A
-$cr "pcmanfm"                    $tf $sbn $send File explorer             $tc A
-$ir "mousepad"                   $tf $syn $send Mousepad                  $tc A
-$ir "spotify"                    $tf $srb $send Spotify $srb$send        ,$tm A
-$ir "nvim_*"                     $tf $syn $send Nvim: %title              $tc A
+$cr "Xarchiver"                            $tf "Xarchiver"                           $tc A
+$ir "vivaldi-stable"                       $tf $scb 爵$send %title                   $tc A
+$ir "zathura"                              $tf $srb $send Zathura                   $tc A
+$ir "tmux_*"                               $tf $scn $send Tmux: %title              $tc A
+$ir "thunar"                               $tf $smn $send Thunar                    $tc A
+$cr "pcmanfm"                              $tf $sbn $send File explorer             $tc A
+$ir "mousepad"                             $tf $syn $send Mousepad                  $tc A
+$ir "nvim_*"                               $tf $syn $send Nvim: %title              $tc A
+$ir "spotify"                              $tf $srb $send Spotify $srb$send        ,$tm A
 
 # >>> Container B
-$cr "pomotroid"                  $tf $syb 祥$send Pomodoro $syb祥$send     $tc B 
-$ir "gtop"                       $tf $smb $send Gtop                      $tc B 
-$ir "gotop"                      $tf $smb $send Gotop                     $tc B 
-$ir "htop"                       $tf $smb $send Htop                      $tc B 
-$ir "bashtop"                    $tf $smb $send Bashtop                   $tc B 
-$ir "iftop"                      $tf $smb $send Iftop                     $tc B 
-$ir "bandwhich"                  $tf $smb $send Bandwhich                 $tc B 
-$tr "Picture in picture"         $tf $srn $send Pic-in-Pic                $tc B 
-$ir "tabbed" class="tabbed"      $tf $sgb  $send Preview-tabbed           $tm B; $X i3viswiz -f -c kitty -t nnn 
-$cr "Sxiv"                       $tf $sgb  $send Image Preview            $tc B; $X i3viswiz -i "file_explorer" -f
+$cr "pomotroid"                            $tf $syb 祥$send Pomodoro $syb祥$send     $tc B
+$ir "gtop"                                 $tf $smb $send Gtop                      $tc B
+$ir "gotop"                                $tf $smb $send Gotop                     $tc B
+$ir "htop"                                 $tf $smb $send Htop                      $tc B
+$ir "bashtop"                              $tf $smb $send Bashtop                   $tc B
+$ir "iftop"                                $tf $smb $send Iftop                     $tc B
+$ir "bandwhich"                            $tf $smb $send Bandwhich                 $tc B
+$tr "Picture in picture"                   $tf $srn $send Pic-in-Pic                $tc B
+$ir "tabbed" class="tabbed"                $tf $sgb  $send Preview-tabbed           $tm B; $X i3viswiz -f -c kitty -t nnn
+$cr "Sxiv"                                 $tf $sgb  $send Image Preview            $tc B; $X i3viswiz -i "file_explorer" -f
 
 # >>> Container C
-$ir "visualizer"                 $tf "visualizer"                          $tc C, border pixel 2px
+$ir "visualizer"                           $tf "visualizer"                          $tc C, border pixel 2px
 
 # >>> Container D
-$cr "discord"                    $tf $smn  $send %title                   $tc D 
-$ir "file_explorer" title="nnn"  $tf $smn $send nnn                       $tc D 
+$cr "discord"                              $tf $smn  $send %title                   $tc D
+$ir "file_explorer" title="nnn"            $tf $smn $send file explorer             $tc D
+$ir "crx_mpognobbkildjkofajifpdfhcoklimli" $tf $scb $send Dev Tools                 $tm D
 
 # >>> Floating windows
 for_window [title="alsamixer"] floating enable border pixel 2px
