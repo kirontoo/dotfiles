@@ -6,8 +6,8 @@
 " /_____/                        \/            \/"   __  .__
 
 
-let g:gruvbox_contrast_dark='medium'
-let g:gruvbox_contrast_light='medium'
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_light='hard'
 
 noremap <leader>Tg :call Gruvbox()<CR>
 function! Gruvbox()
