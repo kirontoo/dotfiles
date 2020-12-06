@@ -30,7 +30,7 @@ prompt {
 textbox-prompt-colon {
   expand: false;
   str: " ";
-  text-color: @black4;
+  text-color: @separator;
 	background-color: @background;
 	padding: 8px 0px;
 }
@@ -56,7 +56,7 @@ entry {
 		padding: 4px 0;
 		text-color: @selection-bg;
 		border: 0 2px 0 0;
-		border-color: @black4;
+		border-color: @separator;
 }
 
 element {

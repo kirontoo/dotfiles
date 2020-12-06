@@ -108,12 +108,12 @@ case-indicator,
 entry,
 prompt {
     spacing:    0;
-    text-color: @cyan2;
+    text-color: @red2;
 }
 
 textbox-prompt-sep {
     expand:     false;
-		str:				" : ";
-    text-color: @text-color;
+		str: "  ";
+    text-color: @separator;
     margin:     0 0.3em 0 0;
 }
