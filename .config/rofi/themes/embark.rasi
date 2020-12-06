@@ -32,6 +32,8 @@
 	background-color :  transparent;
 	spacing          :  0;
 
+	separator        :  @black4;
+
 	text             :  @white2;
 	text2            :  @white;
 
