@@ -7,7 +7,7 @@
 ## Modified from source: https://github.com/adi1090x/rofi
 
 dir="$HOME/.config/rofi/simple-menu.rasi"
-rofi_command="rofi -theme $dir"
+rofi_command="rofi -theme $dir -i"
 
 # Error msg
 msg() {
