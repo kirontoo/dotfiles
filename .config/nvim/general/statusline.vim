@@ -54,7 +54,7 @@ function! ActiveStatus()
 	let statusline=""
 
 	" mode
-	let statusline .= '%7*%#Include# %{toupper(g:currentmode[mode()])}'
+	let statusline .= '%#Include# %{toupper(g:currentmode[mode()])}'
 	" buffer number
 	let statusline .= '%#Typedef# %n%*'
 	" git branch
@@ -87,7 +87,7 @@ function! ActiveStatus()
 
 	" file path
 	let statusline .= '%#SpecialKey#['
-	let statusline .= '%#Number# %<%f%*'
+	let statusline .= '%#Number# %<%t%*'
 	let statusline .= '%#Warningmsg#%{ReadOnly()}'
 	let statusline .= '%#SpecialKey# ]'
 
@@ -151,15 +151,6 @@ let g:currentmode={
 			\ '!'      : 'Shell ',
 			\ 't'      : 'Terminal '
 			\}
-
-highlight User1 cterm=None gui=None ctermfg=007 guifg=fgcolor
-highlight User2 cterm=None gui=None ctermfg=008 guifg=bgcolor
-highlight User3 cterm=None gui=None ctermfg=008 guifg=bgcolor
-highlight User4 cterm=None gui=None ctermfg=008 guifg=bgcolor
-highlight User5 cterm=None gui=None ctermfg=008 guifg=bgcolor
-highlight User7 cterm=None gui=None ctermfg=008 guifg=bgcolor
-highlight User8 cterm=None gui=None ctermfg=008 guifg=bgcolor
-highlight User9 cterm=None gui=None ctermfg=007 guifg=fgcolor
 
 " Automatically change the statusline color depending on mode
 function! ChangeStatuslineColor()
@@ -239,5 +230,6 @@ endfunction
 function! NearestMethodOrFunction() abort
  return get(b:, 'vista_nearest_method_or_function', '')
 endfunction
+
 " 
 " 
