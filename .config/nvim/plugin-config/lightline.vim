@@ -92,47 +92,6 @@ let g:lightline.component = {
         \ 'testing_status': '%{TestingStatus()}'
         \ }
 
-"
-" let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
-"
-" let s:embark0 = ["#585273", "NONE"]
-" let s:embark1 = ["#3e3859", 0]
-" let s:embark2 = ["#2d2b40", "NONE"]
-" let s:embark3 = ["#100e23", 8]
-" let s:embark4 = ["#8a889d", "NONE"]
-" let s:embark5 = ["#CBE3E7", 7]
-" let s:embark6 = ["#f02e6e", 15]
-" let s:embark7 = ["#91ddff", 14]
-" let s:embark8 = ["#65b2ff", 6]
-" let s:embark9 = ["#87dfe0", 4]
-" let s:embark10 = ["#63f2f1", 12]
-" let s:embark11 = ["#f48fb1", 1]
-" let s:embark12 = ["#f2b482", 11]
-" let s:embark13 = ["#ffe6b3", 3]
-" let s:embark14 = ["#a1efd3", 2]
-" let s:embark15 = ["#d4bfff", 5]
-"
-" " let s:p.normal.left = [ [ s:embark1, s:embark8 ], [ s:embark5, s:embark1 ] ]
-" let s:p.normal.left = [ [ s:embark3, s:embark14 ], [ s:embark5, s:embark1 ] ]
-" let s:p.normal.middle = [ [ s:embark5, s:embark3 ] ]
-" let s:p.normal.right = [ [ s:embark5, s:embark1 ], [ s:embark5, s:embark1 ] ]
-" let s:p.normal.warning = [ [ s:embark1, s:embark13 ] ]
-" let s:p.normal.error = [ [ s:embark1, s:embark11 ] ]
-"
-" let s:p.inactive.left =  [ [ s:embark1, s:embark8 ], [ s:embark5, s:embark1 ] ]
-" let s:p.inactive.middle = [ [ s:embark5, s:embark1 ] ]
-" let s:p.inactive.right = [ [ s:embark5, s:embark1 ], [ s:embark5, s:embark1 ] ]
-"
-" let s:p.insert.left = [ [ s:embark1, s:embark6 ], [ s:embark5, s:embark1 ] ]
-" let s:p.replace.left = [ [ s:embark1, s:embark13 ], [ s:embark5, s:embark1 ] ]
-" let s:p.visual.left = [ [ s:embark3, s:embark13 ], [ s:embark3, s:embark12 ] ]
-"
-" let s:p.tabline.left = [ [ s:embark5, s:embark3 ] ]
-" let s:p.tabline.middle = [ [ s:embark5, s:embark1 ], [ s:embark5, s:embark3 ] ]
-" let s:p.tabline.right = [ [ s:embark3, s:embark11 ] ]
-" let s:p.tabline.tabsel = [ [ s:embark3, s:embark11 ] ]
-"
-" let g:lightline#colorscheme#embark#palette = lightline#colorscheme#flatten(s:p)
 " Colors
 let s:deep_space= { "gui": "#100E23", "cterm": "232", "cterm16": "8"}
 let s:space = { "gui": "#1e1c31", "cterm": "233", "cterm16": "NONE"}
