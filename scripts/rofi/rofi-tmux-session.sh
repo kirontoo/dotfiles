@@ -13,7 +13,7 @@ if [[ x"new" = x"${TMUX_SESSION}" ]]; then
 		# create a new tmux session
 		session_name=$( rofi -dmenu -p "Session Name?" )
 		[[ -z "${session_name}" ]] && exit
-		i3-sensible-terminal --name tmux_${session_name} --title ${session_name} -e tmux new -t $session_name &
+		i3run -i tmux_${TMUX_SESSION} -e "i3-sensible-terminal --name tmux_${session_name} --title ${session_name} -e tmux new -t '${session_name}'" &
 
 elif [[ -z "${TMUX_SESSION}" ]]; then
 		exit
