@@ -201,7 +201,6 @@ $B $A+Shift+Tab move container to workspace back_and_forth; workspace back_and_f
 
 # reload the configuration file
 $W+$S+c reload; exec notify-send "i3 has been reloaded"
-# $W+$A+r          $X i3fyra -m u
 $W+$C+$A+Escape  $X xfce4-session-logout
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -370,8 +369,8 @@ set $layout 'AB=-550 AC=-200 BD=500'
 
 $W+p     $X i3fyra -l $layout
 $W+$S+p  $X i3fyra -l 'AB=550 AC=-200 BD=500'
-$W+s     $X i3fyra -l 'AB=-550 AC=-200 BD=200'
-$W+$S+s  $X i3fyra -l 'AB=-550 AC=-200 DB=200'
+$W+s     $X i3fyra -l 'AB=-750 AC=-200 BD=500'
+$W+$S+s  $X i3fyra -l 'AB=-750 AC=-400 BD=500'
 
 # autoload layout
 $X i3fyra -l $layout
@@ -446,6 +445,7 @@ $ir "tmux_*"                               $tf $scn $send Tmux: %title       
 $ir "thunar"                               $tf $smn $send Thunar                    $tc A
 $cr "pcmanfm"                              $tf $sbn $send File explorer             $tc A
 $ir "mousepad"                             $tf $syn $send Mousepad                  $tc A
+$ir "subl"                                 $tf $syn $send Sublime                   $tc A
 $ir "nvim_*"                               $tf $syn $send Nvim: %title              $tc A
 $ir "spotify"                              $tf $srb $send Spotify $srb$send        ,$tm A
 
@@ -458,8 +458,9 @@ $ir "bashtop"                              $tf $smb $send Bashtop            
 $ir "iftop"                                $tf $smb $send Iftop                     $tc B
 $ir "bandwhich"                            $tf $smb $send Bandwhich                 $tc B
 $tr "Picture in picture"                   $tf $srn $send Pic-in-Pic                $tc B
-$ir "tabbed" class="tabbed"                $tf $sgb  $send Preview-tabbed           $tm B; $X i3viswiz -f -c kitty -t nnn
+$ir "tabbed" class="tabbed"                $tf $sgb  $send Preview-tabbed           $tm B; $X i3viswiz -f -c kitty -t "file_explorer"
 $cr "Sxiv"                                 $tf $sgb  $send Image Preview            $tc B; $X i3viswiz -i "file_explorer" -f
+$cr "feh"                                  $tf $sgb  $send Song Album               $tm B
 
 # >>> Container C
 $ir "visualizer"                           $tf "visualizer"                          $tc C, border pixel 2px
@@ -530,7 +531,7 @@ $X discord
 $X spotify
 
 # Start System stats on desktop
-exec_always --no-startup-id $HOME/.config/conky/launch.sh
+# exec_always --no-startup-id $HOME/.config/conky/launch.sh
 
 # Launch Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -567,22 +568,22 @@ exec_always --no-startup-id $HOME/scripts/visulaunch
 # Same logic applied to everything else.
 set_from_resource $term_background background
 set_from_resource $term_foreground foreground
-set_from_resource $term_color0     color0
-set_from_resource $term_color1     color1
-set_from_resource $term_color2     color2
-set_from_resource $term_color3     color3
-set_from_resource $term_color4     color4
-set_from_resource $term_color5     color5
-set_from_resource $term_color6     color6
-set_from_resource $term_color7     color7
-set_from_resource $term_color8     color8
-set_from_resource $term_color9     color9
-set_from_resource $term_color10    color10
-set_from_resource $term_color11    color11
-set_from_resource $term_color12    color12
-set_from_resource $term_color13    color13
-set_from_resource $term_color14    color14
-set_from_resource $term_color15    color15
+set_from_resource $blackn    color 0
+set_from_resource $redn      color 1
+set_from_resource $green     color 2
+set_from_resource $yellown   color 3
+set_from_resource $bluen     color 4
+set_from_resource $magentan  color 5
+set_from_resource $cyann     color 6
+set_from_resource $whiten    color 7
+set_from_resource $blackd    color 8
+set_from_resource $redd      color 9
+set_from_resource $greend    color 10
+set_from_resource $yellowd   color 11
+set_from_resource $blued     color 12
+set_from_resource $magentad  color 13
+set_from_resource $cyand     color 14
+set_from_resource $whited    color 15
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 # bar {
