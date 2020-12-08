@@ -38,8 +38,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'mhinz/vim-signify'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Plug 'thaerkh/vim-indentguides'
-Plug 'ap/vim-css-color'
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
 
 " Utility
 Plug 'airblade/vim-rooter'
@@ -48,6 +47,7 @@ Plug 'brooth/far.vim'
 Plug 'godlygeek/tabular'
 Plug 'haya14busa/incsearch.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
@@ -58,7 +58,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'mcchrish/nnn.vim'
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'vimwiki/vimwiki'
 
 " Files and Projects
@@ -80,6 +80,7 @@ Plug 'szw/vim-maximizer'
 
 " Syntax
 Plug 'pangloss/vim-javascript'
+Plug 'ap/vim-css-color'
 
 " Extras
 Plug 'ThePrimeagen/vim-be-good'
