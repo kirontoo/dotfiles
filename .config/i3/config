@@ -100,7 +100,6 @@ $W+Shift+space  $X rofi -show run
 $W+w            $X rofi -show window -window-format "{t0}"  -theme embark-bar
 $W+e            $X $HOME/scripts/rofi/rofi-launch.sh config
 $W+$A+e         $X $HOME/scripts/rofi/rofi-launch.sh autoscript
-$W+b            $X $HOME/scripts/rofi/rofi-launch.sh books
 $W+c            $X $HOME/scripts/rofi/rofi-launch.sh screenshot
 $W+t            $X $HOME/scripts/rofi/rofi-launch.sh tmux
 $W+m            $X $HOME/scripts/rofi/rofi-launch-menu.sh
@@ -111,7 +110,7 @@ $W+m            $X $HOME/scripts/rofi/rofi-launch-menu.sh
 
 # >>> Start Applications
 # $W+t       $X pkill picom
-$W+$C+t      exec "pkill -f picom; picom -b; exec notify-send 'restart picom'"
+$W+$C+t      exec "picom -b; exec notify-send 'restart picom'"
 $B+Print     $X i3-scrot
 
 $W+Ctrl+x    --release $X xkill
@@ -124,10 +123,10 @@ $W+$S+d      --release  exec "killall dunst;exec notify-send 'restart dunst'"
 $W+Return          exec i3-sensible-terminal
 $W+$S+Return       $R -i vivaldi-stable -x vivaldi-stable -e "vivaldi-stable"
 $W+$C+b            exec i3-sensible-terminal -e 'bmenu'
-$W+F1              $R -i vivaldi_branch -e "vivaldi-stable"
-$W+F2              $R -i file_explorer -e "i3-sensible-terminal --name file_explorer -e nnn -R"
-$W+F3              $R -i discord -e "discord"
-$W+F4              $R -i spotify -e "spotify"
+$W+F1              $R -i vivaldi_branch -g -e "vivaldi-stable"
+$W+F2              $R -i file_explorer -g -e "i3-sensible-terminal --name file_explorer -e nnn -R"
+$W+F3              $R -i discord -g -e "discord"
+$W+F4              $R -i spotify -g -e "spotify"
 $W+$S+F3           exec pcmanfm_pkexec
 # $W+$S+h          exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 
@@ -268,7 +267,6 @@ $W+comma $X pactl set-source-mute 2 toggle
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 default_border pixel 2px
 default_floating_border normal 2
-# border_radius 2
 title_align left
 
 focus_follows_mouse no
@@ -281,16 +279,13 @@ hide_edge_borders true
 # is used in the bar {} block below.
 # font xft:URWGothic-Book 11
 font xft:Iosevka 12
-# font pango:Iosevka SS10, Medium 12
 font pango:Scientifica, Bold 13
 
 # Default workspace on the right monitor
 workspace 1 output $monitor_right
 
 # Max and min size of floating windows
-floating_minimum_size 40 x 60
-
-
+floating_minimum_size 40 x 30
 ################################################################################################
 
 ################################################################################################
@@ -616,9 +611,10 @@ set_from_resource $whited    color 15
 #
 # hide/unhide i3status bar
 # bindsym $mod+m bar mode toggle
+
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #100e23 #2d2b40 #cbe3e7 #f02e6e #100e23
+  client.focused          #100e23 #3e3859 #cbe3e7 #f02e6e #100e23
   client.focused_inactive #100e23 #1e1c31 #cbe3e7 #2d2b40 #100e23
   client.unfocused        #100e23 #100e23 #cbe3e7 #2d2b40 #100e23
   client.urgent           #f2b482 #f2b482 #1e1c31 #1e1c31 #f2b482
