@@ -48,7 +48,7 @@ nmap <silent> gd <Plug>(coc-definition)|                      " go to definition
 nmap <silent> gy <Plug>(coc-type-definition)|                 " go to type definition
 nmap <silent> gi <Plug>(coc-implementation)|                  " go to implementation
 nmap <silent> gr <Plug>(coc-references)|                      " go to reference
-nmap <silent> gD <Plug>(coc-declaration)|											" go to reference
+nmap <silent> gD <Plug>(coc-declaration)|											" go to declaration
 nmap <silent> <leader>cr <Plug>(coc-rename)|                  " Remap for rename current word
 
 " show documentation in preview window
