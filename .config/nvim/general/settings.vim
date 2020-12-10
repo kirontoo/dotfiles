@@ -71,8 +71,8 @@ set wrapmargin=0
 set colorcolumn=80,120
 " let &colorcolumn="80,".join(range(120,256),",")
 
-set nolist                                                                                         "  show trailing whitespaces
-" set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:§
+set list                                                                                           "  show trailing whitespaces
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:§
 
 " Font
 " set guifont=fira\ code:h14
