@@ -13,10 +13,12 @@ let g:coc_global_extensions=[
 				\'coc-tslint',
 				\'coc-html',
 				\'coc-css',
-				\'coc-rls'
+				\'coc-rust-analyzer'
 			\]
 
 let g:coc_disable_startup_warning = 1
+highlight CocErrorHighlight ctermfg=Red  guifg=Red
+highlight CocWarningHighlight ctermfg=Yellow guifg=Orange
 
 "~~~~~~~~~~ COC PLUGIN~~~~~~~~
 " Use tab for trigger completion with characters ahead and navigate.
