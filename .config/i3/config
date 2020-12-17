@@ -103,6 +103,7 @@ $W+$A+e         $X $HOME/scripts/rofi/rofi-launch.sh autoscript
 $W+c            $X $HOME/scripts/rofi/rofi-launch.sh screenshot
 $W+t            $X $HOME/scripts/rofi/rofi-launch.sh tmux
 $W+m            $X $HOME/scripts/rofi/rofi-launch-menu.sh
+$W+q            $X $HOME/scripts/rofi/rofi-launch.sh surfraw
 
 # Screen brightness controls
 # bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
@@ -169,7 +170,7 @@ $W+$A+d  $tm D
 # >>> split orientation
 # $W+s split h;exec notify-send 'tile horizontally'
 # $W+v split v;exec notify-send 'tile vertically'
-$W+q split toggle
+$W+$S+q split toggle
 
 # toggle fullscreen mode for the focused container
 $W+f fullscreen toggle
@@ -523,7 +524,9 @@ exec_always --no-startup-id fix_xcursor
 # for multiple monitos
 $X $HOME/scripts/multi-monitors.sh
 $X discord
-$X spotify
+# $X spotify
+$X $HOME/scripts/muttmail $tm A
+$R -i vivaldi-stable -x vivaldi-stable -e "vivaldi-stable"
 
 # Start System stats on desktop
 # exec_always --no-startup-id $HOME/.config/conky/launch.sh
