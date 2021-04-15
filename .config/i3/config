@@ -12,6 +12,7 @@
 # >> Initialize
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 
+# W = Windows key, A = Alt, S = Shift, C = Control
 set $W bindsym Mod4
 set $A Mod1
 set $S Shift
@@ -230,7 +231,7 @@ $B --release button2 kill
 
 $map volumeicon
 # bindsym $mod+Ctrl+m exec i3-sensible-terminal -e 'alsamixer'
-$map pulseaudio
+$X pulseaudio
 #exec --no-startup-id pa-applet
 $W+$C+a exec pavucontrol
 $W+a $X $HOME/.config/polybar/scripts/pulseaudio-control.bash next-sink; $X $HOME/scripts/visulaunch
@@ -286,7 +287,7 @@ font pango:Scientifica, Bold 13
 workspace 1 output $monitor_right
 
 # Max and min size of floating windows
-floating_minimum_size 40 x 30
+floating_minimum_size 20 x 20
 ################################################################################################
 
 ################################################################################################
@@ -465,6 +466,7 @@ $ir "visualizer"                           $tf "visualizer"                     
 $cr "discord"                              $tf $smn  $send %title                   $tc D
 $ir "file_explorer" title="nnn"            $tf $smn $send file explorer             $tc D
 $ir "crx_mpognobbkildjkofajifpdfhcoklimli" $tf $scb $send Dev Tools                 $tm D
+$ir "schedule"                             $tf "schedule"                            $tc D
 
 # >>> Floating windows
 for_window [title="alsamixer"] floating enable border pixel 2px
@@ -521,11 +523,11 @@ exec --no-startup-id xautolock -time 10 -locker $lockscreen
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
-# for multiple monitos
+# for multiple monitors
 $X $HOME/scripts/multi-monitors.sh
 $X discord
 # $X spotify
-$X $HOME/scripts/muttmail $tm A
+# $X $HOME/scripts/muttmail $tm A
 $R -i vivaldi-stable -x vivaldi-stable -e "vivaldi-stable"
 
 # Start System stats on desktop
@@ -536,7 +538,9 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # startup apps and layout
 # Visualizer
-exec_always --no-startup-id $HOME/scripts/visulaunch
+# exec_always --no-startup-id $HOME/scripts/visulaunch
+
+exec_always --no-startup-id $HOME/scripts/startup.sh
 
 ########################################################
 
