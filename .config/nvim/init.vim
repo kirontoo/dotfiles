@@ -38,7 +38,7 @@ source $VIMPATH/plugin-config/gitgutter.vim
 source $VIMPATH/plugin-config/goyo.vim
 source $VIMPATH/plugin-config/hexokinase.vim
 source $VIMPATH/plugin-config/incsearch.vim
-" source $VIMPATH/plugin-config/lightline.vim
+source $VIMPATH/plugin-config/lightline.vim
 source $VIMPATH/plugin-config/maximize.vim
 source $VIMPATH/plugin-config/nnn.vim
 source $VIMPATH/plugin-config/nerdtree.vim

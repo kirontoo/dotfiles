@@ -96,8 +96,8 @@ noremap <leader>hl <C-w>l:hide<CR>|														" hide the right window
 noremap <leader>wr :vs<bar>:b#<CR>                            " restore previous closed buffer in new window
 
 " resize window horizontally
-nnoremap <c-,> <C-W><
-nnoremap <c-.> <C-W>>
+nnoremap <C-,> <C-W><
+nnoremap <C-.> <C-W>>
 
 " resize window vertically
 nnoremap <A-,> <C-W>-

@@ -38,7 +38,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'mhinz/vim-signify'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Plug 'thaerkh/vim-indentguides'
-" Plug 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim'
 
 " Utility
 Plug 'airblade/vim-rooter'
