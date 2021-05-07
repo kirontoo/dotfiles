@@ -34,53 +34,53 @@ Plug 'zefei/cake16'
 " Plugin: Packages
 
 " UI
-Plug 'ryanoasis/vim-devicons'
-Plug 'mhinz/vim-signify'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Plug 'thaerkh/vim-indentguides'
 Plug 'itchyny/lightline.vim'
+Plug 'mhinz/vim-signify'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Utility
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'airblade/vim-rooter'
 Plug 'alvan/vim-closetag'
 Plug 'brooth/far.vim'
 Plug 'godlygeek/tabular'
 Plug 'haya14busa/incsearch.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+Plug 'mcchrish/nnn.vim'
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'stsewd/fzf-checkout.vim'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'tomtom/tcomment_vim'
-Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'stsewd/fzf-checkout.vim'
-Plug 'mcchrish/nnn.vim'
-Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'vimwiki/vimwiki'
 
 " Files and Projects
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'mhinz/vim-startify'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'mhinz/vim-startify'
 
 " LSP and Git
+" Plug 'sheerun/vim-polyglot', { 'for': [ 'typescript', 'javascript', 'i3', 'html5', 'cpp', 'markdown', 'jsx' ] }
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'liuchengxu/vista.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'vim-test/vim-test'
-" Plug 'sheerun/vim-polyglot', { 'for': [ 'typescript', 'javascript', 'i3', 'html5', 'cpp', 'markdown', 'jsx' ] }
 
 " Debugger Plugins
 Plug 'puremourning/vimspector'
 Plug 'szw/vim-maximizer'
 
 " Syntax
-Plug 'pangloss/vim-javascript'
 Plug 'ap/vim-css-color'
+Plug 'pangloss/vim-javascript'
 
 " Extras
 Plug 'ThePrimeagen/vim-be-good'
