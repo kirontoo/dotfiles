@@ -367,7 +367,7 @@ set $layout 'AB=-550 AC=-200 BD=500'
 $W+p     $X i3fyra -l $layout
 $W+$S+p  $X i3fyra -l 'AB=550 AC=-200 BD=500'
 $W+s     $X i3fyra -l 'AB=-750 AC=-200 BD=500'
-$W+$S+s  $X i3fyra -l 'AB=-750 AC=-400 BD=500'
+$W+$S+s  $X i3fyra -l 'AB=1150 AC=-400 BD=-400'
 
 # autoload layout
 $X i3fyra -l $layout
@@ -525,10 +525,10 @@ exec_always --no-startup-id fix_xcursor
 
 # for multiple monitors
 $X $HOME/scripts/multi-monitors.sh
-$X discord
+# $X discord
 # $X spotify
 # $X $HOME/scripts/muttmail $tm A
-$R -i vivaldi-stable -x vivaldi-stable -e "vivaldi-stable"
+# $R -i vivaldi-stable -x vivaldi-stable -e "vivaldi-stable"
 
 # Start System stats on desktop
 # exec_always --no-startup-id $HOME/.config/conky/launch.sh
