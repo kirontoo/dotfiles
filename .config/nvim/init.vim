@@ -23,7 +23,6 @@ source $VIMPATH/general/statusline.vim
 source $VIMPATH/themes/dracula.vim
 source $VIMPATH/themes/gruvbox.vim
 source $VIMPATH/themes/solarized.vim
-source $VIMPATH/themes/miramare.vim
 
 " load colorscheme
 source $VIMPATH/themes/themes.vim
