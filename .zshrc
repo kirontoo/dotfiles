@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/scripts:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/pomodoro:$HOME/scripts:$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -9,11 +9,23 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="darkblood"
-ZSH_THEME="spaceship"
+#  ZSH_THEME="spaceship"
 
-# ZSH CUSTOM SETTINGS
-SPACESHIP_CHAR_SYMBOL=❯
-SPACESHIP_CHAR_SUFFIX=" "
+# ZSH PROMPT
+# SPACESHIP_CHAR_SYMBOL=❯
+# SPACESHIP_CHAR_SUFFIX=" "
+
+# Starship prompt
+ eval "$(starship init zsh)"
+
+# PURE PROMPT 
+# source: https://github.com/sindresorhus/pure.git 
+# fpath+=$HOME/.zsh/pure
+# autoload -U promptinit; promptinit
+# prompt pure
+
+# file icons
+source ~/.local/share/icons-in-terminal/icons_bash.sh
 
 ################################################
 #     _    _ _           
@@ -24,9 +36,13 @@ SPACESHIP_CHAR_SUFFIX=" "
                        
 alias dev="cd ~/Documents/dev"
 alias dotfiles="cd ~/Documents/dev/dotfiles"
+alias blog="cd ~/Documents/blod"
 alias lg="lazygit"
 alias config="cd ~/.config/regolith"
-alias ide="~/scripts/ide.sh"
+alias ide="~/scripts/tmux-dew.sh"
+
+## tty-clock
+alias clock="tty-clock -cbnB -C 1"
 
 # NNN
 alias nnn="nnn -R"
@@ -38,8 +54,8 @@ alias tls="t ls"
 alias tn="t new -t"
 
 # docker
-alias  dockup="sudo docker-compose up -d"
-alias  dockdown="sudo docker-compose down"
+alias dockup="sudo docker-compose up -d"
+alias dockdown="sudo docker-compose down"
 
 # pomodoro
 alias pomostart="sleep 1500 && zenity --warning --text='Time to take a break!'"
@@ -53,11 +69,23 @@ alias killd="pkill discord"
 alias srcz="source $HOME/.zshrc"
 alias srct="source $HOME/.tmux.conf"
 
+# spotify notify
+alias songnotify="$HOME/scripts/song-notify.sh"
+
 alias cp='cp -i'    # confirm before overwriting existing files
 alias mv='mv -i'
 
+alias calculator="$HOME/scripts/rofi/rofi-launch.sh calculator &"
+
 # generate ASCII art from text
 alias ascii='figlet'
+
+# for window info
+# dependencies: wmctrl
+alias winfo='wmctrl -lx'
+
+# cli-visualizer
+alias mvis='kitty -o font_size=2 --detach --name visualizer -e vis &'
 
 ################################################
 
@@ -100,7 +128,6 @@ source $ZSH/oh-my-zsh.sh
    export EDITOR='nvim'
  fi
 
-
 export TERM=xterm-256color
 
 ################################################
@@ -109,9 +136,23 @@ export TERM=xterm-256color
 # | | | | | | | | | |
 # |_| |_|_| |_|_| |_|
 
-export NNN_PLUG='b:bulknew;c:fzcd;i:imgview;j:autojump;p:preview-tui;'
-export NNN_FIFO='/tmp/nnn.fifo'
-export NNN_COLORS='1267'
+export NNN_PLUG='b:bulknew;c:fzcd;j:autojump;p:preview-tui;i:preview-tabbed'
+export NNN_FIFO='/tmp/nnn.fifo nnn'
+export NNN_COLORS='13428df71b59'
+################################################
+
+################################################
+#
+#  _ _____ _______   ______      _    
+# (_)___ /|  ___\ \ / /  _ \    / \   
+# | | |_ \| |_   \ V /| |_) |  / _ \  
+# | |___) |  _|   | | |  _ <  / ___ \ 
+# |_|____/|_|     |_| |_| \_\/_/   \_\
+#                                     
+################################################
+export I3FYRA_MAIN_CONTAINER=1
+export i3FYRA_ORIENTATION='horizontal'
+
 ################################################
 
 ################################################
@@ -218,7 +259,7 @@ fzf_git_reflog() {
 
 fzf_git_diff() {
   preview="git diff $@ --color=always -- {-1}"
-  git diff $@ --name-only | fzf -m --ansi --preview $preview --preview-window=down:80%
+  git diff $@ --name-only | fzf --color=16 -m --ansi --preview $preview --preview-window=down:80%
 }
 ################################################
 
