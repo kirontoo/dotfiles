@@ -81,7 +81,7 @@ white-b = #CBE3E7
 
 ################################################################################
 ################################################################################
-############                         topbar                     ############
+############                         topbar                     ################
 ################################################################################
 ################################################################################
 
@@ -93,32 +93,21 @@ white-b = #CBE3E7
 monitor-strict = false
 override-redirect = false
 wm-restack = i3
-; dock = false
 bottom = false
-; fixed-center = true
-; width = 96%
+fixed-center = false
 height = 34
-; offset-x = 45
-; offset-y = 10
 
+radius-top = 5
+radius-bottom = 5
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-; Background gradient (vertical steps)
-;   background-[0-9]+ = #aarrggbb
-;background-0 =
-
 radius = 0.0
 line-size = 0
-; line-color = ${colors.magenta-b}
-; spacing = 10
 
 border-size = 0
-;border-left-size = 25
-; border-right-size = 25
-; border-top-size = 1
-; border-bottom-size = 3
-border-color = ${colors.primary}
+border-bottom-size = 2
+border-color = ${colors.black-na}
 
 padding-left = 2
 padding-right = 2
@@ -133,24 +122,9 @@ font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
 font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
 
 modules-left = i3 xwindow
-modules-right = docker spotify wireless-network pulseaudio-control date time powermenu
-
-; modules-right = wireless-network sep battery sep volume-percent sep date sep time sep powermenu
+modules-right = docker spotify memory cpu wireless-network pulseaudio-control date time powermenu
 
 separator = "  "
-
-;dim-value = 1.0
-
-; tray-position = right
-; tray-detached = false
-; tray-maxsize = 20
-; tray-background = ${colors.background}
-; tray-padding = 5
-; tray-scale = 0.9
-
-#i3: Make the bar appear below windows
-;wm-restack = i3
-;override-redirect = true
 
 ; Enable support for inter-process messaging
 ; See the Messaging wiki page for more details.
@@ -172,6 +146,64 @@ double-click-right =
 ; - default   : The default pointer as before, can also be an empty string (default)
 ; - pointer   : Typically in the form of a hand
 ; - ns-resize : Up and down arrows, can be used to indicate scrolling
+cursor-click =
+cursor-scroll =
+
+################################################################################
+################################################################################
+############                         dotbar                     ################
+################################################################################
+################################################################################
+
+[bar/dotbar]
+;https://github.com/jaagr/polybar/wiki/Configuration
+
+;monitor = ${env:MONITOR}
+;monitor-fallback = HDMI1
+monitor-strict = false
+override-redirect = false
+wm-restack = i3
+bottom = false
+fixed-center = false
+height = 34
+
+radius-top = 5
+radius-bottom = 5
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+radius = 0.0
+line-size = 0
+
+border-size = 0
+border-bottom-size = 2
+border-color = ${colors.black-na}
+
+padding-left = 2
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 1
+
+;https://github.com/jaagr/polybar/wiki/Fonts
+font-0 = "scientifica:style=Regular:weight=bold:pixelsize=14;2"
+font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
+font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
+font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
+
+modules-left = i3dot xwindow
+modules-right = docker spotify wireless-network pulseaudio-control date time powermenu
+
+separator = "  "
+enable-ipc = true
+click-left =
+click-middle =
+click-right =
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+double-click-left =
+double-click-middle =
+double-click-right =
 cursor-click =
 cursor-scroll =
 
@@ -269,10 +301,11 @@ label-mode-background = ${colors.green-n}
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
 label-focused-foreground = ${colors.primary}
-label-focused-background = ${colors.background}
+label-focused-background = ${colors.black-d}
 ; label-focused-foreground = ${colors.background}
 ; label-focused-background = ${colors.primary}
 label-focused-padding = 1
+label-focused-margin = 1
 
 ; Available tokens:
 ;   %name%
@@ -290,6 +323,91 @@ label-unfocused-foreground = ${colors.black-b}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
+label-visible-background = ${colors.background}
+label-visible-foreground = ${colors.white-b}
+; label-visible-background = ${colors.black-b}
+; label-visible-foreground = ${colors.white-b}
+label-visible-padding = 1
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+; urgent = Workspace with urgency hint set
+label-urgent = %name%
+label-urgent-foreground = ${colors.background}
+label-urgent-background = ${colors.secondary}
+label-urgent-padding = 1
+
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+
+################################################################################
+################################################################################
+############                    MODULE I3 DOT                       ############
+################################################################################
+################################################################################
+
+[module/i3dot]
+;https://github.com/jaagr/polybar/wiki/Module:-i3
+type = internal/i3
+
+pin-workspaces = false
+strip-wsnumbers = false
+index-sort = true
+enable-click = true
+enable-scroll = true
+wrapping-scroll = false
+reverse-scroll = false
+fuzzy-match = false
+
+; ws-icon-default = " "
+ws-icon-default = " "
+
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
+format = <label-state> <label-mode>
+label-separator-padding = 0.8
+label-separator-foreground = ${colors.black-ba}
+
+label-mode = %mode% 
+label-mode-padding = 2
+label-mode-foreground = ${colors.background}
+label-mode-background = ${colors.green-n}
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+; focused = Active workspace on focused monitor
+label-focused = 
+label-focused-foreground = ${colors.primary}
+label-focused-background = ${colors.black-d}
+; label-focused-foreground = ${colors.background}
+; label-focused-background = ${colors.primary}
+label-focused-padding = 1
+label-focused-margin = 1
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+; unfocused = Inactive workspace on any monitor
+label-unfocused = 
+label-unfocused-padding = 1
+label-unfocused-background = ${colors.background}
+; label-unfocused-foreground = ${colors.black-b}
+label-unfocused-foreground = ${colors.black-b}
+; label-unfocused-background = ${colors.background}
+; label-unfocused-foreground = ${colors.white-b}
+
+; visible = Active workspace on unfocused monitor
+label-visible = %icon%
 label-visible-background = ${colors.background}
 label-visible-foreground = ${colors.white-b}
 ; label-visible-background = ${colors.black-b}
@@ -788,7 +906,6 @@ click-left = task "$((`cat /tmp/tw_polybar_id`))" done
 
 [module/docker]
 type = custom/script
-interal = 5
 exec = $HOME/.config/polybar/scripts/isrunning-docker.sh
 interval = 10
 tail = true
@@ -810,10 +927,29 @@ label-background = ${colors.background}
 exec = ~/.config/polybar/scripts/pulseaudio-control.bash --volume-max 100 --icons-volume " , " --icon-muted " " --sink-nickname "alsa_output.usb-Razer_Razer_Kraken_7.1_V2_00000000-00.analog-stereo:Headphones" --sink-blacklist "alsa_output.pci-0000_01_00.1.hdmi-stereo" --sink-nicknames-from "device.description" --sink-nickname "alsa_output.pci-0000_00_1f.3.analog-stereo:Stereo" listen
 click-right = exec pavucontrol &
 click-left = ~/.config/polybar/scripts/pulseaudio-control.bash togmute
-click-middle = ~/.config/polybar/scripts/pulseaudio-control.bash next-sink
+click-middle = ~/.config/polybar/scripts/pulseaudio-control.bash next-sink; $HOME/scripts/visulaunch
 scroll-up = ~/.config/polybar/scripts/pulseaudio-control.bash up
 scroll-down = ~/.config/polybar/scripts/pulseaudio-control.bash down
 
+###############################################################################
+[module/cpu]
+type = internal/cpu
+
+interval = 1
+format = <label>
+label =  %percentage%%
+format-foreground = ${colors.cyan-b}
+format-background = ${colors.background}
+
+###############################################################################
+[module/memory]
+type = internal/memory
+
+format-foreground =${colors.red-b}
+format-background = ${colors.background}
+interval = 1
+format = <label>
+label =  %gb_used%
 
 ###############################################################################
 # vim:ft=dosini
