@@ -45,11 +45,10 @@ nnoremap Y y$                                                 "  yank to end of 
 "~~~~~~~~~~ TODO LISTS ~~~~~~~~~
 if has( "win32" )
 	nnoremap <leader>T :vimgrep /TODO/ **/*.*<CR>|								" find all TODOs recursively in current directory
-	" :vimgrep TODO **/*.%:e \| cw
-	nnoremap<leader>To :copen<CR>|																" open todo list
+	nnoremap <leader>To :copen<CR>|																" open todo list
 else
-	nnoremap <leader>T :Ag \(FIXME\)\\|\(TODO\)<CR> |								" find all TODOs recursively in current directory
-	nnoremap<leader>To :copen<CR>|																" open todo list
+	nnoremap <leader>T :Ag \(FIXME\)\\|\(TODO\)<CR> |							" find all TODOs recursively in current directory
+	nnoremap <leader>To :copen<CR>|																" open todo list
 endif
 
 
