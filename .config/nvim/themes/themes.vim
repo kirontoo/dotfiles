@@ -19,8 +19,8 @@ function! LightScheme()
 	colorscheme solarized8_high
 endfunction
 
-highlight Pmenu guibg='#00010a' guifg=white             " popup menu colors
-highlight Comment gui=NONE cterm=italic               " bold comments
+highlight Pmenu guibg=NormalFloat guifg=fg              " popup menu colors
+highlight Comment gui=NONE cterm=italic                 " bold comments
 highlight Normal gui=none
 highlight NonText guibg=none
 highlight clear SignColumn                              " use number color for sign column color
