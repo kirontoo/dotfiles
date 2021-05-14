@@ -83,9 +83,6 @@ set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:§
 set guifont=iosevka:h11
 " set guifont=scientifica:h20
 
-" FIXME
-" hi Pmenu guibg=bg
-
 set cursorline                                                                                     "  Show line highlight
 " underline cursorline instead of highlight
 " augroup CustomCursorLine
