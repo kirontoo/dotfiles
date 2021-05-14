@@ -436,14 +436,15 @@ for_window [class="kitty"] title_format $srn $send %title
 
 # >>> Container A
 $cr "Xarchiver"                            $tf "Xarchiver"                           $tc A
-$ir "vivaldi-stable"                       $tf $scb 爵$send %title                   $tc A
-$ir "zathura"                              $tf $srb $send Zathura                   $tc A
-$ir "tmux_*"                               $tf $scn $send Tmux: %title              $tc A
-$ir "thunar"                               $tf $smn $send Thunar                    $tc A
+$cr "discord"                              $tf $smn  $send %title                   $tc A
 $cr "pcmanfm"                              $tf $sbn $send File explorer             $tc A
 $ir "mousepad"                             $tf $syn $send Mousepad                  $tc A
-$ir "subl"                                 $tf $syn $send Sublime                   $tc A
 $ir "nvim_*"                               $tf $syn $send Nvim: %title              $tc A
+$ir "subl"                                 $tf $syn $send Sublime                   $tc A
+$ir "thunar"                               $tf $smn $send Thunar                    $tc A
+$ir "tmux_*"                               $tf $scn $send Tmux: %title              $tc A
+$ir "vivaldi-stable"                       $tf $scb 爵$send %title                   $tc A
+$ir "zathura"                              $tf $srb $send Zathura                   $tc A
 $ir "spotify"                              $tf $srb $send Spotify $srb$send        ,$tm A
 
 # >>> Container B
@@ -463,7 +464,6 @@ $cr "feh"                                  $tf $sgb  $send Song Album        
 $ir "visualizer"                           $tf "visualizer"                          $tc C, border pixel 2px
 
 # >>> Container D
-$cr "discord"                              $tf $smn  $send %title                   $tc D
 $ir "file_explorer" title="nnn"            $tf $smn $send file explorer             $tc D
 $ir "crx_mpognobbkildjkofajifpdfhcoklimli" $tf $scb $send Dev Tools                 $tm D
 $ir "schedule"                             $tf "schedule"                            $tc D
