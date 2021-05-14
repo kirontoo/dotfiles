@@ -32,7 +32,8 @@ source $VIMPATH/plugin-config/coc.vim
 source $VIMPATH/plugin-config/closetag.vim
 source $VIMPATH/plugin-config/devicons.vim
 source $VIMPATH/plugin-config/fugitive.vim
-source $VIMPATH/plugin-config/fzf.vim
+" source $VIMPATH/plugin-config/fzf.vim
+source $VIMPATH/plugin-config/telescope.vim
 source $VIMPATH/plugin-config/gitgutter.vim
 source $VIMPATH/plugin-config/goyo.vim
 source $VIMPATH/plugin-config/hexokinase.vim
@@ -53,3 +54,4 @@ source $VIMPATH/plugin-config/vim-test.vim
 source $VIMPATH/plugin-config/vista.vim
 source $VIMPATH/plugin-config/vimspector.vim
 source $VIMPATH/plugin-config/vimwiki.vim
+source $VIMPATH/plugin-config/whichkey.vim
