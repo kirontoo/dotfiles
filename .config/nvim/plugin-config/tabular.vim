@@ -7,9 +7,10 @@
 
 
 "~~~~~~~~~~ TABULAR PLUGIN ~~~~~~~~~
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:<CR>
-vmap <Leader>a: :Tabularize /:<CR>
+nmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>as: :Tabularize /:\zs<CR>
+
+vmap <Leader>a: :Tabularize /:<CR>
+vmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>as: :Tabularize /:\zs<CR>
