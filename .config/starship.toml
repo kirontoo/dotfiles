@@ -1,5 +1,6 @@
 format = """
 [┌─](bold red) \
+$jobs\
 $character\
 $username\
 $hostname\
@@ -47,7 +48,6 @@ $custom\
 $cmd_duration\
 $line_break\
 $lua\
-$jobs\
 $battery\
 $time\
 $status\
@@ -65,9 +65,9 @@ success_symbol = "[](bold green)"
 error_symbol = "[✗](bold red)"
 
 [username]
-style_user = "red bold"
-style_root = "yellow bold"
-format = "[$user]($style) :: "
+style_user = "yellow bold"
+style_root = "red bold"
+format = "[$user]($style)  "
 disabled = false
 show_always = false
 
