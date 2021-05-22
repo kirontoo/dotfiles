@@ -6,12 +6,12 @@
 "            /_____/                        \/
 
 "~~~~~~~~~~ FUGITIVE PLUGIN~~~~~~~~
-nnoremap <leader>gs :Gstatus<CR>|                            "  git status
-nnoremap <leader>gcc :Gcommit<CR>|                           "  git commit
-nnoremap <leader>gd :Gdiff<CR>|                              "  git diff
-nnoremap <leader>gl :Gpull<CR>|                              "  git pull
-nnoremap <leader>gp :Gpush<CR>|                              "  git push
-nnoremap <leader>gm :Gmerge<CR>|                             "  git merge
+nnoremap <leader>gs <cmd>:Git <CR>|                            "  git status
+nnoremap <leader>gcc <cmd>:Git commit<CR>|                     "  git commit
+nnoremap <leader>gd <cmd>:Gdiff<CR>|                           "  git diff
+nnoremap <leader>gl <cmd>:Git pull<CR>|                        "  git pull
+nnoremap <leader>gp <cmd>:Git push<CR>|                        "  git push
+nnoremap <leader>gm <cmd>:Git merge<CR>|                       "  git merge
 
 
 " FROM fzf-checkout.vim
