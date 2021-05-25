@@ -17,7 +17,7 @@ source $VIMPATH/general/keymaps.vim
 source $VIMPATH/general/netrw.vim
 
 source $VIMPATH/general/custom.vim
-source $VIMPATH/general/statusline.vim
+" source $VIMPATH/general/statusline.vim
 
 " colorscheme configs
 source $VIMPATH/themes/dracula.vim
@@ -34,7 +34,8 @@ source $VIMPATH/plugin-config/devicons.vim
 source $VIMPATH/plugin-config/fugitive.vim
 " source $VIMPATH/plugin-config/fzf.vim
 source $VIMPATH/plugin-config/telescope.vim
-source $VIMPATH/plugin-config/gitgutter.vim
+" source $VIMPATH/plugin-config/gitgutter.vim
+source $VIMPATH/plugin-config/gitsigns.vim
 source $VIMPATH/plugin-config/goyo.vim
 source $VIMPATH/plugin-config/hexokinase.vim
 source $VIMPATH/plugin-config/incsearch.vim
@@ -49,9 +50,11 @@ source $VIMPATH/plugin-config/startify.vim
 source $VIMPATH/plugin-config/splitjoin.vim
 source $VIMPATH/plugin-config/tabular.vim
 source $VIMPATH/plugin-config/treesitter.vim
+source $VIMPATH/plugin-config/todo-comments.vim
 source $VIMPATH/plugin-config/vimplug.vim
 source $VIMPATH/plugin-config/vim-test.vim
 source $VIMPATH/plugin-config/vista.vim
 source $VIMPATH/plugin-config/vimspector.vim
 source $VIMPATH/plugin-config/vimwiki.vim
 source $VIMPATH/plugin-config/whichkey.vim
+source $VIMPATH/plugin-config/zen-mode.vim
