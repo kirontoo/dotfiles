@@ -33,10 +33,10 @@ set $map exec --no-startup-id exec xdotool key
 set $X exec --no-startup-id exec
 
 # >>> i3ass
-set $T exec  --no-startup-id exec i3term
-set $TB exec --no-startup-id exec i3term --font large
-set $R exec  --no-startup-id exec i3run
-set $K exec  --no-startup-id exec i3Kornhe
+set $T   exec  --no-startup-id  exec  i3term
+set $TB  exec  --no-startup-id  exec  i3term --font large
+set $R   exec  --no-startup-id  exec  i3run
+set $K   exec  --no-startup-id  exec  i3Kornhe
 
 set $lockscreen exec betterlockscreen -l dim -t "Get off my computer"
 set $suspendscreen exec betterlockscreen -s dim -t "Get off my computer"
@@ -104,7 +104,6 @@ $W+$A+e         $X $HOME/scripts/rofi/rofi-launch.sh autoscript
 $W+c            $X $HOME/scripts/rofi/rofi-launch.sh screenshot
 $W+t            $X $HOME/scripts/rofi/rofi-launch.sh tmux
 $W+m            $X $HOME/scripts/rofi/rofi-launch-menu.sh
-$W+q            $X $HOME/scripts/rofi/rofi-launch.sh surfraw
 
 # Screen brightness controls
 # bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
