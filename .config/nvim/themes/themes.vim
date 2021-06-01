@@ -19,7 +19,7 @@ function! LightScheme()
 	colorscheme solarized8_high
 endfunction
 
-highlight Pmenu guibg=NormalFloat guifg=fg              " popup menu colors
+highlight Pmenu guibg=bg guifg=fg                       " popup menu colors
 highlight Comment gui=NONE cterm=italic                 " bold comments
 highlight Normal gui=none
 highlight NonText guibg=none
