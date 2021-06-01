@@ -435,7 +435,6 @@ for_window [class="kitty"] title_format $srn $send %title
 
 # >>> Container A
 $cr "Xarchiver"                            $tf "Xarchiver"                           $tc A
-$cr "discord"                              $tf $smn  $send %title                   $tc A
 $cr "pcmanfm"                              $tf $sbn $send File explorer             $tc A
 $ir "mousepad"                             $tf $syn $send Mousepad                  $tc A
 $ir "nvim_*"                               $tf $syn $send Nvim: %title              $tc A
@@ -444,28 +443,31 @@ $ir "thunar"                               $tf $smn $send Thunar             
 $ir "tmux_*"                               $tf $scn $send Tmux: %title              $tc A
 $ir "vivaldi-stable"                       $tf $scb 爵$send %title                   $tc A
 $ir "zathura"                              $tf $srb $send Zathura                   $tc A
-$ir "spotify"                              $tf $srb $send Spotify $srb$send        ,$tm A
 
 # >>> Container B
-$cr "pomotroid"                            $tf $syb 祥$send Pomodoro $syb祥$send     $tc B
-$ir "gtop"                                 $tf $smb $send Gtop                      $tc B
-$ir "gotop"                                $tf $smb $send Gotop                     $tc B
-$ir "htop"                                 $tf $smb $send Htop                      $tc B
-$ir "bashtop"                              $tf $smb $send Bashtop                   $tc B
-$ir "iftop"                                $tf $smb $send Iftop                     $tc B
-$ir "bandwhich"                            $tf $smb $send Bandwhich                 $tc B
-$tr "Picture in picture"                   $tf $srn $send Pic-in-Pic                $tc B
-$ir "tabbed" class="tabbed"                $tf $sgb  $send Preview-tabbed           $tm B; $X i3viswiz -f -c kitty -t "file_explorer"
 $cr "Sxiv"                                 $tf $sgb  $send Image Preview            $tc B; $X i3viswiz -i "file_explorer" -f
 $cr "feh"                                  $tf $sgb  $send Song Album               $tm B
+$cr "pomotroid"                            $tf $syb 祥$send Pomodoro $syb祥$send     $tc B
+$ir "bandwhich"                            $tf $smb $send Bandwhich                 $tc B
+$ir "bashtop"                              $tf $smb $send Bashtop                   $tc B
+$ir "gotop"                                $tf $smb $send Gotop                     $tc B
+$ir "gtop"                                 $tf $smb $send Gtop                      $tc B
+$ir "htop"                                 $tf $smb $send Htop                      $tc B
+$ir "iftop"                                $tf $smb $send Iftop                     $tc B
+$ir "tabbed" class="tabbed"                $tf $sgb  $send Preview-tabbed           $tm B; $X i3viswiz -f -c kitty -t "file_explorer"
+$tr "Picture in picture"                   $tf $srn $send Pic-in-Pic                $tc B
 
 # >>> Container C
 $ir "visualizer"                           $tf "visualizer"                          $tc C, border pixel 2px
 
 # >>> Container D
-$ir "file_explorer" title="nnn"            $tf $smn $send file explorer             $tc D
 $ir "crx_mpognobbkildjkofajifpdfhcoklimli" $tf $scb $send Dev Tools                 $tm D
+$ir "file_explorer" title="nnn"            $tf $smn $send file explorer             $tc D
 $ir "schedule"                             $tf "schedule"                            $tc D
+
+# >>> Workspaces
+$cr "discord"                              $tf $smn  $send %title                   ,move container to workspace $ws4
+$ir "spotify"                              $tf $srb $send Spotify $srb$send        ,move container to workspace $ws5
 
 # >>> Floating windows
 for_window [title="alsamixer"] floating enable border pixel 2px
