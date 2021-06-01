@@ -56,7 +56,7 @@ defaults = {
 EOF
 
 nnoremap <leader><space> <cmd>Telescope find_files hidden=true<cr>
-nnoremap <leader>ff <cmd>Telescope file_browser<cr>
+nnoremap <leader>ff <cmd>Telescope file_browser hidden=true<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>ht <cmd>Telescope help_tags<cr>

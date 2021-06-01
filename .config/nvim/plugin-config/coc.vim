@@ -13,8 +13,16 @@ let g:coc_global_extensions=[
 				\'coc-tslint',
 				\'coc-html',
 				\'coc-css',
-				\'coc-rust-analyzer'
 			\]
+
+" Add extension if prettier and eslint exists
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
 
 let g:coc_disable_startup_warning = 1
 highlight CocErrorHighlight ctermfg=Red  guifg=Red
@@ -45,7 +53,7 @@ else
 	imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
-"Remap keys for gotos
+" Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)|                      " go to definition
 nmap <silent> gy <Plug>(coc-type-definition)|                 " go to type definition
 nmap <silent> gi <Plug>(coc-implementation)|                  " go to implementation
@@ -98,32 +106,3 @@ omap af <Plug>(coc-funcobj-a)
 " coc-tsserver, coc-python are the examples of servers that support it.
 " nmap <silent> <TAB> <Plug>(coc-range-select)
 " xmap <silent> <TAB> <Plug>(coc-range-select)
-
-" ~~~~~~~ COC-EXPLORER ~~~~~~~~~~~~~~~~~~~
-nmap <silent><leader>et :CocCommand explorer <CR>
-nmap <silent><leader>ef :CocCommand explorer --preset floating<CR>
-autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
-let g:coc_explorer_global_presets = {
-			\   '.vim': {
-			\      'root-uri': '~/.vim',
-			\   },
-			\   'floating': {
-			\      'position': 'floating',
-			\      'floating-width': 100,
-			\      'floating-height': 30
-			\   },
-			\   'floatingLeftside': {
-			\      'position': 'floating',
-			\      'floating-position': 'left-center',
-			\      'floating-width': 20,
-			\   },
-			\   'floatingRightside': {
-			\      'position': 'floating',
-			\      'floating-position': 'left-center',
-			\      'floating-width': 20,
-			\   },
-			\   'simplify': {
-			\     'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
-			\   }
-			\ }
-
