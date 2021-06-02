@@ -35,12 +35,12 @@ Plug 'zefei/cake16'
 " Plugin: Packages
 
 " UI
-" Plug 'thaerkh/vim-indentguides'
-Plug 'lewis6991/gitsigns.nvim'
-Plug 'itchyny/lightline.vim'
 " Plug 'mhinz/vim-signify'
+" Plug 'thaerkh/vim-indentguides'
 Plug 'folke/todo-comments.nvim'
 Plug 'folke/zen-mode.nvim'
+Plug 'itchyny/lightline.vim'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
@@ -66,22 +66,27 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vimwiki/vimwiki'
 
 " Files and Projects
-Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'junegunn/fzf.vim'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mhinz/vim-startify'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
 " LSP And Syntax
+" Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+" Plug 'pangloss/vim-javascript'
 " Plug 'sheerun/vim-polyglot', { 'for': [ 'typescript', 'javascript', 'i3', 'html5', 'cpp', 'markdown', 'jsx' ] }
 Plug 'ap/vim-css-color'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'liuchengxu/vista.vim'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'mattn/emmet-vim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+" Plug 'nvim-lua/lsp-status.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-Plug 'pangloss/vim-javascript'
+Plug 'nvim-telescope/telescope-symbols.nvim'
 Plug 'vim-test/vim-test'
 
 " Debugger Plugins

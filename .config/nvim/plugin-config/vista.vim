@@ -12,7 +12,7 @@ nnoremap <leader>vf :Vista focus<cr>
 
 let g:vista_sidebar_width = 30
 let g:vista_close_on_jump = 0
-let g:vista_default_executive = 'coc'
+let g:vista_default_executive = 'nvim_lsp'
 let g:vista_highlight_whole_line = 1
 let g:vista#renderer#enable_icon  = 1
 let g:vista_echo_cursor_strategy = 'echo'
