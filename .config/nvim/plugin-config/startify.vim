@@ -34,6 +34,7 @@ let g:startify_commands = [
 			\ { 'k': [ 'open keymap', 'e $VIMPATH/general/keymaps.vim' ] },
 			\ { 's': [ 'open init.vim', 'e $MYVIMRC']},
 			\ { 'p': [ 'open plugin list', 'e $VIMPATH/vim-plug/plugins.vim' ] },
+			\ { 'd': [ 'open daily goals', 'e $HOME/vimwiki/daily-goals/index.md' ] },
 			\ ]
 
 let g:startify_custom_header=startify#center([
