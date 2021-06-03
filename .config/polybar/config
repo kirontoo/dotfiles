@@ -840,39 +840,18 @@ format-padding = 1
 [module/notification-github]
 type = custom/script
 exec = $HOME/.config/polybar/scripts/notification-github.sh
-interval = 60
 
-###############################################################################
-[module/github]
-type = internal/github
-
-; Accessing an access token stored in file
-; token = ${file:$HOME/.config/github/access.token}
-token = ${file:$HOME/.config/github/access.token}
-
-; Whether empty notifications should be displayed or not
-empty-notifications = true
-
-user = kirontoo
-
-; Number of seconds in between requests
-interval = 10
-
-; Available tags:
-;   <label> (default)
 format = <label>
 format-prefix = "  "
 format-foreground = ${colors.white-b}
 format-background = ${colors.background}
 
-; Available tokens:
-;   %notifications% (default)
-; Default: Notifications: %notifications%
-label = %notifications%
+label = %output%
 label-foreground = ${colors.white-b}
 label-background = ${colors.background}
 format-prefix-background = ${colors.background}
 format-prefix-foreground = ${colors.yellow-b}
+interval = 60
 
 ###############################################################################
 
