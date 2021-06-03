@@ -19,7 +19,6 @@ margin-bottom = 3
 ;https://github.com/jaagr/polybar/wiki/Configuration#application-settings
 throttle-output = 5
 throttle-output-for = 10
-throttle-input-for = 30
 screenchange-reload = true
 compositing-background = over
 compositing-foreground = over
@@ -28,8 +27,8 @@ compositing-underline = over
 compositing-border = over
 
 ; Define fallback values used by all module formats
-format-foreground = #FFFFFF
-format-background = #00FF00
+format-foreground = ${colors.white-b}
+format-background = ${colors.black-n}
 format-underline =
 format-overline =
 format-spacing =
@@ -97,12 +96,12 @@ bottom = false
 fixed-center = false
 height = 34
 
-radius-top = 5
-radius-bottom = 5
+radius-top = 0
+radius-bottom = 0
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-radius = 0.0
+radius = 0
 line-size = 0
 
 border-size = 0
@@ -122,7 +121,7 @@ font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
 font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
 
 modules-left = i3 xwindow
-modules-right = timer docker spotify memory cpu wireless-network pulseaudio-control date time powermenu
+modules-right = spotify docker github memory cpu wireless-network pulseaudio-control date time powermenu
 
 separator = "  "
 
@@ -841,6 +840,7 @@ format-padding = 1
 type = internal/github
 
 ; Accessing an access token stored in file
+; token = ${file:$HOME/.config/github/access.token}
 token = ${file:$HOME/.config/github/access.token}
 
 ; Whether empty notifications should be displayed or not
@@ -851,19 +851,19 @@ interval = 10
 
 ; Available tags:
 ;   <label> (default)
-format = Github: <label>
+format = <label>
 format-prefix = "  "
-format-foreground = #C3E88D
+format-foreground = ${colors.white-b}
 format-background = ${colors.background}
 
 ; Available tokens:
 ;   %notifications% (default)
 ; Default: Notifications: %notifications%
 label = %notifications%
-label-foreground = #C3E88D
+label-foreground = ${colors.white-b}
 label-background = ${colors.background}
 format-prefix-background = ${colors.background}
-format-prefix-foreground = #C3E88D
+format-prefix-foreground = ${colors.yellow-b}
 
 ###############################################################################
 
