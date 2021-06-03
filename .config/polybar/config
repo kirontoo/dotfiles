@@ -121,7 +121,7 @@ font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
 font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
 
 modules-left = i3 xwindow
-modules-right = spotify docker github memory cpu wireless-network pulseaudio-control date time powermenu
+modules-right = spotify docker notification-github memory cpu wireless-network pulseaudio-control date time powermenu
 
 separator = "  "
 
@@ -836,6 +836,13 @@ format-background = ${colors.background}
 format-padding = 1
 
 ###############################################################################
+
+[module/notification-github]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/notification-github.sh
+interval = 60
+
+###############################################################################
 [module/github]
 type = internal/github
 
@@ -845,6 +852,8 @@ token = ${file:$HOME/.config/github/access.token}
 
 ; Whether empty notifications should be displayed or not
 empty-notifications = true
+
+user = kirontoo
 
 ; Number of seconds in between requests
 interval = 10
