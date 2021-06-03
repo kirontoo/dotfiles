@@ -121,12 +121,13 @@ $W+Print     --release $X i3-scrot -w
 $W+$S+Print  --release $X i3-scrot -s
 $W+$S+d      --release  exec "killall dunst;exec notify-send 'restart dunst'"
 
+# $W+F1              $R -i vivaldi_branch -g -e "vivaldi-stable"
+# $W+$S+Return       $R -i vivaldi-stable -x vivaldi-stable -e "vivaldi-stable"
 $W+Return          exec i3-sensible-terminal
-$W+$S+Return       $R -i vivaldi-stable -x vivaldi-stable -e "vivaldi-stable"
 $W+$C+b            exec i3-sensible-terminal -e 'bmenu'
-$W+F1              $R -i vivaldi_branch -g -e "vivaldi-stable"
+$W+F1              $R -i Navigator -g -e "firefox"
 $W+F2              $R -i file_explorer -g -e "i3-sensible-terminal --name file_explorer -e nnn -R"
-$W+F3              $R -i discord -g -e "discord"
+$W+F3              $R -i discord -g -e "Discord"
 $W+F4              $R -i spotify -g -e "spotify"
 $W+$S+F3           exec pcmanfm_pkexec
 # $W+$S+h          exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
@@ -442,6 +443,7 @@ $ir "subl"                                 $tf $syn $send Sublime            
 $ir "thunar"                               $tf $smn $send Thunar                    $tc A
 $ir "tmux_*"                               $tf $scn $send Tmux: %title              $tc A
 $ir "vivaldi-stable"                       $tf $scb 爵$send %title                   $tc A
+$ir "Navigator"                            $tf $scb 爵$send %title                   $tc A
 $ir "zathura"                              $tf $srb $send Zathura                   $tc A
 
 # >>> Container B
