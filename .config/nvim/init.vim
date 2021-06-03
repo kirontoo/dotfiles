@@ -44,6 +44,7 @@ source $VIMPATH/plugin-config/hexokinase.vim
 source $VIMPATH/plugin-config/incsearch.vim
 source $VIMPATH/plugin-config/lightline.vim
 source $VIMPATH/plugin-config/maximize.vim
+source $VIMPATH/plugin-config/lua-lsp.vim
 source $VIMPATH/plugin-config/nnn.vim
 source $VIMPATH/plugin-config/nerdtree.vim
 source $VIMPATH/plugin-config/nvim-lspconfig.vim
