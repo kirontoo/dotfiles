@@ -49,8 +49,10 @@ set noshowmode
 set signcolumn=yes                                                                                 "  Enable sign column
 
 " ~Tab indent
+set copyindent
+set preserveindent
 set tabstop=2
-set softtabstop=2
+set softtabstop=0
 set shiftwidth=2
 set noexpandtab
 set smarttab
