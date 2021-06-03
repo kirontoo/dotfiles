@@ -24,6 +24,7 @@ $golang\
 $helm\
 $java\
 $julia\
+$lua\
 $nim\
 $nodejs\
 $ocaml\
@@ -47,7 +48,6 @@ $crystal\
 $custom\
 $cmd_duration\
 $line_break\
-$lua\
 $battery\
 $time\
 $status\
