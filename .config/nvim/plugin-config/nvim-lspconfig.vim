@@ -14,15 +14,6 @@ local on_attach = function(client, bufnr)
   local opts = { noremap=true, silent=true }
 
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
-	-- buf_set_keymap('n',  '<space>ce',  '<cmd>lua  vim.lsp.diagnostic.set_loclist()<CR>',                          opts)
-	-- buf_set_keymap('n',  '<space>ce',  '<cmd>lua  vim.lsp.diagnostic.show_line_diagnostics()<CR>',                opts)
-	-- buf_set_keymap('n',  '<space>cs',  '<cmd>lua  vim.lsp.buf.document_symbol()<CR>',                             opts)
-	-- buf_set_keymap('n',  '<space>cs',  '<cmd>lua  vim.lsp.buf.workspace_symbol()<CR>',                            opts)
-	-- buf_set_keymap('n',  '<space>wa',  '<cmd>lua  vim.lsp.buf.add_workspace_folder()<CR>',                        opts)
-	-- buf_set_keymap('n',  '<space>wr',  '<cmd>lua  vim.lsp.buf.remove_workspace_folder()<CR>',                     opts)
-	-- buf_set_keymap('n',  'gd',         '<Cmd>lua  vim.lsp.buf.definition()<CR>',                                  opts)
-	-- buf_set_keymap('n',  'gi',         '<cmd>lua  vim.lsp.buf.implementation()<CR>',                              opts)
-	-- buf_set_keymap('n',  'gr',         '<cmd>lua  vim.lsp.buf.references()<CR>',                                  opts)
 	buf_set_keymap("n",  "<space>fc",  "<cmd>lua  vim.lsp.buf.formatting()<CR>",                                  opts)
 	buf_set_keymap('n',  '<C-k>',      '<cmd>lua  vim.lsp.buf.signature_help()<CR>',                              opts)
 	buf_set_keymap('n',  '<space>ca',  '<cmd>lua  vim.lsp.buf.code_action()<CR>',                                 opts)
