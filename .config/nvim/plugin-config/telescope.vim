@@ -15,17 +15,20 @@ defaults = {
 			'--follow',
 			'--ignore'
     },
-    prompt_position = "bottom",
+    prompt_position = "top",
     prompt_prefix = "  ",
     selection_caret = "  ",
     entry_prefix = "  ",
     initial_mode = "insert",
     selection_strategy = "reset",
-    sorting_strategy = "descending",
+    sorting_strategy = "ascending",
     layout_strategy = "flex",
     layout_defaults = {
       horizontal = {
-        mirror = false,
+				width_padding = 0.04,
+				height_padding = 0.1,
+				preview_width = 0.6,
+				mirror = false,
       },
       vertical = {
         mirror = false,
@@ -64,14 +67,19 @@ nnoremap <leader>, <cmd>Telescope buffers<cr>
 nnoremap <leader>/ <cmd>Telescope current_buffer_fuzzy_find<cr>
 nnoremap <leader>?  <cmd>Telescope keymaps<cr>
 nnoremap <leader>Tc <cmd>Telescope colorscheme<cr>
-nnoremap <leader>ej <cmd>Telescope symbols<cr> " emojis
-nnoremap <leader>g? <cmd>Telescope git_status<cr>
-nnoremap <leader>gf <cmd>Telescope git_files<cr>
-nnoremap <leader>gb <cmd>Telescope git_branches<cr>
 nnoremap <leader>gt :lua require('telescope.builtin').treesitter()<CR>
 nnoremap <leader>hc <cmd>Telescope command_history<cr>
 nnoremap <leader>jj <cmd>Telescope jumplist<cr>
 nnoremap <leader>mk <cmd>Telescope marks<cr>
+
+" GIT
+nnoremap <leader>g? <cmd>Telescope git_status<cr>
+nnoremap <leader>gf <cmd>Telescope git_files<cr>
+nnoremap <leader>gb <cmd>Telescope git_branches<cr>
+nnoremap <leader>gc <cmd>Telescope git_commits<cr>
+
+" for emojis
+nnoremap <leader>ej <cmd>Telescope symbols<cr>
 
 " LSP
 nnoremap <leader>ca <cmd>Telescope lsp_code_actions<cr>
