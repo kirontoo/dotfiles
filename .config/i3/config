@@ -466,6 +466,7 @@ $ir "visualizer"                           $tf "visualizer"                     
 $ir "crx_mpognobbkildjkofajifpdfhcoklimli" $tf $scb $send Dev Tools                 $tm D
 $ir "file_explorer" title="nnn"            $tf $smn $send file explorer             $tc D
 $ir "schedule"                             $tf "schedule"                            $tc D
+$tr "Chat"                                 $tf "zoom: chat"                          $tc D
 
 # >>> Workspaces
 $cr "discord"                              $tf $smn  $send %title                   ,move container to workspace $ws4
