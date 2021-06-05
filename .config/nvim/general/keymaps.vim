@@ -126,7 +126,8 @@ tnoremap <C-\> <C-\><C-n>
 
 "~~~~~~~~~~ SEARCH & REPLACE ~~~~~~~~
 nnoremap <leader>rl :s//g<Left><Left>|                        "  search in line
-nnoremap <leader>rw :%s/<c-r><c-w>//g<Left><Left>|            "  search word under cursor in file
+nnoremap <leader>rw :s/<c-r><c-w>//g<Left><Left>|            "  search word under cursor in file
+nnoremap <leader>rW :%s/<c-r><c-w>//g<Left><Left>|            "  search word under cursor in file
 nnoremap <leader>rv :%s///c<Left><Left><Left>|                "  search file & confirm
 nnoremap <leader>rg :%s///gc<Left><Left><Left><Left>|         "  search entire file & confirm
 nnoremap <leader>rc :%s///gcI<Left><Left><Left><Left><Left>|  "  search case sensitive
