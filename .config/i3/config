@@ -60,6 +60,7 @@ set $tf ] title_format
 set $ts ,focus;exec --no-startup-id i3fyra -s
 set $tm ;exec --no-startup-id exec i3fyra -m
 set $tc ,focus;exec --no-startup-id exec i3fyra -m
+
 #############################################################################
 
 #############################################################################
@@ -458,6 +459,7 @@ $ir "htop"                                 $tf $smb $send Htop               
 $ir "iftop"                                $tf $smb $send Iftop                     $tc B
 $ir "tabbed" class="tabbed"                $tf $sgb  $send Preview-tabbed           $tm B; $X i3viswiz -f -c kitty -t "file_explorer"
 $tr "Picture in picture"                   $tf $srn $send Pic-in-Pic                $tc B
+$tr "Picture-in-Picture"                   $tf $srn $send Pic-in-Pic                $tc B
 
 # >>> Container C
 $ir "visualizer"                           $tf "visualizer"                          $tc C, border pixel 2px
@@ -466,35 +468,39 @@ $ir "visualizer"                           $tf "visualizer"                     
 $ir "crx_mpognobbkildjkofajifpdfhcoklimli" $tf $scb $send Dev Tools                 $tm D
 $ir "file_explorer" title="nnn"            $tf $smn $send file explorer             $tc D
 $ir "schedule"                             $tf "schedule"                            $tc D
-$tr "Chat"                                 $tf "zoom: chat"                          $tc D
+$ir "zoom" title="Chat"                    $tf "zoom: chat"                          $tc D
 
 # >>> Workspaces
 $cr "discord"                              $tf $smn  $send %title                   ,move container to workspace $ws4
+$cr "GitKraken"                            $tf $sgb $send GitKraken                 ,move container to workspace $ws3
 $ir "spotify"                              $tf $srb $send Spotify $srb$send        ,move container to workspace $ws5
 
 # >>> Floating windows
-for_window [title="alsamixer"] floating enable border pixel 2px
-for_window [class="Clipgrab"] floating enable
-for_window [title="File Transfer*"] floating enable
-for_window [class="fpakman"] floating enable
-for_window [class="GParted"] floating enable border normal 2
-for_window [title="i3_help"] floating enable sticky enable border normal 2
-for_window [class="Lightdm-settings"] floating enable
-for_window [class="Lxappearance"] floating enable sticky enable border normal 2
-for_window [class="Manjaro-hello"] floating enable
-for_window [class="Manjaro Settings Manager"] floating enable border normal 2
-for_window [title="MuseScore: Play Panel"] floating enable
-for_window [class="Nitrogen"] floating enable sticky enable border normal 2
-for_window [class="Oblogout"] fullscreen enable
-for_window [class="octopi"] floating enable
-for_window [class="Pamac-manager"] floating enable
-for_window [class="Pavucontrol"] floating enable
-for_window [class="qt5ct"] floating enable sticky enable border normal 2
-for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal 2
-for_window [class="Simple-scan"] floating enable border normal
+for_window [class="Firefox" title="^Page Info"] floating enable
+for_window [class="Firefox" window_role="pop-up"] floating enable
 for_window [class="(?i)System-config-printer.py"] floating enable border normal 2
 for_window [class="(?i)virtualbox"] floating enable border normal 2
+for_window [class="Clipgrab"] floating enable
+for_window [class="GParted"] floating enable border normal 2
+for_window [class="Lightdm-settings"] floating enable
+for_window [class="Lxappearance"] floating enable sticky enable border normal 2
+for_window [class="Manjaro Settings Manager"] floating enable border normal 2
+for_window [class="Manjaro-hello"] floating enable
+for_window [class="Nitrogen"] floating enable sticky enable border normal 2
+for_window [class="Oblogout"] fullscreen enable
+for_window [class="Pamac-manager"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal 2
+for_window [class="Simple-scan"] floating enable border normal
 for_window [class="Xfburn"] floating enable
+for_window [class="fpakman"] floating enable
+for_window [class="gitkraken"] move container to workspace $ws3
+for_window [class="octopi"] floating enable
+for_window [class="qt5ct"] floating enable sticky enable border normal 2
+for_window [title="File Transfer*"] floating enable
+for_window [title="MuseScore: Play Panel"] floating enable
+for_window [title="alsamixer"] floating enable border pixel 2px
+for_window [title="i3_help"] floating enable sticky enable border normal 2
 
 # switch to workspace with urgent window automatically
 # for_window [urgent=latest] focus
