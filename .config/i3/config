@@ -52,6 +52,7 @@ set $monitor_right DP-2
 set $ir for_window [instance =
 set $cr for_window [class =
 set $tr for_window [title =
+set $wr for_window [window_role =
 
 # tf: title format
 set $tf ] title_format
@@ -459,7 +460,7 @@ $ir "htop"                                 $tf $smb $send Htop               
 $ir "iftop"                                $tf $smb $send Iftop                     $tc B
 $ir "tabbed" class="tabbed"                $tf $sgb  $send Preview-tabbed           $tm B; $X i3viswiz -f -c kitty -t "file_explorer"
 $tr "Picture in picture"                   $tf $srn $send Pic-in-Pic                $tc B
-$tr "Picture-in-Picture"                   $tf $srn $send Pic-in-Pic                $tc B
+$wr "PictureInPicture"                     $tf $srn $send Pic-in-Pic                $tc B
 
 # >>> Container C
 $ir "visualizer"                           $tf "visualizer"                          $tc C, border pixel 2px
