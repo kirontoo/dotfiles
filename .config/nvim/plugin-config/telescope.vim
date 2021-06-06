@@ -76,7 +76,7 @@ nnoremap <leader>mk <cmd>Telescope marks<cr>
 nnoremap <leader>g? <cmd>Telescope git_status<cr>
 nnoremap <leader>gf <cmd>Telescope git_files<cr>
 nnoremap <leader>gb <cmd>Telescope git_branches<cr>
-nnoremap <leader>gc <cmd>Telescope git_commits<cr>
+nnoremap <leader>gl <cmd>Telescope git_commits<cr>
 
 " for emojis
 nnoremap <leader>ej <cmd>Telescope symbols<cr>
