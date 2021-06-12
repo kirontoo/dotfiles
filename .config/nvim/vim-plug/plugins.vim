@@ -18,15 +18,12 @@ endif
 call plug#begin( $PLUGGEDPATH )
 
 " Plugin: Colorschemes
-Plug 'aswathkk/DarkScene.vim'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'embark-theme/vim', { 'as': 'embark' }
-Plug 'franbach/miramare'
 Plug 'lifepillar/vim-solarized8'
 Plug 'morhetz/gruvbox'
 Plug 'ntk148v/vim-horizon'
 Plug 'tyrannicaltoucan/vim-deep-space'
-Plug 'zefei/cake16'
 
 " Plugin: NerdFonts
 " Plug 'https://github.com/ryanoasis/nerd-fonts.git', { 'do': './install.sh' }
@@ -35,11 +32,12 @@ Plug 'zefei/cake16'
 " Plugin: Packages
 
 " UI
+" Plug 'itchyny/lightline.vim'
 " Plug 'mhinz/vim-signify'
 " Plug 'thaerkh/vim-indentguides'
 Plug 'folke/todo-comments.nvim'
 Plug 'folke/zen-mode.nvim'
-Plug 'itchyny/lightline.vim'
+Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -61,6 +59,7 @@ Plug 'stsewd/fzf-checkout.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vimwiki/vimwiki'
