@@ -215,8 +215,9 @@ gls.right[j] = {
   GitBranch = {
     provider = 'GitBranch',
     condition = condition.check_git_workspace,
-    icon = '  ',
-    highlight = {colors.violet,colors.bg,'bold'},
+    separator = '  ',
+    highlight = {colors.fg,colors.bg,'bold'},
+    separator_highlight = {colors.purple, colors.bg}
   }
 }
 
@@ -314,7 +315,7 @@ gls.right[j] = {
     end,
     condition = checkwidth,
     separator = "|",
-    separator_highlight = {colors.yellow, colors.section_bg},
+    separator_highlight = {colors.grey, colors.section_bg},
     highlight = {colors.grey, colors.section_bg}
   }
 }
@@ -332,7 +333,7 @@ gls.right[j] = {
 
 j = j + 1
 gls.right[j] = {
-	TabOrSpace = {
+  TabOrSpace = {
     provider = function()
       if vim.bo.expandtab
       then
@@ -348,13 +349,13 @@ gls.right[j] = {
 
 j = j + 1
 gls.right[j] = {
-	Tabstop = {
+  Tabstop = {
     provider = function()
       if vim.bo.expandtab
       then
-          return vim.bo.shiftwidth..' '
+        return vim.bo.shiftwidth..' '
       else
-          return vim.bo.tabstop..' '
+        return vim.bo.tabstop..' '
       end
     end,
     condition = condition.hide_in_width,
