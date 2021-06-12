@@ -1,0 +1,18 @@
+#!/bin/bash
+
+branchName="develop"
+
+if [ "$1" ]; then
+    branchName=$1
+fi
+
+exists=$(git show-ref refs/heads/$branchName)
+
+if [ -z "$exists" ]; then
+    echo "$branchName does not exist, defaulting to master"
+    branchName=master
+fi
+
+git checkout $branchName
+git fetch origin --prune
+git merge origin/$branchName
