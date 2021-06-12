@@ -18,6 +18,7 @@ source $VIMPATH/general/netrw.vim
 
 source $VIMPATH/general/custom.vim
 " source $VIMPATH/general/statusline.vim
+source $VIMPATH/general/galaxyline.vim
 
 " colorscheme configs
 source $VIMPATH/themes/dracula.vim
@@ -42,7 +43,7 @@ source $VIMPATH/plugin-config/gitsigns.vim
 source $VIMPATH/plugin-config/goyo.vim
 source $VIMPATH/plugin-config/hexokinase.vim
 source $VIMPATH/plugin-config/incsearch.vim
-source $VIMPATH/plugin-config/lightline.vim
+" source $VIMPATH/plugin-config/lightline.vim
 source $VIMPATH/plugin-config/maximize.vim
 source $VIMPATH/plugin-config/lua-lsp.vim
 source $VIMPATH/plugin-config/nnn.vim
