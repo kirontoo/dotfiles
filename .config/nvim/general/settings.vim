@@ -52,9 +52,10 @@ set signcolumn=yes                                                              
 set copyindent
 set preserveindent
 set tabstop=2
-set softtabstop=0
+" set softtabstop=2
+set expandtab
 set shiftwidth=2
-set noexpandtab
+" set noexpandtab
 set smarttab
 set shiftround                                                                                     "  use multiple of shiftwidth when indenting with '<' and '>'
 
