@@ -51,9 +51,10 @@ $line_break\
 $battery\
 $time\
 $status\
-[└❯](bold red) 
+[└─](bold red)[ \\$ ](bold green)
 """
 
+# [└❯](bold red) 
 add_newline = false
 
 [package]
