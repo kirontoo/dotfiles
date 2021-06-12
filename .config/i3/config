@@ -454,9 +454,9 @@ $cr "feh"                                  $tf $sgb  $send Song Album        
 $cr "pomotroid"                            $tf $syb 祥$send Pomodoro $syb祥$send     $tc B
 $ir "bandwhich"                            $tf $smb $send Bandwhich                 $tc B
 $ir "bashtop"                              $tf $smb $send Bashtop                   $tc B
-$ir "gotop"                                $tf $smb $send Gotop                     $tc B
-$ir "gtop"                                 $tf $smb $send Gtop                      $tc B
-$ir "htop"                                 $tf $smb $send Htop                      $tc B
+$ir "gotop"                                $tf $smb $send gotop                     $tc B
+$ir "gtop"                                 $tf $smb $send gtop                      $tc B
+$ir "htop"                                 $tf $smb $send htop                      $tc B
 $ir "iftop"                                $tf $smb $send Iftop                     $tc B
 $ir "tabbed" class="tabbed"                $tf $sgb  $send Preview-tabbed           $tm B; $X i3viswiz -f -c kitty -t "file_explorer"
 $tr "Picture in picture"                   $tf $srn $send Pic-in-Pic                $tc B
