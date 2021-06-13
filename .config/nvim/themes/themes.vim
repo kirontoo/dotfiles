@@ -20,15 +20,13 @@ function! LightScheme()
 endfunction
 
 highlight Pmenu guibg=bg guifg=fg                       " popup menu colors
-highlight Comment gui=NONE cterm=italic                 " bold comments
+highlight Comment gui=NONE cterm=italic                 " italic comments
 highlight Normal gui=none
 highlight NonText guibg=none
 highlight clear SignColumn                              " use number color for sign column color
 " hi Search guibg=#b16286 guifg=#ebdbb2 gui=NONE          " search string highlight color
 autocmd ColorScheme * highlight VertSplit cterm=NONE    " split color
-hi NonText guifg=bg                                     " mask ~ on empty lines
+" hi NonText guifg=bg                                     " mask ~ on empty lines
 hi clear CursorLineNr                                   " use the theme color for relative number
 hi CursorLineNr gui=bold                                " make relative number bold
 hi SpellBad guifg=#ff7480 cterm=bold,undercurl          " misspelled words
-
-

@@ -11,7 +11,7 @@ endif
 
 if empty(glob( $PLUGVIM ))
 	silent !curl -fLo $PLUGVIM --create-dirs
-				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+		\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -34,13 +34,14 @@ Plug 'tyrannicaltoucan/vim-deep-space'
 " UI
 " Plug 'itchyny/lightline.vim'
 " Plug 'mhinz/vim-signify'
-" Plug 'thaerkh/vim-indentguides'
 Plug 'folke/todo-comments.nvim'
 Plug 'folke/zen-mode.nvim'
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'romgrk/barbar.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " Utility
 Plug 'AndrewRadev/splitjoin.vim'
