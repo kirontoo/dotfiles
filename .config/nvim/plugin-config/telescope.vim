@@ -4,16 +4,16 @@ require('telescope').setup ({
 defaults = {
     vimgrep_arguments = {
       'rg',
-			'--hidden',
-			'--files',
+      '--hidden',
+      '--files',
       '--color=never',
       '--no-heading',
       '--with-filename',
       '--line-number',
       '--column',
       '--smart-case',
-			'--follow',
-			'--ignore'
+      '--follow',
+      '--ignore'
     },
     prompt_position = "top",
     prompt_prefix = "  ",
@@ -25,10 +25,10 @@ defaults = {
     layout_strategy = "flex",
     layout_defaults = {
       horizontal = {
-				width_padding = 0.04,
-				height_padding = 0.1,
-				preview_width = 0.6,
-				mirror = false,
+	width_padding = 0.04,
+	height_padding = 0.1,
+	preview_width = 0.6,
+	mirror = false,
       },
       vertical = {
         mirror = false,
@@ -44,7 +44,7 @@ defaults = {
     results_height = 1,
     results_width = 0.8,
     border = {},
-		borderchars = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
+    borderchars = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
     color_devicons = true,
     use_less = true,
     set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
