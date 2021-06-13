@@ -30,6 +30,7 @@ source $VIMPATH/themes/themes.vim
 
 " plugin configs
 " source $VIMPATH/plugin-config/coc.vim
+source $VIMPATH/plugin-config/barbar.vim
 source $VIMPATH/plugin-config/closetag.vim
 source $VIMPATH/plugin-config/completion-nvim.vim
 source $VIMPATH/plugin-config/devicons.vim

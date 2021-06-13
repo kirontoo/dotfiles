@@ -109,24 +109,23 @@ noremap <leader>tn :tabn<CR>|                                 "  go to next tab
 noremap <leader>tp :tabp<CR>|                                 "  go to prev tab
 
 "~~~~~~~~~~ BUFFER NAVIGATION~~~~~~~~~
-noremap <leader>bd :bd<CR>|																		"  delete current buffer
-noremap <leader>bD :%bd<bar>e#<CR>|                           "  delete all buffers but current and previous one
-noremap <leader>br :e<CR>|                                    "  reload buffer
-noremap <leader>bp :bp<CR>|                                   "  previous buffer
-noremap <leader>bn :bn<CR>|                                   "  next buffer
-noremap <leader>bv :vsp \| b|                                 "  vsplit and open buffer from number
-noremap <leader>bw :b#|                                "  open previously opened buffer
 " nnoremap <leader>. :ls <CR>:b|                                "  open buffer list and change buffers
+" noremap <S-Tab> :bp<CR>
+" noremap <Tab> :bn<CR>
+" noremap <leader>bD :%bd<bar>e#<CR>|                           "  delete all buffers but current and previous one
+" noremap <leader>bd :bd<CR>|																		"  delete current buffer
+" noremap <leader>bn :bn<CR>|                                   "  next buffer
+" noremap <leader>bp :bp<CR>|                                   "  previous buffer
 nnoremap <leader>. :b <c-d>|																	" change buffer
-noremap <Tab> :bn<CR>
-noremap <S-Tab> :bp<CR>
+noremap <leader>br :e<CR>|                                    "  reload buffer
+noremap <leader>bv :vsp \| b|                                 "  vsplit and open buffer from number
 
 "~~~~~~~~~~ TERMINAL NAVIGATION~~~~~~~~~
 tnoremap <C-\> <C-\><C-n>
 
 "~~~~~~~~~~ SEARCH & REPLACE ~~~~~~~~
 nnoremap <leader>rl :s//g<Left><Left>|                        "  search in line
-nnoremap <leader>rw :s/<c-r><c-w>//g<Left><Left>|            "  search word under cursor in file
+nnoremap <leader>rw :s/<c-r><c-w>//g<Left><Left>|             "  search word under cursor in file
 nnoremap <leader>rW :%s/<c-r><c-w>//g<Left><Left>|            "  search word under cursor in file
 nnoremap <leader>rv :%s///c<Left><Left><Left>|                "  search file & confirm
 nnoremap <leader>rg :%s///gc<Left><Left><Left><Left>|         "  search entire file & confirm
