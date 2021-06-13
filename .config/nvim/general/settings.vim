@@ -11,8 +11,8 @@ filetype plugin indent on
 
 " For terminal true color
 if (has("termguicolors"))
-	set termguicolors
-	hi! Normal ctermbg=NONE guibg=NONE
+  set termguicolors
+  hi! Normal ctermbg=NONE guibg=NONE
 endif
 
 if exists('+termguicolors')
@@ -22,7 +22,7 @@ if exists('+termguicolors')
 endif
 
 if !has('gui_running')
-	set t_Co=256
+  set t_Co=256
 endif
 
 " Basic configurations
@@ -53,9 +53,9 @@ set copyindent
 set preserveindent
 set tabstop=2
 " set softtabstop=2
-set expandtab
+" set expandtab
 set shiftwidth=2
-" set noexpandtab
+set noexpandtab
 set smarttab
 set shiftround                                                                                     "  use multiple of shiftwidth when indenting with '<' and '>'
 
@@ -75,7 +75,7 @@ set colorcolumn=80,120
 " let &colorcolumn="80,".join(range(120,256),",")
 
 set list                                                                                           "  show trailing whitespaces
-set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:§
+set listchars=tab:▸\ ,space:·,extends:›,precedes:‹,nbsp:·,trail:·,eol:§
 
 " Font
 " set guifont=fira\ code:h14
@@ -89,9 +89,9 @@ set guifont=iosevka:h11
 set cursorline                                                                                     "  Show line highlight
 " underline cursorline instead of highlight
 " augroup CustomCursorLine
-" 	au!
-" 	au ColorScheme * :hi clear CursorLine
-" 	au ColorScheme * :hi! CursorLine gui=underline cterm=underline
+"   au!
+"   au ColorScheme * :hi clear CursorLine
+"   au ColorScheme * :hi! CursorLine gui=underline cterm=underline
 " augroup END
 
 
@@ -145,10 +145,10 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 
 augroup ClearWhitespace
 match ExtraWhitespace /\s\+$/
-	autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-	autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-	autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-	autocmd BufWinLeave * call clearmatches()
+  autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+  autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+  autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+  autocmd BufWinLeave * call clearmatches()
 augroup END
 
 " Add all TODO items to the quickfix list relative to where you opened Vim.
@@ -172,3 +172,30 @@ function! s:todo() abort
 endfunction
 
 command! Todo call s:todo()
+
+
+" Only convert the beginning of the line to tabs
+" https://stackoverflow.com/questions/5172137/vim-retab-spaces-at-the-beginning-of-lines-only
+func! RetabIndents()
+    let saved_view = winsaveview()
+    execute '%s@^\(\ \{'.&ts.'\}\)\+@\=repeat("\t", len(submatch(0))/'.&ts.')@e'
+    call winrestview(saved_view)
+endfunc
+
+command! RetabIndents call RetabIndents()
+
+" Toggle between tabs and spaces then retab entire file
+function! s:convertTab()
+  if &expandtab
+    " convert to tabs
+    setlocal noexpandtab
+    call RetabIndents()
+  else
+    " convert to spaces
+    setlocal expandtab
+    :exe "%retab!"
+  endif
+
+endfunction
+
+command! Retab call s:convertTab()
