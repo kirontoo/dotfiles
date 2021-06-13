@@ -266,8 +266,8 @@ gls.right[j] = {
     end,
     icon = ' ',
     highlight = {colors.cyan , colors.bg, 'bold'},
-    -- separator = ' ',
-    -- separator_highlight = { colors.bg, colors.bg },
+    separator = ' ',
+    separator_highlight = {'NONE',colors.bg},
   }
 }
 
@@ -296,7 +296,7 @@ gls.right[j] = {
 
 j = j + 1
 gls.right[j] = {
-	FileEncode = {
+  FileEncode = {
     provider = 'FileEncode',
     highlight = {colors.grey, colors.section_bg},
   }
@@ -304,7 +304,7 @@ gls.right[j] = {
 
 j = j + 1
 gls.right[j] = {
-	FileFormat = {
+  FileFormat = {
     provider = function()
       local fileformat = vim.bo.fileformat
       if fileformat == 'unix' then
