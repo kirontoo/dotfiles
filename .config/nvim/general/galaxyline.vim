@@ -5,7 +5,7 @@ local gls = gl.section
 local fileinfo = require('galaxyline.provider_fileinfo')
 local condition = require('galaxyline.condition')
 
-gl.short_line_list = {'NvimTree','vista','dbui','packer', 'startify'}
+gl.short_line_list = {'NvimTree','vista','dbui','packer', 'startify', 'NerdTree'}
 
 -- local schema = require('colors').schema
 
