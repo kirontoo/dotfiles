@@ -26,17 +26,17 @@ if !has('gui_running')
 endif
 
 " Basic configurations
-set nocompatible                                                                                   "  prevent remapping to make plugins compatible
-set ttyfast                                                                                        "  Speed up scrolling in Vim
-set path+=**                                                                                       "  Search down into subfolders & provide tab-completion
-set wildmenu                                                                                       "  Display all matching files when tab-complete
-set wildignore+=**/node_modules/**,.git\,.tags,tags                                                "  ignore folders to search
+set nocompatible                                     "   prevent remapping to make plugins compatible
+set ttyfast                                          "   Speed up scrolling in Vim
+set path+=**                                         "   Search down into subfolders & provide tab-completion
+set wildmenu                                         "   Display all matching files when tab-complete
+set wildignore+=**/node_modules/**,.git\,.tags,tags  "   ignore folders to search
 set wildchar=<Tab> wildmenu wildmode=full
 set wildcharm=<C-Z>
-set wildmode=longest:full,full                                                                     "  Auto complete
+set wildmode=longest:full,full                       "   Auto complete
 set wildignorecase
 
-set updatetime=100                                                                                 "  lower updatetime to 100ms from 4000
+set updatetime=100                                   "   lower updatetime to 100ms from 4000
 set lazyredraw
 
 set encoding=utf-8
@@ -46,24 +46,23 @@ set ff=unix
 
 set laststatus=2
 set noshowmode
-set signcolumn=yes                                                                                 "  Enable sign column
+set signcolumn=yes                                   "   Enable sign column
 
 " ~Tab indent
 set copyindent
 set preserveindent
 set tabstop=2
 " set softtabstop=2
-" set expandtab
 set shiftwidth=2
 set noexpandtab
 set smarttab
-set shiftround                                                                                     "  use multiple of shiftwidth when indenting with '<' and '>'
+set shiftround                                       "   use multiple of shiftwidth when indenting with '<' and '>'
 
-set splitbelow splitright                                                                          "  Splits window below and right
-set mouse=""                                                                                       "  disable mouse usage
-set hidden                                                                                         "  hide buffers
-set autoindent                                                                                     "  always set autoindenting on
-set number relativenumber                                                                          "  Line Numbers
+set splitbelow splitright                            "   Splits window below and right
+set mouse=""                                         "   disable mouse usage
+set hidden                                           "   hide buffers
+set autoindent                                       "   always set autoindenting on
+set number relativenumber                            "   Line Numbers
 
 " ~Line Wrap
 set tw=80
@@ -74,7 +73,7 @@ set wrapmargin=0
 set colorcolumn=80,120
 " let &colorcolumn="80,".join(range(120,256),",")
 
-set list                                                                                           "  show trailing whitespaces
+set list                                                                 "   show trailing whitespaces
 set listchars=tab:▸\ ,space:·,extends:›,precedes:‹,nbsp:·,trail:·,eol:§
 
 " Font
@@ -95,10 +94,10 @@ set cursorline                                                                  
 " augroup END
 
 
-set showcmd                                                                                        "  show command
-set hlsearch                                                                                       "  highlight search terms
-set incsearch                                                                                      "  show search matches as you type
-set ignorecase                                                                                     "  Ignore case
+set showcmd     "   show command
+set hlsearch    "   highlight search terms
+set incsearch   "   show search matches as you type
+set ignorecase  "   Ignore case
 
 " OS CLIPBOARD
 set clipboard+=unnamedplus
@@ -121,11 +120,11 @@ set tags+=tags
 set foldmethod=manual
 set foldlevelstart=1
 
-let javaScript_fold=1                                                                              "  JavaScript
-let typeScript_fold=1                                                                              "  Typescript
-let csharp_fold=1                                                                                  "  C#
-let sh_fold_enabled=1                                                                              "  sh
-let vimsyn_folding='af'                                                                            "  Vim script
+let javaScript_fold=1    "   JavaScript
+let typeScript_fold=1    "   Typescript
+let csharp_fold=1        "   C#
+let sh_fold_enabled=1    "   sh
+let vimsyn_folding='af'  "   Vim script
 
 " python3 path
 let g:python3_host_prog = '/usr/bin/python3'
