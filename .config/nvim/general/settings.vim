@@ -54,7 +54,7 @@ set preserveindent
 set tabstop=2
 " set softtabstop=2
 set shiftwidth=2
-set noexpandtab
+set expandtab                                        "   default to spaces
 set smarttab
 set shiftround                                       "   use multiple of shiftwidth when indenting with '<' and '>'
 
