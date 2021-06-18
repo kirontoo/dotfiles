@@ -225,6 +225,8 @@ j = j + 1
 gls.right[j] = {
   DiffAdd = {
     provider = 'DiffAdd',
+    separator = ' ',
+    separator_highlight = {'NONE',colors.bg},
     condition = condition.hide_in_width,
     icon = '  ',
     highlight = {colors.green,colors.bg},
@@ -262,10 +264,8 @@ gls.right[j] = {
       end
       return true
     end,
-    icon = ' ',
+    icon = '  ',
     highlight = {colors.cyan , colors.bg, 'bold'},
-    separator = ' ',
-    separator_highlight = {'NONE',colors.bg},
   }
 }
 

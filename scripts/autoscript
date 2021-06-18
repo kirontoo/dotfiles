@@ -8,20 +8,20 @@ SCRIPT_FILE="$SCRIPT_FOLDER/$1"
 COMMAND="$EDITOR $SCRIPT_FILE"
 
 if  [ $WILL_FLOAT ]; then
-	if [[ -d $SCRIPT_FILE ]]; then
-		FOLDER=$SCRIPT_FILE
-		SCRIPT=$( ls "${FOLDER}" | rofi -dmenu -width 15 -lines 10 -p "${1}")
-		[[ -z $SCRIPT ]] && exit
-		SCRIPT_FILE="$SCRIPT_FOLDER/$1/$SCRIPT"
-	fi
+  if [[ -d $SCRIPT_FILE ]]; then
+    FOLDER=$SCRIPT_FILE
+    SCRIPT=$( ls "${FOLDER}" | rofi -dmenu -width 15 -lines 10 -p "${1}")
+    [[ -z $SCRIPT ]] && exit
+    SCRIPT_FILE="$SCRIPT_FOLDER/$1/$SCRIPT"
+  fi
 
-	COMMAND="$HOME/scripts/float-window i3-sensible-terminal --detach --name nvim_scripts -e $EDITOR $SCRIPT_FILE"
+  COMMAND="$HOME/scripts/float-window i3-sensible-terminal --detach --name nvim_scripts -e $EDITOR $SCRIPT_FILE"
 fi
 
 if [[ -f $SCRIPT_FILE ]]; then
-	exec $COMMAND
+  exec $COMMAND
 else
   echo '#!/bin/bash' > $SCRIPT_FILE
   chmod +x $SCRIPT_FILE
-	exec $COMMAND
+  exec $COMMAND
 fi
