@@ -28,41 +28,43 @@ source $VIMPATH/themes/solarized.vim
 " load colorscheme
 source $VIMPATH/themes/themes.vim
 
+
+
 " plugin configs
 " source $VIMPATH/plugin-config/coc.vim
+" source $VIMPATH/plugin-config/fzf.vim
+" source $VIMPATH/plugin-config/gitgutter.vim
+" source $VIMPATH/plugin-config/lightline.vim
 source $VIMPATH/plugin-config/barbar.vim
 source $VIMPATH/plugin-config/closetag.vim
 source $VIMPATH/plugin-config/completion-nvim.vim
 source $VIMPATH/plugin-config/devicons.vim
-source $VIMPATH/plugin-config/emmet.vim
 source $VIMPATH/plugin-config/diagnosticls.vim
+source $VIMPATH/plugin-config/emmet.vim
 source $VIMPATH/plugin-config/fugitive.vim
-" source $VIMPATH/plugin-config/fzf.vim
-source $VIMPATH/plugin-config/telescope.vim
-" source $VIMPATH/plugin-config/gitgutter.vim
 source $VIMPATH/plugin-config/gitsigns.vim
 source $VIMPATH/plugin-config/goyo.vim
 source $VIMPATH/plugin-config/hexokinase.vim
 source $VIMPATH/plugin-config/incsearch.vim
-" source $VIMPATH/plugin-config/lightline.vim
-source $VIMPATH/plugin-config/maximize.vim
 source $VIMPATH/plugin-config/lua-lsp.vim
-source $VIMPATH/plugin-config/nnn.vim
+source $VIMPATH/plugin-config/maximize.vim
 source $VIMPATH/plugin-config/nerdtree.vim
+source $VIMPATH/plugin-config/nnn.vim
 source $VIMPATH/plugin-config/nvim-lspconfig.vim
 source $VIMPATH/plugin-config/omnisharp.vim
 source $VIMPATH/plugin-config/polyglot.vim
 source $VIMPATH/plugin-config/rooter.vim
-source $VIMPATH/plugin-config/startify.vim
 source $VIMPATH/plugin-config/splitjoin.vim
+source $VIMPATH/plugin-config/startify.vim
 source $VIMPATH/plugin-config/tabular.vim
-source $VIMPATH/plugin-config/treesitter.vim
-" source $VIMPATH/plugin-config/trouble.vim
+source $VIMPATH/plugin-config/telescope.vim
 source $VIMPATH/plugin-config/todo-comments.vim
-source $VIMPATH/plugin-config/vimplug.vim
+source $VIMPATH/plugin-config/treesitter.vim
+source $VIMPATH/plugin-config/trouble.vim
 source $VIMPATH/plugin-config/vim-test.vim
-source $VIMPATH/plugin-config/vista.vim
+source $VIMPATH/plugin-config/vimplug.vim
 source $VIMPATH/plugin-config/vimspector.vim
 source $VIMPATH/plugin-config/vimwiki.vim
+source $VIMPATH/plugin-config/vista.vim
 source $VIMPATH/plugin-config/whichkey.vim
 source $VIMPATH/plugin-config/zen-mode.vim
