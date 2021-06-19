@@ -12,7 +12,6 @@ nnoremap <silent><leader>n :NnnPicker<CR>
 nnoremap <silent><leader>nd :NnnPicker %:p:h<CR>
 
 let g:nnn#action = {
-	\ '<c-t>': 'tab split',
-	\ '<c-x>': 'split',
-	\ '<c-v>': 'vsplit'
-}
+			\ '<c-t>': 'tab split',
+			\ '<c-x>': 'split',
+			\ '<c-v>': 'vsplit' }
