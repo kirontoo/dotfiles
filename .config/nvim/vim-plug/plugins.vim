@@ -2,17 +2,17 @@
 
 " Plugin Calls
 if has("win32") || has("win16")
-	let $PLUGVIM = $HOME . '\AppData\Local\nvim\autoload\plug.vim'
-	let $PLUGGEDPATH = $HOME . '\AppData\Local\nvim\autoload\plugged'
+  let $PLUGVIM = $HOME . '\AppData\Local\nvim\autoload\plug.vim'
+  let $PLUGGEDPATH = $HOME . '\AppData\Local\nvim\autoload\plugged'
 else
-	let $PLUGVIM = $HOME . '/.local/share/nvim/site/autoload/plug.vim'
-	let $PLUGGEDPATH = $HOME . '/.local/share/nvim/plugged'
+  let $PLUGVIM = $HOME . '/.local/share/nvim/site/autoload/plug.vim'
+  let $PLUGGEDPATH = $HOME . '/.local/share/nvim/plugged'
 endif
 
 if empty(glob( $PLUGVIM ))
-	silent !curl -fLo $PLUGVIM --create-dirs
-		\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  silent !curl -fLo $PLUGVIM --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin( $PLUGGEDPATH )
@@ -35,13 +35,14 @@ Plug 'tyrannicaltoucan/vim-deep-space'
 " Plug 'itchyny/lightline.vim'
 " Plug 'mhinz/vim-signify'
 Plug 'folke/todo-comments.nvim'
+Plug 'folke/trouble.nvim'
 Plug 'folke/zen-mode.nvim'
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'romgrk/barbar.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'romgrk/barbar.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
 
 " Utility
 Plug 'AndrewRadev/splitjoin.vim'
@@ -56,7 +57,6 @@ Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'mcchrish/nnn.vim'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'stsewd/fzf-checkout.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
