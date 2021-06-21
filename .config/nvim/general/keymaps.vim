@@ -82,7 +82,7 @@ nnoremap <A-,> <C-W>-
 nnoremap <A-.> <C-W>+
 
 "~~~~~~~~~~TAB NAVIGATION ~~~~~~~~~
-noremap <leader>td :tabclose<CR>|                             "  close tab
+noremap <leader>tx :tabclose<CR>|                             "  close tab
 noremap <leader>to :tabnew<CR>|                               "  open new empty tab
 noremap <leader>tn :tabn<CR>|                                 "  go to next tab
 noremap <leader>tp :tabp<CR>|                                 "  go to prev tab
