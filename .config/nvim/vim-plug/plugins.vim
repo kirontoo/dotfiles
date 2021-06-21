@@ -48,7 +48,6 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'airblade/vim-rooter'
 Plug 'alvan/vim-closetag'
-Plug 'brooth/far.vim'
 Plug 'folke/which-key.nvim'
 Plug 'godlygeek/tabular'
 Plug 'haya14busa/incsearch.vim'
@@ -84,17 +83,13 @@ Plug 'liuchengxu/vista.vim'
 Plug 'mattn/emmet-vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
-" Plug 'nvim-lua/lsp-status.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'nvim-telescope/telescope-symbols.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'vim-test/vim-test'
 
 " Debugger Plugins
 Plug 'puremourning/vimspector'
 Plug 'szw/vim-maximizer'
-
-" Extras
-Plug 'ThePrimeagen/vim-be-good'
 
 call plug#end()
 
