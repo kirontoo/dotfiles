@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:$HOME/scripts:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.node_modules/bin:$HOME/tailwindcss-intellisense:$HOME/scripts:$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -11,12 +11,15 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="darkblood"
 #  ZSH_THEME="spaceship"
 
+# https://github.com/jackharrisonsherlock/common
+ ZSH_THEME="common"
+
 # ZSH PROMPT
 # SPACESHIP_CHAR_SYMBOL=❯
 # SPACESHIP_CHAR_SUFFIX=" "
 
 # Starship prompt
- eval "$(starship init zsh)"
+#  eval "$(starship init zsh)"
 
 # PURE PROMPT 
 # source: https://github.com/sindresorhus/pure.git 
@@ -38,7 +41,7 @@ alias dev="cd ~/Documents/dev"
 alias dotfiles="cd ~/Documents/dev/dotfiles"
 alias blog="cd ~/Documents/blod"
 alias lg="lazygit"
-alias config="cd ~/.config/regolith"
+alias config="cd ~/.config/"
 alias ide="~/scripts/tmux-dew.sh"
 
 ## tty-clock
@@ -57,6 +60,9 @@ alias tn="t new -t"
 alias dockup="sudo docker-compose up -d"
 alias dockdown="sudo docker-compose down"
 
+# open files
+alias open="xdg-open"
+
 # pomodoro
 alias pomostart="sleep 1500 && zenity --warning --text='Time to take a break!'"
 alias pomobreak="sleep 300 && zenity --warning --text'Break Time over!'"
@@ -69,11 +75,15 @@ alias killd="pkill discord"
 alias srcz="source $HOME/.zshrc"
 alias srct="source $HOME/.tmux.conf"
 
-# spotify notify
-alias songnotify="$HOME/scripts/song-notify.sh"
-
 alias cp='cp -i'    # confirm before overwriting existing files
 alias mv='mv -i'
+
+# https://github.com/jszczerbinsky/ptSh
+alias ls="ptls"
+alias pwd="ptpwd"
+alias mkdir="ptmkdir"
+alias touch="pttouch"
+alias lx="ls_extended"
 
 alias calculator="$HOME/scripts/rofi/rofi-launch.sh calculator &"
 
@@ -264,3 +274,5 @@ fzf_git_diff() {
 ################################################
 
 eval "$(jump shell zsh)"
+
+alias luamake=/home/phoenix/Documents/repos/lua-language-server/3rd/luamake/luamake
