@@ -74,7 +74,8 @@ set colorcolumn=80,120
 " let &colorcolumn="80,".join(range(120,256),",")
 
 set list                                                                 "   show trailing whitespaces
-set listchars=tab:▸\ ,space:·,extends:›,precedes:‹,nbsp:·,trail:·,eol:§
+" set listchars=tab:▸\ ,space:·,extends:›,precedes:‹,nbsp:·,trail:·,eol:§
+set listchars=tab:▸\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:§
 
 " Font
 " set guifont=fira\ code:h14
@@ -131,7 +132,7 @@ let g:python3_host_prog = '/usr/bin/python3'
 
 "~~~~~~~ AUTOMACTIC SETTINGS ~~~~~~~~
 " automatically remove all trailing whitespace
-autocmd FileType cs,js,css,jsx,ts,tsx,vim,c autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType cs,js,css,jsx,ts,tsx,vim,c,svelte autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " unhighligt for search
 autocmd CursorMoved * if (expand('<cword>') =~ @/) | set hlsearch | else | set nohlsearch | endif
@@ -149,29 +150,6 @@ match ExtraWhitespace /\s\+$/
   autocmd InsertLeave * match ExtraWhitespace /\s\+$/
   autocmd BufWinLeave * call clearmatches()
 augroup END
-
-" Add all TODO items to the quickfix list relative to where you opened Vim.
-function! s:todo() abort
-  let entries = []
-  for cmd in ['git grep -niIw -e TODO -e FIXME 2> /dev/null',
-            \ 'grep -rniIw -e TODO -e FIXME . 2> /dev/null']
-    let lines = split(system(cmd), '\n')
-    if v:shell_error != 0 | continue | endif
-    for line in lines
-      let [fname, lno, text] = matchlist(line, '^\([^:]*\):\([^:]*\):\(.*\)')[1:3]
-      call add(entries, { 'filename': fname, 'lnum': lno, 'text': text })
-    endfor
-    break
-  endfor
-
-  if !empty(entries)
-    call setqflist(entries)
-    copen
-  endif
-endfunction
-
-command! Todo call s:todo()
-
 
 " Only convert the beginning of the line to tabs
 " https://stackoverflow.com/questions/5172137/vim-retab-spaces-at-the-beginning-of-lines-only
