@@ -103,7 +103,7 @@ $W+Shift+space  $X rofi -show run
 $W+w            $X rofi -show window -window-format "{t0}"  -theme embark-bar
 $W+e            $X $HOME/scripts/rofi/rofi-launch.sh config
 $W+$A+e         $X $HOME/scripts/rofi/rofi-launch.sh autoscript
-$W+c            $X $HOME/scripts/rofi/rofi-launch.sh screenshot
+$W+c            $X $HOME/scripts/rofi/rofi-launch.sh screenshooter
 $W+t            $X $HOME/scripts/rofi/rofi-launch.sh tmux
 $W+m            $X $HOME/scripts/rofi/rofi-launch-menu.sh
 
@@ -127,7 +127,8 @@ $W+$S+d      --release  exec "killall dunst;exec notify-send 'restart dunst'"
 # $W+$S+Return       $R -i vivaldi-stable -x vivaldi-stable -e "vivaldi-stable"
 $W+Return          exec i3-sensible-terminal
 $W+$C+b            exec i3-sensible-terminal -e 'bmenu'
-$W+F1              $R -i Navigator -g -e "firefox"
+# $W+F1              $R -i Navigator -g -e "firefox"
+$W+F1              $R -i vivaldi-stable -x vivaldi-stable -e "vivaldi-stable"
 $W+F2              $R -i file_explorer -g -e "i3-sensible-terminal --name file_explorer -e nnn -R"
 $W+F3              $R -i discord -g -e "Discord"
 $W+F4              $R -i spotify -g -e "spotify"
@@ -266,7 +267,7 @@ $W+comma $X pactl set-source-mute 2 toggle
 # NOTE: do no set this. MUST BE TILING.
 # This will mess up how windows are laid out 
 # when in use with i3fyra
-# workspace_layout tabbed 
+workspace_layout tabbed 
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 default_border pixel 2px
@@ -468,8 +469,8 @@ $ir "visualizer"                           $tf "visualizer"                     
 # >>> Container D
 $ir "crx_mpognobbkildjkofajifpdfhcoklimli" $tf $scb $send Dev Tools                 $tm D
 $ir "file_explorer" title="nnn"            $tf $smn $send file explorer             $tc D
-$ir "schedule"                             $tf "schedule"                            $tc D
-$ir "zoom" title="Chat"                    $tf "zoom: chat"                          $tc D
+$ir "schedule"                             $tf $sgb $send schedule                  $tc D
+$ir "zoom" title="Chat"                    $tf $sbb $send zoom: chat                $tc D
 
 # >>> Workspaces
 $cr "discord"                              $tf $smn  $send %title                   ,move container to workspace $ws4
@@ -600,18 +601,18 @@ set_from_resource $whited    color 15
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 # bar {
-# 	i3bar_command i3bar
-# 	status_command i3status
-# 	position bottom
+#   i3bar_command i3bar
+#   status_command i3status
+#   position bottom
 #
 # ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-# 	tray_output primary
-# #	tray_output eDP1
+#   tray_output primary
+# # tray_output eDP1
 #
-# 	bindsym button4 nop
-# 	bindsym button5 nop
+#   bindsym button4 nop
+#   bindsym button5 nop
 #   font xft:SpaceMono 11
-# 	strip_workspace_numbers yes
+#   strip_workspace_numbers yes
 #
 #     colors {
 #         background #1e1c31
@@ -717,17 +718,17 @@ mode "$mode_gaps_outer" {
 }
 
 mode "$mode_monitor" { 
-				bindsym Up move workspace to output up
-				bindsym Down move workspace to output down
-				bindsym Left move workspace to output left
-				bindsym Right move workspace to output right
+        bindsym Up move workspace to output up
+        bindsym Down move workspace to output down
+        bindsym Left move workspace to output left
+        bindsym Right move workspace to output right
 
-				bindsym k move workspace to output up
-				bindsym j move workspace to output down
-				bindsym h move workspace to output left
-				bindsym l move workspace to output right
+        bindsym k move workspace to output up
+        bindsym j move workspace to output down
+        bindsym h move workspace to output left
+        bindsym l move workspace to output right
 
-				bindsym Escape mode "default"
+        bindsym Escape mode "default"
 }
 
 mode "$mode_system" {
