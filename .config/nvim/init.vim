@@ -18,7 +18,8 @@ source $VIMPATH/general/netrw.vim
 
 source $VIMPATH/general/custom.vim
 " source $VIMPATH/general/statusline.vim
-source $VIMPATH/general/galaxyline.vim
+" source $VIMPATH/general/galaxyline.vim
+source $VIMPATH/general/lualine.vim
 
 " colorscheme configs
 source $VIMPATH/themes/dracula.vim
@@ -28,13 +29,12 @@ source $VIMPATH/themes/solarized.vim
 " load colorscheme
 source $VIMPATH/themes/themes.vim
 
-
-
 " plugin configs
 " source $VIMPATH/plugin-config/coc.vim
 " source $VIMPATH/plugin-config/fzf.vim
 " source $VIMPATH/plugin-config/gitgutter.vim
 " source $VIMPATH/plugin-config/lightline.vim
+source $VIMPATH/plugin-config/auto-session.vim
 source $VIMPATH/plugin-config/barbar.vim
 source $VIMPATH/plugin-config/closetag.vim
 source $VIMPATH/plugin-config/completion-nvim.vim
@@ -56,6 +56,7 @@ source $VIMPATH/plugin-config/polyglot.vim
 source $VIMPATH/plugin-config/rooter.vim
 source $VIMPATH/plugin-config/splitjoin.vim
 source $VIMPATH/plugin-config/startify.vim
+source $VIMPATH/plugin-config/session-lens.vim
 source $VIMPATH/plugin-config/tabular.vim
 source $VIMPATH/plugin-config/telescope.vim
 source $VIMPATH/plugin-config/todo-comments.vim
