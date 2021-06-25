@@ -6,10 +6,11 @@
 "      \/            \/                      \/
 
 "~~~~~~~~~~ STARTIFY PLUGIN ~~~~~~~~~
-nnoremap <leader>ss :SSave <CR>
 nnoremap <leader>sc :SClose <CR>
-nnoremap <leader>sl :SLoad <space>
-nnoremap <leader>sd :SDelete <space>
+nnoremap <leader>S <cmd>Startify<CR>
+" nnoremap <leader>ss :SSave <CR>
+" nnoremap <leader>sl :SLoad <space>
+" nnoremap <leader>sd :SDelete <space>
 
 
 " Startify Config

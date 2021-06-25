@@ -5,7 +5,7 @@ local gls = gl.section
 local fileinfo = require('galaxyline.provider_fileinfo')
 local condition = require('galaxyline.condition')
 
-gl.short_line_list = {'NvimTree','vista','dbui','packer', 'startify', 'NerdTree', 'nnn'}
+gl.short_line_list = {'NvimTree','vista','dbui','packer', 'startify', 'NerdTree', 'nnn', 'vim-test'}
 
 -- local schema = require('colors').schema
 
@@ -264,7 +264,7 @@ gls.right[j] = {
     end
     return true
   end,
-  icon = '  ',
+  icon = '   ',
   highlight = {colors.cyan , colors.bg, 'bold'},
   }
 }

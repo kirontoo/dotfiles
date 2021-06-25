@@ -22,7 +22,6 @@ Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'embark-theme/vim', { 'as': 'embark' }
 Plug 'lifepillar/vim-solarized8'
 Plug 'morhetz/gruvbox'
-Plug 'ntk148v/vim-horizon'
 Plug 'tyrannicaltoucan/vim-deep-space'
 
 " Plugin: NerdFonts
@@ -37,12 +36,15 @@ Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'folke/todo-comments.nvim'
 Plug 'folke/trouble.nvim'
 Plug 'folke/zen-mode.nvim'
-Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+" Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'romgrk/barbar.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+" Plug 'datwaft/bubbly.nvim'
+Plug 'hoob3rt/lualine.nvim'
 
 " Utility
 Plug 'AndrewRadev/splitjoin.vim'
@@ -64,6 +66,9 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vimwiki/vimwiki'
 
+Plug 'rmagatti/auto-session'
+Plug 'rmagatti/session-lens'
+
 " Files and Projects
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'junegunn/fzf.vim'
@@ -80,6 +85,8 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'ap/vim-css-color'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'liuchengxu/vista.vim'
+
+Plug 'simrat39/symbols-outline.nvim'
 Plug 'mattn/emmet-vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'

@@ -56,6 +56,8 @@ defaults = {
     buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
   }
 })
+
+require("telescope").load_extension("session-lens")
 EOF
 
 nnoremap <leader><space> <cmd>Telescope find_files hidden=true<cr>
