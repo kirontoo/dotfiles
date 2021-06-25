@@ -1,5 +1,16 @@
 lua <<EOF
 local colors = require('lualine.themes.embark')
+
+local conditions = {
+  buffer_not_empty = function() return vim.fn.empty(vim.fn.expand('%:t')) ~= 1 end,
+  hide_in_width = function() return vim.fn.winwidth(0) > 80 end,
+  check_git_workspace = function()
+    local filepath = vim.fn.expand('%:p:h')
+    local gitdir = vim.fn.finddir('.git', filepath .. ';')
+    return gitdir and #gitdir > 0 and #gitdir < #filepath
+  end
+}
+
 require('lualine').setup({
 options = {
   icons_enabled = true,
@@ -21,16 +32,33 @@ sections = {
   },
   lualine_x = { {
       'diff',
-      -- Is it me or the symbol for modified us really weird
       colored = true,
       symbols = {added = ' ', modified = '柳', removed = ' '},
       color_removed = colors.insert.a.bg,
       color_modified = colors.visual.a.bg,
       color_added = colors.replace.a.bg,
     },
-    'encoding', 'bo:shiftwidth','fileformat', 'filetype'
+    { 'encoding', condition = conditions.hide_in_width }, 'bo:shiftwidth', 'filetype',
+    {
+      -- Lsp server name .
+      function()
+        local msg = 'No Active Lsp'
+        local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+        local clients = vim.lsp.get_active_clients()
+        if next(clients) == nil then return msg end
+        for _, client in ipairs(clients) do
+          local filetypes = client.config.filetypes
+          if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+            return client.name
+          end
+        end
+        return msg
+      end,
+      icon = '',
+      color = {fg = colors.normal.a.bg, gui = 'bold'}
+    }
   },
-  lualine_y = {'branch'},
+  lualine_y = {{ 'branch', condition = conditions.check_git_workspace }},
   lualine_z = {'location'}
   },
 inactive_sections = {
