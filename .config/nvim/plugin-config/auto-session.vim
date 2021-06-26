@@ -1,7 +1,8 @@
 lua << EOF
 require('auto-session').setup({
   auto_session_enable_last_session = false,
-  pre_save_cmds = { "tabdo NERDTreeClose", "tabdo Vista!" }
+  auto_save_enabled = false,
+  pre_save_cmds = { "tabdo Vista!", "tabdo TroubleClose", "tabdo NvimTreeClose" }
 })
 EOF
 

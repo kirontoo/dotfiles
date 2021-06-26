@@ -34,7 +34,10 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup {
-		on_attach = require'completion'.on_attach,
+		on_attach = function()
+			require'completion'.on_attach()
+			require'lsp_signature'.on_attach()
+		end,
 		capabilities = capabilities,
 	}
 end
