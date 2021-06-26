@@ -59,7 +59,8 @@ set smarttab
 set shiftround                                       "   use multiple of shiftwidth when indenting with '<' and '>'
 
 set splitbelow splitright                            "   Splits window below and right
-set mouse=""                                         "   disable mouse usage
+" set mouse=""                                         "   disable mouse usage
+set mouse=a
 set hidden                                           "   hide buffers
 set autoindent                                       "   always set autoindenting on
 set number relativenumber                            "   Line Numbers
