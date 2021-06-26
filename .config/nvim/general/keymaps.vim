@@ -66,10 +66,13 @@ noremap <leader>wd :close<CR>|                                "  close a window
 noremap <leader>wo :only<CR>|                                 "  keep only current window open
 noremap <leader>wh :hide<CR>|                                 "  hide the current window
 
-noremap <leader>hh <C-w>h:hide<CR>|                           " hide the left window
-noremap <leader>hj <C-w>j:hide<CR>|                           " hide the bottom window
-noremap <leader>hk <C-w>k:hide<CR>|                           " hide the top window
-noremap <leader>hl <C-w>l:hide<CR>|                           " hide the right window
+noremap <leader>wq <C-w>t
+noremap <leader>w; <C-w>b
+
+noremap <leader>whh <C-w>h:hide<CR>|                          " hide the left window
+noremap <leader>whj <C-w>j:hide<CR>|                          " hide the bottom window
+noremap <leader>whk <C-w>k:hide<CR>|                          " hide the top window
+noremap <leader>whl <C-w>l:hide<CR>|                          " hide the right window
 
 noremap <leader>wr :vs<bar>:b#<CR>|                           " restore previous closed buffer in new window
 
