@@ -9,8 +9,8 @@ fi
 exists=$(git show-ref refs/heads/$branchName)
 
 if [ -z "$exists" ]; then
-    echo "$branchName does not exist, defaulting to master"
-    branchName=master
+    echo "$branchName does not exist, defaulting to main"
+    branchName=main
 fi
 
 git checkout $branchName
