@@ -100,7 +100,7 @@ noremap <leader>tp :tabp<CR>|                                 "  go to prev tab
 " noremap <leader>bp :bp<CR>|                                   "  previous buffer
 nnoremap <leader>. :b <c-d>|                                  " change buffer
 noremap <leader>br :e<CR>|                                    "  reload buffer
-noremap <leader>bv :vsp \| b|                                 "  vsplit and open buffer from number
+noremap <leader>bv :vsp \| b <c-d>|                           "  vsplit and open buffer from number
 
 "~~~~~~~~~~ TERMINAL NAVIGATION~~~~~~~~~
 tnoremap <C-\> <C-\><C-n>
