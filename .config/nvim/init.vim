@@ -36,6 +36,7 @@ source $VIMPATH/themes/themes.vim
 " source $VIMPATH/plugin-config/gitgutter.vim
 " source $VIMPATH/plugin-config/lightline.vim
 source $VIMPATH/plugin-config/auto-session.vim
+source $VIMPATH/plugin-config/autopairs.vim
 " source $VIMPATH/plugin-config/barbar.vim
 source $VIMPATH/plugin-config/nvim-bufferline.vim
 source $VIMPATH/plugin-config/closetag.vim
@@ -44,13 +45,13 @@ source $VIMPATH/plugin-config/devicons.vim
 source $VIMPATH/plugin-config/diagnosticls.vim
 source $VIMPATH/plugin-config/fugitive.vim
 source $VIMPATH/plugin-config/gitsigns.vim
-source $VIMPATH/plugin-config/goyo.vim
+" source $VIMPATH/plugin-config/goyo.vim
 source $VIMPATH/plugin-config/hexokinase.vim
 source $VIMPATH/plugin-config/incsearch.vim
 source $VIMPATH/plugin-config/lua-lsp.vim
 source $VIMPATH/plugin-config/maximize.vim
 " source $VIMPATH/plugin-config/nerdtree.vim
-source $VIMPATH/plugin-config/nnn.vim
+" source $VIMPATH/plugin-config/nnn.vim
 source $VIMPATH/plugin-config/nvim-lspconfig.vim
 source $VIMPATH/plugin-config/nvimtree.vim
 source $VIMPATH/plugin-config/omnisharp.vim
@@ -59,6 +60,7 @@ source $VIMPATH/plugin-config/rooter.vim
 source $VIMPATH/plugin-config/splitjoin.vim
 source $VIMPATH/plugin-config/startify.vim
 source $VIMPATH/plugin-config/session-lens.vim
+source $VIMPATH/plugin-config/symbols-outline.vim
 source $VIMPATH/plugin-config/tabular.vim
 source $VIMPATH/plugin-config/telescope.vim
 source $VIMPATH/plugin-config/todo-comments.vim
