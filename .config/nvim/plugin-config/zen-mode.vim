@@ -5,7 +5,7 @@ require("zen-mode").setup {
 			-- height and width can be:
 			-- * an absolute number of cells when > 1
 			-- * a percentage of the width / height of the editor when <= 1
-			width = 120, -- width of the Zen window
+			width = 0.65, -- width of the Zen window
 			height = 1, -- height of the Zen window
 			-- by default, no options are changed for the Zen window
 			-- uncomment any of the options below, or add other vim.wo options you want to apply
@@ -16,7 +16,7 @@ require("zen-mode").setup {
 				-- cursorline = false, -- disable cursorline
 				-- cursorcolumn = false, -- disable cursor column
 				-- foldcolumn = "0", -- disable fold column
-				-- list = false, -- disable whitespace characters
+				list = false, -- disable whitespace characters
 			},
 		},
 		plugins = {
@@ -34,8 +34,8 @@ require("zen-mode").setup {
 			-- - allow_remote_control socket-only
 			-- - listen_on unix:/tmp/kitty
 			kitty = {
-				enabled = false,
-				font = "+4", -- font size increment
+				enabled = true,
+				font = "+2", -- font size increment
 			},
 		},
 
@@ -47,3 +47,5 @@ require("zen-mode").setup {
 	end,
 }
 EOF
+
+nnoremap <leader>tz <cmd>ZenMode<cr>
