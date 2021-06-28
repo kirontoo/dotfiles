@@ -16,8 +16,8 @@ options = {
   icons_enabled = true,
   theme = 'embark',
   section_separators = {'', ''},
-  component_separators = {'', ''}
-  },
+  component_separators = {'', ''},
+},
 sections = {
   lualine_a = {'mode'},
   lualine_b = {'filename'},
@@ -70,6 +70,6 @@ inactive_sections = {
   lualine_z = {}
   },
 tabline = {},
-extensions = {}
+extensions = { 'nvim-tree', 'fugitive' }
 })
 EOF

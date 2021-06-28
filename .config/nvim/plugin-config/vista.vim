@@ -18,7 +18,7 @@ let g:vista#renderer#enable_icon  = 1
 let g:vista_echo_cursor_strategy = 'echo'
 let g:vista_update_on_text_changed = 1
 let g:vista_disable_statusline = 1
-let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+let g:vista_icon_indent = ["", "﬌ "]
 
 let g:vista#renderer#icons = {
 \   "function": "\uf794",
