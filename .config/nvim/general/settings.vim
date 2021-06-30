@@ -141,6 +141,9 @@ autocmd CursorMoved * if (expand('<cword>') =~ @/) | set hlsearch | else | set n
 " prevent comment on new newline
 autocmd FileType vim setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" set relative number line for nvim tree
+au BufWinEnter NvimTree setlocal rnu
+
 " highlight trailing whitespaces in red
 highlight ExtraWhitespace ctermbg=red guibg=red
 
