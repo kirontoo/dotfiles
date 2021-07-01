@@ -31,9 +31,9 @@ Plug 'tyrannicaltoucan/vim-deep-space'
 " Plugin: Packages
 
 " UI
+Plug 'Pocco81/TrueZen.nvim'
 Plug 'folke/todo-comments.nvim'
 Plug 'folke/trouble.nvim'
-Plug 'folke/zen-mode.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
@@ -49,7 +49,6 @@ Plug 'folke/which-key.nvim'
 Plug 'godlygeek/tabular'
 Plug 'haya14busa/incsearch.vim'
 Plug 'hoob3rt/lualine.nvim'
-Plug 'windwp/nvim-autopairs'
 Plug 'pwntester/octo.nvim'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
@@ -59,7 +58,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-test/vim-test'
 Plug 'vimwiki/vimwiki'
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+Plug 'windwp/nvim-autopairs'
 
 
 " Files, Projects, Sessions
@@ -84,7 +83,6 @@ Plug 'simrat39/symbols-outline.nvim'
 
 " Debugger Plugins
 Plug 'puremourning/vimspector'
-Plug 'szw/vim-maximizer'
 
 call plug#end()
 

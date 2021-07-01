@@ -69,4 +69,4 @@ source $VIMPATH/plugin-config/vimspector.vim
 source $VIMPATH/plugin-config/vimwiki.vim
 source $VIMPATH/plugin-config/vista.vim
 source $VIMPATH/plugin-config/whichkey.vim
-source $VIMPATH/plugin-config/zen-mode.vim
+source $VIMPATH/plugin-config/true-zen.vim
