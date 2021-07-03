@@ -6,7 +6,7 @@
 "                       |_|
 " taken from ThePrimeagen
 
-let g:vimspectcor_install_gadgets = [ 'vscode-node' ]
+let g:vimspectcor_install_gadgets = [ 'vscode-node-debug2', 'vscode-go', 'CodeLLDB' ]
 
 nnoremap <leader>dd :call vimspector#Launch()<CR>
 nnoremap <leader>dc :call GotoWindow(g:vimspector_session_windows.code)<CR>
@@ -21,7 +21,7 @@ nnoremap <leader>dtcb :call vimspector#CleanLineBreakpoint()<CR>
 
 nmap <leader>dl <Plug>VimspectorStepInto
 nmap <leader>dj <Plug>VimspectorStepOver
-nmap <leader>dk <Plug>VimspectorStepOut
+nmap <leader>dh <Plug>VimspectorStepOut
 nmap <leader>d_ <Plug>VimspectorRestart
 nnoremap <leader>d<space> :call vimspector#Continue()<CR>
 
@@ -30,6 +30,5 @@ nmap <leader>dbp <Plug>VimspectorToggleBreakpoint
 nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
 
 function! GotoWindow( id )
-	call win_gotoid( a:id )
-	MaximizerToggle
+  call win_gotoid( a:id )
 endfunction
