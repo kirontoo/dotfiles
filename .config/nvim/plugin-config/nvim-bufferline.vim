@@ -99,20 +99,20 @@ require('bufferline').setup ({
     },
 
     error_visible = {
-      guifg = '#F48FB1',
-      guibg = '#100e23'
+      guibg = '#F48FB1',
+      guifg = '#100e23'
     },
     error_selected = {
-      guibg = '#100e23',
-      guifg = '#F48FB1'
+      guifg = '#100e23',
+      guibg = '#F48FB1'
     },
     error_diagnostic = {
       guifg = '#F48FB1',
       guibg = '#100e23'
     },
     error_diagnostic_selected = {
-      guibg = '#100e23',
-      guifg = '#F48FB1',
+      guifg = '#100e23',
+      guibg = '#F48FB1',
     },
     error_diagnostic_visible = {
       guibg = '#100e23',
