@@ -91,5 +91,5 @@ nnoremap <leader>cs <cmd>Telescope lsp_document_symbols<cr>
 nnoremap <leader>cS <cmd>Telescope lsp_workspace_symbols<cr>
 nnoremap <leader>cT :lua require('telescope.builtin').treesitter()<CR>
 nnoremap <leader>gr <cmd>Telescope lsp_references<cr>
-nnoremap gd <cmd>Telescope lsp_definitions<cr>
+nnoremap <leader>gD <cmd>Telescope lsp_definitions<cr>
 nnoremap gi <cmd>Telescope lsp_implementations<cr>

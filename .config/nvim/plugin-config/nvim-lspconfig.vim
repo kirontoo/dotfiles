@@ -19,7 +19,7 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap('n',  '<space>ca',  '<cmd>lua  vim.lsp.buf.code_action()<CR>',                                 opts)
 	buf_set_keymap('n',  '<space>ch',  '<Cmd>lua  vim.lsp.buf.hover()<CR>',                                       opts)
 	buf_set_keymap('n',  '<space>cr',  '<cmd>lua  vim.lsp.buf.rename()<CR>',                                      opts)
-	buf_set_keymap('n',  '<space>gD',  '<cmd>lua  vim.lsp.buf.type_definition()<CR>',                             opts)
+	buf_set_keymap('n',  'gd',         '<cmd>lua  vim.lsp.buf.type_definition()<CR>',                             opts)
 	buf_set_keymap('n',  '<space>wl',  '<cmd>lua  print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>',  opts)
 	buf_set_keymap('n',  '[d',         '<cmd>lua  vim.lsp.diagnostic.goto_prev()<CR>',                            opts)
 	buf_set_keymap('n',  ']d',         '<cmd>lua  vim.lsp.diagnostic.goto_next()<CR>',                            opts)
@@ -37,8 +37,11 @@ for _, lsp in ipairs(servers) do
 		on_attach = function()
 			require'completion'.on_attach()
 			require'lsp_signature'.on_attach()
+			on_attach()
 		end,
 		capabilities = capabilities,
 	}
 end
 EOF
+
+" nnoremap <leader>ch <cmd>lua vim.lsp.buf.hover()<cr>
