@@ -93,7 +93,7 @@ noremap <leader>to :tabnew<CR>|                               "  open new empty 
 " noremap <S-Tab> :bp<CR>
 " noremap <Tab> :bn<CR>
 " noremap <leader>bD :%bd<bar>e#<CR>|                           "  delete all buffers but current and previous one
-" noremap <leader>bd :bd<CR>|                                   "  delete current buffer
+noremap <leader>bd :bd<CR>|                                   "  delete current buffer
 " noremap <leader>bn :bn<CR>|                                   "  next buffer
 " noremap <leader>bp :bp<CR>|                                   "  previous buffer
 nnoremap <leader>. :b <c-d>|                                  " change buffer
@@ -116,6 +116,21 @@ nnoremap <leader>bg :call ToggleBackground()<cr>
 
 "~~~~~~~~~~ CCOMMAND LINE ~~~~~~~~~
 cnoreabbr <expr> %% fnameescape( expand( '%:p' ) )
+
+"~~~~~~~~~~ VIM HELP ~~~~~~~~~
+nnoremap <leader>?v :vert h<space>
+nnoremap <leader>?c :helpclose<CR>
+
+"~~~~~~~~~~ VIMWIKI ~~~~~~~~~
+" TODO: Move into vimwiki config
+
+" generate the date for vimwiki diary
+" FORMAT: # WEEKDAY : DAYS SINCE STARTING 100 days of code : DATE
+" EXAMPLE: # MON : DAY 60 : JULY 05, 2021
+nnoremap <silent><leader>now :read !date +"\# \%a : DAY $((($(date +\%s) - $(date --date "2021-05-06" +\%s))/(3600*24))) : \%B \%d, \%Y" \| tr a-z A-Z<cr>
+
+" days since starting 100 days of code
+nnoremap <leader>day :read !echo DAY $((($(date +\%s) - $(date --date "2021-05-06" +\%s))/(3600*24)))<cr>
 
 "~~~~~~~~~~ QUIT VIM ~~~~~~~~~
 noremap <leader>qq :conf qa!<CR>|                             "  quit all files

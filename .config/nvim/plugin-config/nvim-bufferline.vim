@@ -99,8 +99,8 @@ require('bufferline').setup ({
     },
 
     error_visible = {
-      guibg = '#F48FB1',
-      guifg = '#100e23'
+      guifg = '#F48FB1',
+      guibg = '#100e23'
     },
     error_selected = {
       guifg = '#100e23',
@@ -145,16 +145,16 @@ require('bufferline').setup ({
       guibg = '#100e23'
     },
     warning_selected = {
-      guibg = '#100e23',
-      guifg = '#FFE6B3'
+      guifg = '#100e23',
+      guibg = '#FFE6B3'
     },
     warning_diagnostic = {
       guifg = '#FFE6B3',
       guibg = '#100e23'
     },
     warning_diagnostic_selected = {
-      guibg = '#100e23',
-      guifg = '#FFE6B3',
+      guifg = '#100e23',
+      guibg = '#FFE6B3',
     },
     warning_diagnostic_visible = {
       guibg = '#100e23',
@@ -195,6 +195,6 @@ nnoremap <silent><Tab>       <cmd>BufferLineCycleNext<CR>
 nnoremap <silent><S-Tab>     <cmd>BufferLineCyclePrev<CR>
 nnoremap <silent><leader>bn  <cmd>BufferLineCycleNext<CR>
 nnoremap <silent><leader>bp  <cmd>BufferLineCyclePrev<CR>
-nnoremap <silent><leader>bd  <cmd>bd<CR>
+" nnoremap <silent><leader>bd  <cmd>bd<CR>
 nnoremap <silent><leader>bD  <cmd>%bd<bar>e#<CR>|                           "  delete all buffers but current and previous one
 nnoremap <silent>gb          <cmd>BufferLinePick<CR>

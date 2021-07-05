@@ -62,12 +62,13 @@ EOF
 
 nnoremap <leader><space> <cmd>Telescope find_files hidden=true<cr>
 nnoremap <leader>ff <cmd>Telescope file_browser hidden=true<cr>
+nnoremap <leader>fh <cmd>Telescope oldfiles<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>ht <cmd>Telescope help_tags<cr>
 
 nnoremap <leader>, <cmd>Telescope buffers<cr>
 nnoremap <leader>/ <cmd>Telescope current_buffer_fuzzy_find<cr>
-nnoremap <leader>?  <cmd>Telescope keymaps<cr>
+nnoremap <leader>?k <cmd>Telescope keymaps<cr>
 nnoremap <leader>Tc <cmd>Telescope colorscheme<cr>
 nnoremap <leader>hc <cmd>Telescope command_history<cr>
 nnoremap <leader>jj <cmd>Telescope jumplist<cr>
