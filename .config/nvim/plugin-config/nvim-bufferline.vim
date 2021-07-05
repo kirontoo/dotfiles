@@ -90,8 +90,8 @@ require('bufferline').setup ({
       guibg = '#100e23'
     },
     diagnostic_selected = {
-      guibg = '#100e23',
-      guifg = '#d4bfff',
+      guifg = '#100e23',
+      guibg = '#d4bfff',
     },
     diagnostic_visible = {
       guibg = '#100e23',
@@ -176,7 +176,7 @@ require('bufferline').setup ({
 
     pick = {
       guifg = '#100e23',
-      guibg = '#63F2F1'
+      guibg = '#62D196'
     },
     pick_selected = {
       guifg = '#100e23',
@@ -184,7 +184,7 @@ require('bufferline').setup ({
     },
     pick_visible = {
       guifg = '#100e23',
-      guibg = '#63F2F1'
+      guibg = '#62D196'
     },
   }
 })
