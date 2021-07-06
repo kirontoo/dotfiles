@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# Dependency: jump
+# A small script to create a tmux session and open 3 windows
+# window 1: my notes
+# window 2: open project in neovim if a directory is given
+# window 3: cd to same directory
+
+SESSION="dev"
+SESSIONEXISTS=$(tmux list-sessions | grep $SESSION)
+
+FOLDER=""
+
+if [ "$1" ]; then
+    FOLDER=$1
+fi
+
+# Only create new tmux session if it already doesn't exist
+if ["$SESSIONEXISTS" = ""]
+then
+    tmux new-session -d -s $SESSION
+
+    tmux rename-window -t 'dev' 'notes'
+    tmux send-keys -t 'notes' 'nvim -c VimwikiIndex' C-m
+
+    # Setup window for development
+    tmux new-window -t $SESSION:1 -n 'dev'
+
+    # Jump into directory
+    if [[ -n "$FOLDER" ]]; then
+        tmux send-keys -t 'dev' "j ${FOLDER}" C-m
+    fi
+
+    tmux send-keys -t 'dev' 'nvim' C-m
+    tmux send-keys -t 'dev' Escape
+
+    # Setup window for server
+    tmux new-window -t $SESSION:2 -n 'server'
+    if [[ -n "$FOLDER" ]]; then
+        tmux send-keys -t 'dev' "j ${FOLDER}" C-m
+    fi
+fi
+
+# IDEA: auto launch window?
+# TODO: integrate with rofi-tmux-session
