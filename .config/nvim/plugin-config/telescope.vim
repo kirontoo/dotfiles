@@ -15,34 +15,29 @@ defaults = {
       '--follow',
       '--ignore'
     },
-    prompt_position = "top",
     prompt_prefix = "  ",
     selection_caret = "  ",
     entry_prefix = "  ",
     initial_mode = "insert",
     selection_strategy = "reset",
-    sorting_strategy = "ascending",
+    sorting_strategy = "descending",
     layout_strategy = "flex",
-    layout_defaults = {
+    layout_config = {
       horizontal = {
-  width_padding = 0.04,
-  height_padding = 0.1,
-  preview_width = 0.6,
-  mirror = false,
+        preview_width = 0.6,
+        mirror = false,
       },
       vertical = {
         mirror = false,
       },
+      preview_cutoff = 120,
+      prompt_position = "bottom",
     },
     file_sorter =  require'telescope.sorters'.get_fuzzy_file,
     file_ignore_patterns = { ".git", "node_modules" },
     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
     shorten_path = true,
     winblend = 10,
-    width = 0.55,
-    preview_cutoff = 120,
-    results_height = 1,
-    results_width = 0.8,
     border = {},
     borderchars = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
     color_devicons = true,
@@ -93,3 +88,5 @@ nnoremap <leader>cT :lua require('telescope.builtin').treesitter()<CR>
 nnoremap <leader>gr <cmd>Telescope lsp_references<cr>
 nnoremap <leader>gD <cmd>Telescope lsp_definitions<cr>
 nnoremap gi <cmd>Telescope lsp_implementations<cr>
+
+autocmd! CursorHold <buffer> lua vim.lsp.diagnostic.show_line_diagnostics()
