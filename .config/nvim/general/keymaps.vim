@@ -121,17 +121,6 @@ cnoreabbr <expr> %% fnameescape( expand( '%:p' ) )
 nnoremap <leader>?v :vert h<space>
 nnoremap <leader>?c :helpclose<CR>
 
-"~~~~~~~~~~ VIMWIKI ~~~~~~~~~
-" TODO: Move into vimwiki config
-
-" generate the date for vimwiki diary
-" FORMAT: # WEEKDAY : DAYS SINCE STARTING 100 days of code : DATE
-" EXAMPLE: # MON : DAY 60 : JULY 05, 2021
-nnoremap <silent><leader>now :read !date +"\# \%a : DAY $((($(date +\%s) - $(date --date "2021-05-06" +\%s))/(3600*24))) : \%B \%d, \%Y" \| tr a-z A-Z<cr>
-
-" days since starting 100 days of code
-nnoremap <leader>day :read !echo DAY $((($(date +\%s) - $(date --date "2021-05-06" +\%s))/(3600*24)))<cr>
-
 "~~~~~~~~~~ QUIT VIM ~~~~~~~~~
 noremap <leader>qq :conf qa!<CR>|                             "  quit all files
 noremap <leader>qn :q!<CR>|                                   "  quit without saving
