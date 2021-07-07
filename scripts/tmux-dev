@@ -37,7 +37,7 @@ then
     # Setup window for server
     tmux new-window -t $SESSION:2 -n 'server'
     if [[ -n "$FOLDER" ]]; then
-        tmux send-keys -t 'dev' "j ${FOLDER}" C-m
+        tmux send-keys -t $SESSION:2 "j ${FOLDER}" C-m
     fi
 fi
 
