@@ -13,7 +13,6 @@
 
 "~~~~~~~~~~ FILES ~~~~~~~~
 noremap <leader>fev :e  $MYVIMRC<CR>|                         "  edit vimrc
-noremap <leader>feg :e  $MYVIMRC<CR>|                         "  edit fvim gui vimrc
 noremap <leader>fer :source $MYVIMRC<CR>|                     "  reload vimrc
 noremap <leader>fi gg=G|                                      "  fix file indents
 noremap <leader>ft :Retab<CR>|                                "  toggle between tabs and spaces
