@@ -23,7 +23,7 @@ source $VIMPATH/general/startup.vim
 source $VIMPATH/general/lualine.vim
 
 " colorscheme configs
-source $VIMPATH/themes/dracula.vim
+" source $VIMPATH/themes/dracula.vim
 source $VIMPATH/themes/gruvbox.vim
 source $VIMPATH/themes/solarized.vim
 
@@ -47,6 +47,7 @@ source $VIMPATH/plugin-config/fugitive.vim
 source $VIMPATH/plugin-config/gitsigns.vim
 source $VIMPATH/plugin-config/incsearch.vim
 source $VIMPATH/plugin-config/lua-lsp.vim
+source $VIMPATH/plugin-config/lspsaga.vim
 source $VIMPATH/plugin-config/maximize.vim
 source $VIMPATH/plugin-config/nvim-bufferline.vim
 source $VIMPATH/plugin-config/nvim-lspconfig.vim

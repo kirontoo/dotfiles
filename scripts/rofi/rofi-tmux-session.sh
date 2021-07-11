@@ -13,7 +13,6 @@ if [[ x"new" = x"${TMUX_SESSION}" ]]; then
     # create a new tmux session
     session_name=$( rofi -dmenu -p "Session Name?" )
     [[ -z "${session_name}" ]] && exit
-    echo ${session_name} > $HOME/log.txt
     i3run -i tmux_${session_name} -e "i3-sensible-terminal --name tmux_${session_name} --title ${session_name} -e tmux new -s '${session_name}'" &
 
 elif [[ x"kill" = x"${TMUX_SESSION}" ]]; then

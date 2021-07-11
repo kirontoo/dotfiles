@@ -33,10 +33,14 @@ defaults = {
       preview_cutoff = 120,
       prompt_position = "bottom",
     },
+    path_display = {
+      "tail",
+      "shorten",
+      "absolute"
+    },
     file_sorter =  require'telescope.sorters'.get_fuzzy_file,
     file_ignore_patterns = { ".git", "node_modules" },
     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
-    shorten_path = true,
     winblend = 10,
     border = {},
     borderchars = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
@@ -80,7 +84,7 @@ nnoremap <leader>gst <cmd>Telescope git_stash<cr>
 nnoremap <leader>ej <cmd>Telescope symbols<cr>
 
 " LSP
-nnoremap <leader>ca <cmd>Telescope lsp_code_actions<cr>
+" nnoremap <leader>ca <cmd>Telescope lsp_code_actions<cr>
 nnoremap <leader>ce <cmd>Telescope lsp_document_diagnostics<cr>
 nnoremap <leader>cE <cmd>Telescope lsp_workspace_diagnostics<cr>
 nnoremap <leader>cs <cmd>Telescope lsp_document_symbols<cr>
