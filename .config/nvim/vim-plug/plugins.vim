@@ -39,7 +39,7 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'ryanoasis/vim-devicons'
-" Plug 'glepnir/lspsaga.nvim'
+Plug 'glepnir/lspsaga.nvim'
 
 " Utility
 Plug 'AndrewRadev/splitjoin.vim'

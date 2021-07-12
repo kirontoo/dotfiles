@@ -31,7 +31,7 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n',  '<space>wl',  '<cmd>lua  print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>',  opts)
     -- buf_set_keymap('n',  '[d',         '<cmd>lua  vim.lsp.diagnostic.goto_prev()<CR>',                            opts)
     -- buf_set_keymap('n',  ']d',         '<cmd>lua  vim.lsp.diagnostic.goto_next()<CR>',                            opts)
-    buf_set_keymap('n',  'gD',         '<Cmd>lua  vim.lsp.buf.declaration()<CR>',                                 opts)
+    buf_set_keymap('n',  'gD',         '<Cmd>lua  vim.lsp.buf.definition()<CR>',                                 opts)
 
 end
 
