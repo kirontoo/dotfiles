@@ -237,7 +237,8 @@ $map volumeicon
 $X pulseaudio
 #exec --no-startup-id pa-applet
 $W+$C+a exec pavucontrol
-$W+a $X $HOME/.config/polybar/scripts/pulseaudio-control.bash next-sink; $X $HOME/scripts/visulaunch
+$W+a $X $HOME/.config/polybar/scripts/pulseaudio-control.bash next-sink; 
+# $X $HOME/scripts/visulaunch
 
 # Media controls
 $B XF86AudioPlay exec playerctl play-pause
