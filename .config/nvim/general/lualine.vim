@@ -20,7 +20,7 @@ options = {
 },
 sections = {
   lualine_a = {'mode'},
-  lualine_b = {'filename'},
+  lualine_b = {{'filename', file_status = true, path = 1}},
   lualine_c = { {
       'diagnostics',
       sources = {'nvim_lsp'},
@@ -48,8 +48,12 @@ sections = {
             return '⯈ '..vim.bo.tabstop
           end
         end,
+        condition = conditions.hide_in_width
       },
-      'filetype',
+    {
+        'filetype',
+        condition = conditions.hide_in_width
+    },
     {
       -- Lsp server name .
       function()
