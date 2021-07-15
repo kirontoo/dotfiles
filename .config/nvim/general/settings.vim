@@ -119,7 +119,8 @@ set timeoutlen=700
 set tags+=tags
 
 " Folding syntax
-set foldmethod=manual
+set nofoldenable
+set foldmethod=expr
 set foldlevelstart=1
 
 let javaScript_fold=1    "   JavaScript
