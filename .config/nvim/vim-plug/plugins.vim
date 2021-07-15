@@ -42,6 +42,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'glepnir/lspsaga.nvim'
 
 " Utility
+Plug 'folke/twilight.nvim',
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'airblade/vim-rooter'
 Plug 'akinsho/nvim-bufferline.lua'
