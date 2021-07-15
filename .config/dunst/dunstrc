@@ -29,8 +29,8 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-		# geometry = "0x4-50+60"
-		geometry = "500x4-20+50"
+    # geometry = "0x4-50+60"
+    geometry = "500x4-20+50"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -129,7 +129,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "%s %p\n%b"
+    format = "<b>%a</b>\n%s %p\n%b\n%p"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
@@ -151,7 +151,7 @@
     # The frequency with wich text that is longer than the notification
     # window allows bounces back and forth.
     # This option conflicts with "word_wrap".
-		bounce_freq = 5
+    bounce_freq = 5
 
     # When word_wrap is set to no, specify where to make an ellipsis in long lines.
     # Possible values are "start", "middle" and "end".
@@ -297,7 +297,7 @@
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#100e23"
     foreground = "#cbe3e7"
-		frame_color = "#3e3859"
+                frame_color = "#3e3859"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
@@ -305,7 +305,7 @@
 [urgency_normal]
     background = "#100e23"
     foreground = "#cbe3e7"
-		frame_color = "#3e3859"
+                frame_color = "#3e3859"
     timeout = 5
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
