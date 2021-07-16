@@ -32,9 +32,10 @@ defaults = {
         mirror = false,
       },
       bottom_pane = {
-        height = 0.4,
-        prompt_position = "bottom",
-        mirror = true,
+        height = 0.45,
+        prompt_position = "top",
+        mirror = false,
+        preview_title = "",
       },
       vertical = {
         mirror = false,
@@ -52,7 +53,14 @@ defaults = {
     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
     winblend = 10,
     border = {},
-    borderchars = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
+    -- borderchars = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
+    borderchars = {
+        "z",
+        prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
+        results = { " " },
+        -- results = { "a", "b", "c", "d", "e", "f", "g", "h" },
+        preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└"},
+    },
     show_line = false,
     color_devicons = true,
     use_less = true,
@@ -69,15 +77,16 @@ highlight TelescopePromptBorder   guifg=#a1efd3
 highlight TelescopeResultsBorder  guifg=#a1efd3
 highlight TelescopePreviewBorder  guifg=#a1efd3
 
-" nnoremap <leader><space> <cmd>Telescope find_files hidden=true<cr>
-nnoremap <leader><space> <cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy(), {hidden=false})<cr>
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').file_browser(require('telescope.themes').get_ivy())<cr>
-" nnoremap <leader>ff <cmd>Telescope file_browser hidden=true<cr>
+nnoremap <leader><space> <cmd>Telescope find_files hidden=true<cr>
+" nnoremap <leader><space> <cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy(), {hidden=false})<cr>
+" nnoremap <leader>ff <cmd>lua require('telescope.builtin').file_browser(require('telescope.themes').get_ivy())<cr>
+nnoremap <leader>ff <cmd>Telescope file_browser hidden=true<cr>
 nnoremap <leader>fh <cmd>Telescope oldfiles<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>ht <cmd>Telescope help_tags<cr>
 
-nnoremap <leader>, <cmd>Telescope buffers previewer=false layouts.prompt_position="top"<cr>
+" nnoremap <leader>, <cmd>Telescope buffers previewer=false layouts.prompt_position="top"<cr>
+nnoremap <leader>, <cmd>Telescope buffers<cr>
 nnoremap <leader>/ <cmd>Telescope current_buffer_fuzzy_find<cr>
 nnoremap <leader>?k <cmd>Telescope keymaps<cr>
 nnoremap <leader>Tc <cmd>Telescope colorscheme<cr>
@@ -97,8 +106,8 @@ nnoremap <leader>ej <cmd>Telescope symbols<cr>
 
 " LSP
 " nnoremap <leader>ca <cmd>Telescope lsp_code_actions<cr>
-nnoremap <leader>ce <cmd>Telescope lsp_document_diagnostics previewer=false<cr>
-nnoremap <leader>cE <cmd>Telescope lsp_workspace_diagnostics previewer=false<cr>
+nnoremap <leader>ce <cmd>Telescope lsp_document_diagnostics<cr>
+nnoremap <leader>cE <cmd>Telescope lsp_workspace_diagnostics<cr>
 nnoremap <leader>cs <cmd>Telescope lsp_document_symbols<cr>
 nnoremap <leader>cS <cmd>Telescope lsp_workspace_symbols<cr>
 nnoremap <leader>cT :lua require('telescope.builtin').treesitter()<CR>
