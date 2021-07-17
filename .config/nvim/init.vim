@@ -46,6 +46,7 @@ source $VIMPATH/plugin-config/diagnosticls.vim
 source $VIMPATH/plugin-config/fugitive.vim
 source $VIMPATH/plugin-config/gitsigns.vim
 source $VIMPATH/plugin-config/incsearch.vim
+source $VIMPATH/plugin-config/indent-guide.vim
 source $VIMPATH/plugin-config/lua-lsp.vim
 source $VIMPATH/plugin-config/lspsaga.vim
 source $VIMPATH/plugin-config/maximize.vim
