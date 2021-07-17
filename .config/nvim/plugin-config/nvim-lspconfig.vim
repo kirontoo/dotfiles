@@ -5,6 +5,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     {
         virtual_text = false,
         signs = true,
+        severity_sort = true,
         underline = true,
     }
 )
