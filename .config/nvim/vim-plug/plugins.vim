@@ -34,12 +34,13 @@ Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'Pocco81/TrueZen.nvim'
 Plug 'folke/todo-comments.nvim'
 Plug 'folke/trouble.nvim'
+Plug 'glepnir/lspsaga.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'Yggdroot/indentLine'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'glepnir/lspsaga.nvim'
 
 " Utility
 Plug 'folke/twilight.nvim',
