@@ -4,48 +4,50 @@ My personal dotfiles
 
 ## Dependencies
 
-* anisto
-* kitty terminal
-* go
-* python 3
-* i3-gaps-rounded-corners
+
 * [i3ass v2020.08.11.1](https://github.com/budlabs/i3ass) 
-* file manager: nnn
-* zsh
-* tmux
-* polybar
-* compon / picom
-* conky
-* nerdfonts
-* fontawesome
-* rofi
-* drun
+* anisto
 * awesomewm
-* dunst
-* betterlockscreen
-* neovim-nightly
-* sxiv ( image viewer )
-* giflib ( to play gifs in sxiv )
-* viu ( image viewer )
-* jq ( for i3-swap-workspace.sh )
 * bat 
 * bat-extras
-* xclip
-* scrot
-* lynx or w3m ( terminal web browser ) => remember to change in mailcap
+* betterlockscreen
+* compon / picom
+* conky
+* drun
+* dunst
 * ffcast  ( for rofi-screenshooter )
+* file manager: nnn
+* fontawesome
+* giflib ( to play gifs in sxiv )
+* go
+* i3-gaps-rounded-corners
+* jq ( for i3-swap-workspace.sh )
+* kitty terminal
+* lynx or w3m ( terminal web browser ) => remember to change in mailcap
+* neovim-nightly
+* nerdfonts
+* polybar
+* python 3
+* rofi
+* scrot
 * slop  ( for rofi-screenshooter )
 * spotifyd
+* stow
+* sxiv ( image viewer )
+* tmux
+* wmctrl
+* viu ( image viewer )
+* xclip
+* zsh
 
 ## Programs I Use
 
 * kitty or alacritty
-* vit ( tui for taskwarrior )
 * spotify-tui
 * lazygit or gitui
-* insomnia ( browser )
+* insomnia ( http client )
+* vivaldi ( browser)
 * zathura ( pdf reader )
-* neomutt ( using mutt-wizard to quick configure ) => ( requires: pass and GnuPG )
 * vis
 * pomotroid
 * [jump](https://github.com/gsamokovarov/jump)

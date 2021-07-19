@@ -25,7 +25,7 @@ true_zen.setup({
       right_padding = 32,
       top_padding = 1,
       bottom_padding = 1,
-      ideal_writing_area_width = 140,
+      ideal_writing_area_width = 120,
       just_do_it_for_me = true,
       keep_default_fold_fillchars = true,
       custome_bg = "",
@@ -44,14 +44,6 @@ true_zen.setup({
 
 -- Dependency: folke/twilight
 local twilight = require("twilight")
-
-true_zen.after_mode_ataraxis_on = function ()
-  twilight.enable()
-end
-
-true_zen.after_mode_ataraxis_off = function ()
-  twilight.disable()
-end
 
 true_zen.after_mode_minimalist_on = function ()
   twilight.enable()
