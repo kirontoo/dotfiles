@@ -20,18 +20,14 @@ true_zen.setup({
         signcolumn = "no",
       },
     },
-    ataraxis = {
-      left_padding = 32,
-      right_padding = 32,
-      top_padding = 1,
-      bottom_padding = 1,
-      ideal_writing_area_width = 120,
-      just_do_it_for_me = true,
-      keep_default_fold_fillchars = true,
-      custome_bg = "",
-      bg_configuration = true,
-      affected_higroups = {NonText = {}, FoldColumn = {}, VertSplit = {}, StatusLine = {}, StatusLineNC = {}, SignColumn = {}}
-    },
+  },
+  ataraxis = {
+    ideal_writing_area_width = {120, 140},
+    just_do_it_for_me = true,
+    keep_default_fold_fillchars = true,
+    custome_bg = "",
+    bg_configuration = true,
+    affected_higroups = {NonText = {}, FoldColumn = {}, ColorColumn = {}, VertSplit = {}, StatusLine = {}, StatusLineNC = {}, SignColumn = {}}
   },
   misc = {
     ui_elements_commands = true
@@ -54,7 +50,7 @@ true_zen.after_mode_minimalist_off = function ()
 end
 
 true_zen.after_mode_focus_on = function ()
-  twilight.enable()
+twilight.enable()
 end
 
 true_zen.after_mode_focus_off = function ()
