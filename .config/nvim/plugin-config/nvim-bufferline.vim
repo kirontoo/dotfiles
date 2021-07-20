@@ -36,7 +36,7 @@ require('bufferline').setup ({
     show_tab_indicators = true,
     persist_buffer_sort = false, -- whether or not custom sorted buffers should persist
     -- separator_style = "slant" | "thick" | "thin" | { 'any', 'any' },
-    separator_style = "slant",
+    separator_style = "thin",
     enforce_regular_tabs = true,
     always_show_bufferline = true,
     -- sort_by = 'extension' | 'relative_directory' | 'directory' | function(buffer_a, buffer_b)
@@ -59,12 +59,12 @@ require('bufferline').setup ({
     },
     tab_selected = {
       guifg = '#63F2F1',
-      guibg = '#100e23'
+      guibg = '#1e1c32'
     },
 
     buffer_selected = {
       guifg = '#cbe3e7',
-      guibg = '#100e23',
+      guibg = '#1e1c32',
       gui = 'bold'
     },
     buffer_visible = {
@@ -77,7 +77,7 @@ require('bufferline').setup ({
       guifg = '#8a889d'
     },
     close_button_selected = {
-      guibg = '#100e23',
+      guibg = '#1e1c32',
       guifg = '#8a889d'
     },
     close_button_visible = {
@@ -90,7 +90,7 @@ require('bufferline').setup ({
       guibg = '#100e23'
     },
     diagnostic_selected = {
-      guifg = '#100e23',
+      guifg = '#1e1c32',
       guibg = '#d4bfff',
     },
     diagnostic_visible = {
@@ -103,7 +103,7 @@ require('bufferline').setup ({
       guibg = '#100e23'
     },
     error_selected = {
-      guifg = '#100e23',
+      guifg = '#1e1c32',
       guibg = '#F48FB1'
     },
     error_diagnostic = {
@@ -111,7 +111,7 @@ require('bufferline').setup ({
       guibg = '#100e23'
     },
     error_diagnostic_selected = {
-      guifg = '#100e23',
+      guifg = '#1e1c32',
       guibg = '#F48FB1',
     },
     error_diagnostic_visible = {
@@ -124,7 +124,7 @@ require('bufferline').setup ({
       guibg = '#100e23'
     },
     info_selected = {
-      guibg = '#100e23',
+      guibg = '#1e1c32',
       guifg = '#91DDFF'
     },
     info_diagnostic = {
@@ -132,7 +132,7 @@ require('bufferline').setup ({
       guibg = '#100e23'
     },
     info_diagnostic_selected = {
-      guibg = '#100e23',
+      guibg = '#1e1c32',
       guifg = '#91DDFF',
     },
     info_diagnostic_visible = {
@@ -145,7 +145,7 @@ require('bufferline').setup ({
       guibg = '#100e23'
     },
     warning_selected = {
-      guifg = '#100e23',
+      guifg = '#1e1c32',
       guibg = '#FFE6B3'
     },
     warning_diagnostic = {
@@ -153,7 +153,7 @@ require('bufferline').setup ({
       guibg = '#100e23'
     },
     warning_diagnostic_selected = {
-      guifg = '#100e23',
+      guifg = '#1e1c32',
       guibg = '#FFE6B3',
     },
     warning_diagnostic_visible = {
@@ -166,7 +166,7 @@ require('bufferline').setup ({
       guifg = '#2D2B40'
     },
     separator_selected = {
-      guibg = '#100e23',
+      guibg = '#1e1c32',
       guifg = '#2D2B40'
     },
     separator_visible = {
@@ -179,7 +179,7 @@ require('bufferline').setup ({
       guibg = '#62D196'
     },
     pick_selected = {
-      guifg = '#100e23',
+      guifg = '#1e1c32',
       guibg = '#FFE6B3'
     },
     pick_visible = {
