@@ -22,7 +22,6 @@ true_zen.setup({
     },
   },
   ataraxis = {
-    ideal_writing_area_width = {120, 140},
     just_do_it_for_me = true,
     keep_default_fold_fillchars = true,
     custome_bg = "",
@@ -34,29 +33,30 @@ true_zen.setup({
   },
   integrations = {
     nvim_bufferline = true,
-    tmux = true
+    tmux = true,
+    lualine = false
   }
 })
 
 -- Dependency: folke/twilight
-local twilight = require("twilight")
-
-true_zen.after_mode_minimalist_on = function ()
-  twilight.enable()
-end
-
-true_zen.after_mode_minimalist_off = function ()
-  twilight.disable()
-end
-
-true_zen.after_mode_focus_on = function ()
-twilight.enable()
-end
-
-true_zen.after_mode_focus_off = function ()
-  twilight.disable()
-end
-
+-- local twilight = require("twilight")
+--
+-- true_zen.after_mode_minimalist_on = function ()
+--   twilight.enable()
+-- end
+--
+-- true_zen.after_mode_minimalist_off = function ()
+--   twilight.disable()
+-- end
+--
+-- true_zen.after_mode_focus_on = function ()
+-- twilight.enable()
+-- end
+--
+-- true_zen.after_mode_focus_off = function ()
+--   twilight.disable()
+-- end
+--
 EOF
 
 " Requirement: Plugin folke/twilight
