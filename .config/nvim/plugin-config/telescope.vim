@@ -32,7 +32,7 @@ defaults = {
         mirror = false,
       },
       bottom_pane = {
-        height = 0.45,
+        height = 0.35,
         prompt_position = "top",
         mirror = false,
         preview_title = "",
@@ -49,6 +49,7 @@ defaults = {
       "absolute"
     },
     file_sorter =  require'telescope.sorters'.get_fuzzy_file,
+    file_previewer = require("telescope.previewers").vim_buffer_cat.new,
     file_ignore_patterns = { ".git", "node_modules" },
     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
     winblend = 10,
