@@ -60,6 +60,7 @@ EOF
 
 nnoremap <leader>xt <cmd>TroubleToggle<cr>
 nnoremap <leader>xf <cmd>Trouble<cr>
+nnoremap <leader>xx <cmd>TroubleClose<cr>
 nnoremap <leader>xw <cmd>Trouble lsp_document_diagnostics<cr>
 nnoremap <leader>xW <cmd>Trouble lsp_workspace_diagnostics<cr>
 nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
