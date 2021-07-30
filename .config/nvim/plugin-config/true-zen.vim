@@ -38,25 +38,6 @@ true_zen.setup({
   }
 })
 
--- Dependency: folke/twilight
--- local twilight = require("twilight")
---
--- true_zen.after_mode_minimalist_on = function ()
---   twilight.enable()
--- end
---
--- true_zen.after_mode_minimalist_off = function ()
---   twilight.disable()
--- end
---
--- true_zen.after_mode_focus_on = function ()
--- twilight.enable()
--- end
---
--- true_zen.after_mode_focus_off = function ()
---   twilight.disable()
--- end
---
 EOF
 
 " Requirement: Plugin folke/twilight
