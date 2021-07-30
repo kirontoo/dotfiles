@@ -30,11 +30,32 @@ nnoremap <leader>m- :m-|
 vnoremap <leader>m+ :m+|
 vnoremap <leader>m- :m-|
 
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
 "~~~~~~~~~~ DUPLICATE LINES ~~~~~~~~~
 vnoremap <A-S-Up> :t -1<CR>
 vnoremap <A-S-Down> :t.<CR>
 nnoremap <A-S-Up> :t -1<CR>
 nnoremap <A-S-Down> :t.<CR>
+
+"~~~~~~~~~~ JUMPLIST ~~~~~~~~~
+nnoremap <expr> k      ( v:count > 5 ? "m'" . v:count : "" ) . 'k'
+nnoremap <expr> j      ( v:count > 5 ? "m'" . v:count : "" ) . 'j'
+nnoremap <expr> <Up>   ( v:count > 5 ? "m'" . v:count : "" ) . 'k'
+nnoremap <expr> <Down> ( v:count > 5 ? "m'" . v:count : "" ) . 'j'
+
+"~~~~~~~~~~ INCREACE & DECREASE ~~~~~~~~~
+nmap <silent>+ <C-a>
+nmap <silent>- <C-x>
+vmap <silent>+ <C-a>
+vmap <silent>- <C-x>
+
+"~~~~~~~~~~ UNDO BREAKPOINTS ~~~~~~~~~
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
 
 "~~~~~~~~~~ VISUAL LINES ~~~~~~~~~
 vnoremap v $h                                                 " vv selects to eol without newline
