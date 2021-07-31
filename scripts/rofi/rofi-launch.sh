@@ -43,7 +43,7 @@ elif [ "$menu" = "screenshooter" ]; then
     exec "~/scripts/rofi/rofi-screenshooter.sh" 
 
 elif [ "$menu" = "screenshooter-stop" ]; then
-    exec "~/scripts/rofi/rofi-screenshooter.sh -s" 
+    $HOME/scripts/rofi/rofi-screenshooter.sh --stop 
 
 elif [ "$menu" = "services" ]; then
     exec "~/scripts/rofi/rofi-run-services.sh" 

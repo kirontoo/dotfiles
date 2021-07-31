@@ -78,11 +78,8 @@ function print_menu() {
 }
 
 function launch() {
-	# print_menu | rofi -dmenu -width 15 -mesg "Launch Rofi Menu" -i -p "Menu"
 	print_menu | rofi -dmenu -p "Menu" -theme $HOME/.config/rofi/embark-bar.rasi
-
 	# print_menu | dmenu -nb "#1e1c31" -nf "#cbe3e7" -sb "#f48fb1" -sf "#100e32" -fn "scientifica:bold:pixelsize=15" -p "Menu >_" -h 34px
-	# print_menu | i3menu --prompt "Menu >_ " --theme embark --orientation horizontal --include pel --target B
 }
 
 value=$( launch )

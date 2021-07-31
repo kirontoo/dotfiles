@@ -133,6 +133,7 @@ main() {
 
   if [[ $1 = '--stop' ]] || [[ $1 = '-s' ]]
   then
+    notify-send "Stop recording"
     pkill -fxn '(/\S+)*ffmpeg\s.*\sx11grab\s.*'
     exit 1
   fi
