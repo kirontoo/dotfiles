@@ -38,19 +38,35 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "pyright", "tsserver", "cssls", "html", "svls", "svelte", "dockerls", "diagnosticls", "gopls" }
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-for _, lsp in ipairs(servers) do
-    nvim_lsp[lsp].setup {
-        on_attach = function()
-            require'completion'.on_attach()
-            require'lsp_signature'.on_attach()
-            on_attach()
-        end,
-        capabilities = capabilities,
-    }
+-- local servers = { "pyright", "tsserver", "cssls", "html", "svls", "svelte", "dockerls", "diagnosticls", "gopls" }
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities.textDocument.completion.completionItem.snippetSupport = true
+-- for _, lsp in ipairs(servers) do
+--     nvim_lsp[lsp].setup {
+--         on_attach = function()
+--             require'completion'.on_attach()
+--             require'lsp_signature'.on_attach()
+--             on_attach()
+--         end,
+--         capabilities = capabilities,
+--     }
+-- end
+
+-- servers = html, css, typescript, svelte, bash
+require'lspinstall'.setup() -- important
+
+local servers = require'lspinstall'.installed_servers()
+for _, server in pairs(servers) do
+  require'lspconfig'[server].setup{
+      on_attach = function()
+          require'completion'.on_attach()
+          require'lsp_signature'.on_attach()
+          on_attach()
+      end,
+      capabilities = capabilities,
+  }
 end
+
 EOF
 
 " autocmd! CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics({ show_header = false })
