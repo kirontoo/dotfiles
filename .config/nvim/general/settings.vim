@@ -6,7 +6,8 @@
 "      \/     \/                   \//_____/     \/
 
 " Leader key
-map <Space> <leader>
+" map <Space> <leader>
+map , <leader>
 filetype plugin indent on
 
 " For terminal true color
@@ -66,8 +67,8 @@ set autoindent                                       "   always set autoindentin
 set number relativenumber                            "   Line Numbers
 
 " ~Line Wrap
-set tw=80
 set nowrap linebreak
+" set textwidth=72
 set textwidth=0
 set wrapmargin=0
 
@@ -85,16 +86,8 @@ set listchars=tab:\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:§
 " set guifont=terminessttf\ nf:h12
 " set guifont=source\ code\ pro\ for\ powerline:h11
 set guifont=iosevka:h11
-" set guifont=scientifica:h20
 
 set cursorline                                                                                     "  Show line highlight
-" underline cursorline instead of highlight
-" augroup CustomCursorLine
-"   au!
-"   au ColorScheme * :hi clear CursorLine
-"   au ColorScheme * :hi! CursorLine gui=underline cterm=underline
-" augroup END
-
 
 set showcmd     "   show command
 set hlsearch    "   highlight search terms
