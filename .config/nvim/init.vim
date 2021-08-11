@@ -47,10 +47,11 @@ source $VIMPATH/plugin-config/devicons.vim
 source $VIMPATH/plugin-config/diagnosticls.vim
 source $VIMPATH/plugin-config/fugitive.vim
 source $VIMPATH/plugin-config/gitsigns.vim
+source $VIMPATH/plugin-config/harpoon.vim
 source $VIMPATH/plugin-config/incsearch.vim
 source $VIMPATH/plugin-config/indent-guide.vim
-source $VIMPATH/plugin-config/lua-lsp.vim
 source $VIMPATH/plugin-config/lspsaga.vim
+source $VIMPATH/plugin-config/lua-lsp.vim
 source $VIMPATH/plugin-config/nvim-bufferline.vim
 source $VIMPATH/plugin-config/nvim-lspconfig.vim
 source $VIMPATH/plugin-config/nvimtree.vim
@@ -65,10 +66,10 @@ source $VIMPATH/plugin-config/telescope.vim
 source $VIMPATH/plugin-config/todo-comments.vim
 source $VIMPATH/plugin-config/treesitter.vim
 source $VIMPATH/plugin-config/trouble.vim
+source $VIMPATH/plugin-config/true-zen.vim
 source $VIMPATH/plugin-config/vim-test.vim
 source $VIMPATH/plugin-config/vimplug.vim
 source $VIMPATH/plugin-config/vimspector.vim
 source $VIMPATH/plugin-config/vimwiki.vim
 source $VIMPATH/plugin-config/vista.vim
 source $VIMPATH/plugin-config/whichkey.vim
-source $VIMPATH/plugin-config/true-zen.vim
