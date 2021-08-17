@@ -49,7 +49,7 @@ nnoremap <silent><leader>cr :Lspsaga rename<CR>
 
 
 " preview definition
-nnoremap <silent> gd :Lspsaga preview_definition<CR>
+" nnoremap <silent> gd :Lspsaga preview_definition<CR>
 " can use smart_scroll_with_saga to scroll
 
 autocmd! CursorHold * lua require'lspsaga.diagnostic'.show_line_diagnostics()
