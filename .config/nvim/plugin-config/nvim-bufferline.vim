@@ -198,3 +198,5 @@ nnoremap <silent><leader>bp  <cmd>BufferLineCyclePrev<CR>
 " nnoremap <silent><leader>bd  <cmd>bd<CR>
 nnoremap <silent><leader>bD  <cmd>%bd<bar>e#<CR>|                           "  delete all buffers but current and previous one
 nnoremap <silent>gb          <cmd>BufferLinePick<CR>
+nnoremap <silent><leader>bl  <cmd>BufferLineCloseRight<CR>
+nnoremap <silent><leader>bh  <cmd>BufferLineCloseLeft<CR>
