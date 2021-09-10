@@ -3,9 +3,9 @@ lua << EOF
 require('bufferline').setup ({
   options = {
     view = "multiwindow",
-    numbers = "buffer_id",
-    number_style = "", -- buffer_id at index 1, ordinal at index 2
-    mappings = true,
+    numbers = function(opts)
+      return string.format('%s'), opts.id
+    end,
     close_command = "bdelete! %d",       -- can be a string | function, see "Mouse actions"
     right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
     left_mouse_command = "buffer %d",    -- can be a string | function, see "Mouse actions"
