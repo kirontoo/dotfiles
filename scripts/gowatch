@@ -2,12 +2,25 @@
 
 CWD=$(pwd)
 
+package=inotify-tools
+
+check_package() {
+    # check if package is already installed
+    if pacman -Qs $package > /dev/null ; then
+        return
+    else
+        pacman -S "${package}"
+        return
+    fi
+}
+
 run_tests() {
     clear
     echo "Running test files:"
     go test -v
 }
 
+check_package
 run_tests
 
 while inotifywait -qqre modify "$CWD"; do
