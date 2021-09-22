@@ -1,0 +1,16 @@
+#!/bin/bash
+
+CWD=$(pwd)
+
+run_tests() {
+    clear
+    echo "Running test files:"
+    go test -v
+}
+
+run_tests
+
+while inotifywait -qqre modify "$CWD"; do
+    run_tests
+done
+
