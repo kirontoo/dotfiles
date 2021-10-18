@@ -60,7 +60,6 @@ source $VIMPATH/plugin-config/rooter.vim
 source $VIMPATH/plugin-config/session-lens.vim
 source $VIMPATH/plugin-config/splitjoin.vim
 source $VIMPATH/plugin-config/startify.vim
-source $VIMPATH/plugin-config/symbols-outline.vim
 source $VIMPATH/plugin-config/tabular.vim
 source $VIMPATH/plugin-config/telescope.vim
 source $VIMPATH/plugin-config/todo-comments.vim
@@ -73,3 +72,4 @@ source $VIMPATH/plugin-config/vimspector.vim
 source $VIMPATH/plugin-config/vimwiki.vim
 source $VIMPATH/plugin-config/vista.vim
 source $VIMPATH/plugin-config/whichkey.vim
+source $VIMPATH/plugin-config/emmet.vim

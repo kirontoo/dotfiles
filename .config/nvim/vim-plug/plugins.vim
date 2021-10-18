@@ -53,7 +53,7 @@ Plug 'godlygeek/tabular'
 Plug 'haya14busa/incsearch.vim'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'pwntester/octo.nvim'
-Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
@@ -62,6 +62,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vim-test/vim-test'
 Plug 'vimwiki/vimwiki'
 Plug 'windwp/nvim-autopairs'
+Plug 'fatih/vim-go'
 
 
 " Files, Projects, Sessions
@@ -84,7 +85,6 @@ Plug 'kabouzeid/nvim-lspinstall'
 Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-telescope/telescope-symbols.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate', 'branch': 'master' }
-Plug 'simrat39/symbols-outline.nvim'
 
 " Debugger Plugins
 Plug 'puremourning/vimspector'
