@@ -28,7 +28,7 @@ then
 
     # Jump into directory
     if [[ -n "$FOLDER" ]]; then
-        tmux send-keys -t 'dev' "j ${FOLDER}" C-m
+        tmux send-keys -t 'dev' "cd ${FOLDER}" C-m
     fi
 
     tmux send-keys -t 'dev' 'nvim' C-m
@@ -37,8 +37,12 @@ then
     # Setup window for server
     tmux new-window -t $SESSION:2 -n 'server'
     if [[ -n "$FOLDER" ]]; then
-        tmux send-keys -t $SESSION:2 "j ${FOLDER}" C-m
+        tmux send-keys -t $SESSION:2 "cd ${FOLDER}" C-m
     fi
+
+    # Window for schedule
+    tmux new-window -t $SESSION:3 -n 'schedule'
+    tmux send-keys -t $SESSION:3 "nvim -c VimwikiDiaryIndex" C-m
 fi
 
 # IDEA: auto launch window?
