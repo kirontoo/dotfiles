@@ -6,19 +6,6 @@ local themes = require('telescope.themes')
 -- totally optional to use setup
 require('telescope').setup ({
 defaults = {
-    vimgrep_arguments = {
-      'rg',
-      '--hidden',
-      '--files',
-      '--color=never',
-      '--no-heading',
-      '--with-filename',
-      '--line-number',
-      '--column',
-      '--smart-case',
-      '--follow',
-      '--ignore'
-    },
     prompt_prefix = "  ",
     selection_caret = "  ",
     entry_prefix = "  ",
