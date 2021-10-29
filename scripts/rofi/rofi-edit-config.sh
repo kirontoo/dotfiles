@@ -1,10 +1,13 @@
 #!/bin/bash
 
-read_or_write() {
+declare -A LABELS
+declare -A COMMANDS
+
+function read_or_write() {
   read=$(echo "no
 yes" | rofi -dmenu -p "Read Only?")
-	
-	[[ -z "$read" ]] && exit
+        
+        [[ -z "$read" ]] && exit
 
   if [ "$read" == 'no' ]; then
     exec kitty -e nvim $HOME/$1
@@ -13,51 +16,48 @@ yes" | rofi -dmenu -p "Read Only?")
   fi
 }
 
-choice=$(echo "bash
-compton
-conky
-i3
-polybar
-rofi
-scripts
-zsh
-" | rofi -dmenu -width 15 -lines 8 -p "Edit Config")
+COMMANDS["bash"]=".bashrc"
+COMMANDS["i3"]=".config/i3/config"
+COMMANDS["polybar"]=".config/polybar/config"
+COMMANDS["zsh"]=".zshrc"
+COMMANDS["compton"]=".config/compton/config"
+COMMANDS["rofi"]=".config/rofi/themes/embark.rasi"
 
-if [ "$choice" == 'bash' ]; then
-      read_or_write '.bashrc'
-fi
-if [ "$choice" == 'i3' ]; then
-      read_or_write '.config/i3/config'
-fi
-if [ "$choice" == 'polybar' ]; then
-      read_or_write '.config/polybar/config'
-fi
-if [ "$choice" == 'zsh' ]; then
-      read_or_write '.zshrc'
-fi
-if [ "$choice" == 'compton' ]; then
-      read_or_write '.config/compton/config'
-fi
-if [ "$choice" == 'rofi' ]; then
-      read_or_write '.config/rofi/themes/embark.rasi'
-fi
-if [ "$choice" == 'conky' ]; then
-      read_or_write '.config/conky/system-overview'
-fi
+LABELS["bash"]="edit .bashrc"
+LABELS["i3"]="edit i3 config"
+LABELS["polybar"]="edit polybar theme"
+LABELS["zsh"]="edit .zshrc"
+LABELS["compton"]="edit compton"
+LABELS["rofi"]="edit rofi theme"
 
-if [ "$choice" == 'scripts' ]; then
-    file=$(echo "edit-config
-sysmon
-surfraw" | rofi -dmenu -width 15 -lines 3 -p "Select Script")
+function print_menu() {
+  # sort alphabetically
+  mapfile -d '' sorted < <(printf '%s\0' "${!LABELS[@]}" | sort -z)
+  for key in ${!sorted[@]}  
+  do
+    # echo -e "${sorted[$key]}: ${LABELS[${sorted[$key]}]}"
+    echo -e "${sorted[$key]}"
+  done
+}
 
-    if [ "$file" == 'edit-config' ]; then
-      read_or_write '.config/scripts/rofi/rofi-edit-config.sh'
-    fi
-    if [ "$file" == 'sysmon' ]; then
-      read_or_write '.config/scripts/rofi/rofi-sysmon.sh'
-    fi
-    if [ "$file" == 'surfraw' ]; then
-      read_or_write '.config/scripts/rofi/rofi-surfraw.sh'
-    fi
+function launch() {
+  print_menu | rofi -dmenu -p "Edit Config" -theme $HOME/.config/rofi/embark-bar.rasi
+  # print_menu | dmenu -nb "#1e1c31" -nf "#cbe3e7" -sb "#f48fb1" -sf "#100e32" -fn "scientifica:bold:pixelsize=15" -p "Menu >_" -h 34px
+}
+
+value=$( launch )
+selection=${value%%:\ *}
+label=${value:$((${#selection}+1))}
+
+[[ -z ${selection} ]] && exit
+
+# check if selection exists
+if test ${COMMANDS[$selection]+isset} 
+then
+  eval echo "Executing: ${COMMANDS[$selection]}"
+  eval read_or_write ${COMMANDS[$selection]}
+else
+  # run an alternative command  eg. launch an app
+  eval$(rofi -dmenu -theme $HOME/.config/rofi/prompt.rasi -p "Error: Run command")
 fi
 
