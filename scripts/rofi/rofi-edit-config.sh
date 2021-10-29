@@ -6,8 +6,8 @@ declare -A COMMANDS
 function read_or_write() {
   read=$(echo "no
 yes" | rofi -dmenu -p "Read Only?")
-        
-        [[ -z "$read" ]] && exit
+
+  [[ -z "$read" ]] && exit
 
   if [ "$read" == 'no' ]; then
     exec kitty -e nvim $HOME/$1
@@ -22,9 +22,11 @@ COMMANDS["polybar"]=".config/polybar/config"
 COMMANDS["zsh"]=".zshrc"
 COMMANDS["compton"]=".config/compton/config"
 COMMANDS["rofi"]=".config/rofi/themes/embark.rasi"
+COMMANDS["kitty"]=".config/kitty/kitty.conf"
 
 LABELS["bash"]="edit .bashrc"
 LABELS["i3"]="edit i3 config"
+LABELS["kitty"]="edit kitty config"
 LABELS["polybar"]="edit polybar theme"
 LABELS["zsh"]="edit .zshrc"
 LABELS["compton"]="edit compton"
@@ -42,7 +44,6 @@ function print_menu() {
 
 function launch() {
   print_menu | rofi -dmenu -p "Edit Config" -theme $HOME/.config/rofi/embark-bar.rasi
-  # print_menu | dmenu -nb "#1e1c31" -nf "#cbe3e7" -sb "#f48fb1" -sf "#100e32" -fn "scientifica:bold:pixelsize=15" -p "Menu >_" -h 34px
 }
 
 value=$( launch )
