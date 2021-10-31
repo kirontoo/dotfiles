@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.node_modules/bin:$HOME/tailwindcss-intellisense:$HOME/scripts:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.node_modules/bin:$HOME/go/bin:$HOME/scripts:$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -38,9 +38,10 @@ source ~/.local/share/icons-in-terminal/icons_bash.sh
 # /_/   \_\_|_|\__,_|___/
                        
 alias dev="cd ~/Documents/dev"
+alias repos="cd ~/Documents/repos/github.com/kirontoo"
 alias dotfiles="cd ~/Documents/dev/dotfiles"
 alias blog="cd ~/Documents/blod"
-alias lg="lazygit"
+alias lg="gitui"
 alias config="cd ~/.config/"
 alias ide="~/scripts/tmux-dew.sh"
 
@@ -78,11 +79,9 @@ alias srct="source $HOME/.tmux.conf"
 alias cp='cp -i'    # confirm before overwriting existing files
 alias mv='mv -i'
 
-# https://github.com/jszczerbinsky/ptSh
-alias ls="ptls"
-alias pwd="ptpwd"
-alias mkdir="ptmkdir"
-alias touch="pttouch"
+# remove node modules
+alias rmnode='rm -rfv ./node_modules'
+
 alias lx="ls_extended"
 
 alias calculator="$HOME/scripts/rofi/rofi-launch.sh calculator &"
@@ -160,7 +159,8 @@ export NNN_COLORS='13428df71b59'
 # |_|____/|_|     |_| |_| \_\/_/   \_\
 #                                     
 ################################################
-export I3FYRA_MAIN_CONTAINER=1
+export I3FYRA_MAIN_CONTAINER='A'
+export I3FYRA_WS=1
 export i3FYRA_ORIENTATION='horizontal'
 
 ################################################
@@ -175,6 +175,10 @@ export i3FYRA_ORIENTATION='horizontal'
 # |__|   |_____||__|   
                       
 
+alias fzf='fzf --color='bg:#1e1c31,bg+:#3e3859,info:#63f2f1,border:#100e23,spinner:#87dfeb' \
+    --color='hl:#f48fb1,fg:#cbe3e7,header:#62d196,fg+:#cbe3e7' \
+    --color='pointer:#f02e6e,marker:#f48fb1,prompt:#a1efd3,hl+:#d4bfff''
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias fcd='fzf_change_directory'
 alias ffe='fzf_find_edit'
@@ -183,6 +187,7 @@ alias fgd='fzf_git_diff'
 alias fgadd='fzf_git_add'
 alias fgl='fzf_git_log'
 alias grl='fzf_git_reflog'
+alias fcp='fzf_change_proj_dir'
 
 export FZF_DEFAULT_OPTS='
   --height 75% --multi --reverse
@@ -195,6 +200,18 @@ fzf_find_edit() {
       )
     if [[ -n $file ]]; then
         $EDITOR "$file"
+    fi
+}
+
+
+fzf_change_proj_dir() {
+    local directory=$(
+      ls $(xdg-user-dir DOCUMENTS)/repos/github.com/kirontoo | \
+      fzf --query="$1" --no-multi --select-1 --exit-0 \
+          --preview 'tree -C {} | head -100'
+      )
+    if [[ -n $directory ]]; then
+      cd "$(xdg-user-dir DOCUMENTS)/repos/github.com/kirontoo/$directory"
     fi
 }
 
