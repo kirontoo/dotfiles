@@ -12,7 +12,7 @@ require('nvim-tree').setup {
   ignore_ft_on_setup = { 'startify', 'dashboard', 'vimwiki' },
   view = {
       width = 40
-    }
+  }
 }
 
 EOF
