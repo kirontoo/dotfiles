@@ -48,3 +48,20 @@ augroup VCenterCursor
 				\ let &scrolloff=winheight(win_getid())/2
 augroup END
 
+
+fun LastMod()
+    if line("$") > 20
+      	let l = 20
+    else
+      	let l = line("$")
+    endif
+    exe "1," . l . "g/modified: /s/modified: .*/modified: " .
+    	\ strftime("%FT%T%z")
+endfun
+
+augroup SkeletonGroup
+    autocmd!
+    autocmd BufNewFile *.svelte  0r $VIMPATH/snippets/svelte/boilerplate.svelte
+    " autocmd BufNewFile $HOME/vimwiki/**/*.md 0r $VIMPATH/snippets/md/skeleton.md
+augroup END
+
