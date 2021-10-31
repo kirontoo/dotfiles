@@ -18,7 +18,6 @@ endif
 call plug#begin( $PLUGGEDPATH )
 
 " Plugin: Colorschemes
-Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'embark-theme/vim', { 'as': 'embark' }
 Plug 'lifepillar/vim-solarized8'
 Plug 'morhetz/gruvbox'
@@ -26,7 +25,6 @@ Plug 'tyrannicaltoucan/vim-deep-space'
 
 " Plugin: NerdFonts
 " Plug 'https://github.com/ryanoasis/nerd-fonts.git', { 'do': './install.sh' }
-
 
 " Plugin: Packages
 
@@ -42,16 +40,27 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'ryanoasis/vim-devicons'
 
+" Fix for fern plugin
+Plug 'antoinemadec/FixCursorHold.nvim'
+
+Plug 'lambdalisue/fern-renderer-devicons.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'lambdalisue/fern-git-status.vim'
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern-hijack.vim'
+
 " Utility
-Plug 'folke/twilight.nvim',
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'airblade/vim-rooter'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'alvan/vim-closetag'
+Plug 'fatih/vim-go'
+Plug 'folke/twilight.nvim',
 Plug 'folke/which-key.nvim'
 Plug 'godlygeek/tabular'
 Plug 'haya14busa/incsearch.vim'
 Plug 'hoob3rt/lualine.nvim'
+Plug 'lambdalisue/fern.vim'
 Plug 'pwntester/octo.nvim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -62,15 +71,14 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vim-test/vim-test'
 Plug 'vimwiki/vimwiki'
 Plug 'windwp/nvim-autopairs'
-Plug 'fatih/vim-go'
-
 
 " Files, Projects, Sessions
 Plug 'ThePrimeagen/harpoon'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-Plug 'kyazdani42/nvim-tree.lua'
+" Plug 'kyazdani42/nvim-tree.lua'
 Plug 'mhinz/vim-startify'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'rmagatti/auto-session'
 Plug 'rmagatti/session-lens'
