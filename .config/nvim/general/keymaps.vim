@@ -106,7 +106,7 @@ nnoremap <A-.> <C-W>+
 
 "~~~~~~~~~~TAB NAVIGATION ~~~~~~~~~
 noremap <leader>tx :tabclose<CR>|                             "  close tab
-noremap <leader>to :tabnew<CR>|                               "  open new empty tab
+noremap <leader>tn :tabnew<CR>|                               "  open new empty tab
 
 "~~~~~~~~~~ BUFFER NAVIGATION~~~~~~~~~
 " nnoremap <leader>. :ls <CR>:b|                                "  open buffer list and change buffers
