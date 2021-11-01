@@ -60,7 +60,7 @@ set $tf ] title_format
 # ts: show target container, tc: move to target container
 set $ts ,focus;exec --no-startup-id i3fyra -s
 set $tm ;exec --no-startup-id exec i3fyra -m
-set $tc ,focus;exec --no-startup-id exec i3fyra -m
+set $tc ,focus;exec --no-startup-id exec i3fyra --conid $CONID --move 
 
 #############################################################################
 
@@ -140,30 +140,24 @@ $W+$Left   focus left
 $W+$Down   focus down
 $W+$Up     focus up
 $W+$Right  focus right
-$W+Left    focus left
-$W+Down    focus down
-$W+Up      focus up
-$W+Right   focus right
 
 # >>> change focus to nearest container
 $W+$A+$Left   $X i3viswiz left
 $W+$A+$Down   $X i3viswiz down
 $W+$A+$Up     $X i3viswiz up
 $W+$A+$Right  $X i3viswiz right
-$W+$A+Left    $X i3viswiz left
-$W+$A+Down    $X i3viswiz down
-$W+$A+Up      $X i3viswiz up
-$W+$A+Right   $X i3viswiz right
 
 # >>> move focused window positions
 $W+$S+$Left   move left
 $W+$S+$Down   move down
 $W+$S+$Up     move up
 $W+$S+$Right  move right
-$W+$S+Left    move left
-$W+$S+Down    move down
-$W+$S+Up      move up
-$W+$S+Right   move right
+
+# >>> resize i3fyra containers 
+$W+$A+$S+$Left  $K size --speed 50 left
+$W+$A+$S+$Down  $K size --speed 50 down
+$W+$A+$S+$Up    $K size --speed 50 up
+$W+$A+$S+$Right $K size --speed 50 right
 
 # >>> move windows to specific containers
 $W+$A+a  $tm A
@@ -184,6 +178,7 @@ $W+$S+t layout toggle tabbed splith splitv
 
 # toggle tiling / floating
 $W+$S+f floating toggle
+$W+$A+f focus mode_toggle
 
 # move the currently focused window to the scratchpad
 $W+$S+n move scratchpad
@@ -477,6 +472,7 @@ $ir "zoom" title="Chat"                    $tf $sbb $send zoom: chat         
 $cr "discord"                              $tf $smn  $send %title                   ,move container to workspace $ws4
 $cr "GitKraken"                            $tf $sgb $send GitKraken                 ,move container to workspace $ws3
 $ir "spotify"                              $tf $srb $send Spotify $srb$send        ,move container to workspace $ws5
+$ir "steam"                                $tf $sgb $send Steam                     ,move container to workspace $ws6
 
 # >>> Floating windows
 for_window [class="Firefox" title="^Page Info"] floating enable
