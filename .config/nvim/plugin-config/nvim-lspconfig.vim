@@ -44,8 +44,6 @@ local on_attach = function(client, bufnr)
     -- vim.api.nvim_command [[augroup END]]
   -- end
 
-require'completion'.on_attach(client, bufnr)
-
   --protocol.SymbolKind = { }
   protocol.CompletionItemKind = {
     '', -- Text
@@ -109,7 +107,6 @@ local servers = require'lspinstall'.installed_servers()
 for _, server in pairs(servers) do
   require'lspconfig'[server].setup{
       on_attach = function()
-          require'completion'.on_attach()
           require'lsp_signature'.on_attach()
           on_attach()
       end,

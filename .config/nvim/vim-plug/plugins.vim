@@ -2,17 +2,17 @@
 
 " Plugin Calls
 if has("win32") || has("win16")
-  let $PLUGVIM = $HOME . '\AppData\Local\nvim\autoload\plug.vim'
-  let $PLUGGEDPATH = $HOME . '\AppData\Local\nvim\autoload\plugged'
+    let $PLUGVIM = $HOME . '\AppData\Local\nvim\autoload\plug.vim'
+    let $PLUGGEDPATH = $HOME . '\AppData\Local\nvim\autoload\plugged'
 else
-  let $PLUGVIM = $HOME . '/.local/share/nvim/site/autoload/plug.vim'
-  let $PLUGGEDPATH = $HOME . '/.local/share/nvim/plugged'
+    let $PLUGVIM = $HOME . '/.local/share/nvim/site/autoload/plug.vim'
+    let $PLUGGEDPATH = $HOME . '/.local/share/nvim/plugged'
 endif
 
 if empty(glob( $PLUGVIM ))
-  silent !curl -fLo $PLUGVIM --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent !curl -fLo $PLUGVIM --create-dirs
+    	        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin( $PLUGGEDPATH )
@@ -90,7 +90,11 @@ Plug 'liuchengxu/vista.vim'
 Plug 'mattn/emmet-vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'kabouzeid/nvim-lspinstall'
-Plug 'nvim-lua/completion-nvim'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
 Plug 'nvim-telescope/telescope-symbols.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate', 'branch': 'master' }
 

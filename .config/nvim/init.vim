@@ -41,7 +41,7 @@ source $VIMPATH/themes/themes.vim
 source $VIMPATH/plugin-config/auto-session.vim
 source $VIMPATH/plugin-config/autopairs.vim
 source $VIMPATH/plugin-config/closetag.vim
-source $VIMPATH/plugin-config/completion-nvim.vim
+source $VIMPATH/plugin-config/nvim-cmp.vim
 source $VIMPATH/plugin-config/devicons.vim
 source $VIMPATH/plugin-config/fern.vim
 source $VIMPATH/plugin-config/diagnosticls.vim

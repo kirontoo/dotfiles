@@ -152,6 +152,10 @@ $W+$S+$Left   move left
 $W+$S+$Down   move down
 $W+$S+$Up     move up
 $W+$S+$Right  move right
+# $W+$S+$Left   $K move --speed 0 left
+# $W+$S+$Down   $K move --speed 0 down
+# $W+$S+$Up     $K move --speed 0 up
+# $W+$S+$Right  $K move --speed 0 right
 
 # >>> resize i3fyra containers 
 $W+$A+$S+$Left  $K size --speed 50 left
@@ -472,7 +476,7 @@ $ir "zoom" title="Chat"                    $tf $sbb $send zoom: chat         
 $cr "discord"                              $tf $smn  $send %title                   ,move container to workspace $ws4
 $cr "GitKraken"                            $tf $sgb $send GitKraken                 ,move container to workspace $ws3
 $ir "spotify"                              $tf $srb $send Spotify $srb$send        ,move container to workspace $ws5
-$ir "steam"                                $tf $sgb $send Steam                     ,move container to workspace $ws6
+$cr "Steam" title="Steam"                    $tf $sgb $send Steam                     ,move container to workspace $ws6
 
 # >>> Floating windows
 for_window [class="Firefox" title="^Page Info"] floating enable
