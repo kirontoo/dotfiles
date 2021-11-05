@@ -3,10 +3,10 @@ let g:fern#renderer = "nerdfont"
 
 " Keymaps
 
-nnoremap <leader>tps <cmd>Fern %:h -opener=split<cr>
-nnoremap <leader>tpv <cmd>:Fern %:h -opener=vsplit<cr>
+nnoremap <leader>tds <cmd>Fern %:h -opener=split<cr>
+nnoremap <leader>tdv <cmd>:Fern %:h -opener=vsplit<cr>
 nnoremap <leader>t. <cmd>:Fern %:h<cr>
-nnoremap <leader>td <cmd>:Fern .<cr>
+nnoremap <leader>tp <cmd>:Fern .<cr>
 
 nnoremap <leader>tt <cmd>Fern . -drawer -toggle<cr>
 nnoremap <leader>tf <cmd>Fern . -drawer -reveal=%<cr>
