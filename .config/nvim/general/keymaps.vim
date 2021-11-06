@@ -13,6 +13,7 @@
 
 "~~~~~~~~~~ FILES ~~~~~~~~
 noremap <leader>fev :e  $MYVIMRC<CR>|                         "  edit vimrc
+noremap <leader>fep :e $VIMPATH/vim-plug/plugins.vim<CR>|     "  edit plugins
 noremap <leader>fer :source $MYVIMRC<CR>|                     "  reload vimrc
 noremap <leader>fi gg=G|                                      "  fix file indents
 noremap <leader>ft :Retab<CR>|                                "  toggle between tabs and spaces
@@ -74,15 +75,7 @@ nnoremap <C-Down>  <C-w>j
 nnoremap <C-Up>    <C-w>k
 nnoremap <C-Right> <C-w>l
 
-" nnoremap <leader>h <C-w>h
-" nnoremap <leader>j <C-w>j
-" nnoremap <leader>k <C-w>k
-" nnoremap <leader>l <C-w>l
-
-noremap <leader>wv :vsplit<CR>|                               "  split window vertically
-noremap <leader>ws :split<CR>|                                "  split window vertically
-noremap <leader>wvr :vert sview <C-Z><CR>|                    "  split vertically in read only mode
-noremap <leader>wd :close<CR>|                                "  close a window
+noremap <leader>wx :close<CR>|                                "  close a window
 noremap <leader>wo :only<CR>|                                 "  keep only current window open
 noremap <leader>wh :hide<CR>|                                 "  hide the current window
 
