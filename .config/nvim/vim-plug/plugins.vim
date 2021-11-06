@@ -42,12 +42,12 @@ Plug 'ryanoasis/vim-devicons'
 
 " Fix for fern plugin
 Plug 'antoinemadec/FixCursorHold.nvim'
-
+" File Explorer
+Plug 'lambdalisue/fern-git-status.vim'
+Plug 'lambdalisue/fern-hijack.vim'
 Plug 'lambdalisue/fern-renderer-devicons.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
-Plug 'lambdalisue/fern-git-status.vim'
 Plug 'lambdalisue/nerdfont.vim'
-Plug 'lambdalisue/fern-hijack.vim'
 
 " Utility
 Plug 'AndrewRadev/splitjoin.vim'
@@ -76,7 +76,7 @@ Plug 'windwp/nvim-autopairs'
 Plug 'ThePrimeagen/harpoon'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 " Plug 'kyazdani42/nvim-tree.lua'
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -95,6 +95,8 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
 Plug 'nvim-telescope/telescope-symbols.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate', 'branch': 'master' }
 

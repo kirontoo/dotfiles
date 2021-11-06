@@ -21,6 +21,7 @@ source $VIMPATH/general/startup.vim
 " source $VIMPATH/general/statusline.vim
 " source $VIMPATH/general/galaxyline.vim
 source $VIMPATH/general/lualine.vim
+" source $VIMPATH/general/tabline.vim
 
 " colorscheme configs
 " source $VIMPATH/themes/dracula.vim
@@ -38,13 +39,15 @@ source $VIMPATH/themes/themes.vim
 " source $VIMPATH/plugin-config/maximize.vim
 " source $VIMPATH/plugin-config/nerdtree.vim
 " source $VIMPATH/plugin-config/nnn.vim
+" source $VIMPATH/plugin-config/nvimtree.vim
+" source $VIMPATH/plugin-config/startify.vim
 source $VIMPATH/plugin-config/auto-session.vim
 source $VIMPATH/plugin-config/autopairs.vim
 source $VIMPATH/plugin-config/closetag.vim
-source $VIMPATH/plugin-config/nvim-cmp.vim
 source $VIMPATH/plugin-config/devicons.vim
-source $VIMPATH/plugin-config/fern.vim
 source $VIMPATH/plugin-config/diagnosticls.vim
+source $VIMPATH/plugin-config/emmet.vim
+source $VIMPATH/plugin-config/fern.vim
 source $VIMPATH/plugin-config/fugitive.vim
 source $VIMPATH/plugin-config/gitsigns.vim
 source $VIMPATH/plugin-config/harpoon.vim
@@ -53,13 +56,12 @@ source $VIMPATH/plugin-config/indent-guide.vim
 source $VIMPATH/plugin-config/lspsaga.vim
 source $VIMPATH/plugin-config/lua-lsp.vim
 source $VIMPATH/plugin-config/nvim-bufferline.vim
+source $VIMPATH/plugin-config/nvim-cmp.vim
 source $VIMPATH/plugin-config/nvim-lspconfig.vim
-" source $VIMPATH/plugin-config/nvimtree.vim
 source $VIMPATH/plugin-config/polyglot.vim
 source $VIMPATH/plugin-config/rooter.vim
 source $VIMPATH/plugin-config/session-lens.vim
 source $VIMPATH/plugin-config/splitjoin.vim
-source $VIMPATH/plugin-config/startify.vim
 source $VIMPATH/plugin-config/tabular.vim
 source $VIMPATH/plugin-config/telescope.vim
 source $VIMPATH/plugin-config/todo-comments.vim
@@ -72,4 +74,3 @@ source $VIMPATH/plugin-config/vimspector.vim
 source $VIMPATH/plugin-config/vimwiki.vim
 source $VIMPATH/plugin-config/vista.vim
 source $VIMPATH/plugin-config/whichkey.vim
-source $VIMPATH/plugin-config/emmet.vim
