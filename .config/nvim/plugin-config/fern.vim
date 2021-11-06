@@ -14,7 +14,7 @@ nnoremap <leader>tf <cmd>Fern . -drawer -reveal=%<cr>
 nnoremap <leader>tr <Plug>(fern-action-reload)
 
 function! FernInit() abort
-    nmap <buffer> n <Plug>(fern-action-new-path)
+    nmap <buffer> N <Plug>(fern-action-new-path)
     nmap <buffer> r <Plug>(fern-action-reload)
     nmap <buffer> X <Plug>(fern-action-remove)
     nmap <buffer> <C-x> <Plug>(fern-action-open:split)
