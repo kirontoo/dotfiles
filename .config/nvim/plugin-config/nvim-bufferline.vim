@@ -45,147 +45,32 @@ require('bufferline').setup ({
     -- end
   },
   highlights = {
-    fill = {
-      guibg = '#2D2B40',
-      guifg = '#A1EFD3'
-    },
-    background = {
-      guibg = '#100e23',
-      guifg = '#8a889d'
-    },
-    tab = {
-      guibg = '#100e23',
-      guifg = '#8a889d'
-    },
-    tab_selected = {
-      guifg = '#63F2F1',
-      guibg = '#1e1c32'
-    },
+     tab_selected = {
+       -- guifg = '#63F2F1',
+       -- guibg = '#1e1c32'
+       guifg = {
+         attribute = "fg",
+         highlight = "PmenuSel"
+       },
+       guibg = {
+         attribute = "bg",
+         highlight = "Normal"
+        }
+     },
 
-    buffer_selected = {
-      guifg = '#cbe3e7',
-      guibg = '#1e1c32',
-      gui = 'bold'
-    },
-    buffer_visible = {
-      guibg = '#100e23',
-      guifg = '#8a889d'
-    },
-
-    close_button= {
-      guibg = '#100e23',
-      guifg = '#8a889d'
-    },
-    close_button_selected = {
-      guibg = '#1e1c32',
-      guifg = '#8a889d'
-    },
-    close_button_visible = {
-      guibg = '#100e23',
-      guifg = '#8a889d'
-    },
-
-    diagnostic = {
-      guifg = '#D4BFFF',
-      guibg = '#100e23'
-    },
-    diagnostic_selected = {
-      guifg = '#1e1c32',
-      guibg = '#d4bfff',
-    },
-    diagnostic_visible = {
-      guibg = '#100e23',
-      guifg = '#d4bfff',
-    },
-
-    error_visible = {
-      guifg = '#F48FB1',
-      guibg = '#100e23'
-    },
-    error_selected = {
-      guifg = '#1e1c32',
-      guibg = '#F48FB1'
-    },
-    error_diagnostic = {
-      guifg = '#F48FB1',
-      guibg = '#100e23'
-    },
-    error_diagnostic_selected = {
-      guifg = '#1e1c32',
-      guibg = '#F48FB1',
-    },
-    error_diagnostic_visible = {
-      guibg = '#100e23',
-      guifg = '#F48FB1'
-    },
-
-    info_visible = {
-      guifg = '#91DDFF',
-      guibg = '#100e23'
-    },
-    info_selected = {
-      guibg = '#1e1c32',
-      guifg = '#91DDFF'
-    },
-    info_diagnostic = {
-      guifg = '#91DDFF',
-      guibg = '#100e23'
-    },
-    info_diagnostic_selected = {
-      guibg = '#1e1c32',
-      guifg = '#91DDFF',
-    },
-    info_diagnostic_visible = {
-      guibg = '#100e23',
-      guifg = '#91DDFF'
-    },
-
-    warning_visible = {
-      guifg = '#FFE6B3',
-      guibg = '#100e23'
-    },
-    warning_selected = {
-      guifg = '#1e1c32',
-      guibg = '#FFE6B3'
-    },
-    warning_diagnostic = {
-      guifg = '#FFE6B3',
-      guibg = '#100e23'
-    },
-    warning_diagnostic_selected = {
-      guifg = '#1e1c32',
-      guibg = '#FFE6B3',
-    },
-    warning_diagnostic_visible = {
-      guibg = '#100e23',
-      guifg = '#FFE6B3'
-    },
-
-    separator = {
-      guibg = '#100e23',
-      guifg = '#2D2B40'
-    },
-    separator_selected = {
-      guibg = '#1e1c32',
-      guifg = '#2D2B40'
-    },
-    separator_visible = {
-      guibg = '#100e23',
-      guifg = '#2D2B40'
-    },
-
-    pick = {
-      guifg = '#100e23',
-      guibg = '#62D196'
-    },
-    pick_selected = {
-      guifg = '#1e1c32',
-      guibg = '#FFE6B3'
-    },
-    pick_visible = {
-      guifg = '#100e23',
-      guibg = '#62D196'
-    },
+     buffer_selected = {
+       -- guifg = '#cbe3e7',
+       -- guibg = '#1e1c32',
+       gui = 'bold',
+       guifg = {
+         attribute = "fg",
+         highlight = "TabLineSel"
+       },
+       guibg = {
+         attribute = "bg",
+         highlight = "Normal"
+        }
+    }
   }
 })
 
