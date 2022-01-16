@@ -60,16 +60,24 @@ entry {
 }
 
 element {
-	  text-color: @white;
+	    text-color: @white;
 		dynamic: true;
 		padding: 2px 4px;
 		margin: 6px 0px;
 }
 
 element selected {
+		text-color: @selection-bg;
+		background-color: @selection-bg;
+}
+
+
+element-text selected {
 		background-color: @selection-bg;
 		text-color: @selection-fg;
+
 }
+
 
 textbox {
  text-color: @white;
