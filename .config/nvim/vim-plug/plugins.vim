@@ -21,6 +21,7 @@ call plug#begin( $PLUGGEDPATH )
 Plug 'embark-theme/vim', { 'as': 'embark' }
 Plug 'lifepillar/vim-solarized8'
 Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 Plug 'tyrannicaltoucan/vim-deep-space'
 
 " Plugin: NerdFonts
@@ -77,6 +78,9 @@ Plug 'ThePrimeagen/harpoon'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 " Plug 'kyazdani42/nvim-tree.lua'
 " Plug 'mhinz/vim-startify'
+
+Plug 'glepnir/dashboard-nvim'
+
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'

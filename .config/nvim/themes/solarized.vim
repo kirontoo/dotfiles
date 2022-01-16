@@ -14,5 +14,6 @@ function! Solarized()
 		let g:lightline.colorscheme='solarized'
 		call lightline#enable()
 	endif
+	call MyLualine('solarized')
 endfunction
 
