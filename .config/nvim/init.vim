@@ -5,10 +5,10 @@
 " |__|_ \__||__|   \____/|___|  /__|  \____/ \____/
 "  \/  \/
 
-if has("win32")
-	let $VIMPATH=$HOME . "/AppData/Local/nvim"
+if has('win32')
+	let $VIMPATH=$HOME . '/AppData/Local/nvim'
 else
-	let $VIMPATH=$HOME . "/.config/nvim"
+	let $VIMPATH=$HOME . '/.config/nvim'
 endif
 
 source $VIMPATH/vim-plug/plugins.vim

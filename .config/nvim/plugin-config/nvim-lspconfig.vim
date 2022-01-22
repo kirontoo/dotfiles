@@ -72,6 +72,7 @@ local on_attach = function(client, bufnr)
     'ﬦ', -- Operator
     '', -- TypeParameter
   }
+    require'lsp_signature'.on_attach()
 end
 
 nvim_lsp.flow.setup {
@@ -79,40 +80,21 @@ nvim_lsp.flow.setup {
 }
 
 nvim_lsp.tsserver.setup {
-  on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" }
 }
 
+local lsp_installer = require("nvim-lsp-installer")
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
--- local servers = { "pyright", "tsserver", "cssls", "html", "svls", "svelte", "dockerls", "diagnosticls", "gopls" }
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities.textDocument.completion.completionItem.snippetSupport = true
--- for _, lsp in ipairs(servers) do
---     nvim_lsp[lsp].setup {
---         on_attach = function()
---             require'completion'.on_attach()
---             require'lsp_signature'.on_attach()
---             on_attach()
---         end,
---         capabilities = capabilities,
---     }
--- end
+-- Register a handler that will be called for all installed servers.
+-- Alternatively, you may also register handlers on specific server instances instead (see example below).
+lsp_installer.on_server_ready(function(server)
+    local opts = {
+        on_attach = on_attach,
+        capabilities = capabilities
+    }
 
--- servers = html, css, typescript, svelte, bash
-require'lspinstall'.setup() -- important
-
-local servers = require'lspinstall'.installed_servers()
-for _, server in pairs(servers) do
-  require'lspconfig'[server].setup{
-      on_attach = function()
-          require'lsp_signature'.on_attach()
-          on_attach()
-      end,
-      capabilities = capabilities,
-  }
-end
+    server:setup(opts)
+end)
 
 EOF
 
