@@ -90,7 +90,7 @@ Plug 'rmagatti/session-lens'
 " LSP And Syntax
 Plug 'ap/vim-css-color'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'liuchengxu/vista.vim'
+" Plug 'liuchengxu/vista.vim'
 Plug 'mattn/emmet-vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'kabouzeid/nvim-lspinstall'
