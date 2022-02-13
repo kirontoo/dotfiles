@@ -73,5 +73,6 @@ source $VIMPATH/plugin-config/vim-test.vim
 source $VIMPATH/plugin-config/vimplug.vim
 source $VIMPATH/plugin-config/vimspector.vim
 source $VIMPATH/plugin-config/vimwiki.vim
-" source $VIMPATH/plugin-config/vista.vim
+source $VIMPATH/plugin-config/vista.vim
+" source $VIMPATH/plugin-config/symbols-outline.vim
 source $VIMPATH/plugin-config/whichkey.vim

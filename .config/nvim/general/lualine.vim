@@ -40,12 +40,12 @@ function MyLualine( scheme )
             lualine_b = {'filename'},
             lualine_c = { {
                 'diagnostics',
-                sources = {'nvim_lsp'},
-                symbols = {error = ' ', warn = ' ', info = ' '},
-                color_error = colors.insert.a.bg,
-                color_warn = colors.visual.a.bg,
-                color_info = colors.command.a.bg
-                }
+                    sources = {'nvim_lsp'},
+                    symbols = {error = ' ', warn = ' ', info = ' '},
+                    color_error = colors.insert.a.bg,
+                    color_warn = colors.visual.a.bg,
+                    color_info = colors.command.a.bg
+                },
             },
         lualine_x = { {
             'diff',

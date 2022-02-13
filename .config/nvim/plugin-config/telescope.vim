@@ -107,8 +107,8 @@ nnoremap <leader>ej <cmd>Telescope symbols<cr>
 
 " LSP
 " nnoremap <leader>ca <cmd>Telescope lsp_code_actions<cr>
-nnoremap <leader>ce <cmd>Telescope lsp_document_diagnostics<cr>
-nnoremap <leader>cE <cmd>Telescope lsp_workspace_diagnostics<cr>
+nnoremap <leader>ce <cmd>Telescope diagnostics<cr>
+" nnoremap <leader>cE <cmd>Telescope lsp_workspace_diagnostics<cr>
 nnoremap <leader>cs <cmd>Telescope lsp_document_symbols<cr>
 nnoremap <leader>cS <cmd>Telescope lsp_workspace_symbols<cr>
 nnoremap <leader>cT :lua require('telescope.builtin').treesitter()<CR>

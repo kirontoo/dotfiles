@@ -2,9 +2,8 @@ let g:vimwiki_list = [{'path': '~/my_site/',
         \ 'template_path': '~/public_html/templates/',
         \ 'template_default': 'def_template',
         \ 'template_ext': '.html'}]
-
 let wiki_1 = {}
-let wiki_1.path = '~/vimwiki/'
+let wiki_1.path = '~/vimwiki'
 let wiki_1.template_path = '~/vimwiki/templates/'
 let wiki_1.template_ext = '.md'
 let wiki_1.syntax = 'markdown'
@@ -14,14 +13,24 @@ let wiki_1.auto_tags = 1
 let wiki_1.auto_diary_index = 1
 
 let wiki_2 = {}
-let wiki_2.path = '~/vimwiki/journal'
+let wiki_2.path = '~/Documents/mindmap/schedule'
 let wiki_2.template_path = '~/vimwiki/templates/'
 let wiki_2.template_ext = '.md'
 let wiki_2.syntax = 'markdown'
 let wiki_2.ext = '.md'
+let wiki_2.index = 'index'
+let wiki_2.auto_tags = 1
 let wiki_2.auto_diary_index = 1
 
-let g:vimwiki_list = [wiki_1, wiki_2]
+let wiki_3 = {}
+let wiki_3.path = '~/Documents/mindmap/journal'
+let wiki_3.template_path = '~/vimwiki/templates/'
+let wiki_3.template_ext = '.md'
+let wiki_3.syntax = 'markdown'
+let wiki_3.ext = '.md'
+let wiki_3.auto_diary_index = 1
+
+let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
 
 " let g:vimwiki_list = [
 "     \ {'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md',},

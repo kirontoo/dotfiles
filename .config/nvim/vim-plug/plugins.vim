@@ -23,6 +23,7 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 Plug 'tyrannicaltoucan/vim-deep-space'
+Plug 'catppuccin/nvim'
 
 " Plugin: NerdFonts
 " Plug 'https://github.com/ryanoasis/nerd-fonts.git', { 'do': './install.sh' }
@@ -72,6 +73,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vim-test/vim-test'
 Plug 'vimwiki/vimwiki'
 Plug 'windwp/nvim-autopairs'
+" Plug 'simrat39/symbols-outline.nvim'
 
 " Files, Projects, Sessions
 Plug 'ThePrimeagen/harpoon'
@@ -90,7 +92,7 @@ Plug 'rmagatti/session-lens'
 " LSP And Syntax
 Plug 'ap/vim-css-color'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-" Plug 'liuchengxu/vista.vim'
+Plug 'liuchengxu/vista.vim'
 Plug 'mattn/emmet-vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'kabouzeid/nvim-lspinstall'
