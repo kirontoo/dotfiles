@@ -78,6 +78,74 @@ cyan-b = #63F2F1
 white-n = #8A889D
 white-b = #CBE3E7
 
+
+
+[bar/bottombar]
+;https://github.com/jaagr/polybar/wiki/Configuration
+
+;monitor = ${env:MONITOR}
+;monitor-fallback = HDMI1
+monitor-strict = false
+override-redirect = false
+wm-restack = i3
+bottom = true
+fixed-center = false
+height = 34
+
+radius-top = 0
+radius-bottom = 0
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+radius = 0
+line-size = 0
+
+border-size = 0
+border-bottom-size = 2
+border-color = ${colors.black-na}
+
+padding-left = 2
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 1
+
+;https://github.com/jaagr/polybar/wiki/Fonts
+font-0 = "scientifica:style=Regular:weight=bold:pixelsize=14;2"
+font-1 = "Font Awesome 6 Free:style=Regular:pixelsize=12;3"
+font-2 = "Font Awesome 6 Free:style=Solid:pixelsize=12;3"
+font-3 = "Font Awesome 6 Brands:pixelsize=12;3"
+
+modules-left = spotify
+; modules-right = spotify docker notification-github timer memory cpu wireless-network volume-percent date time powermenu
+modules-right = wireless-network volume-percent memory cpu 
+
+separator = "  "
+
+; Enable support for inter-process messaging
+; See the Messaging wiki page for more details.
+enable-ipc = true
+
+; Fallback click handlers that will be called if
+; there's no matching module handler found.
+click-left =
+click-middle =
+click-right =
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+double-click-left =
+double-click-middle =
+double-click-right =
+
+; Requires polybar to be built with xcursor support (xcb-util-cursor)
+; Possible values are:
+; - default   : The default pointer as before, can also be an empty string (default)
+; - pointer   : Typically in the form of a hand
+; - ns-resize : Up and down arrows, can be used to indicate scrolling
+cursor-click =
+cursor-scroll =
+
+
 ################################################################################
 ################################################################################
 ############                         topbar                     ################
@@ -116,12 +184,13 @@ module-margin-right = 1
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
 font-0 = "scientifica:style=Regular:weight=bold:pixelsize=14;2"
-font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
-font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
-font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
+font-1 = "Font Awesome 6 Free:style=Regular:pixelsize=12;3"
+font-2 = "Font Awesome 6 Free:style=Solid:pixelsize=12;3"
+font-3 = "Font Awesome 6 Brands:pixelsize=12;3"
 
 modules-left = i3 xwindow
-modules-right = spotify docker notification-github memory cpu wireless-network pulseaudio-control date time powermenu
+; modules-right = spotify docker notification-github timer memory cpu wireless-network volume-percent date time powermenu
+modules-right = docker notification-github date time powermenu
 
 separator = "  "
 
@@ -186,9 +255,9 @@ module-margin-right = 1
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
 font-0 = "scientifica:style=Regular:weight=bold:pixelsize=14;2"
-font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
-font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
-font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
+font-1 = "Font Awesome 6 Free:style=Regular:pixelsize=12;3"
+font-2 = "Font Awesome 6 Free:style=Solid:pixelsize=12;3"
+font-3 = "Font Awesome 6 Brands:pixelsize=12;3"
 
 modules-left = i3dot xwindow
 modules-right = docker spotify wireless-network pulseaudio-control date time powermenu
@@ -260,13 +329,13 @@ fuzzy-match = false
 ;http://fontawesome.io/cheatsheet/
 ;       v     
 
-ws-icon-0 = 1;
+ws-icon-0 = 1;
 ws-icon-1 = 2;
-ws-icon-2 = 3;
+ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
 ws-icon-7 = 8;
 ws-icon-8 = 9;
 ws-icon-9 = 10;
@@ -315,17 +384,12 @@ label-focused-margin = 1
 label-unfocused = %name%
 label-unfocused-padding = 1
 label-unfocused-background = ${colors.background}
-; label-unfocused-foreground = ${colors.black-b}
 label-unfocused-foreground = ${colors.black-b}
-; label-unfocused-background = ${colors.background}
-; label-unfocused-foreground = ${colors.white-b}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
 label-visible-background = ${colors.background}
 label-visible-foreground = ${colors.white-b}
-; label-visible-background = ${colors.black-b}
-; label-visible-foreground = ${colors.white-b}
 label-visible-padding = 1
 
 ; Available tokens:
@@ -675,7 +739,7 @@ format-background = ${colors.background}
 ; format-padding = 2
 format-prefix = "  "
 format-prefix-foreground = ${colors.green-b}
-label = %output:0:30:...%
+label = %output:0:50:...%
 
 ################################################################################
 
@@ -736,6 +800,8 @@ label-muted = ""
 label-muted-foreground = ${colors.red-b}
 label-muted-background = ${colors.background}
 interval = 3
+
+click-middle = ~/.config/polybar/scripts/pulseaudio-control.bash next-sink; 
 
 ################################################################################
 
@@ -911,9 +977,9 @@ format = <label>
 label-foreground  = ${colors.green-n}
 label-background = ${colors.background}
 
-click-left = $HOME/.config/polybar/scripts/polybar-timer.sh new 45 '' 'notify-send "Session finished"' ; $HOME/.config/polybar/scripts/polybar-timer.sh update %pid%
+click-left = $HOME/.config/polybar/scripts/polybar-timer.sh new 50 '' 'notify-send "Session finished"' ; $HOME/.config/polybar/scripts/polybar-timer.sh update %pid%
 click-middle = $HOME/.config/polybar/scripts/polybar-timer.sh cancel ; $HOME/.config/polybar/scripts/polybar-timer.sh update %pid%
-click-right = $HOME/.config/polybar/scripts/polybar-timer.sh new 20 'Break' 'notify-send "Break finished"' ; $HOME/.config/polybar/scripts/polybar-timer.sh update %pid%
+click-right = $HOME/.config/polybar/scripts/polybar-timer.sh new 10 'Break' 'notify-send "Break finished"' ; $HOME/.config/polybar/scripts/polybar-timer.sh update %pid%
 scroll-up = $HOME/.config/polybar/scripts/polybar-timer.sh increase 60 || $HOME/.config/polybar/scripts/polybar-timer.sh new 1 'TIMER:' 'notify-send -u critical "Timer expired."' ; $HOME/.config/polybar/scripts/polybar-timer.sh update %pid%
 scroll-down = $HOME/.config/polybar/scripts/polybar-timer.sh increase -60 ; $HOME/.config/polybar/scripts/polybar-timer.sh update %pid%
 
@@ -932,7 +998,8 @@ label = %output:0:25:...%
 exec = ~/.config/polybar/scripts/pulseaudio-control.bash --volume-max 100 --icons-volume " , " --icon-muted " " --sink-nickname "alsa_output.usb-Razer_Razer_Kraken_7.1_V2_00000000-00.analog-stereo:Headphones" --sink-blacklist "alsa_output.pci-0000_01_00.1.hdmi-stereo" --sink-nicknames-from "device.description" --sink-nickname "alsa_output.pci-0000_00_1f.3.analog-stereo:Stereo" listen
 click-right = exec pavucontrol &
 click-left = ~/.config/polybar/scripts/pulseaudio-control.bash togmute
-click-middle = ~/.config/polybar/scripts/pulseaudio-control.bash next-sink; $HOME/scripts/visulaunch
+click-middle = ~/.config/polybar/scripts/pulseaudio-control.bash next-sink; 
+; $HOME/scripts/visulaunch
 scroll-up = ~/.config/polybar/scripts/pulseaudio-control.bash up
 scroll-down = ~/.config/polybar/scripts/pulseaudio-control.bash down
 
