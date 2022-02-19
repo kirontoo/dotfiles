@@ -13,7 +13,7 @@ nnoremap <leader>vs :Vista finder<cr>
 
 let g:vista_sidebar_width = 35
 let g:vista_close_on_jump = 0
-let g:vista_default_executive = 'ctags'
+let g:vista_default_executive = 'nvim_lsp'
 let g:vista_highlight_whole_line = 1
 let g:vista#renderer#enable_icon  = 1
 let g:vista_echo_cursor_strategy = 'echo'
@@ -35,7 +35,7 @@ let g:vista_executive_for = {
   \'html': 'nvim_lsp',
   \'svelte': 'nvim_lsp',
   \'json': 'nvim_lsp',
-  \'css': 'ctags'
+  \'markdown': 'toc'
   \}
 
 " augroup NearestMethod
