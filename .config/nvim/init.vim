@@ -21,7 +21,7 @@ source $VIMPATH/general/startup.vim
 " source $VIMPATH/general/statusline.vim
 " source $VIMPATH/general/galaxyline.vim
 source $VIMPATH/general/lualine.vim
-" source $VIMPATH/general/tabline.vim
+source $VIMPATH/general/tabline.vim
 
 " colorscheme configs
 " source $VIMPATH/themes/dracula.vim
@@ -74,5 +74,5 @@ source $VIMPATH/plugin-config/vimplug.vim
 source $VIMPATH/plugin-config/vimspector.vim
 source $VIMPATH/plugin-config/vimwiki.vim
 source $VIMPATH/plugin-config/vista.vim
-" source $VIMPATH/plugin-config/symbols-outline.vim
+source $VIMPATH/plugin-config/symbols-outline.vim
 source $VIMPATH/plugin-config/whichkey.vim
