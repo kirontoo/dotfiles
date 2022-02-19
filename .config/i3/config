@@ -60,7 +60,8 @@ set $tf ] title_format
 # ts: show target container, tc: move to target container
 set $ts ,focus;exec --no-startup-id i3fyra -s
 set $tm ;exec --no-startup-id exec i3fyra -m
-set $tc ,focus;exec --no-startup-id exec i3fyra --conid $CONID --move 
+# set $tc ,focus;exec --no-startup-id exec i3fyra --conid $CONID --move 
+set $tc ,focus;exec --no-startup-id exec i3fyra --move 
 
 #############################################################################
 
@@ -152,16 +153,18 @@ $W+$S+$Left   move left
 $W+$S+$Down   move down
 $W+$S+$Up     move up
 $W+$S+$Right  move right
-# $W+$S+$Left   $K move --speed 0 left
-# $W+$S+$Down   $K move --speed 0 down
-# $W+$S+$Up     $K move --speed 0 up
-# $W+$S+$Right  $K move --speed 0 right
+
+# >>> move container splits
+$W+$C+$Left   $K move --speed 0 left
+$W+$C+$Down   $K move --speed 0 down
+$W+$C+$Up     $K move --speed 0 up
+$W+$C+$Right  $K move --speed 0 right
 
 # >>> resize i3fyra containers 
-$W+$A+$S+$Left  $K size --speed 50 left
-$W+$A+$S+$Down  $K size --speed 50 down
-$W+$A+$S+$Up    $K size --speed 50 up
-$W+$A+$S+$Right $K size --speed 50 right
+# $W+$A+$S+$Left  $K size --speed 50 left
+# $W+$A+$S+$Down  $K size --speed 50 down
+# $W+$A+$S+$Up    $K size --speed 50 up
+# $W+$A+$S+$Right $K size --speed 50 right
 
 # >>> move windows to specific containers
 $W+$A+a  $tm A
@@ -370,7 +373,7 @@ set $layout 'AB=-550 AC=-200 BD=500'
 $W+p     $X i3fyra -l $layout
 $W+$S+p  $X i3fyra -l 'AB=550 AC=-200 BD=500'
 $W+s     $X i3fyra -l 'AB=-750 AC=-200 BD=500'
-$W+$S+s  $X i3fyra -l 'AB=1150 AC=-400 BD=-400'
+$W+$S+s  $X i3fyra -l 'AB=1150 AC=-200 BD=-400'
 
 # autoload layout
 $X i3fyra -l $layout
@@ -465,10 +468,11 @@ $wr "PictureInPicture"                     $tf $srn $send Pic-in-Pic         
 
 # >>> Container C
 $ir "visualizer"                           $tf "visualizer"                          $tc C, border pixel 2px
+$tr "visualizer"                           $tf "visualizer"                          $tc C, border pixel 2px
 
 # >>> Container D
 $ir "crx_mpognobbkildjkofajifpdfhcoklimli" $tf $scb $send Dev Tools                 $tm D
-$ir "file_explorer" title="nnn"            $tf $smn $send file explorer             $tc D
+# $ir "file_explorer" title="nnn"            $tf $smn $send file explorer             $tc D
 $ir "schedule"                             $tf $sgb $send schedule                  $tc D
 $ir "zoom" title="Chat"                    $tf $sbb $send zoom: chat                $tc D
 
