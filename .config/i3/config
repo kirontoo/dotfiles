@@ -502,6 +502,7 @@ for_window [class="Simple-scan"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 for_window [class="fpakman"] floating enable
 for_window [class="gitkraken"] move container to workspace $ws3
+for_window [class="obsidian"] move container to workspace $ws7
 for_window [class="octopi"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border normal 2
 for_window [title="File Transfer*"] floating enable
@@ -550,6 +551,10 @@ $X $HOME/scripts/multi-monitors.sh
 # Start System stats on desktop
 # exec_always --no-startup-id $HOME/.config/conky/launch.sh
 
+# Geolocation service for RedShift (screen sunset)
+exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
+exec --no-startup-id redshift
+
 # Launch Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
@@ -557,7 +562,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Visualizer
 # exec_always --no-startup-id $HOME/scripts/visulaunch
 
-exec_always --no-startup-id $HOME/scripts/startup.sh
+# exec_always --no-startup-id $HOME/scripts/startup.sh
 
 ########################################################
 
