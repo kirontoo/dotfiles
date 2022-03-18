@@ -5,7 +5,7 @@ My personal dotfiles
 ## Dependencies
 
 
-* [i3ass v2020.08.11.1](https://github.com/budlabs/i3ass) 
+* [i3ass v2020.10.21.1](https://github.com/budlabs/i3ass) 
 * anisto
 * awesomewm
 * bat 
@@ -27,6 +27,7 @@ My personal dotfiles
 * neovim-nightly
 * nerdfonts
 * polybar
+* [pulseaudio-control](https://github.com/marioortizmanero/polybar-pulseaudio-control)
 * python 3
 * rofi
 * scrot
