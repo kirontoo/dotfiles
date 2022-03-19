@@ -7,43 +7,85 @@
 # window 3: cd to same directory
 
 SESSION="dev"
-SESSIONEXISTS=$(tmux list-sessions | grep $SESSION)
+FOLDER="$HOME/Documents/repos/github.com/kirontoo"
+SPLIT_PANES=false
 
-FOLDER=""
+function usage() {
+cat <<USAGE
 
-if [ "$1" ]; then
-    FOLDER=$1
+    Usage: $0 [-s session] [-r repo ] [--split]
+
+    Options:
+        -s, --session: tmux session name
+        -r, --repo:    repo path
+        --split:       information about argument
+USAGE
+    exit 1
+}
+
+function jump_dir() {
+    # window should be a number
+    local window = $1
+    if [[ -n "$FOLDER" ]]; then
+        tmux send-keys -t $SESSION:$WINDOW "cd ${FOLDER}" C-m
+    fi
+}
+
+# if no arguments are provided, exit
+if [ $# -eq 0 ]; then
+    usage
+    exit 1
 fi
 
+for arg in "$@"; do
+    case $arg in
+    -s | --session)
+        SESSION=$2
+        shift # remove arg (-s) name from `$@`
+        shift # remove arg value (session) from `$@`
+        ;;
+    -r | --repo)
+        FOLDER=$2
+        ## Check if folder exists
+        if [[ ! -d "$FOLDER" ]]; then
+            echo "Directory does not exist: $FOLDER"
+            exit 1
+        fi
+        shift
+        shift
+        ;;
+    --split)
+        ## split panes?
+        SPLIT_PANES=true
+        shift
+        ;;
+    -h | --help) 
+        usage
+        ;;
+    esac
+done
+
+EXISTING_SESSION=$(tmux list-sessions | grep $SESSION)
+
 # Only create new tmux session if it already doesn't exist
-if ["$SESSIONEXISTS" = ""]
-then
+if [[ -z "$EXISTING_SESSION" ]]; then
     tmux new-session -d -s $SESSION
 
-    tmux rename-window -t 'dev' 'notes'
-    tmux send-keys -t 'notes' 'nvim -c VimwikiIndex' C-m
+    # $SESSION:0 meaning session name : window number
+    tmux rename-window -t $SESSION:0 'db'
+    # tmux send-keys -t 'notes' 'nvim -c VimwikiIndex' C-m
 
     # Setup window for development
     tmux new-window -t $SESSION:1 -n 'dev'
+    jump_dir 1
 
-    # Jump into directory
-    if [[ -n "$FOLDER" ]]; then
-        tmux send-keys -t 'dev' "cd ${FOLDER}" C-m
-    fi
-
-    tmux send-keys -t 'dev' 'nvim' C-m
-    tmux send-keys -t 'dev' Escape
+    tmux send-keys -t $SESSION:1 'nvim' C-m
+    tmux send-keys -t $SESSION:1 Escape
 
     # Setup window for server
     tmux new-window -t $SESSION:2 -n 'server'
-    if [[ -n "$FOLDER" ]]; then
-        tmux send-keys -t $SESSION:2 "cd ${FOLDER}" C-m
-    fi
-
-    # Window for schedule
-    tmux new-window -t $SESSION:3 -n 'schedule'
-    tmux send-keys -t $SESSION:3 "nvim -c VimwikiDiaryIndex" C-m
+    jump_dir 2
+else
+    tmux attach -t $SESSION
 fi
 
-# IDEA: auto launch window?
-# TODO: integrate with rofi-tmux-session
