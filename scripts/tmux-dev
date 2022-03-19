@@ -25,7 +25,7 @@ USAGE
 
 function jump_dir() {
     # window should be a number
-    local window = $1
+    local window="$1"
     if [[ -n "$FOLDER" ]]; then
         tmux send-keys -t $SESSION:$WINDOW "cd ${FOLDER}" C-m
     fi
