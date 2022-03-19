@@ -26,6 +26,7 @@ source $VIMPATH/general/tabline.vim
 " colorscheme configs
 " source $VIMPATH/themes/dracula.vim
 source $VIMPATH/themes/gruvbox.vim
+source $VIMPATH/themes/catppuccin.vim
 source $VIMPATH/themes/solarized.vim
 
 " load colorscheme

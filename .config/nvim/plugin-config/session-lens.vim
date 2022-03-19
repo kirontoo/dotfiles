@@ -11,7 +11,7 @@ require('session-lens').setup({
       preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└"},
       },
     },
-  previewer = true
+  previewer = false
 })
 EOF
 

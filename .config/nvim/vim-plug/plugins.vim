@@ -23,7 +23,7 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 Plug 'tyrannicaltoucan/vim-deep-space'
-Plug 'catppuccin/nvim'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin'}
 
 " Plugin: NerdFonts
 " Plug 'https://github.com/ryanoasis/nerd-fonts.git', { 'do': './install.sh' }
@@ -73,7 +73,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vim-test/vim-test'
 Plug 'vimwiki/vimwiki'
 Plug 'windwp/nvim-autopairs'
-" Plug 'simrat39/symbols-outline.nvim'
+Plug 'simrat39/symbols-outline.nvim'
+" Plug 'stevearc/aerial.nvim'
 
 " Files, Projects, Sessions
 Plug 'ThePrimeagen/harpoon'

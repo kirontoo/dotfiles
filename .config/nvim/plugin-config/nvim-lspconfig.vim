@@ -73,6 +73,7 @@ local on_attach = function(client, bufnr)
     '', -- TypeParameter
   }
     require'lsp_signature'.on_attach()
+    --- require("aerial").on_attach(client, bufnr)
 end
 
 nvim_lsp.flow.setup {
