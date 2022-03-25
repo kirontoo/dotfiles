@@ -24,7 +24,7 @@ USAGE
 }
 
 function jump_dir() {
-    # window should be a number
+    # session window should be a number
     local window="$1"
     if [[ -n "$FOLDER" ]]; then
         tmux send-keys -t $SESSION:$WINDOW "cd ${FOLDER}" C-m
@@ -74,6 +74,7 @@ if [[ -z "$EXISTING_SESSION" ]]; then
     # $SESSION:0 meaning session name : window number
     tmux rename-window -t $SESSION:0 'db'
     # tmux send-keys -t 'notes' 'nvim -c VimwikiIndex' C-m
+    jump_dir 0
 
     # Setup window for development
     tmux new-window -t $SESSION:1 -n 'dev'
