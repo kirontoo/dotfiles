@@ -97,7 +97,7 @@ $W+x kill
 $W+Shift+w exec --no-startup-id $HOME/scripts/i3-swap-workspace.sh
 
 # >>> rofi app and window launchers
-$W+z            $X morc_menu
+# $W+z            $X morc_menu
 $W+d            $X dmenu_recency -nb "#1e1c31" -nf "#cbe3e7" -sb "#f48fb1" -sf "#100e32" -fn "scientifica:bold:pixelsize=15" -p ">_" -h 34px 
 $W+space        $X rofi -show drun
 $W+Shift+space  $X rofi -show run 
@@ -167,10 +167,16 @@ $W+$C+$Right  $K move --speed 0 right
 # $W+$A+$S+$Right $K size --speed 50 right
 
 # >>> move windows to specific containers
-$W+$A+a  $tm A
-$W+$A+b  $tm B
-$W+$A+c  $tm C
-$W+$A+d  $tm D
+$W+$A+$S+a  $tm A
+$W+$A+$S+b  $tm B
+$W+$A+$S+c  $tm C
+$W+$A+$S+d  $tm D
+
+# >>> Focus parent containers
+$W+$A+a $X i3viswiz -p A -f
+$W+$A+b $X i3viswiz -p B -f
+$W+$A+c $X i3viswiz -p C -f
+$W+$A+d $X i3viswiz -p D -f
 
 # >>> split orientation
 # $W+s split h;exec notify-send 'tile horizontally'
@@ -201,6 +207,9 @@ $W+$S+Tab  $X i3flip prev
 # move current container instead of focus
 $W+$A+Tab     $X i3flip --move next
 $W+$S+$A+Tab  $X i3flip --move prev
+
+# zen mod
+$W+z  $X i3zen
 
 $B $A+Tab workspace back_and_forth
 $B $A+Shift+Tab move container to workspace back_and_forth; workspace back_and_forth
@@ -278,7 +287,7 @@ default_floating_border normal 2
 title_align left
 
 focus_follows_mouse no
-focus_wrapping no
+focus_wrapping yes
 
 # Hide borders
 hide_edge_borders true
@@ -324,7 +333,7 @@ set $ws9 9
 set $ws0 0
 
 # workspace back and forth (with/without active container)
-workspace_auto_back_and_forth yes
+workspace_auto_back_and_forth no
 
 # switch to workspace
 $W+1 workspace $ws1
@@ -552,8 +561,8 @@ $X $HOME/scripts/multi-monitors.sh
 # exec_always --no-startup-id $HOME/.config/conky/launch.sh
 
 # Geolocation service for RedShift (screen sunset)
-exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
-exec --no-startup-id redshift
+# exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
+# exec --no-startup-id redshift
 
 # Launch Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -669,11 +678,11 @@ set_from_resource $whited    color 15
 # gaps top 40
 
 # no gaps
-gaps outer 1
-gaps top 0
+# gaps outer 1
+# gaps top 0
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
-$W+$S+g mode "$mode_gaps"
+# $W+$S+g mode "$mode_gaps"
 #############################################################################
 
 #############################################################################
@@ -688,44 +697,44 @@ $W+$S+g mode "$mode_gaps"
 # Modes
 #############################################################################
 
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+# set $mode_gaps Gaps: (o) outer, (i) inner
+# set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+# set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_monitor Move Monitor (h) left, (l) right
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 
-mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
+# mode "$mode_gaps" {
+#         bindsym o      mode "$mode_gaps_outer"
+#         bindsym i      mode "$mode_gaps_inner"
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+# }
 
-mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
+# mode "$mode_gaps_inner" {
+#         bindsym plus  gaps inner current plus 5
+#         bindsym minus gaps inner current minus 5
+#         bindsym 0     gaps inner current set 0
 
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
+#         bindsym Shift+plus  gaps inner all plus 5
+#         bindsym Shift+minus gaps inner all minus 5
+#         bindsym Shift+0     gaps inner all set 0
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+# }
 
-mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
+# mode "$mode_gaps_outer" {
+#         bindsym plus  gaps outer current plus 5
+#         bindsym minus gaps outer current minus 5
+#         bindsym 0     gaps outer current set 0
 
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
+#         bindsym Shift+plus  gaps outer all plus 5
+#         bindsym Shift+minus gaps outer all minus 5
+#         bindsym Shift+0     gaps outer all set 0
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+# }
 
 mode "$mode_monitor" { 
         bindsym Up move workspace to output up
