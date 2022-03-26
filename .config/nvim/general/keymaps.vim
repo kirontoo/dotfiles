@@ -124,6 +124,10 @@ nnoremap <leader>rv :%s///c<Left><Left><Left>|                "  search file & c
 nnoremap <leader>rg :%s///gc<Left><Left><Left><Left>|         "  search entire file & confirm
 nnoremap <leader>rc :%s///gcI<Left><Left><Left><Left><Left>|  "  search case sensitive
 
+" REQUIRES tpope/abolish plugin
+nnoremap <leader>rwc :Subvert/<cr-r><c-w>//g<Left><Left>
+nnoremap <leader>rWc :%Subvert/<cr-r><c-w>//g<Left><Left>
+
 "~~~~~~~~~~ BACKGROUND TOGGLE ~~~~~~~~~
 nnoremap <leader>bg :call ToggleBackground()<cr>
 
