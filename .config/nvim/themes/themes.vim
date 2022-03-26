@@ -6,10 +6,12 @@
 "            \/     \/      \/     \/     \/
 
 " Default theme
-colorscheme embark
 set background=dark
+" colorscheme embark
+colorscheme catppuccin
+call MyLualine('catppuccin')
 
-call MyLualine('embark')
+" call MyLualine('embark')
 
 " NOTE: needs to be called after colorcheme
 syntax on
