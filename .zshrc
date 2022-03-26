@@ -30,6 +30,11 @@ export ZSH="$HOME/.oh-my-zsh"
 # file icons
 source ~/.local/share/icons-in-terminal/icons_bash.sh
 
+# nvim installation
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 ################################################
 #     _    _ _           
 #    / \  | (_) __ _ ___ 
@@ -40,7 +45,8 @@ source ~/.local/share/icons-in-terminal/icons_bash.sh
 alias dev="cd ~/Documents/dev"
 alias repos="cd ~/Documents/repos/github.com/kirontoo"
 alias dotfiles="cd ~/Documents/dev/dotfiles"
-alias blog="cd ~/Documents/blod"
+alias mindmap="cd ~/Documents/mindmap"
+alias blog="cd ~/Documents/blog"
 alias lg="gitui"
 alias config="cd ~/.config/"
 alias ide="~/scripts/tmux-dew.sh"
@@ -160,7 +166,7 @@ export NNN_COLORS='13428df71b59'
 #                                     
 ################################################
 export I3FYRA_MAIN_CONTAINER='A'
-export I3FYRA_WS=1
+export I3FYRA_WS='1'
 export i3FYRA_ORIENTATION='horizontal'
 
 ################################################
@@ -293,3 +299,7 @@ fzf_git_diff() {
 eval "$(jump shell zsh)"
 
 alias luamake=/home/phoenix/Documents/repos/lua-language-server/3rd/luamake/luamake
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
