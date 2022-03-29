@@ -100,3 +100,7 @@ end)
 EOF
 
 " autocmd! CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics({ show_header = false })
+" Auto format code
+nnoremap <leader>ff <cmd>EslintFixAll<cr>
+
+autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll
