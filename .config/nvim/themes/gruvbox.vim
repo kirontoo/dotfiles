@@ -7,27 +7,26 @@
 
 
 let g:gruvbox_contrast_dark='medium'
-let g:gruvbox_contrast_light='medium'
+let g:gruvbox_contrast_light='hard'
 
 noremap <leader>Tg :call Gruvbox()<CR>
 
 function! Gruvbox()
-	colorscheme gruvbox
-	if exists('#lightline')
-		let g:lightline.colorscheme='gruvbox'
-		call lightline#enable()
-	endif
+    colorscheme gruvbox
+    if exists('#lightline')
+        let g:lightline.colorscheme='gruvbox'
+        call lightline#enable()
+    endif
 
     let g:lualinescheme="gruvbox"
-	call MyLualine('gruvbox')
+    call MyLualine('gruvbox')
 endfunction
 
 nnoremap <leader>Tl :call LightScheme()<CR>
 
 function! LightScheme()
-	let g:gruvbox_contrast_light='hard'
-	colorscheme gruvbox
-	set background=light
+    colorscheme gruvbox
+    set background=light
     let g:lualinescheme="gruvbox"
-	call MyLualine('gruvbox')
+    call MyLualine('gruvbox')
 endfunction
