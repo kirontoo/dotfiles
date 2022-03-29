@@ -77,7 +77,8 @@ set colorcolumn=80,120
 
 set list                                                                 "   show trailing whitespaces
 " set listchars=tab:▸\ ,space:·,extends:›,precedes:‹,nbsp:·,trail:·,eol:§
-set listchars=tab:\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:§
+" set listchars=tab:\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:§
+set listchars=tab:\ ,extends:›,precedes:‹,nbsp:␣,trail:·,eol:↲
 
 " Font
 " set guifont=fira\ code:h14
