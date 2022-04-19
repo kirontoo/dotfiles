@@ -38,8 +38,8 @@ set $TB  exec  --no-startup-id  exec  i3term --font large
 set $R   exec  --no-startup-id  exec  i3run
 set $K   exec  --no-startup-id  exec  i3Kornhe
 
-set $lockscreen exec betterlockscreen -l dim -t "Get off my computer"
-set $suspendscreen exec betterlockscreen -s dim -t "Get off my computer"
+set $lockscreen exec betterlockscreen -l
+set $suspendscreen exec betterlockscreen -s
 
 # set $lockscreen $HOME/scripts/minimal-lock.sh
 
@@ -131,7 +131,7 @@ $W+$C+b            exec i3-sensible-terminal -e 'bmenu'
 # $W+F1              $R -i Navigator -g -e "firefox"
 $W+F1              $R -i vivaldi-stable -x vivaldi-stable -e "vivaldi-stable"
 $W+F2              $R -i file_explorer -g -e "i3-sensible-terminal --name file_explorer -e nnn -R"
-$W+F3              $R -i discord -g -e "Discord"
+$W+F3              $R -i discord -g -e "discord"
 $W+F4              $R -i spotify -g -e "spotify"
 $W+$S+F3           exec pcmanfm_pkexec
 # $W+$S+h          exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
