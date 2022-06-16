@@ -34,7 +34,7 @@ Plug 'catppuccin/nvim', { 'as': 'catppuccin'}
 Plug 'Pocco81/TrueZen.nvim'
 Plug 'folke/todo-comments.nvim'
 Plug 'folke/trouble.nvim'
-" Plug 'glepnir/lspsaga.nvim'
+Plug 'glepnir/lspsaga.nvim'
 Plug 'tami5/lspsaga.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'lewis6991/gitsigns.nvim'
@@ -78,7 +78,6 @@ Plug 'simrat39/symbols-outline.nvim'
 " Plug 'stevearc/aerial.nvim'
 
 " Files, Projects, Sessions
-Plug 'ThePrimeagen/harpoon'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 " Plug 'kyazdani42/nvim-tree.lua'
 " Plug 'mhinz/vim-startify'
@@ -92,22 +91,23 @@ Plug 'rmagatti/auto-session'
 Plug 'rmagatti/session-lens'
 
 " LSP And Syntax
+Plug 'L3MON4D3/LuaSnip'
 Plug 'ap/vim-css-color'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/vim-vsnip'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'kabouzeid/nvim-lspinstall'
 Plug 'liuchengxu/vista.vim'
 Plug 'mattn/emmet-vim'
 Plug 'neovim/nvim-lspconfig'
-Plug 'kabouzeid/nvim-lspinstall'
-Plug 'williamboman/nvim-lsp-installer'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
 Plug 'nvim-telescope/telescope-symbols.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate', 'branch': 'master' }
+Plug 'williamboman/nvim-lsp-installer'
 
 " Debugger Plugins
 Plug 'puremourning/vimspector'

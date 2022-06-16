@@ -7,11 +7,11 @@
 
 " Default theme
 set background=dark
-" colorscheme embark
-colorscheme catppuccin
-call MyLualine('catppuccin')
+colorscheme embark
+call MyLualine('embark')
+" colorscheme catppuccin
+" call MyLualine('catppuccin')
 
-" call MyLualine('embark')
 
 " NOTE: needs to be called after colorcheme
 syntax on

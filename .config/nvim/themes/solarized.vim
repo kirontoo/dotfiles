@@ -8,12 +8,13 @@
 noremap <leader>Ts :call Solarized()<CR>
 function! Solarized()
 	colorscheme solarized8_high
-	let g:airline_theme='solarized'
+	" let g:airline_theme='solarized'
 	set background=light
-	if exists('#lightline')
-		let g:lightline.colorscheme='solarized'
-		call lightline#enable()
-	endif
+    let g:lualinescheme="solarized"
+	" if exists('#lightline')
+	" 	let g:lightline.colorscheme='solarized'
+	" 	call lightline#enable()
+	" endif
 	call MyLualine('solarized')
 endfunction
 

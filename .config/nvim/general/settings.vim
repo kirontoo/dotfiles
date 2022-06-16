@@ -45,7 +45,7 @@ set fileencoding=utf-8
 set fileencodings=utf-8
 set ff=unix
 
-set laststatus=2
+set laststatus=3
 set noshowmode
 set signcolumn=yes                                   "   Enable sign column
 

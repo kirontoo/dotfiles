@@ -81,7 +81,7 @@ highlight TelescopePreviewBorder  guifg=#a1efd3
 nnoremap <leader><space> <cmd>Telescope find_files hidden=true<cr>
 " nnoremap <leader><space> <cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy(), {hidden=false})<cr>
 " nnoremap <leader>ff <cmd>lua require('telescope.builtin').file_browser(require('telescope.themes').get_ivy())<cr>
-nnoremap <leader>ff <cmd>Telescope file_browser hidden=true<cr>
+" nnoremap <leader>ff <cmd>Telescope file_browser hidden=true<cr>
 nnoremap <leader>fh <cmd>Telescope oldfiles<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>ht <cmd>Telescope help_tags<cr>
