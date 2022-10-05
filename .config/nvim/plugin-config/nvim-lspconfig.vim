@@ -84,6 +84,10 @@ nvim_lsp.tsserver.setup {
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" }
 }
 
+nvim_lsp.gopls.setup {
+  filetypes = {"go", "gomod", "gowork", "gotmpl", "gohtmltmpl"}
+}
+
 local lsp_installer = require("nvim-lsp-installer")
 
 -- Register a handler that will be called for all installed servers.

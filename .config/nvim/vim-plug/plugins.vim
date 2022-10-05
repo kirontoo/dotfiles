@@ -74,7 +74,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vim-test/vim-test'
 Plug 'vimwiki/vimwiki'
 Plug 'windwp/nvim-autopairs'
-Plug 'simrat39/symbols-outline.nvim'
+" Plug 'simrat39/symbols-outline.nvim'
 " Plug 'stevearc/aerial.nvim'
 
 " Files, Projects, Sessions
