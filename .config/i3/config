@@ -477,6 +477,7 @@ $ir "iftop"                                $tf $smb $send Iftop              
 $ir "tabbed" class="tabbed"                $tf $sgb  $send Preview-tabbed           $tm B; $X i3viswiz -f -c kitty -t "file_explorer"
 $tr "Picture in picture"                   $tf $srn $send Pic-in-Pic                $tc B
 $wr "PictureInPicture"                     $tf $srn $send Pic-in-Pic                $tc B
+$cr "mpv"                                  $tf $scb $send %title                    $tc B
 
 # >>> Container C
 $ir "visualizer"                           $tf "visualizer"                          $tc C, border pixel 2px
