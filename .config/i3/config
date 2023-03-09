@@ -203,6 +203,9 @@ $W+$S+n move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 $W+n scratchpad show
 
+# Make a floating window sticky (Persistent across all workspaces)
+$W+s sticky toggle
+
 # focus tabbed windows next / previous
 $W+Tab     $X i3flip next
 $W+$S+Tab  $X i3flip prev
@@ -383,9 +386,8 @@ $W+$S+0 move container to workspace $ws0; workspace $ws0
 set $layout 'AB=-550 AC=-200 BD=500'
 
 $W+p     $X i3fyra -l $layout
-$W+$S+p  $X i3fyra -l 'AB=550 AC=-200 BD=500'
-$W+s     $X i3fyra -l 'AB=-750 AC=-200 BD=500'
-$W+$S+s  $X i3fyra -l 'AB=1150 AC=-200 BD=-400'
+$W+$S+p     $X i3fyra -l 'AB=-750 AC=-200 BD=500'
+$W+$S+$A+p  $X i3fyra -l 'AB=1150 AC=-200 BD=-400'
 
 # autoload layout
 $X i3fyra -l $layout
@@ -506,7 +508,6 @@ for_window [class="Lightdm-settings"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable border normal 2
 for_window [class="Manjaro Settings Manager"] floating enable border normal 2
 for_window [class="Manjaro-hello"] floating enable
-for_window [class="Nitrogen"] floating enable sticky enable border normal 2
 for_window [class="Oblogout"] fullscreen enable
 for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
@@ -541,11 +542,13 @@ for_window [title="i3_help"] floating enable sticky enable border normal 2
 ########################################################
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; picom -b
+# exec --no-startup-id nitrogen --restore; sleep 1; picom -b
+exec --no-startup-id ~/.fehbg
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
+exec --no-startup-id pulseeffects -l audiotechnica
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
@@ -756,6 +759,11 @@ mode "resize" {
         bindsym j resize grow height 5 px or 5 ppt
         bindsym k resize shrink height 5 px or 5 ppt
         bindsym l resize grow width 5 px or 5 ppt
+
+        bindsym Shift+h resize shrink width 30 px or 30 ppt
+        bindsym Shift+j resize grow height 30 px or 30 ppt
+        bindsym Shift+k resize shrink height 30 px or 30 ppt
+        bindsym Shift+l resize grow width 30 px or 30 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
