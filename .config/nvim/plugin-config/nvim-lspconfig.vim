@@ -92,6 +92,7 @@ local lsp_installer = require("nvim-lsp-installer")
 
 -- Register a handler that will be called for all installed servers.
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 lsp_installer.on_server_ready(function(server)
     local opts = {
         on_attach = on_attach,

@@ -82,7 +82,6 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 " Plug 'kyazdani42/nvim-tree.lua'
 " Plug 'mhinz/vim-startify'
 
-Plug 'glepnir/dashboard-nvim'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'

@@ -65,3 +65,6 @@ augroup SkeletonGroup
     " autocmd BufNewFile $HOME/vimwiki/**/*.md 0r $VIMPATH/snippets/md/skeleton.md
 augroup END
 
+" Format json data
+command FormatJson :%!jq .
+command UnformatJson :%!jq -c .
