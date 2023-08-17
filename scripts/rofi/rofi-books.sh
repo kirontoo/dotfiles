@@ -25,5 +25,7 @@ BOOK_SELECTION=$( ( get_books ) | rofi -dmenu -theme simple-menu -i -p "Open PDF
 if [[ -z "${BOOK_SELECTION}" ]]; then
 	echo "Cancel"
 else
-	zathura $(xdg-user-dir DOCUMENTS)/books/"${BOOK_SELECTION}" &
+	directory_path=$(find $(xdg-user-dir DOCUMENTS)/books -name "${BOOK_SELECTION}")
+	echo ${directory_path}
+	foxitreader ${directory_path} &
 fi
