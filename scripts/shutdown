@@ -1,0 +1,5 @@
+#!/bin/bash
+
+notify-send "shutdown in 5 minutes"
+shutdown  +5
+exit 0

@@ -121,11 +121,11 @@ $W+$C+t      exec "picom -b; exec notify-send 'restart picom'"
 $B+Print     $X i3-scrot
 
 $W+Ctrl+x    --release $X xkill
-$W+$S+$A+p   --release exec i3-scrot -s
+# $W+$S+$A+p   --release exec i3-scrot -s
 $W+$A+p      --release $X i3-scrot -w
 $W+Print     --release $X i3-scrot -w
 $W+$S+Print  --release $X i3-scrot -s
-$W+$S+d      --release  exec "killall dunst;exec notify-send 'restart dunst'"
+# $W+$S+d      --release  exec "killall dunst;exec notify-send 'restart dunst'"
 
 # $W+F1              $R -i vivaldi_branch -g -e "vivaldi-stable"
 # $W+$S+Return       $R -i vivaldi-stable -x vivaldi-stable -e "vivaldi-stable"
@@ -221,7 +221,7 @@ $B $A+Tab workspace back_and_forth
 $B $A+Shift+Tab move container to workspace back_and_forth; workspace back_and_forth
 
 # reload the configuration file
-$W+$S+c reload; exec notify-send "i3 has been reloaded"
+$W+$S+c reload; exec notify-send "i3 config has been reloaded"
 $W+$C+$A+Escape  $X xfce4-session-logout
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -383,11 +383,11 @@ $W+$S+0 move container to workspace $ws0; workspace $ws0
 # >>> I3FYRA
 # dependency: i3ass https://github.com/budlabs/i3ass
 
-set $layout 'AB=-550 AC=-200 BD=500'
+set $layout 'AB=-750 AC=-200 BD=500'
 
 $W+p     $X i3fyra -l $layout
-$W+$S+p     $X i3fyra -l 'AB=-750 AC=-200 BD=500'
-$W+$S+$A+p  $X i3fyra -l 'AB=1150 AC=-200 BD=-400'
+$W+$S+p     $X i3fyra -l 'AB=-950 AC=-200 BD=500'
+$W+$S+$A+p  $X i3fyra -l 'AB=1500 AC=-200 BD=-400'
 
 # autoload layout
 $X i3fyra -l $layout
