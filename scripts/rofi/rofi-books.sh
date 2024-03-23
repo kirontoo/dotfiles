@@ -28,4 +28,5 @@ else
 	directory_path=$(find $(xdg-user-dir DOCUMENTS)/books -name "${BOOK_SELECTION}")
 	echo ${directory_path}
 	foxitreader ${directory_path} &
+	exit
 fi

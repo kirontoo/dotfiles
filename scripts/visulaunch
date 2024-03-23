@@ -5,6 +5,7 @@ pkill -f visualizer
 # Wait until the processes have been shut down
 while pgrep -u $UID -x vis >/dev/null; do sleep 1; done
 
-exec i3-sensible-terminal -o font_size=2 --detach --name visualizer -e vis
+# exec i3-sensible-terminal -o font_size=2 --detach --name visualizer -e vis
+exec /usr/bin/alacritty  -o font.size=2 -t visualizer -e vis &
 
 echo "Visualizer launched"
