@@ -10,6 +10,7 @@ vim.opt.clipboard:append('unnamedplus')
 vim.opt.wrap = false
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
+vim.g.concaellevel = 1
 
 -- vim.opt.list=true
 -- vim.opt.listchars='tab:ﲒ,extends:›,precedes:‹,nbsp:␣,trail:·,eol:↲'
