@@ -43,13 +43,8 @@ return {
 				substitutions = {},
 			},
 			new_notes_location = "03-Resources",
-			note_id_func = function(title)
-				local suffix = ""
-				if title ~= nil then
-					-- If title is given, transform it into valid file name.
-					suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
-				end
-				return tostring(os.time()) .. "-" .. suffix
+			note_id_func = function()
+				return string.format("%s", tostring(os.date('%Y%m%d%H%M', os.time())))
 			end,
 
 			image_name_func = function()
