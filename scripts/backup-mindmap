@@ -1,0 +1,9 @@
+#!/bin/bash
+current_date_time=`date +%Y%m%d%H%M%S`
+
+cd $HOME/Documents/mindmap/
+git fetch
+git merge origin/main
+git add --all
+git commit -m "backup: $current_date_time"
+git push
