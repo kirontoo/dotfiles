@@ -1,0 +1,15 @@
+#!/bin/bash
+# source: https://github.com/agalea91/dotfiles/blob/main/bin/on
+
+if [ -z "$1" ]; then
+  echo "Error: A file name must be set, e.g. \"notes about web dev\""
+  exit 1
+fi
+
+file_name=$(echo "$1" | tr ' ' '-')
+formatted_file_name=$(date "+%Y-%m-%d")_${file_name}.md
+
+cd "$HOME/Documents/mindmap/00-Inbox" || exit
+touch "./${formatted_file_name}"
+nvim "./${formatted_file_name}"
+
