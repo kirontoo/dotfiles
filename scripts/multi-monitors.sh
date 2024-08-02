@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # xrandr --auto --output DP-2 --primary --auto --output DP-2 --auto --right-of HDMI-0 --scale 0.8
-xrandr --auto --output DP-2 --primary --right-of DP-4 --scale 1x1
+xrandr --auto --output DP-2 --primary --right-of DP-0 --scale 1x1
 
 
 # xrandr \
